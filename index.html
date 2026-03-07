@@ -68,13 +68,13 @@
           </linearGradient>
         </defs>
 
-        <!-- Left text: "Human\nIntelligence" — to the LEFT of left I bar -->
-        <text id="tL1" x="-12" y="280" text-anchor="end" font-family="Outfit,sans-serif" font-size="42" font-weight="600" fill="#050E3C" opacity="0">Human</text>
-        <text id="tL2" x="-12" y="326" text-anchor="end" font-family="Outfit,sans-serif" font-size="42" font-weight="600" fill="#050E3C" opacity="0">Intelligence</text>
+        <!-- Left text: "Human\nIntelligence" — typed to the LEFT of left I bar -->
+        <text id="tL1" x="-16" y="272" text-anchor="end" font-family="Outfit,sans-serif" font-size="54" font-weight="600" fill="#050E3C" opacity="0"></text>
+        <text id="tL2" x="-16" y="332" text-anchor="end" font-family="Outfit,sans-serif" font-size="54" font-weight="600" fill="#050E3C" opacity="0"></text>
 
-        <!-- Right text: "Artificial\nIntelligence" — to the RIGHT of right I bar -->
-        <text id="tR1" x="593" y="280" text-anchor="start" font-family="Outfit,sans-serif" font-size="42" font-weight="600" fill="#DC0000" opacity="0">Artificial</text>
-        <text id="tR2" x="593" y="326" text-anchor="start" font-family="Outfit,sans-serif" font-size="42" font-weight="600" fill="#DC0000" opacity="0">Intelligence</text>
+        <!-- Right text: "Artificial\nIntelligence" — typed to the RIGHT of right I bar -->
+        <text id="tR1" x="597" y="272" text-anchor="start" font-family="Outfit,sans-serif" font-size="54" font-weight="600" fill="#DC0000" opacity="0"></text>
+        <text id="tR2" x="597" y="332" text-anchor="start" font-family="Outfit,sans-serif" font-size="54" font-weight="600" fill="#DC0000" opacity="0"></text>
 
         <!-- X curves — BEHIND bars (exact logo paths) -->
         <path id="c1" d="M4 50 C220.132 50 360.869 552 577 552" stroke="url(#agrad)" stroke-width="73" stroke-linecap="butt" fill="none" opacity="0"/>
@@ -346,44 +346,82 @@ window.addEventListener('scroll', () => {
     el.style.transition = 'stroke-dashoffset ' + dur + 'ms ease-in-out';
     el.style.strokeDashoffset = '0';
   }
+  // Typing effect: reveal text character-by-character
+  function typeText(el, text, charDelay, cb) {
+    el.setAttribute('opacity', '1');
+    el.textContent = '';
+    var i = 0;
+    function next() {
+      if (i < text.length) {
+        el.textContent += text[i]; i++;
+        setTimeout(next, charDelay);
+      } else if (cb) cb();
+    }
+    next();
+  }
 
   // Timeline (1.5× speed after curves connect):
-  // 0.3s  — left I bar (navy) fades in
-  // 0.5s  — "Human / Intelligence" text left of bar
-  // 1.0s  — right I bar (red) fades in
-  // 1.2s  — "Artificial / Intelligence" text right of bar
-  // 2.0s  — X curves draw L→R (1200ms)
-  // 3.33s — text fades out  (1.5×)
-  // 3.6s  — color morph      (1.5×)
-  // 3.87s — logo shrinks + heading appears
+  // 0.3s  — left I bar fades in
+  // 0.5s  — "Human" types, then "Intelligence" types (left)
+  // 1.0s  — right I bar fades in
+  // 1.2s  — "Artificial" types, then "Intelligence" types (right)
+  // 2.4s  — X curves draw L→R (1200ms)
+  // 3.73s — text fades out   (1.5×)
+  // 4.0s  — color morph      (1.5×)
+  // 4.27s — logo shrinks + heading appears
 
+  // Left I bar
   setTimeout(function(){ fade(bL, 1, 600); }, 300);
-  setTimeout(function(){ fade(tL1, 1, 500); fade(tL2, 1, 500); }, 500);
-  setTimeout(function(){ fade(bR, 1, 600); }, 1000);
-  setTimeout(function(){ fade(tR1, 1, 500); fade(tR2, 1, 500); }, 1200);
-  setTimeout(function(){ draw(c1, 1200); draw(c2, 1200); }, 2000);
+  // Type "Human" → "Intelligence" left of bar
+  setTimeout(function(){
+    typeText(tL1, 'Human', 45, function(){
+      setTimeout(function(){ typeText(tL2, 'Intelligence', 45); }, 80);
+    });
+  }, 500);
 
-  // --- 1.5× speed post-curve ---
+  // Right I bar
+  setTimeout(function(){ fade(bR, 1, 600); }, 1000);
+  // Type "Artificial" → "Intelligence" right of bar
+  setTimeout(function(){
+    typeText(tR1, 'Artificial', 45, function(){
+      setTimeout(function(){ typeText(tR2, 'Intelligence', 45); }, 80);
+    });
+  }, 1200);
+
+  // X curves draw L→R (after typing finishes ~2270ms)
+  setTimeout(function(){ draw(c1, 1200); draw(c2, 1200); }, 2400);
+
+  // --- 1.5× speed post-curve (curves done ~3600ms) ---
   setTimeout(function(){
     fade(tL1, 0, 333); fade(tL2, 0, 333);
     fade(tR1, 0, 333); fade(tR2, 0, 333);
-  }, 3333);
+  }, 3733);
   setTimeout(function(){
     fade(bL, 0, 533); fade(bR, 0, 533);
     fade(gL, 1, 533); fade(gR, 1, 533);
-  }, 3600);
+  }, 4000);
 
-  // Logo shrinks into position + heading slides in
+  // Logo shrinks → heading expands → content fades up
   setTimeout(function(){
+    // 1) Start logo shrink
     $('logoAnim').classList.add('compact');
-    var h1 = document.createElement('h1');
-    h1.id = 'heroH1';
-    h1.innerHTML = 'Connecting Intelligences<br>beyond Boundaries';
-    $('heroIntro').appendChild(h1);
-    requestAnimationFrame(function(){ requestAnimationFrame(function(){
-      h1.classList.add('visible');
-    }); });
-  }, 3867);
+
+    // 2) After shrink is ~40% done, add & expand heading
+    setTimeout(function(){
+      var h1 = document.createElement('h1');
+      h1.id = 'heroH1';
+      h1.innerHTML = 'Connecting Intelligences<br>beyond Boundaries';
+      $('heroIntro').appendChild(h1);
+      requestAnimationFrame(function(){ requestAnimationFrame(function(){
+        h1.classList.add('visible');
+      }); });
+    }, 500);
+
+    // 3) After shrink is nearly done, reveal hero content
+    setTimeout(function(){
+      document.querySelector('.hero-content').classList.add('visible');
+    }, 1200);
+  }, 4267);
 })();
 </script>
 </body>
