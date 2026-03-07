@@ -49,7 +49,7 @@
       <a href="research.html">Research</a>
       <a href="members.html">Members</a>
       <a href="publications.html">Publications</a>
-      <a href="monthly-report.html">Monthly Report</a>
+      <a href="lab-log.html">Lab Log</a>
     </div>
     <button class="nav-toggle" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -63,38 +63,38 @@
     <!-- Logo Formation Animation -->
     <div class="hero-intro" id="heroIntro">
     <div class="logo-anim-container" id="logoAnim">
-      <svg id="animSvg" viewBox="-320 -20 1220 640" xmlns="http://www.w3.org/2000/svg">
+      <svg id="animSvg" viewBox="0 0 580 600" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id="agrad" gradientUnits="userSpaceOnUse" x1="113" y1="0" x2="569" y2="0">
+          <linearGradient id="agrad" gradientUnits="userSpaceOnUse" x1="4" y1="0" x2="577" y2="0">
             <stop offset="0%" stop-color="#050E3C"/><stop offset="25%" stop-color="#002455"/><stop offset="50%" stop-color="#4A1942"/><stop offset="75%" stop-color="#FF3838"/><stop offset="100%" stop-color="#DC0000"/>
           </linearGradient>
         </defs>
 
         <!-- Left text: "Human\nIntelligence" — typed to the LEFT of left I bar -->
-        <text id="tL1" x="97" y="272" text-anchor="end" font-family="Outfit,sans-serif" font-size="68" font-weight="600" fill="#050E3C" opacity="0"></text>
-        <text id="tL2" x="97" y="348" text-anchor="end" font-family="Outfit,sans-serif" font-size="68" font-weight="600" fill="#050E3C" opacity="0"></text>
+        <text id="tL1" x="-16" y="272" text-anchor="end" font-family="Outfit,sans-serif" font-size="68" font-weight="600" fill="#050E3C" opacity="0"></text>
+        <text id="tL2" x="-16" y="348" text-anchor="end" font-family="Outfit,sans-serif" font-size="68" font-weight="600" fill="#050E3C" opacity="0"></text>
 
         <!-- Right text: "Artificial\nIntelligence" — typed to the RIGHT of right I bar -->
-        <text id="tR1" x="584" y="272" text-anchor="start" font-family="Outfit,sans-serif" font-size="68" font-weight="600" fill="#DC0000" opacity="0"></text>
-        <text id="tR2" x="584" y="348" text-anchor="start" font-family="Outfit,sans-serif" font-size="68" font-weight="600" fill="#DC0000" opacity="0"></text>
+        <text id="tR1" x="597" y="272" text-anchor="start" font-family="Outfit,sans-serif" font-size="68" font-weight="600" fill="#DC0000" opacity="0"></text>
+        <text id="tR2" x="597" y="348" text-anchor="start" font-family="Outfit,sans-serif" font-size="68" font-weight="600" fill="#DC0000" opacity="0"></text>
 
-        <!-- X curves — BEHIND bars (center-to-center of bars) -->
-        <path id="c1" d="M137 120 C296 120 385 480 544 480" stroke="url(#agrad)" stroke-width="48" stroke-linecap="butt" fill="none" opacity="0"/>
-        <path id="c2" d="M137 480 C296 480 385 120 544 120" stroke="url(#agrad)" stroke-width="48" stroke-linecap="butt" fill="none" opacity="0"/>
+        <!-- X curves — BEHIND bars (exact logo paths) -->
+        <path id="c1" d="M4 50 C220.132 50 360.869 552 577 552" stroke="url(#agrad)" stroke-width="73" stroke-linecap="butt" fill="none" opacity="0"/>
+        <path id="c2" d="M4 552 C220.132 552 360.869 50 577 50" stroke="url(#agrad)" stroke-width="73" stroke-linecap="butt" fill="none" opacity="0"/>
 
-        <!-- I bars — solid color (initial) — smaller, centered -->
-        <rect id="bL" x="113" y="95" width="48" height="410" fill="#050E3C" opacity="0"/>
-        <rect id="bR" x="520" y="95" width="48" height="410" fill="#DC0000" opacity="0"/>
+        <!-- I bars — solid color (initial) — ON TOP -->
+        <rect id="bL" x="4" y="38" width="70" height="522" fill="#050E3C" opacity="0"/>
+        <rect id="bR" x="507" y="38" width="70" height="522" fill="#DC0000" opacity="0"/>
 
-        <!-- I bars — gradient (final, hidden) — same size as solid bars -->
-        <rect id="gL" x="113" y="95" width="48" height="410" fill="url(#agrad)" opacity="0"/>
-        <rect id="gR" x="520" y="95" width="48" height="410" fill="url(#agrad)" opacity="0"/>
+        <!-- I bars — gradient (final, hidden) — ON TOP of everything -->
+        <rect id="gL" x="4" y="38" width="70" height="522" fill="url(#agrad)" opacity="0"/>
+        <rect id="gR" x="507" y="38" width="70" height="522" fill="url(#agrad)" opacity="0"/>
       </svg>
     </div>
     </div>
 
     <div class="hero-content">
-      <div class="hero-badge">Department of Computer Science & IT · La Trobe University</div>
+      <div class="hero-badge">Dept. of CS & IT · La Trobe University</div>
       <p class="hero-sub">IXRI Lab — Intelligent XR Interface Lab</p>
       <p class="hero-desc">We connect humans and AI through XR, augmenting human capabilities beyond the limits of space, time, and reality.</p>
       <div class="hero-actions">
@@ -139,50 +139,33 @@
   </div>
 </section>
 
-<!-- Core Values -->
-<section class="section section-alt" id="values">
+<!-- News -->
+<section class="section section-alt" id="news">
   <div class="container">
-    <h2 class="section-title">Core Values</h2>
-    <div class="values-grid">
-      <div class="value-card">
-        <h3>Execution</h3>
-        <p class="value-quote">"Ideas only gain value when they are executed."</p>
-        <p>We build prototypes, run experiments, and ship papers through rapid execution and iteration.</p>
-      </div>
-      <div class="value-card">
-        <h3>Creativity</h3>
-        <p class="value-quote">"Connecting boundaries begins with thinking outside of them."</p>
-        <p>We encourage thinking unbound by existing frameworks. Borrow perspectives, ask unexpected questions.</p>
-      </div>
-      <div class="value-card">
-        <h3>Collaboration</h3>
-        <p class="value-quote">"Surround yourself with intelligences that push you forward."</p>
-        <p>We collaborate with every form of intelligence — human and artificial alike.</p>
-      </div>
+    <div class="section-header-row">
+      <h2 class="section-title">Latest News</h2>
+      <a href="news.html" class="section-more">View All →</a>
     </div>
-  </div>
-</section>
-
-<!-- How We Work -->
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">How We Work</h2>
-    <div class="work-grid">
-      <div class="work-item">
-        <h4>AI-First Research</h4>
-        <p>Every member builds a personal AI assistant and actively uses the best AI tools in their research workflow.</p>
+    <div class="news-grid">
+      <div class="news-card">
+        <div class="news-thumb placeholder-thumb">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--text-light)" stroke-width="1.2"><rect x="2" y="2" width="20" height="20" rx="2"/><circle cx="8" cy="8" r="2"/><path d="M2 16l5-5 4 4 3-3 8 8"/></svg>
+        </div>
+        <div class="news-card-body">
+          <span class="news-date">March 2026</span>
+          <h4>IXRI Lab Officially Launches</h4>
+          <p>The Intelligent XR Interface Lab begins at La Trobe University, Melbourne.</p>
+        </div>
       </div>
-      <div class="work-item">
-        <h4>Demo-Driven</h4>
-        <p>"If you can't demo it, you haven't finished it." Every project produces 15-second demo videos.</p>
-      </div>
-      <div class="work-item">
-        <h4>The Running Train</h4>
-        <p>Board → Understand the Engine → Build Your Own Train. Every researcher becomes an independent engineer.</p>
-      </div>
-      <div class="work-item">
-        <h4>Target Venues</h4>
-        <p>IEEE ISMAR & VR (TVCG track) as primary, expanding to ACM CHI, UIST, CVPR, and ECCV.</p>
+      <div class="news-card">
+        <div class="news-thumb placeholder-thumb">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--text-light)" stroke-width="1.2"><rect x="2" y="2" width="20" height="20" rx="2"/><circle cx="8" cy="8" r="2"/><path d="M2 16l5-5 4 4 3-3 8 8"/></svg>
+        </div>
+        <div class="news-card-body">
+          <span class="news-date">Coming Soon</span>
+          <h4>More Updates on the Way</h4>
+          <p>Stay tuned for research highlights, events, and lab activities.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -227,7 +210,7 @@
         <p><a href="research.html">Research</a></p>
         <p><a href="members.html">Members</a></p>
         <p><a href="publications.html">Publications</a></p>
-        <p><a href="monthly-report.html">Monthly Report</a></p>
+        <p><a href="lab-log.html">Lab Log</a></p>
       </div>
       <div>
         <h4>Location</h4>
@@ -346,21 +329,8 @@ window.addEventListener('scroll', () => {
 
   // Logo shrinks → heading expands → content fades up
   setTimeout(function(){
-    // 1) Start logo shrink + animate viewBox zoom to logo area
+    // 1) Start logo shrink (pure CSS transition — GPU accelerated)
     $('logoAnim').classList.add('compact');
-    var startVB = [-320, -20, 1220, 640];
-    var endVB = [80, 60, 530, 490];
-    var vbDur = 2000;
-    var vbStart = performance.now();
-    function easeInOut(t) { return t < 0.5 ? 2*t*t : -1+(4-2*t)*t; }
-    function animVB(now) {
-      var t = Math.min((now - vbStart) / vbDur, 1);
-      var e = easeInOut(t);
-      var vb = startVB.map(function(s, i) { return s + (endVB[i] - s) * e; });
-      svg.setAttribute('viewBox', vb.join(' '));
-      if (t < 1) requestAnimationFrame(animVB);
-    }
-    requestAnimationFrame(animVB);
 
     // 2) After shrink is ~40% done, add & expand heading
     setTimeout(function(){
