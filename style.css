@@ -194,6 +194,35 @@ img { max-width: 100%; height: auto; }
 .spec-table th, .spec-table td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); }
 .spec-table th { background: var(--bg-alt); font-weight: 600; color: var(--navy); }
 
+/* ===== Members Page ===== */
+.member-profile { display: flex; gap: 32px; max-width: 800px; margin: 0 auto; align-items: flex-start; }
+.member-photo { flex-shrink: 0; width: 180px; height: 180px; border-radius: var(--radius); overflow: hidden; background: var(--bg-alt); border: 1px solid var(--border); }
+.member-photo img { width: 100%; height: 100%; object-fit: cover; }
+.member-photo-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: var(--bg-alt); }
+.member-info h3 { font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.member-role { font-size: 15px; color: var(--red); font-weight: 500; margin-bottom: 12px; }
+.member-bio { font-size: 14px; color: var(--text); margin-bottom: 10px; line-height: 1.7; }
+.member-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+.member-links a { font-size: 13px; font-weight: 500; color: var(--red); border: 1px solid var(--border); padding: 6px 14px; border-radius: 6px; transition: all 0.2s; }
+.member-links a:hover { border-color: var(--red); background: #fef0f0; }
+
+/* ===== News / Placeholder ===== */
+.news-placeholder { text-align: center; padding: 60px 20px; color: var(--text-light); }
+.news-placeholder h3 { font-size: 20px; font-weight: 600; color: var(--navy); margin: 16px 0 8px; }
+.news-placeholder p { font-size: 15px; max-width: 480px; margin: 0 auto; }
+.placeholder-icon { margin-bottom: 8px; }
+
+/* ===== Monthly Report ===== */
+.report-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; margin-bottom: 20px; }
+.report-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.report-header h3 { font-size: 20px; font-weight: 700; color: var(--navy); }
+.report-tag { font-size: 11px; font-weight: 600; color: var(--red); background: #fef0f0; padding: 3px 10px; border-radius: 4px; }
+.report-summary { font-size: 15px; color: var(--text); margin-bottom: 16px; }
+.report-highlights h4 { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+.report-highlights ul { list-style: none; padding: 0; }
+.report-highlights li { font-size: 14px; color: var(--text-light); padding: 4px 0 4px 20px; position: relative; }
+.report-highlights li::before { content: ""; position: absolute; left: 0; top: 11px; width: 8px; height: 8px; border-radius: 50%; background: var(--red); }
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .hero h1 { font-size: 28px; }
@@ -206,6 +235,9 @@ img { max-width: 100%; height: auto; }
   .ixri-meaning { flex-direction: column; align-items: center; gap: 24px; }
   .areas-grid, .values-grid { grid-template-columns: 1fr; }
   .project-grid, .work-grid { grid-template-columns: 1fr; }
+  .member-profile { flex-direction: column; align-items: center; text-align: center; }
+  .member-photo { width: 140px; height: 140px; }
+  .member-links { justify-content: center; }
   .footer-grid { grid-template-columns: 1fr; gap: 24px; }
   .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: #fff; flex-direction: column; padding: 16px 24px; border-bottom: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.06); gap: 12px; }
   .nav-links.open { display: flex; }
