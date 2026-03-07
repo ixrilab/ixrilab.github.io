@@ -8,7 +8,7 @@
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
 <nav class="nav">
   <div class="container nav-inner">
     <a href="index.html" class="nav-logo">
-      <img src="images/logo-navy.svg" alt="IXRI" width="28" height="28">
+      <img src="images/ixri-logo-gradient.png" alt="IXRI" width="28" height="28">
       <span>IXRI Lab</span>
     </a>
     <div class="nav-links">
@@ -35,6 +35,48 @@
 <!-- Hero -->
 <header class="hero">
   <div class="container">
+    <!-- Logo Formation Animation -->
+    <div class="logo-anim-container" id="logoAnim">
+      <svg class="logo-anim-svg" viewBox="0 0 660 260" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="grad-curve1" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#050E3C"/>
+            <stop offset="100%" stop-color="#DC0000"/>
+          </linearGradient>
+          <linearGradient id="grad-curve2" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#050E3C"/>
+            <stop offset="100%" stop-color="#DC0000"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Left I bar (Human Intelligence) -->
+        <g class="anim-bar-left">
+          <rect x="195" y="22" width="22" height="216" rx="2" fill="#050E3C"/>
+        </g>
+
+        <!-- Right I bar (AI) -->
+        <g class="anim-bar-right">
+          <rect x="443" y="22" width="22" height="216" rx="2" fill="#DC0000"/>
+        </g>
+
+        <!-- Text labels -->
+        <text class="anim-label anim-label-fade" x="191" y="18" text-anchor="end" font-size="15" font-weight="300" fill="#718096" letter-spacing="0.5">human</text>
+        <text class="anim-label anim-label-fade" x="206" y="18" text-anchor="start" font-size="16" font-weight="700" fill="#050E3C" letter-spacing="0.3">Intelligence</text>
+
+        <text class="anim-label anim-label-fade-r" x="453" y="18" text-anchor="end" font-size="15" font-weight="300" fill="#718096" letter-spacing="0.5">A</text>
+        <text class="anim-label anim-label-fade-r" x="457" y="18" text-anchor="start" font-size="16" font-weight="700" fill="#DC0000" letter-spacing="0.3">Intelligence</text>
+
+        <!-- X curves (draw in) -->
+        <path class="anim-curve anim-curve-1" d="M206 40 C310 40, 350 220, 454 220" stroke="url(#grad-curve1)" stroke-width="22" stroke-linecap="butt" fill="none"/>
+        <path class="anim-curve anim-curve-2" d="M206 220 C310 220, 350 40, 454 40" stroke="url(#grad-curve2)" stroke-width="22" stroke-linecap="butt" fill="none"/>
+
+        <!-- Bars on top (to cover junctions cleanly) -->
+        <rect class="anim-bar-left" x="195" y="22" width="22" height="216" rx="2" fill="#050E3C" style="animation-delay: 0.3s;"/>
+        <rect class="anim-bar-right" x="443" y="22" width="22" height="216" rx="2" fill="#DC0000" style="animation-delay: 0.3s;"/>
+      </svg>
+      <img class="anim-final-logo" src="images/ixri-logo-gradient.png" alt="IXRI Logo">
+    </div>
+
     <div class="hero-content">
       <div class="hero-badge">Department of Computer Science & IT · La Trobe University</div>
       <h1>Connecting Intelligences<br>beyond Boundaries</h1>
@@ -44,9 +86,6 @@
         <a href="#research" class="btn btn-primary">Our Research</a>
         <a href="#join" class="btn btn-outline">Join Us</a>
       </div>
-    </div>
-    <div class="hero-logo">
-      <img src="images/logo-navy.png" alt="IXRI Logo" width="280" height="280">
     </div>
   </div>
 </header>
@@ -217,7 +256,7 @@
     <div class="footer-grid">
       <div>
         <div class="footer-logo">
-          <img src="images/logo-white.svg" alt="IXRI" width="32" height="32">
+          <img src="images/ixri-logo-gradient.png" alt="IXRI" width="32" height="32">
           <span>IXRI Lab</span>
         </div>
         <p class="footer-tagline">Intelligent XR Interface Lab<br>Connecting Intelligences beyond Boundaries<br>Since 2026</p>
