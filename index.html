@@ -415,12 +415,12 @@ window.addEventListener('scroll', () => {
       requestAnimationFrame(function(){ requestAnimationFrame(function(){
         h1.classList.add('visible');
       }); });
-    }, 500);
+    }, 800);
 
-    // 3) After shrink is nearly done, reveal hero content
+    // 3) After shrink settles, reveal hero content
     setTimeout(function(){
       document.querySelector('.hero-content').classList.add('visible');
-    }, 1200);
+    }, 1800);
   }, 4267);
 })();
 </script>
