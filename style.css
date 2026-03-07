@@ -240,13 +240,15 @@ img { max-width: 100%; height: auto; }
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
+  .hero { padding: 80px 0 36px; }
   .hero h1 { font-size: 28px; }
   .hero-desc { margin: 0 auto 28px; }
   .hero-actions { justify-content: center; }
-  .hero-intro { flex-direction: column; gap: 12px; }
+  .hero-intro { flex-direction: column; gap: 8px; margin-bottom: 12px; }
   .logo-anim-container { width: 100%; max-width: 100%; }
-  .logo-anim-container.compact { width: 56px; }
-  #heroH1 { font-size: 24px; text-align: center; white-space: normal; }
+  .logo-anim-container.compact { width: 48px; margin: 0 auto; }
+  #heroH1 { font-size: 22px; text-align: center; white-space: normal; }
+  #animSvg { max-height: 28vh; }
   .ixri-meaning { flex-direction: column; align-items: center; gap: 24px; }
   .areas-grid, .values-grid { grid-template-columns: 1fr; }
   .project-grid, .work-grid, .news-grid { grid-template-columns: 1fr; }
@@ -260,4 +262,5 @@ img { max-width: 100%; height: auto; }
   .nav-links.open { display: flex; }
   .nav-toggle { display: block; }
   .page-header { padding: 80px 0 30px; }
+  .section { padding: 56px 0; }
 }
