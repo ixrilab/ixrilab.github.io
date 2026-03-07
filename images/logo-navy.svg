@@ -1,0 +1,7 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- IXRI Lab Logo v3-A: The Definitive Mark (Navy, transparent bg) -->
+  <rect x="36" y="24" width="56" height="352" fill="#0A1E3D"/>
+  <rect x="308" y="24" width="56" height="352" fill="#0A1E3D"/>
+  <path d="M92 52 C188 52, 212 348, 308 348" stroke="#0A1E3D" stroke-width="56" stroke-linecap="butt" fill="none"/>
+  <path d="M92 348 C188 348, 212 52, 308 52" stroke="#0A1E3D" stroke-width="56" stroke-linecap="butt" fill="none"/>
+</svg>
