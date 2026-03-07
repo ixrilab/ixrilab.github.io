@@ -51,7 +51,7 @@ img { max-width: 100%; height: auto; }
 
 /* ===== Logo Formation Animation ===== */
 .hero-intro { display: flex; align-items: center; justify-content: center; gap: 24px; margin-bottom: 20px; }
-.logo-anim-container { width: 400px; flex-shrink: 0; transition: width 2s cubic-bezier(0.25,0.1,0.25,1); overflow: hidden; }
+.logo-anim-container { width: 400px; flex-shrink: 0; transition: width 2s cubic-bezier(0.25,0.1,0.25,1); overflow: hidden; margin: 0 auto; }
 .logo-anim-container.compact { width: 90px; }
 #animSvg { width: 100%; display: block; }
 #heroH1 { font-size: 42px; font-weight: 800; line-height: 1.2; margin: 0; text-align: left; white-space: nowrap; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; max-width: 0; overflow: hidden; opacity: 0; transition: max-width 1.6s cubic-bezier(0.25,0.1,0.25,1), opacity 1s ease 0.3s; }
@@ -244,11 +244,11 @@ img { max-width: 100%; height: auto; }
   .hero h1 { font-size: 28px; }
   .hero-desc { margin: 0 auto 28px; }
   .hero-actions { justify-content: center; }
-  .hero-intro { flex-direction: column; gap: 8px; margin-bottom: 12px; }
-  .logo-anim-container { width: 100%; max-width: 100%; }
-  .logo-anim-container.compact { width: 48px; margin: 0 auto; }
+  .hero-intro { flex-direction: column; align-items: center; gap: 8px; margin-bottom: 12px; }
+  .logo-anim-container { width: 100%; max-width: 100%; margin: 0 auto; display: flex; justify-content: center; }
+  .logo-anim-container.compact { width: 48px; }
   #heroH1 { font-size: 22px; text-align: center; white-space: normal; }
-  #animSvg { max-height: 32vh; }
+  #animSvg { max-height: 32vh; display: block; margin: 0 auto; }
   .ixri-meaning { flex-direction: column; align-items: center; gap: 24px; }
   .areas-grid, .values-grid { grid-template-columns: 1fr; }
   .project-grid, .work-grid, .news-grid { grid-template-columns: 1fr; }

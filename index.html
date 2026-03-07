@@ -45,7 +45,6 @@
     </a>
     <div class="nav-links">
       <a href="index.html" class="active">Home</a>
-      <a href="news.html">News</a>
       <a href="research.html">Research</a>
       <a href="members.html">Members</a>
       <a href="publications.html">Publications</a>
@@ -65,7 +64,7 @@
     <div class="logo-anim-container" id="logoAnim">
       <svg id="animSvg" viewBox="-120 0 820 600" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id="agrad" gradientUnits="userSpaceOnUse" x1="4" y1="0" x2="577" y2="0">
+          <linearGradient id="agrad" gradientUnits="userSpaceOnUse" x1="167" y1="0" x2="413" y2="0">
             <stop offset="0%" stop-color="#050E3C"/><stop offset="25%" stop-color="#002455"/><stop offset="50%" stop-color="#4A1942"/><stop offset="75%" stop-color="#FF3838"/><stop offset="100%" stop-color="#DC0000"/>
           </linearGradient>
         </defs>
@@ -78,17 +77,17 @@
         <text id="tR1" x="300" y="272" text-anchor="start" font-family="Outfit,sans-serif" font-size="54" font-weight="600" fill="#DC0000" opacity="0"></text>
         <text id="tR2" x="300" y="332" text-anchor="start" font-family="Outfit,sans-serif" font-size="54" font-weight="600" fill="#DC0000" opacity="0"></text>
 
-        <!-- X curves — BEHIND bars (exact logo paths) -->
-        <path id="c1" d="M4 50 C220.132 50 360.869 552 577 552" stroke="url(#agrad)" stroke-width="73" stroke-linecap="butt" fill="none" opacity="0"/>
-        <path id="c2" d="M4 552 C220.132 552 360.869 50 577 50" stroke="url(#agrad)" stroke-width="73" stroke-linecap="butt" fill="none" opacity="0"/>
+        <!-- X curves — small scale logo (30×80 bars) -->
+        <path id="c1" d="M167 261 C260 261 320 338 413 338" stroke="url(#agrad)" stroke-width="31" stroke-linecap="butt" fill="none" opacity="0"/>
+        <path id="c2" d="M167 338 C260 338 320 261 413 261" stroke="url(#agrad)" stroke-width="31" stroke-linecap="butt" fill="none" opacity="0"/>
 
-        <!-- I bars — solid color (initial) — ON TOP -->
-        <rect id="bL" x="4" y="38" width="70" height="522" fill="#050E3C" opacity="0"/>
-        <rect id="bR" x="507" y="38" width="70" height="522" fill="#DC0000" opacity="0"/>
+        <!-- I bars — solid color (30×80, matching 2× text I) -->
+        <rect id="bL" x="167" y="259" width="30" height="80" fill="#050E3C" opacity="0"/>
+        <rect id="bR" x="383" y="259" width="30" height="80" fill="#DC0000" opacity="0"/>
 
-        <!-- I bars — gradient (final) — ON TOP of everything -->
-        <rect id="gL" x="4" y="38" width="70" height="522" fill="url(#agrad)" opacity="0"/>
-        <rect id="gR" x="507" y="38" width="70" height="522" fill="url(#agrad)" opacity="0"/>
+        <!-- I bars — gradient (final) -->
+        <rect id="gL" x="167" y="259" width="30" height="80" fill="url(#agrad)" opacity="0"/>
+        <rect id="gR" x="383" y="259" width="30" height="80" fill="url(#agrad)" opacity="0"/>
       </svg>
     </div>
     </div>
@@ -139,38 +138,6 @@
   </div>
 </section>
 
-<!-- News -->
-<section class="section section-alt" id="news">
-  <div class="container">
-    <div class="section-header-row">
-      <h2 class="section-title">Latest News</h2>
-      <a href="news.html" class="section-more">View All →</a>
-    </div>
-    <div class="news-grid">
-      <div class="news-card">
-        <div class="news-thumb placeholder-thumb">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--text-light)" stroke-width="1.2"><rect x="2" y="2" width="20" height="20" rx="2"/><circle cx="8" cy="8" r="2"/><path d="M2 16l5-5 4 4 3-3 8 8"/></svg>
-        </div>
-        <div class="news-card-body">
-          <span class="news-date">March 2026</span>
-          <h4>IXRI Lab Officially Launches</h4>
-          <p>The Intelligent XR Interface Lab begins at La Trobe University, Melbourne.</p>
-        </div>
-      </div>
-      <div class="news-card">
-        <div class="news-thumb placeholder-thumb">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--text-light)" stroke-width="1.2"><rect x="2" y="2" width="20" height="20" rx="2"/><circle cx="8" cy="8" r="2"/><path d="M2 16l5-5 4 4 3-3 8 8"/></svg>
-        </div>
-        <div class="news-card-body">
-          <span class="news-date">Coming Soon</span>
-          <h4>More Updates on the Way</h4>
-          <p>Stay tuned for research highlights, events, and lab activities.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- Join -->
 <section class="section section-dark" id="join">
   <div class="container center-text">
@@ -206,7 +173,6 @@
       </div>
       <div>
         <h4>Links</h4>
-        <p><a href="news.html">News</a></p>
         <p><a href="research.html">Research</a></p>
         <p><a href="members.html">Members</a></p>
         <p><a href="publications.html">Publications</a></p>
@@ -332,8 +298,8 @@ window.addEventListener('scroll', () => {
   }, 2500);
 
   // Phase 4a: Two "I"s spread outward + scale 2× toward bar positions
-  // Left "I" center ~(273,313) → left bar center (39,299): offset (-234,-14)
-  // Right "I" center ~(307,313) → right bar center (542,299): offset (235,-14)
+  // Left "I" center ~(273,313) → left bar center (182,299): offset (-91,-14)
+  // Right "I" center ~(307,313) → right bar center (398,299): offset (91,-14)
   setTimeout(function(){
     tL2.style.transformBox = 'fill-box';
     tL2.style.transformOrigin = 'center center';
@@ -341,54 +307,31 @@ window.addEventListener('scroll', () => {
     tR2.style.transformOrigin = 'center center';
     tL2.style.transition = 'transform 600ms cubic-bezier(0.25,0.1,0.25,1)';
     tR2.style.transition = 'transform 600ms cubic-bezier(0.25,0.1,0.25,1)';
-    tL2.style.transform = 'translate(-234px, -14px) scale(2)';
-    tR2.style.transform = 'translate(235px, -14px) scale(2)';
+    tL2.style.transform = 'translate(-91px, -14px) scale(2)';
+    tR2.style.transform = 'translate(91px, -14px) scale(2)';
   }, 3000);
 
-  // Phase 4b: Swap text → bars at matching small scale, then bars grow
+  // Phase 4b: Crossfade text → bars (same 30×80 size — no jump!)
   setTimeout(function(){
-    // Bars start at ~2× I letter size (not full size!)
-    // 2× I ≈ 30w×80h vs bar 70×522 → scaleX(0.43) scaleY(0.15)
-    bL.style.transformBox = 'fill-box';
-    bL.style.transformOrigin = 'center center';
-    bR.style.transformBox = 'fill-box';
-    bR.style.transformOrigin = 'center center';
-    bL.style.transform = 'scaleX(0.43) scaleY(0.15)';
-    bR.style.transform = 'scaleX(0.43) scaleY(0.15)';
-
-    // Quick swap: hide 2× text, show small bars (150ms)
-    fade(tL2, 0, 150);
-    fade(tR2, 0, 150);
-    bL.style.transition = 'opacity 150ms ease';
-    bR.style.transition = 'opacity 150ms ease';
-    bL.setAttribute('opacity', '1');
-    bR.setAttribute('opacity', '1');
-
-    // Then grow bars to full size
-    setTimeout(function(){
-      bL.style.transition = 'transform 700ms cubic-bezier(0.25,0.1,0.25,1)';
-      bR.style.transition = 'transform 700ms cubic-bezier(0.25,0.1,0.25,1)';
-      requestAnimationFrame(function(){
-        bL.style.transform = 'none';
-        bR.style.transform = 'none';
-      });
-    }, 160);
+    fade(tL2, 0, 200);
+    fade(tR2, 0, 200);
+    fade(bL, 1, 200);
+    fade(bR, 1, 200);
   }, 3600);
-  // Bars full size ~4460ms
 
   // Phase 5: X curves draw — connecting the two I bars
   setTimeout(function(){
-    draw(c1, 1200);
-    draw(c2, 1200);
-  }, 4550);
+    draw(c1, 1000);
+    draw(c2, 1000);
+  }, 3900);
 
   // Phase 6: Gradient morph
   setTimeout(function(){
-    fade(bL, 0, 533);
-    fade(bR, 0, 533);
-    fade(gL, 1, 533);
-    fade(gR, 1, 533);
-  }, 5850);
+    fade(bL, 0, 400);
+    fade(bR, 0, 400);
+    fade(gL, 1, 400);
+    fade(gR, 1, 400);
+  }, 5000);
 
   // Phase 7: Logo shrinks → heading expands → content fades up
   setTimeout(function(){
@@ -407,7 +350,7 @@ window.addEventListener('scroll', () => {
     setTimeout(function(){
       document.querySelector('.hero-content').classList.add('visible');
     }, 1800);
-  }, 6150);
+  }, 5200);
 })();
 </script>
 </body>
