@@ -58,7 +58,8 @@
 <!-- Hero -->
 <header class="hero">
   <div class="container">
-    <!-- Logo Formation Animation (same coordinates as real logo) -->
+    <!-- Logo Formation Animation -->
+    <div class="hero-intro" id="heroIntro">
     <div class="logo-anim-container" id="logoAnim">
       <svg id="animSvg" viewBox="-260 0 1100 600" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -88,11 +89,11 @@
         <rect id="gR" x="507" y="38" width="70" height="522" fill="url(#agrad)" opacity="0"/>
       </svg>
     </div>
+    </div>
 
     <div class="hero-content">
       <div class="hero-badge">Department of Computer Science & IT · La Trobe University</div>
-      <h1>Connecting Intelligences<br>beyond Boundaries</h1>
-      <p class="hero-sub">IXRI Lab — <strong>I</strong>ntelligent <strong>XR</strong> <strong>I</strong>nterface Lab</p>
+      <p class="hero-sub">IXRI Lab — Intelligent XR Interface Lab</p>
       <p class="hero-desc">We connect humans and AI through XR, augmenting human capabilities beyond the limits of space, time, and reality.</p>
       <div class="hero-actions">
         <a href="#research" class="btn btn-primary">Our Research</a>
@@ -169,6 +170,7 @@
 <!-- Core Research Question -->
 <section class="section">
   <div class="container">
+    <h2 class="section-title">2026 Research Question</h2>
     <blockquote class="big-quote">
       "How can XR interfaces augment human capabilities through seamless Human-AI collaboration?"
     </blockquote>
@@ -345,62 +347,43 @@ window.addEventListener('scroll', () => {
     el.style.strokeDashoffset = '0';
   }
 
-  // Smooth viewBox animation (wide → logo-only)
-  function animateViewBox(from, to, dur, cb) {
-    var start = null;
-    function step(ts) {
-      if (!start) start = ts;
-      var t = Math.min((ts - start) / dur, 1);
-      // easeInOutCubic
-      var e = t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2,3)/2;
-      var vb = [
-        from[0] + (to[0]-from[0])*e,
-        from[1] + (to[1]-from[1])*e,
-        from[2] + (to[2]-from[2])*e,
-        from[3] + (to[3]-from[3])*e
-      ];
-      svg.setAttribute('viewBox', vb.join(' '));
-      if (t < 1) requestAnimationFrame(step);
-      else if (cb) cb();
-    }
-    requestAnimationFrame(step);
-  }
-
-  // Timeline:
+  // Timeline (1.5× speed after curves connect):
   // 0.3s  — left I bar (navy) fades in
-  // 0.5s  — "Human\nIntelligence" text appears left of bar
+  // 0.5s  — "Human / Intelligence" text left of bar
   // 1.0s  — right I bar (red) fades in
-  // 1.2s  — "Artificial\nIntelligence" text appears right of bar
-  // 2.0s  — both X curves draw simultaneously L→R
-  // 3.4s  — text fades out
-  // 3.8s  — solid bars → gradient bars (color morph)
-  // 4.2s  — viewBox smoothly zooms to logo-only (text area crops out)
-  // Final: SVG shows exact logo, no element swap
+  // 1.2s  — "Artificial / Intelligence" text right of bar
+  // 2.0s  — X curves draw L→R (1200ms)
+  // 3.33s — text fades out  (1.5×)
+  // 3.6s  — color morph      (1.5×)
+  // 3.87s — logo shrinks + heading appears
 
   setTimeout(function(){ fade(bL, 1, 600); }, 300);
   setTimeout(function(){ fade(tL1, 1, 500); fade(tL2, 1, 500); }, 500);
   setTimeout(function(){ fade(bR, 1, 600); }, 1000);
   setTimeout(function(){ fade(tR1, 1, 500); fade(tR2, 1, 500); }, 1200);
-  // Curves draw L→R
   setTimeout(function(){ draw(c1, 1200); draw(c2, 1200); }, 2000);
-  // Text fades
+
+  // --- 1.5× speed post-curve ---
   setTimeout(function(){
-    fade(tL1, 0, 500); fade(tL2, 0, 500);
-    fade(tR1, 0, 500); fade(tR2, 0, 500);
-  }, 3400);
-  // Color morph: solid → gradient
+    fade(tL1, 0, 333); fade(tL2, 0, 333);
+    fade(tR1, 0, 333); fade(tR2, 0, 333);
+  }, 3333);
   setTimeout(function(){
-    fade(bL, 0, 800); fade(bR, 0, 800);
-    fade(gL, 1, 800); fade(gR, 1, 800);
-  }, 3800);
-  // ViewBox zoom: wide view → logo-only crop
+    fade(bL, 0, 533); fade(bR, 0, 533);
+    fade(gL, 1, 533); fade(gR, 1, 533);
+  }, 3600);
+
+  // Logo shrinks into position + heading slides in
   setTimeout(function(){
-    animateViewBox(
-      [-260, 0, 1100, 600],   // current (wide, shows text)
-      [-20, 0, 620, 600],     // final (logo only + small padding)
-      1200
-    );
-  }, 4200);
+    $('logoAnim').classList.add('compact');
+    var h1 = document.createElement('h1');
+    h1.id = 'heroH1';
+    h1.innerHTML = 'Connecting Intelligences<br>beyond Boundaries';
+    $('heroIntro').appendChild(h1);
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){
+      h1.classList.add('visible');
+    }); });
+  }, 3867);
 })();
 </script>
 </body>
