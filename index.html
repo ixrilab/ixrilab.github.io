@@ -12,13 +12,36 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- Shared SVG Defs -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="brand-grad" gradientUnits="userSpaceOnUse" x1="356" y1="0" x2="929" y2="0">
+      <stop offset="0%" stop-color="#050E3C"/><stop offset="25%" stop-color="#002455"/><stop offset="50%" stop-color="#4A1942"/><stop offset="75%" stop-color="#FF3838"/><stop offset="100%" stop-color="#DC0000"/>
+    </linearGradient>
+  </defs>
+  <symbol id="logo-gradient" viewBox="0 0 578 600">
+    <g transform="translate(-352 -1182)">
+      <path d="M356 1232C572.132 1232 712.869 1734 929 1734" stroke="url(#brand-grad)" stroke-width="73" stroke-linecap="butt" fill="none"/>
+      <path d="M356 1734C572.132 1734 712.869 1232 929 1232" stroke="url(#brand-grad)" stroke-width="73" stroke-linecap="butt" fill="none"/>
+      <rect x="356" y="1220" width="70" height="522" fill="url(#brand-grad)"/>
+      <rect x="859" y="1220" width="70" height="522" fill="url(#brand-grad)"/>
+    </g>
+  </symbol>
+  <symbol id="logo-white" viewBox="0 0 578 600">
+    <g transform="translate(-352 -1182)">
+      <path d="M356 1232C572.132 1232 712.869 1734 929 1734" stroke="#FFF" stroke-width="73" stroke-linecap="butt" fill="none"/>
+      <path d="M356 1734C572.132 1734 712.869 1232 929 1232" stroke="#FFF" stroke-width="73" stroke-linecap="butt" fill="none"/>
+      <rect x="356" y="1220" width="70" height="522" fill="#FFF"/>
+      <rect x="859" y="1220" width="70" height="522" fill="#FFF"/>
+    </g>
+  </symbol>
+</svg>
 
 <!-- Navigation -->
 <nav class="nav">
   <div class="container nav-inner">
     <a href="index.html" class="nav-logo">
-      <img src="images/ixri-logo-gradient.png" alt="IXRI" width="28" height="28">
-      <span>IXRI Lab</span>
+      <img src="images/ixri-lockup-light-transparent.png" alt="IXRI Lab" class="nav-lockup">
     </a>
     <div class="nav-links">
       <a href="index.html" class="active">Home</a>
@@ -35,46 +58,35 @@
 <!-- Hero -->
 <header class="hero">
   <div class="container">
-    <!-- Logo Formation Animation -->
+    <!-- Logo Formation Animation (same coordinates as real logo) -->
     <div class="logo-anim-container" id="logoAnim">
-      <svg class="logo-anim-svg" viewBox="0 0 660 260" xmlns="http://www.w3.org/2000/svg">
+      <svg id="animSvg" viewBox="-260 0 1100 600" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id="grad-curve1" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stop-color="#050E3C"/>
-            <stop offset="100%" stop-color="#DC0000"/>
-          </linearGradient>
-          <linearGradient id="grad-curve2" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stop-color="#050E3C"/>
-            <stop offset="100%" stop-color="#DC0000"/>
+          <linearGradient id="agrad" gradientUnits="userSpaceOnUse" x1="4" y1="0" x2="577" y2="0">
+            <stop offset="0%" stop-color="#050E3C"/><stop offset="25%" stop-color="#002455"/><stop offset="50%" stop-color="#4A1942"/><stop offset="75%" stop-color="#FF3838"/><stop offset="100%" stop-color="#DC0000"/>
           </linearGradient>
         </defs>
 
-        <!-- Left I bar (Human Intelligence) -->
-        <g class="anim-bar-left">
-          <rect x="195" y="22" width="22" height="216" rx="2" fill="#050E3C"/>
-        </g>
+        <!-- Left text: "Human\nIntelligence" — to the LEFT of left I bar -->
+        <text id="tL1" x="-12" y="280" text-anchor="end" font-family="Outfit,sans-serif" font-size="42" font-weight="600" fill="#050E3C" opacity="0">Human</text>
+        <text id="tL2" x="-12" y="326" text-anchor="end" font-family="Outfit,sans-serif" font-size="42" font-weight="600" fill="#050E3C" opacity="0">Intelligence</text>
 
-        <!-- Right I bar (AI) -->
-        <g class="anim-bar-right">
-          <rect x="443" y="22" width="22" height="216" rx="2" fill="#DC0000"/>
-        </g>
+        <!-- Right text: "Artificial\nIntelligence" — to the RIGHT of right I bar -->
+        <text id="tR1" x="593" y="280" text-anchor="start" font-family="Outfit,sans-serif" font-size="42" font-weight="600" fill="#DC0000" opacity="0">Artificial</text>
+        <text id="tR2" x="593" y="326" text-anchor="start" font-family="Outfit,sans-serif" font-size="42" font-weight="600" fill="#DC0000" opacity="0">Intelligence</text>
 
-        <!-- Text labels -->
-        <text class="anim-label anim-label-fade" x="191" y="18" text-anchor="end" font-size="15" font-weight="300" fill="#718096" letter-spacing="0.5">human</text>
-        <text class="anim-label anim-label-fade" x="206" y="18" text-anchor="start" font-size="16" font-weight="700" fill="#050E3C" letter-spacing="0.3">Intelligence</text>
+        <!-- X curves — BEHIND bars (exact logo paths) -->
+        <path id="c1" d="M4 50 C220.132 50 360.869 552 577 552" stroke="url(#agrad)" stroke-width="73" stroke-linecap="butt" fill="none" opacity="0"/>
+        <path id="c2" d="M4 552 C220.132 552 360.869 50 577 50" stroke="url(#agrad)" stroke-width="73" stroke-linecap="butt" fill="none" opacity="0"/>
 
-        <text class="anim-label anim-label-fade-r" x="453" y="18" text-anchor="end" font-size="15" font-weight="300" fill="#718096" letter-spacing="0.5">A</text>
-        <text class="anim-label anim-label-fade-r" x="457" y="18" text-anchor="start" font-size="16" font-weight="700" fill="#DC0000" letter-spacing="0.3">Intelligence</text>
+        <!-- I bars — solid color (initial) — ON TOP -->
+        <rect id="bL" x="4" y="38" width="70" height="522" fill="#050E3C" opacity="0"/>
+        <rect id="bR" x="507" y="38" width="70" height="522" fill="#DC0000" opacity="0"/>
 
-        <!-- X curves (draw in) -->
-        <path class="anim-curve anim-curve-1" d="M206 40 C310 40, 350 220, 454 220" stroke="url(#grad-curve1)" stroke-width="22" stroke-linecap="butt" fill="none"/>
-        <path class="anim-curve anim-curve-2" d="M206 220 C310 220, 350 40, 454 40" stroke="url(#grad-curve2)" stroke-width="22" stroke-linecap="butt" fill="none"/>
-
-        <!-- Bars on top (to cover junctions cleanly) -->
-        <rect class="anim-bar-left" x="195" y="22" width="22" height="216" rx="2" fill="#050E3C" style="animation-delay: 0.3s;"/>
-        <rect class="anim-bar-right" x="443" y="22" width="22" height="216" rx="2" fill="#DC0000" style="animation-delay: 0.3s;"/>
+        <!-- I bars — gradient (final, hidden) — ON TOP of everything -->
+        <rect id="gL" x="4" y="38" width="70" height="522" fill="url(#agrad)" opacity="0"/>
+        <rect id="gR" x="507" y="38" width="70" height="522" fill="url(#agrad)" opacity="0"/>
       </svg>
-      <img class="anim-final-logo" src="images/ixri-logo-gradient.png" alt="IXRI Logo">
     </div>
 
     <div class="hero-content">
@@ -256,7 +268,7 @@
     <div class="footer-grid">
       <div>
         <div class="footer-logo">
-          <img src="images/ixri-logo-gradient.png" alt="IXRI" width="32" height="32">
+          <svg width="32" height="33" viewBox="0 0 578 600"><use href="#logo-gradient"/></svg>
           <span>IXRI Lab</span>
         </div>
         <p class="footer-tagline">Intelligent XR Interface Lab<br>Connecting Intelligences beyond Boundaries<br>Since 2026</p>
@@ -302,6 +314,94 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 window.addEventListener('scroll', () => {
   document.querySelector('.nav').classList.toggle('scrolled', window.scrollY > 50);
 });
+
+// ===== Logo Formation Animation =====
+(function() {
+  var $ = function(id) { return document.getElementById(id); };
+  var svg = $('animSvg');
+  var bL = $('bL'), bR = $('bR');       // solid bars
+  var gL = $('gL'), gR = $('gR');       // gradient bars
+  var c1 = $('c1'), c2 = $('c2');       // curves
+  var tL1 = $('tL1'), tL2 = $('tL2');   // left text
+  var tR1 = $('tR1'), tR2 = $('tR2');   // right text
+
+  if (!bL || !svg) return;
+
+  // Setup stroke-dash for curve draw (L→R direction)
+  var len1 = c1.getTotalLength();
+  var len2 = c2.getTotalLength();
+  c1.style.strokeDasharray = len1;
+  c1.style.strokeDashoffset = len1;
+  c2.style.strokeDasharray = len2;
+  c2.style.strokeDashoffset = len2;
+
+  function fade(el, to, dur) {
+    el.style.transition = 'opacity ' + dur + 'ms ease';
+    el.setAttribute('opacity', String(to));
+  }
+  function draw(el, dur) {
+    el.setAttribute('opacity', '1');
+    el.style.transition = 'stroke-dashoffset ' + dur + 'ms ease-in-out';
+    el.style.strokeDashoffset = '0';
+  }
+
+  // Smooth viewBox animation (wide → logo-only)
+  function animateViewBox(from, to, dur, cb) {
+    var start = null;
+    function step(ts) {
+      if (!start) start = ts;
+      var t = Math.min((ts - start) / dur, 1);
+      // easeInOutCubic
+      var e = t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2,3)/2;
+      var vb = [
+        from[0] + (to[0]-from[0])*e,
+        from[1] + (to[1]-from[1])*e,
+        from[2] + (to[2]-from[2])*e,
+        from[3] + (to[3]-from[3])*e
+      ];
+      svg.setAttribute('viewBox', vb.join(' '));
+      if (t < 1) requestAnimationFrame(step);
+      else if (cb) cb();
+    }
+    requestAnimationFrame(step);
+  }
+
+  // Timeline:
+  // 0.3s  — left I bar (navy) fades in
+  // 0.5s  — "Human\nIntelligence" text appears left of bar
+  // 1.0s  — right I bar (red) fades in
+  // 1.2s  — "Artificial\nIntelligence" text appears right of bar
+  // 2.0s  — both X curves draw simultaneously L→R
+  // 3.4s  — text fades out
+  // 3.8s  — solid bars → gradient bars (color morph)
+  // 4.2s  — viewBox smoothly zooms to logo-only (text area crops out)
+  // Final: SVG shows exact logo, no element swap
+
+  setTimeout(function(){ fade(bL, 1, 600); }, 300);
+  setTimeout(function(){ fade(tL1, 1, 500); fade(tL2, 1, 500); }, 500);
+  setTimeout(function(){ fade(bR, 1, 600); }, 1000);
+  setTimeout(function(){ fade(tR1, 1, 500); fade(tR2, 1, 500); }, 1200);
+  // Curves draw L→R
+  setTimeout(function(){ draw(c1, 1200); draw(c2, 1200); }, 2000);
+  // Text fades
+  setTimeout(function(){
+    fade(tL1, 0, 500); fade(tL2, 0, 500);
+    fade(tR1, 0, 500); fade(tR2, 0, 500);
+  }, 3400);
+  // Color morph: solid → gradient
+  setTimeout(function(){
+    fade(bL, 0, 800); fade(bR, 0, 800);
+    fade(gL, 1, 800); fade(gR, 1, 800);
+  }, 3800);
+  // ViewBox zoom: wide view → logo-only crop
+  setTimeout(function(){
+    animateViewBox(
+      [-260, 0, 1100, 600],   // current (wide, shows text)
+      [-20, 0, 620, 600],     // final (logo only + small padding)
+      1200
+    );
+  }, 4200);
+})();
 </script>
 </body>
 </html>
