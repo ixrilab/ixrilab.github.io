@@ -299,15 +299,15 @@ window.addEventListener('scroll', () => {
     next();
   }
 
-  // ===== NEW ANIMATION CONCEPT =====
+  // ===== ANIMATION CONCEPT =====
   // Phase 1: "Human Intelligence" types → "Artificial Intelligence" types
   // Phase 2: "Human" & "Artificial" fade out
   // Phase 3: "Intelligence" un-types → only "I" remains on each side
-  // Phase 4: Text "I" crossfades into I bar rects
+  // Phase 4: Text "I" GROWS into I bar (scale transform, not crossfade)
   // Phase 5: X curves draw, connecting the two I bars
   // Phase 6: Gradient morph → logo shrinks
 
-  // Phase 1: Typing (NO bars visible — they appear later from the "I")
+  // Phase 1: Typing
   setTimeout(function(){
     typeText(tL1, 'Human', 45, function(){
       setTimeout(function(){ typeText(tL2, 'Intelligence', 45); }, 80);
@@ -318,7 +318,6 @@ window.addEventListener('scroll', () => {
       setTimeout(function(){ typeText(tR2, 'Intelligence', 45); }, 80);
     });
   }, 1000);
-  // Left typing done ~1.15s, right typing done ~2.07s
 
   // Phase 2: Fade out "Human" and "Artificial"
   setTimeout(function(){
@@ -326,35 +325,64 @@ window.addEventListener('scroll', () => {
     fade(tR1, 0, 400);
   }, 2300);
 
-  // Phase 3: Un-type "Intelligence" → "I" (both sides simultaneously)
+  // Phase 3: Un-type "Intelligence" → "I"
   setTimeout(function(){
-    unTypeText(tL2, 35, 1);  // 11 chars removed × 35ms = 385ms
+    unTypeText(tL2, 35, 1);
     unTypeText(tR2, 35, 1);
   }, 2500);
-  // Un-type done ~2885ms
 
-  // Phase 4: Crossfade text "I" → bar rects
+  // Phase 4: Text "I" GROWS into I bars via CSS transform
+  // The bars start shrunken to match the "I" letter size/position,
+  // then scale up to full bar dimensions — looks like the I expands.
   setTimeout(function(){
-    fade(tL2, 0, 400);
-    fade(tR2, 0, 400);
-    fade(bL, 1, 400);
-    fade(bR, 1, 400);
+    // Setup transform-box so transforms are relative to element center
+    bL.style.transformBox = 'fill-box';
+    bL.style.transformOrigin = 'center center';
+    bR.style.transformBox = 'fill-box';
+    bR.style.transformOrigin = 'center center';
+
+    // Shrink bars to "I" letter size at text position (no transition yet)
+    // Left bar center (39,299) → text I center ~(-20,313): offset (-59,14)
+    // Right bar center (542,299) → text I center ~(601,313): offset (59,14)
+    // Scale: I letter ~12×42 vs bar 70×522 → scaleX(0.18) scaleY(0.08)
+    bL.style.transform = 'translate(-59px, 14px) scaleX(0.18) scaleY(0.08)';
+    bR.style.transform = 'translate(59px, 14px) scaleX(0.18) scaleY(0.08)';
+
+    // Quick swap: fade out text I, fade in shrunken bar (150ms)
+    tL2.style.transition = 'opacity 150ms ease';
+    tR2.style.transition = 'opacity 150ms ease';
+    tL2.setAttribute('opacity', '0');
+    tR2.setAttribute('opacity', '0');
+    bL.style.transition = 'opacity 150ms ease';
+    bR.style.transition = 'opacity 150ms ease';
+    bL.setAttribute('opacity', '1');
+    bR.setAttribute('opacity', '1');
+
+    // After swap, grow bars to full size
+    setTimeout(function(){
+      bL.style.transition = 'transform 800ms cubic-bezier(0.25,0.1,0.25,1)';
+      bR.style.transition = 'transform 800ms cubic-bezier(0.25,0.1,0.25,1)';
+      requestAnimationFrame(function(){
+        bL.style.transform = 'none';
+        bR.style.transform = 'none';
+      });
+    }, 160);
   }, 3000);
+  // Growth done ~3960ms
 
   // Phase 5: X curves draw — connecting the two I bars
   setTimeout(function(){
     draw(c1, 1200);
     draw(c2, 1200);
-  }, 3500);
-  // Curves done ~4700ms
+  }, 4100);
 
-  // Phase 6: Gradient morph (1.5× speed)
+  // Phase 6: Gradient morph
   setTimeout(function(){
     fade(bL, 0, 533);
     fade(bR, 0, 533);
     fade(gL, 1, 533);
     fade(gR, 1, 533);
-  }, 4800);
+  }, 5400);
 
   // Phase 7: Logo shrinks → heading expands → content fades up
   setTimeout(function(){
@@ -373,7 +401,7 @@ window.addEventListener('scroll', () => {
     setTimeout(function(){
       document.querySelector('.hero-content').classList.add('visible');
     }, 1800);
-  }, 5100);
+  }, 5700);
 })();
 </script>
 </body>
