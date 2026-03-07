@@ -331,50 +331,31 @@ window.addEventListener('scroll', () => {
     unTypeText(tR2, 35, 1);
   }, 2500);
 
-  // Phase 4: Text "I" GROWS into I bars via CSS transform
-  // The bars start shrunken to match the "I" letter size/position,
-  // then scale up to full bar dimensions — looks like the I expands.
+  // Phase 4a: Text "I" scales up ~2× (subtle growth)
   setTimeout(function(){
-    // Setup transform-box so transforms are relative to element center
-    bL.style.transformBox = 'fill-box';
-    bL.style.transformOrigin = 'center center';
-    bR.style.transformBox = 'fill-box';
-    bR.style.transformOrigin = 'center center';
-
-    // Shrink bars to "I" letter size at text position (no transition yet)
-    // Left bar center (39,299) → text I center ~(-20,313): offset (-59,14)
-    // Right bar center (542,299) → text I center ~(601,313): offset (59,14)
-    // Scale: I letter ~12×42 vs bar 70×522 → scaleX(0.18) scaleY(0.08)
-    bL.style.transform = 'translate(-59px, 14px) scaleX(0.18) scaleY(0.08)';
-    bR.style.transform = 'translate(59px, 14px) scaleX(0.18) scaleY(0.08)';
-
-    // Quick swap: fade out text I, fade in shrunken bar (150ms)
-    tL2.style.transition = 'opacity 150ms ease';
-    tR2.style.transition = 'opacity 150ms ease';
-    tL2.setAttribute('opacity', '0');
-    tR2.setAttribute('opacity', '0');
-    bL.style.transition = 'opacity 150ms ease';
-    bR.style.transition = 'opacity 150ms ease';
-    bL.setAttribute('opacity', '1');
-    bR.setAttribute('opacity', '1');
-
-    // After swap, grow bars to full size
-    setTimeout(function(){
-      bL.style.transition = 'transform 800ms cubic-bezier(0.25,0.1,0.25,1)';
-      bR.style.transition = 'transform 800ms cubic-bezier(0.25,0.1,0.25,1)';
-      requestAnimationFrame(function(){
-        bL.style.transform = 'none';
-        bR.style.transform = 'none';
-      });
-    }, 160);
+    tL2.style.transformBox = 'fill-box';
+    tL2.style.transformOrigin = 'center center';
+    tR2.style.transformBox = 'fill-box';
+    tR2.style.transformOrigin = 'center center';
+    tL2.style.transition = 'transform 500ms cubic-bezier(0.25,0.1,0.25,1)';
+    tR2.style.transition = 'transform 500ms cubic-bezier(0.25,0.1,0.25,1)';
+    tL2.style.transform = 'scale(2)';
+    tR2.style.transform = 'scale(2)';
   }, 3000);
-  // Growth done ~3960ms
+
+  // Phase 4b: Crossfade 2× text → full I bars
+  setTimeout(function(){
+    fade(tL2, 0, 300);
+    fade(tR2, 0, 300);
+    fade(bL, 1, 300);
+    fade(bR, 1, 300);
+  }, 3500);
 
   // Phase 5: X curves draw — connecting the two I bars
   setTimeout(function(){
     draw(c1, 1200);
     draw(c2, 1200);
-  }, 4100);
+  }, 3900);
 
   // Phase 6: Gradient morph
   setTimeout(function(){
@@ -382,7 +363,7 @@ window.addEventListener('scroll', () => {
     fade(bR, 0, 533);
     fade(gL, 1, 533);
     fade(gR, 1, 533);
-  }, 5400);
+  }, 5200);
 
   // Phase 7: Logo shrinks → heading expands → content fades up
   setTimeout(function(){
@@ -401,7 +382,7 @@ window.addEventListener('scroll', () => {
     setTimeout(function(){
       document.querySelector('.hero-content').classList.add('visible');
     }, 1800);
-  }, 5700);
+  }, 5500);
 })();
 </script>
 </body>
