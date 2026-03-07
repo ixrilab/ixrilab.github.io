@@ -51,9 +51,9 @@ img { max-width: 100%; height: auto; }
 
 /* ===== Logo Formation Animation ===== */
 .hero-intro { display: flex; align-items: center; justify-content: center; gap: 24px; margin-bottom: 20px; }
-.logo-anim-container { width: 700px; flex-shrink: 0; transition: width 2s cubic-bezier(0.25,0.1,0.25,1); overflow: hidden; }
-.logo-anim-container.compact { width: 100px; }
-#animSvg { width: 100%; display: block; transition: none; }
+.logo-anim-container { width: 740px; flex-shrink: 0; transition: width 2s cubic-bezier(0.25,0.1,0.25,1); overflow: hidden; }
+.logo-anim-container.compact { width: 130px; }
+#animSvg { width: 100%; display: block; }
 #heroH1 { font-size: 42px; font-weight: 800; line-height: 1.2; margin: 0; text-align: left; white-space: nowrap; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; max-width: 0; overflow: hidden; opacity: 0; transition: max-width 1.6s cubic-bezier(0.25,0.1,0.25,1), opacity 1s ease 0.3s; }
 #heroH1.visible { max-width: 600px; opacity: 1; }
 
@@ -245,7 +245,7 @@ img { max-width: 100%; height: auto; }
   .hero-actions { justify-content: center; }
   .hero-intro { flex-direction: column; gap: 12px; }
   .logo-anim-container { width: 100%; max-width: 100%; }
-  .logo-anim-container.compact { width: 48px; }
+  .logo-anim-container.compact { width: 56px; }
   #heroH1 { font-size: 24px; text-align: center; white-space: normal; }
   .ixri-meaning { flex-direction: column; align-items: center; gap: 24px; }
   .areas-grid, .values-grid { grid-template-columns: 1fr; }

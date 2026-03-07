@@ -63,32 +63,32 @@
     <!-- Logo Formation Animation -->
     <div class="hero-intro" id="heroIntro">
     <div class="logo-anim-container" id="logoAnim">
-      <svg id="animSvg" viewBox="-230 0 1090 600" xmlns="http://www.w3.org/2000/svg">
+      <svg id="animSvg" viewBox="-380 0 1340 600" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id="agrad" gradientUnits="userSpaceOnUse" x1="150" y1="0" x2="475" y2="0">
+          <linearGradient id="agrad" gradientUnits="userSpaceOnUse" x1="4" y1="0" x2="577" y2="0">
             <stop offset="0%" stop-color="#050E3C"/><stop offset="25%" stop-color="#002455"/><stop offset="50%" stop-color="#4A1942"/><stop offset="75%" stop-color="#FF3838"/><stop offset="100%" stop-color="#DC0000"/>
           </linearGradient>
         </defs>
 
         <!-- Left text: typed to the LEFT of left I bar -->
-        <text id="tL1" x="134" y="280" text-anchor="end" font-family="Outfit,sans-serif" font-size="58" font-weight="600" fill="#050E3C" opacity="0"></text>
-        <text id="tL2" x="134" y="340" text-anchor="end" font-family="Outfit,sans-serif" font-size="58" font-weight="600" fill="#050E3C" opacity="0"></text>
+        <text id="tL1" x="-16" y="272" text-anchor="end" font-family="Outfit,sans-serif" font-size="54" font-weight="600" fill="#050E3C" opacity="0"></text>
+        <text id="tL2" x="-16" y="332" text-anchor="end" font-family="Outfit,sans-serif" font-size="54" font-weight="600" fill="#050E3C" opacity="0"></text>
 
         <!-- Right text: typed to the RIGHT of right I bar -->
-        <text id="tR1" x="491" y="280" text-anchor="start" font-family="Outfit,sans-serif" font-size="58" font-weight="600" fill="#DC0000" opacity="0"></text>
-        <text id="tR2" x="491" y="340" text-anchor="start" font-family="Outfit,sans-serif" font-size="58" font-weight="600" fill="#DC0000" opacity="0"></text>
+        <text id="tR1" x="597" y="272" text-anchor="start" font-family="Outfit,sans-serif" font-size="54" font-weight="600" fill="#DC0000" opacity="0"></text>
+        <text id="tR2" x="597" y="332" text-anchor="start" font-family="Outfit,sans-serif" font-size="54" font-weight="600" fill="#DC0000" opacity="0"></text>
 
-        <!-- X curves — BEHIND bars (center-to-center) -->
-        <path id="c1" d="M172 152 C266 152 359 448 452 448" stroke="url(#agrad)" stroke-width="45" stroke-linecap="butt" fill="none" opacity="0"/>
-        <path id="c2" d="M172 448 C266 448 359 152 452 152" stroke="url(#agrad)" stroke-width="45" stroke-linecap="butt" fill="none" opacity="0"/>
+        <!-- X curves — BEHIND bars (exact logo paths) -->
+        <path id="c1" d="M4 50 C220.132 50 360.869 552 577 552" stroke="url(#agrad)" stroke-width="73" stroke-linecap="butt" fill="none" opacity="0"/>
+        <path id="c2" d="M4 552 C220.132 552 360.869 50 577 50" stroke="url(#agrad)" stroke-width="73" stroke-linecap="butt" fill="none" opacity="0"/>
 
-        <!-- I bars — solid color (initial) -->
-        <rect id="bL" x="150" y="140" width="45" height="320" fill="#050E3C" opacity="0"/>
-        <rect id="bR" x="430" y="140" width="45" height="320" fill="#DC0000" opacity="0"/>
+        <!-- I bars — solid color (initial) — ON TOP -->
+        <rect id="bL" x="4" y="38" width="70" height="522" fill="#050E3C" opacity="0"/>
+        <rect id="bR" x="507" y="38" width="70" height="522" fill="#DC0000" opacity="0"/>
 
-        <!-- I bars — gradient (final) -->
-        <rect id="gL" x="150" y="140" width="45" height="320" fill="url(#agrad)" opacity="0"/>
-        <rect id="gR" x="430" y="140" width="45" height="320" fill="url(#agrad)" opacity="0"/>
+        <!-- I bars — gradient (final) — ON TOP of everything -->
+        <rect id="gL" x="4" y="38" width="70" height="522" fill="url(#agrad)" opacity="0"/>
+        <rect id="gR" x="507" y="38" width="70" height="522" fill="url(#agrad)" opacity="0"/>
       </svg>
     </div>
     </div>
@@ -329,8 +329,7 @@ window.addEventListener('scroll', () => {
 
   // Logo shrinks → heading expands → content fades up
   setTimeout(function(){
-    // 1) Zoom viewBox to logo area (single change, not animated) + CSS shrink
-    svg.setAttribute('viewBox', '125 115 380 370');
+    // 1) Start logo shrink (pure CSS transition — GPU accelerated, no JS viewBox change)
     $('logoAnim').classList.add('compact');
 
     // 2) After shrink is ~40% done, add & expand heading
