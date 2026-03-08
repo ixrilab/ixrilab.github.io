@@ -230,12 +230,6 @@ window.addEventListener('scroll', () => {
   c2.style.strokeDasharray = len2;
   c2.style.strokeDashoffset = len2;
 
-  // Setup bar CSS transform properties (actual transform values set dynamically in Phase 4)
-  bL.style.transformBox = 'fill-box';
-  bL.style.transformOrigin = 'center center';
-  bR.style.transformBox = 'fill-box';
-  bR.style.transformOrigin = 'center center';
-
   function fade(el, to, dur) {
     el.style.transition = 'opacity ' + dur + 'ms ease';
     el.setAttribute('opacity', String(to));
@@ -276,8 +270,8 @@ window.addEventListener('scroll', () => {
   // Phase 1: "Human Intelligence" types → "Artificial Intelligence" types
   // Phase 2: "Human" & "Artificial" fade out
   // Phase 3: "Intelligence" un-types → only "I" remains on each side
-  // Phase 4a: Swap "I" text → bar at SAME size (invisible swap, measured dynamically)
-  // Phase 4b: Bars GROW + spread outward to correct logo size/position
+  // Phase 4a: Measure I text with getBBox(), set bar geometry to EXACT same x/y/w/h
+  // Phase 4b: Bars GROW (x/y/width/height transition) to final logo size/position
   // Phase 5: X curves draw, connecting the two I bars
   // Phase 6: Gradient morph
   // Phase 7: Logo shrinks to compact → heading + content
@@ -306,55 +300,64 @@ window.addEventListener('scroll', () => {
     unTypeText(tR2, 35, 1);
   }, 2500);
 
-  // Phase 4a: Invisible swap — replace "I" text with bar at identical size/position
-  // We measure the actual "I" bounding box dynamically for pixel-perfect matching
+  // Phase 4a: Pixel-perfect swap — set bar geometry to exact I text bbox, then swap
   setTimeout(function(){
     var boxL = tL2.getBBox();
     var boxR = tR2.getBBox();
-    var barW = 25, barH = 183;
 
-    // Calculate scale to make bar match I text size
-    var sxL = boxL.width / barW;
-    var syL = boxL.height / barH;
-    // Calculate translate to move bar center to I text center
-    var dxL = (boxL.x + boxL.width / 2) - (190 + barW / 2);
-    var dyL = (boxL.y + boxL.height / 2) - (208 + barH / 2);
-    bL.style.transform = 'translate(' + dxL + 'px,' + dyL + 'px) scaleX(' + sxL + ') scaleY(' + syL + ')';
+    // Set bar x/y/width/height via CSS to exactly match I text bounding box
+    bL.style.x = boxL.x + 'px';
+    bL.style.y = boxL.y + 'px';
+    bL.style.width = boxL.width + 'px';
+    bL.style.height = boxL.height + 'px';
 
-    var sxR = boxR.width / barW;
-    var syR = boxR.height / barH;
-    var dxR = (boxR.x + boxR.width / 2) - (366 + barW / 2);
-    var dyR = (boxR.y + boxR.height / 2) - (208 + barH / 2);
-    bR.style.transform = 'translate(' + dxR + 'px,' + dyR + 'px) scaleX(' + sxR + ') scaleY(' + syR + ')';
+    bR.style.x = boxR.x + 'px';
+    bR.style.y = boxR.y + 'px';
+    bR.style.width = boxR.width + 'px';
+    bR.style.height = boxR.height + 'px';
 
-    // Quick crossfade — sizes match, so swap is invisible
-    fade(tL2, 0, 100);
-    fade(tR2, 0, 100);
-    fade(bL, 1, 100);
-    fade(bR, 1, 100);
+    // Instant swap — bar is now pixel-identical rectangle on top of I text
+    tL2.setAttribute('opacity', '0');
+    tR2.setAttribute('opacity', '0');
+    bL.setAttribute('opacity', '1');
+    bR.setAttribute('opacity', '1');
   }, 3000);
 
-  // Phase 4b: Bars GROW + spread to final logo positions
+  // Phase 4b: Bars GROW to final logo size + position (direct geometry transition)
   setTimeout(function(){
-    bL.style.transition = 'transform 900ms cubic-bezier(0.25,0.1,0.25,1)';
-    bR.style.transition = 'transform 900ms cubic-bezier(0.25,0.1,0.25,1)';
-    bL.style.transform = 'translate(0,0) scaleX(1) scaleY(1)';
-    bR.style.transform = 'translate(0,0) scaleX(1) scaleY(1)';
-  }, 3200);
+    var ease = 'cubic-bezier(0.25,0.1,0.25,1)';
+    var dur = '900ms';
+    var trans = ['x','y','width','height'].map(function(p){ return p + ' ' + dur + ' ' + ease; }).join(', ');
+    bL.style.transition = trans;
+    bR.style.transition = trans;
 
-  // Phase 5: X curves draw — connecting the two I bars
+    // Animate to final logo bar geometry (0.35× of original 70×522 bars)
+    bL.style.x = '190px';
+    bL.style.y = '208px';
+    bL.style.width = '25px';
+    bL.style.height = '183px';
+
+    bR.style.x = '366px';
+    bR.style.y = '208px';
+    bR.style.width = '25px';
+    bR.style.height = '183px';
+  }, 3150);
+
+  // Phase 5: X curves draw — starts as bars are nearly at final size
   setTimeout(function(){
     draw(c1, 1000);
     draw(c2, 1000);
-  }, 4000);
+  }, 3900);
 
-  // Phase 6: Gradient morph
+  // Phase 6: Gradient morph — clear geometry transition first
   setTimeout(function(){
+    bL.style.transition = '';
+    bR.style.transition = '';
     fade(bL, 0, 400);
     fade(bR, 0, 400);
     fade(gL, 1, 400);
     fade(gR, 1, 400);
-  }, 5100);
+  }, 5000);
 
   // Phase 7: Logo shrinks → heading expands → content fades up
   setTimeout(function(){
@@ -373,7 +376,7 @@ window.addEventListener('scroll', () => {
     setTimeout(function(){
       document.querySelector('.hero-content').classList.add('visible');
     }, 1800);
-  }, 5400);
+  }, 5200);
 })();
 </script>
 </body>
