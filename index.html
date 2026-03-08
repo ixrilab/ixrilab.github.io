@@ -230,6 +230,15 @@ window.addEventListener('scroll', () => {
   c2.style.strokeDasharray = len2;
   c2.style.strokeDashoffset = len2;
 
+  // Pre-set bars to match 4× I text size BEFORE they become visible.
+  // Bar is 25×183. 4× I text is ~60×156. Scale: X=2.4, Y=0.85
+  bL.style.transformBox = 'fill-box';
+  bL.style.transformOrigin = 'center center';
+  bR.style.transformBox = 'fill-box';
+  bR.style.transformOrigin = 'center center';
+  bL.style.transform = 'scaleX(2.4) scaleY(0.85)';
+  bR.style.transform = 'scaleX(2.4) scaleY(0.85)';
+
   function fade(el, to, dur) {
     el.style.transition = 'opacity ' + dur + 'ms ease';
     el.setAttribute('opacity', String(to));
@@ -312,19 +321,27 @@ window.addEventListener('scroll', () => {
     tR2.style.transform = 'translate(72px, -13px) scale(4)';
   }, 3000);
 
-  // Phase 4b: Crossfade text → bars (same 30×80 size — no jump!)
+  // Phase 4b: Quick crossfade text → bars (bars already pre-scaled to match 4× I size)
   setTimeout(function(){
-    fade(tL2, 0, 200);
-    fade(tR2, 0, 200);
-    fade(bL, 1, 200);
-    fade(bR, 1, 200);
+    fade(tL2, 0, 120);
+    fade(tR2, 0, 120);
+    fade(bL, 1, 120);
+    fade(bR, 1, 120);
+
+    // Phase 4c: Bars morph from 4×-I-matching scale to correct logo proportions
+    setTimeout(function(){
+      bL.style.transition = 'transform 700ms cubic-bezier(0.25,0.1,0.25,1)';
+      bR.style.transition = 'transform 700ms cubic-bezier(0.25,0.1,0.25,1)';
+      bL.style.transform = 'scaleX(1) scaleY(1)';
+      bR.style.transform = 'scaleX(1) scaleY(1)';
+    }, 80);
   }, 3600);
 
   // Phase 5: X curves draw — connecting the two I bars
   setTimeout(function(){
     draw(c1, 1000);
     draw(c2, 1000);
-  }, 3900);
+  }, 4200);
 
   // Phase 6: Gradient morph
   setTimeout(function(){
@@ -332,7 +349,7 @@ window.addEventListener('scroll', () => {
     fade(bR, 0, 400);
     fade(gL, 1, 400);
     fade(gR, 1, 400);
-  }, 5000);
+  }, 5300);
 
   // Phase 7: Logo shrinks → heading expands → content fades up
   setTimeout(function(){
@@ -351,7 +368,7 @@ window.addEventListener('scroll', () => {
     setTimeout(function(){
       document.querySelector('.hero-content').classList.add('visible');
     }, 1800);
-  }, 5200);
+  }, 5500);
 })();
 </script>
 </body>
