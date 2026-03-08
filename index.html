@@ -64,8 +64,8 @@
     <div class="logo-anim-container" id="logoAnim">
       <svg id="animSvg" viewBox="-120 0 820 600" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <!-- Gradient spans full mini-logo width, same 5-stop as original -->
-          <linearGradient id="agrad" gradientUnits="userSpaceOnUse" x1="190" y1="0" x2="391" y2="0">
+          <!-- Gradient spans full logo width at 0.70× scale -->
+          <linearGradient id="agrad" gradientUnits="userSpaceOnUse" x1="89" y1="0" x2="491" y2="0">
             <stop offset="0%" stop-color="#050E3C"/><stop offset="25%" stop-color="#002455"/><stop offset="50%" stop-color="#4A1942"/><stop offset="75%" stop-color="#FF3838"/><stop offset="100%" stop-color="#DC0000"/>
           </linearGradient>
         </defs>
@@ -78,17 +78,17 @@
         <text id="tR1" x="300" y="272" text-anchor="start" font-family="Outfit,sans-serif" font-size="54" font-weight="600" fill="#DC0000" opacity="0"></text>
         <text id="tR2" x="300" y="332" text-anchor="start" font-family="Outfit,sans-serif" font-size="54" font-weight="600" fill="#DC0000" opacity="0"></text>
 
-        <!-- X curves — uniform 0.35× scale of original logo, centered at (290,300) -->
-        <path id="c1" d="M190 212 C266 212 315 388 391 388" stroke="url(#agrad)" stroke-width="26" stroke-linecap="butt" fill="none" opacity="0"/>
-        <path id="c2" d="M190 388 C266 388 315 212 391 212" stroke="url(#agrad)" stroke-width="26" stroke-linecap="butt" fill="none" opacity="0"/>
+        <!-- X curves — uniform 0.70× scale of original logo, centered at (290,300) -->
+        <path id="c1" d="M89 126 C241 126 339 477 491 477" stroke="url(#agrad)" stroke-width="51" stroke-linecap="butt" fill="none" opacity="0"/>
+        <path id="c2" d="M89 477 C241 477 339 126 491 126" stroke="url(#agrad)" stroke-width="51" stroke-linecap="butt" fill="none" opacity="0"/>
 
-        <!-- I bars — solid color (25×183, 0.35× of original 70×522) -->
-        <rect id="bL" x="190" y="208" width="25" height="183" fill="#050E3C" opacity="0"/>
-        <rect id="bR" x="366" y="208" width="25" height="183" fill="#DC0000" opacity="0"/>
+        <!-- I bars — solid color (49×365, 0.70× of original 70×522) -->
+        <rect id="bL" x="89" y="117" width="49" height="365" fill="#050E3C" opacity="0"/>
+        <rect id="bR" x="442" y="117" width="49" height="365" fill="#DC0000" opacity="0"/>
 
         <!-- I bars — gradient (final) -->
-        <rect id="gL" x="190" y="208" width="25" height="183" fill="url(#agrad)" opacity="0"/>
-        <rect id="gR" x="366" y="208" width="25" height="183" fill="url(#agrad)" opacity="0"/>
+        <rect id="gL" x="89" y="117" width="49" height="365" fill="url(#agrad)" opacity="0"/>
+        <rect id="gR" x="442" y="117" width="49" height="365" fill="url(#agrad)" opacity="0"/>
       </svg>
     </div>
     </div>
@@ -230,6 +230,19 @@ window.addEventListener('scroll', () => {
   c2.style.strokeDasharray = len2;
   c2.style.strokeDashoffset = len2;
 
+  // Bar geometry constants (0.70× scale)
+  var BAR_W = 49, BAR_H = 365;
+  var BL_CX = 89 + BAR_W / 2;   // 113.5
+  var BL_CY = 117 + BAR_H / 2;  // 299.5
+  var BR_CX = 442 + BAR_W / 2;  // 466.5
+  var BR_CY = 117 + BAR_H / 2;  // 299.5
+
+  // Pre-set bar transform properties for GPU-composited animation
+  bL.style.transformBox = 'fill-box';
+  bL.style.transformOrigin = 'center center';
+  bR.style.transformBox = 'fill-box';
+  bR.style.transformOrigin = 'center center';
+
   function fade(el, to, dur) {
     el.style.transition = 'opacity ' + dur + 'ms ease';
     el.setAttribute('opacity', String(to));
@@ -300,56 +313,48 @@ window.addEventListener('scroll', () => {
     unTypeText(tR2, 35, 1);
   }, 2500);
 
-  // Phase 4a: Pixel-perfect swap — set bar geometry to exact I text bbox, then swap
+  // Phase 4a: Pixel-perfect swap using GPU-composited CSS transform
+  // Measure I text bbox → compute transform to shrink bar to same size/position → instant swap
   setTimeout(function(){
     var boxL = tL2.getBBox();
     var boxR = tR2.getBBox();
 
-    // Set bar x/y/width/height via CSS to exactly match I text bounding box
-    bL.style.x = boxL.x + 'px';
-    bL.style.y = boxL.y + 'px';
-    bL.style.width = boxL.width + 'px';
-    bL.style.height = boxL.height + 'px';
+    // Scale factors: shrink bar (49×365) to match I text bbox
+    var sxL = boxL.width / BAR_W, syL = boxL.height / BAR_H;
+    var sxR = boxR.width / BAR_W, syR = boxR.height / BAR_H;
 
-    bR.style.x = boxR.x + 'px';
-    bR.style.y = boxR.y + 'px';
-    bR.style.width = boxR.width + 'px';
-    bR.style.height = boxR.height + 'px';
+    // Translate: move bar center to I text center
+    var txL = (boxL.x + boxL.width / 2) - BL_CX;
+    var tyL = (boxL.y + boxL.height / 2) - BL_CY;
+    var txR = (boxR.x + boxR.width / 2) - BR_CX;
+    var tyR = (boxR.y + boxR.height / 2) - BR_CY;
 
-    // Instant swap — bar is now pixel-identical rectangle on top of I text
+    // Apply shrink transform (no transition — instant)
+    bL.style.transform = 'translate(' + txL + 'px,' + tyL + 'px) scale(' + sxL + ',' + syL + ')';
+    bR.style.transform = 'translate(' + txR + 'px,' + tyR + 'px) scale(' + sxR + ',' + syR + ')';
+
+    // Instant swap
     tL2.setAttribute('opacity', '0');
     tR2.setAttribute('opacity', '0');
     bL.setAttribute('opacity', '1');
     bR.setAttribute('opacity', '1');
+
+    // Phase 4b: Grow to full size — use double rAF to ensure initial paint
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){
+      bL.style.transition = 'transform 900ms cubic-bezier(0.25,0.1,0.25,1)';
+      bR.style.transition = 'transform 900ms cubic-bezier(0.25,0.1,0.25,1)';
+      bL.style.transform = 'none';
+      bR.style.transform = 'none';
+    }); });
   }, 3000);
 
-  // Phase 4b: Bars GROW to final logo size + position (direct geometry transition)
-  setTimeout(function(){
-    var ease = 'cubic-bezier(0.25,0.1,0.25,1)';
-    var dur = '900ms';
-    var trans = ['x','y','width','height'].map(function(p){ return p + ' ' + dur + ' ' + ease; }).join(', ');
-    bL.style.transition = trans;
-    bR.style.transition = trans;
-
-    // Animate to final logo bar geometry (0.35× of original 70×522 bars)
-    bL.style.x = '190px';
-    bL.style.y = '208px';
-    bL.style.width = '25px';
-    bL.style.height = '183px';
-
-    bR.style.x = '366px';
-    bR.style.y = '208px';
-    bR.style.width = '25px';
-    bR.style.height = '183px';
-  }, 3150);
-
-  // Phase 5: X curves draw — starts as bars are nearly at final size
+  // Phase 5: X curves draw — starts as bars approach final size (~750ms into 900ms growth)
   setTimeout(function(){
     draw(c1, 1000);
     draw(c2, 1000);
-  }, 3900);
+  }, 3800);
 
-  // Phase 6: Gradient morph — clear geometry transition first
+  // Phase 6: Gradient morph
   setTimeout(function(){
     bL.style.transition = '';
     bR.style.transition = '';
@@ -357,7 +362,7 @@ window.addEventListener('scroll', () => {
     fade(bR, 0, 400);
     fade(gL, 1, 400);
     fade(gR, 1, 400);
-  }, 5000);
+  }, 4900);
 
   // Phase 7: Logo shrinks → heading expands → content fades up
   setTimeout(function(){
@@ -376,7 +381,7 @@ window.addEventListener('scroll', () => {
     setTimeout(function(){
       document.querySelector('.hero-content').classList.add('visible');
     }, 1800);
-  }, 5200);
+  }, 5100);
 })();
 </script>
 </body>
