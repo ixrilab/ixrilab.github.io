@@ -64,7 +64,8 @@
     <div class="logo-anim-container" id="logoAnim">
       <svg id="animSvg" viewBox="-120 0 820 600" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id="agrad" gradientUnits="userSpaceOnUse" x1="44" y1="0" x2="536" y2="0">
+          <!-- Gradient spans full mini-logo width, same 5-stop as original -->
+          <linearGradient id="agrad" gradientUnits="userSpaceOnUse" x1="190" y1="0" x2="391" y2="0">
             <stop offset="0%" stop-color="#050E3C"/><stop offset="25%" stop-color="#002455"/><stop offset="50%" stop-color="#4A1942"/><stop offset="75%" stop-color="#FF3838"/><stop offset="100%" stop-color="#DC0000"/>
           </linearGradient>
         </defs>
@@ -77,17 +78,17 @@
         <text id="tR1" x="300" y="272" text-anchor="start" font-family="Outfit,sans-serif" font-size="54" font-weight="600" fill="#DC0000" opacity="0"></text>
         <text id="tR2" x="300" y="332" text-anchor="start" font-family="Outfit,sans-serif" font-size="54" font-weight="600" fill="#DC0000" opacity="0"></text>
 
-        <!-- X curves — logo-proportioned layout with 60×160 bars -->
-        <path id="c1" d="M44 224 C230 224 350 377 536 377" stroke="url(#agrad)" stroke-width="63" stroke-linecap="butt" fill="none" opacity="0"/>
-        <path id="c2" d="M44 377 C230 377 350 224 536 224" stroke="url(#agrad)" stroke-width="63" stroke-linecap="butt" fill="none" opacity="0"/>
+        <!-- X curves — uniform 0.35× scale of original logo, centered at (290,300) -->
+        <path id="c1" d="M190 212 C266 212 315 388 391 388" stroke="url(#agrad)" stroke-width="26" stroke-linecap="butt" fill="none" opacity="0"/>
+        <path id="c2" d="M190 388 C266 388 315 212 391 212" stroke="url(#agrad)" stroke-width="26" stroke-linecap="butt" fill="none" opacity="0"/>
 
-        <!-- I bars — solid color (60×160, matching 4× text I) -->
-        <rect id="bL" x="44" y="220" width="60" height="160" fill="#050E3C" opacity="0"/>
-        <rect id="bR" x="476" y="220" width="60" height="160" fill="#DC0000" opacity="0"/>
+        <!-- I bars — solid color (25×183, 0.35× of original 70×522) -->
+        <rect id="bL" x="190" y="208" width="25" height="183" fill="#050E3C" opacity="0"/>
+        <rect id="bR" x="366" y="208" width="25" height="183" fill="#DC0000" opacity="0"/>
 
         <!-- I bars — gradient (final) -->
-        <rect id="gL" x="44" y="220" width="60" height="160" fill="url(#agrad)" opacity="0"/>
-        <rect id="gR" x="476" y="220" width="60" height="160" fill="url(#agrad)" opacity="0"/>
+        <rect id="gL" x="190" y="208" width="25" height="183" fill="url(#agrad)" opacity="0"/>
+        <rect id="gR" x="366" y="208" width="25" height="183" fill="url(#agrad)" opacity="0"/>
       </svg>
     </div>
     </div>
@@ -298,8 +299,8 @@ window.addEventListener('scroll', () => {
   }, 2500);
 
   // Phase 4a: Two "I"s spread outward + scale 4× toward bar positions
-  // Left "I" center ~(273,313) → left bar center (74,300): offset (-199,-13)
-  // Right "I" center ~(307,313) → right bar center (506,300): offset (199,-13)
+  // Left "I" center ~(273,313) → left bar center (203,300): offset (-70,-13)
+  // Right "I" center ~(307,313) → right bar center (379,300): offset (72,-13)
   setTimeout(function(){
     tL2.style.transformBox = 'fill-box';
     tL2.style.transformOrigin = 'center center';
@@ -307,8 +308,8 @@ window.addEventListener('scroll', () => {
     tR2.style.transformOrigin = 'center center';
     tL2.style.transition = 'transform 600ms cubic-bezier(0.25,0.1,0.25,1)';
     tR2.style.transition = 'transform 600ms cubic-bezier(0.25,0.1,0.25,1)';
-    tL2.style.transform = 'translate(-199px, -13px) scale(4)';
-    tR2.style.transform = 'translate(199px, -13px) scale(4)';
+    tL2.style.transform = 'translate(-70px, -13px) scale(4)';
+    tR2.style.transform = 'translate(72px, -13px) scale(4)';
   }, 3000);
 
   // Phase 4b: Crossfade text → bars (same 30×80 size — no jump!)
