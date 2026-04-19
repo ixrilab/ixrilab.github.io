@@ -213,6 +213,8 @@ img { max-width: 100%; height: auto; display: block; }
   text-decoration: none; transition: background 0.3s;
 }
 .btn-pill:hover { background: #e8e8ed; text-decoration: none; }
+.section-gradient .btn-pill { color: var(--text-primary); }
+.section-dark .btn-pill { color: var(--text-primary); }
 
 /* =========================================
    MOTTO
@@ -385,9 +387,7 @@ img { max-width: 100%; height: auto; display: block; }
 .value-card h3 { font-size: 21px; font-weight: 700; color: #f5f5f7; margin-bottom: 8px; }
 .value-quote {
   font-size: 14px; font-style: italic; margin-bottom: 12px;
-  background: var(--gradient);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #f5f5f7;
 }
 .value-card p:last-child { font-size: 14px; color: #86868b; }
 
