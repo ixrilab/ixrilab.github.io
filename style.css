@@ -501,7 +501,7 @@ img { max-width: 100%; height: auto; display: block; }
 .pub-links a:hover { text-decoration: underline; }
 .pub-teaser {
   width: 100%;
-  background: var(--bg-gray); border: 1px solid var(--border);
+  background: #fff; border: 1px solid var(--border);
   border-radius: 14px; overflow: hidden;
   margin-bottom: 10px;
   padding: 12px;
