@@ -388,6 +388,10 @@ img { max-width: 100%; height: auto; display: block; }
 .value-quote {
   font-size: 14px; font-style: italic; margin-bottom: 12px;
   color: #f5f5f7;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: #f5f5f7;
+  background-clip: unset;
 }
 .value-card p:last-child { font-size: 14px; color: #86868b; }
 
