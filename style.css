@@ -318,6 +318,7 @@ img { max-width: 100%; height: auto; display: block; }
 .area-card {
   background: #fff; border: none;
   border-radius: 20px; padding: 36px;
+  text-align: center;
   transition: transform 0.4s cubic-bezier(0.32,0.08,0.24,1);
 }
 .area-card:hover { transform: scale(1.02); }
