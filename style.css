@@ -500,10 +500,18 @@ img { max-width: 100%; height: auto; display: block; }
 .pub-links a { font-size: 12px; color: var(--link); text-decoration: none; }
 .pub-links a:hover { text-decoration: underline; }
 .pub-teaser {
-  width: 100%; border-radius: 12px; overflow: hidden;
-  margin-bottom: 10px;
+  width: 100%; aspect-ratio: 16 / 9;
+  background: #fff; border: 1px solid var(--border);
+  border-radius: 16px; overflow: hidden;
+  margin-bottom: 12px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 16px;
 }
-.pub-teaser img { width: 100%; display: block; border-radius: 12px; }
+.pub-teaser img {
+  max-width: 100%; max-height: 100%;
+  object-fit: contain; display: block;
+  border-radius: 0;
+}
 .pub-year-header {
   font-size: 28px; font-weight: 700; color: var(--text-primary);
   margin: 56px 0 20px; padding-bottom: 12px;
@@ -611,6 +619,7 @@ img { max-width: 100%; height: auto; display: block; }
 
   .pub-year-header { font-size: 24px; margin: 40px 0 16px; }
   .pub-item.award { margin: 0 -12px; padding: 20px 12px; }
+  .pub-teaser { padding: 12px; border-radius: 12px; }
 
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
 }
