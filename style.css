@@ -500,15 +500,15 @@ img { max-width: 100%; height: auto; display: block; }
 .pub-links a { font-size: 12px; color: var(--link); text-decoration: none; }
 .pub-links a:hover { text-decoration: underline; }
 .pub-teaser {
-  width: 100%; aspect-ratio: 16 / 9;
+  width: 100%; max-height: 280px;
   background: #fff; border: 1px solid var(--border);
   border-radius: 16px; overflow: hidden;
   margin-bottom: 12px;
   display: flex; align-items: center; justify-content: center;
-  padding: 16px;
+  padding: 14px;
 }
 .pub-teaser img {
-  max-width: 100%; max-height: 100%;
+  max-width: 100%; max-height: 250px;
   object-fit: contain; display: block;
   border-radius: 0;
 }
@@ -518,6 +518,7 @@ img { max-width: 100%; height: auto; display: block; }
   border-bottom: 1px solid var(--border);
 }
 .pub-year-header:first-child { margin-top: 0; }
+.pub-container { padding-top: 0; }
 
 /* Placeholder */
 .news-placeholder { text-align: center; padding: 60px 20px; color: var(--text-secondary); }
