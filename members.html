@@ -38,7 +38,7 @@
       <a href="research.html">Projects</a>
       <a href="members.html" class="active">Members</a>
       <a href="publications.html">Publications</a>
-      <a href="lab-log.html">Lab Log</a>
+      <a href="news.html">News</a>
     </div>
     <button class="nav-toggle" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -136,7 +136,7 @@
         <p><a href="research.html">Projects</a></p>
         <p><a href="members.html">Members</a></p>
         <p><a href="publications.html">Publications</a></p>
-        <p><a href="lab-log.html">Lab Log</a></p>
+        <p><a href="news.html">News</a></p>
       </div>
       <div>
         <h4>Location</h4>
@@ -152,6 +152,7 @@
 <script>
 document.querySelector('.nav-toggle').addEventListener('click', function() {
   document.querySelector('.nav-links').classList.toggle('open');
+  this.classList.toggle('open');
 });
 window.addEventListener('scroll', function() {
   document.querySelector('.nav').classList.toggle('scrolled', window.scrollY > 10);
