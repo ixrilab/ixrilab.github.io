@@ -264,7 +264,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .footer a { color: var(--link); font-size: 12px; }
 .footer a:hover { text-decoration: underline; }
-.footer h4 {
+.footer h4, .footer-heading {
   color: var(--text-primary); font-size: 12px;
   font-weight: 600; margin-bottom: 8px;
 }
@@ -399,7 +399,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* How We Work */
 .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
 .work-item { background: var(--bg-gray); border: none; border-radius: 20px; padding: 28px; }
-.work-item h4 { font-size: 17px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+.work-item h4, .work-item h3 { font-size: 17px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
 .work-item p { font-size: 14px; color: var(--text-secondary); line-height: 1.58; }
 
 /* Members — centered vertical profile */

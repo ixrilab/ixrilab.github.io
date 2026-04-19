@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Brand & Logo — IXRI Lab</title>
+<meta name="description" content="IXRI Lab brand guidelines, logos, and visual identity.">
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -40,7 +41,7 @@
 
     <!-- Logo Concept -->
     <div class="brand-section">
-      <h3>Logo Concept — I · XR · I</h3>
+      <h2 class="brand-section-title">Logo Concept — I · XR · I</h2>
       <p style="max-width:700px; margin-bottom:20px; font-size:15px; color:var(--text-light);">The IXRI mark consists of two vertical I-bars connected by crossing curves forming an X. The left I represents Human Intelligence, the right I represents Artificial Intelligence, and the X (XR) at the center connects the two — visually expressing our mission of "Connecting Intelligences beyond Boundaries."</p>
       <div style="text-align:center; padding:40px; background:var(--bg-alt); border-radius:12px;">
         <img src="images/logo-navy.png" alt="IXRI Logo" width="200" height="200" style="filter:drop-shadow(0 4px 12px rgba(0,0,0,0.1));">
@@ -49,9 +50,9 @@
 
     <!-- Logo Downloads -->
     <div class="brand-section">
-      <h3>Logo Downloads</h3>
+      <h2 class="brand-section-title">Logo Downloads</h2>
 
-      <h4 style="font-size:15px; color:var(--text-light); margin:20px 0 12px;">Primary — Monochrome Navy (Light Background)</h4>
+      <h3 style="font-size:15px; color:var(--text-secondary); margin:20px 0 12px; font-weight:500;">Primary — Monochrome Navy (Light Background)</h4>
       <div class="download-grid">
         <div class="download-card">
           <div class="download-preview on-white">
@@ -73,7 +74,7 @@
         </div>
       </div>
 
-      <h4 style="font-size:15px; color:var(--text-light); margin:28px 0 12px;">Reversed — White (Dark Background)</h4>
+      <h3 style="font-size:15px; color:var(--text-secondary); margin:28px 0 12px; font-weight:500;">Reversed — White (Dark Background)</h4>
       <div class="download-grid">
         <div class="download-card">
           <div class="download-preview on-dark">
@@ -99,7 +100,7 @@
 
     <!-- Color Palette -->
     <div class="brand-section">
-      <h3>Color Palette</h3>
+      <h2 class="brand-section-title">Color Palette</h2>
       <div class="color-palette">
         <div class="color-chip">
           <div class="color-chip-swatch" style="background:#0A1E3D;"></div>
@@ -134,7 +135,7 @@
 
     <!-- Typography -->
     <div class="brand-section">
-      <h3>Typography</h3>
+      <h2 class="brand-section-title">Typography</h2>
       <table class="spec-table">
         <tr><th>Use</th><th>Font</th><th>Weight</th></tr>
         <tr><td>Primary</td><td>Inter</td><td>400 Regular, 600 Semi-Bold, 700 Bold</td></tr>
@@ -145,7 +146,7 @@
 
     <!-- Construction -->
     <div class="brand-section">
-      <h3>Logo Construction Specification</h3>
+      <h2 class="brand-section-title">Logo Construction Specification</h2>
       <table class="spec-table">
         <tr><th>Property</th><th>Value</th></tr>
         <tr><td>ViewBox</td><td>400 × 400 px</td></tr>
@@ -163,7 +164,7 @@
 
     <!-- Usage Rules -->
     <div class="brand-section">
-      <h3>Usage Guidelines</h3>
+      <h2 class="brand-section-title">Usage Guidelines</h2>
       <table class="spec-table">
         <tr><th>Context</th><th>Recommended Variant</th></tr>
         <tr><td>Favicon (16–32 px)</td><td>Mono Navy</td></tr>
@@ -181,7 +182,7 @@
 
     <!-- Lab Info -->
     <div class="brand-section">
-      <h3>Lab Information</h3>
+      <h2 class="brand-section-title">Lab Information</h2>
       <table class="spec-table">
         <tr><th>Field</th><th>Value</th></tr>
         <tr><td>Full Name</td><td>Interactive XR Intelligence Lab (IXRI Lab)</td></tr>
@@ -210,17 +211,17 @@
         <p class="footer-tagline">Interactive XR Intelligence Lab<br>Since 2026</p>
       </div>
       <div>
-        <h4>Contact</h4>
+        <p class="footer-heading">Contact</p>
         <p><a href="mailto:ixrilab@gmail.com">ixrilab@gmail.com</a></p>
         <p><a href="mailto:dooyoung.me@gmail.com">dooyoung.me@gmail.com</a></p>
       </div>
       <div>
-        <h4>Links</h4>
+        <p class="footer-heading">Links</p>
         <p><a href="index.html">Home</a></p>
         <p><a href="publications.html">Publications</a></p>
       </div>
       <div>
-        <h4>Location</h4>
+        <p class="footer-heading">Location</p>
         <p>La Trobe University<br>Melbourne, Australia</p>
       </div>
     </div>
@@ -231,6 +232,7 @@
 <script>
 document.querySelector('.nav-toggle').addEventListener('click', function() {
   document.querySelector('.nav-links').classList.toggle('open');
+  this.classList.toggle('open');
 });
 </script>
 </body>
