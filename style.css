@@ -279,7 +279,8 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .news-ticker-track::-webkit-scrollbar { display: none; }
 .news-card {
-  flex: 0 0 280px; scroll-snap-align: start;
+  flex: 0 0 280px; min-width: 280px;
+  scroll-snap-align: start;
   background: #fff; border-radius: 16px;
   padding: 24px; text-decoration: none; color: inherit;
   transition: transform 0.3s cubic-bezier(0.32,0.08,0.24,1),
