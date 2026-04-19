@@ -500,17 +500,15 @@ img { max-width: 100%; height: auto; display: block; }
 .pub-links a { font-size: 12px; color: var(--link); text-decoration: none; }
 .pub-links a:hover { text-decoration: underline; }
 .pub-teaser {
-  width: 100%; max-height: 280px;
-  background: #fff; border: 1px solid var(--border);
-  border-radius: 16px; overflow: hidden;
-  margin-bottom: 12px;
-  display: flex; align-items: center; justify-content: center;
-  padding: 14px;
+  width: 100%;
+  background: var(--bg-gray); border: 1px solid var(--border);
+  border-radius: 14px; overflow: hidden;
+  margin-bottom: 10px;
+  padding: 12px;
 }
 .pub-teaser img {
-  max-width: 100%; max-height: 250px;
-  object-fit: contain; display: block;
-  border-radius: 0;
+  width: 100%; height: auto;
+  display: block;
 }
 .pub-year-header {
   font-size: 28px; font-weight: 700; color: var(--text-primary);
