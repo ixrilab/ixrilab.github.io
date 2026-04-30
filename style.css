@@ -338,7 +338,13 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .news-ticker-track {
   display: flex; gap: 16px;
-  overflow-x: auto; scroll-snap-type: x mandatory;
+  /* Horizontal-only scroller: lock gestures to horizontal pan, kill any
+     vertical overflow, and prevent overscroll from chaining to the page. */
+  overflow-x: auto;
+  overflow-y: hidden;
+  touch-action: pan-x;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding: 0 22px 8px;
   margin: 0 -22px;
