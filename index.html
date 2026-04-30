@@ -2,14 +2,18 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title>IXRI Lab — Interactive XR Intelligence Lab</title>
 <meta name="description" content="IXRI Lab — Connecting Intelligences beyond Boundaries. Research in XR, AI, and Interface Design at La Trobe University.">
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=3">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=5">
 <meta property="og:title" content="IXRI Lab — Interactive XR Intelligence Lab">
 <meta property="og:description" content="Connecting Intelligences beyond Boundaries. XR, AI, and Interface research at La Trobe University.">
 <meta property="og:image" content="images/ixri-logo-gradient.png">
@@ -17,7 +21,7 @@
 </head>
 <body>
 <!-- Shared SVG Defs -->
-<svg style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg">
+<svg style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <defs>
     <linearGradient id="brand-grad" gradientUnits="userSpaceOnUse" x1="356" y1="0" x2="929" y2="0">
       <stop offset="0%" stop-color="#050E3C"/><stop offset="25%" stop-color="#002455"/><stop offset="50%" stop-color="#4A1942"/><stop offset="75%" stop-color="#FF3838"/><stop offset="100%" stop-color="#DC0000"/>
@@ -36,16 +40,16 @@
 <!-- Nav -->
 <nav class="nav">
   <div class="container-wide nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="images/ixri-lockup-light-transparent.png" alt="IXRI Lab" class="nav-lockup">
+    <a href="index.html" class="nav-logo" aria-label="IXRI Lab — Home">
+      <img src="images/ixri-lockup-light.svg" alt="IXRI Lab" class="nav-lockup" width="125" height="20">
     </a>
-    <div class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="research.html">Projects</a>
+    <div class="nav-links" data-spy="links">
+      <a href="index.html" class="active" data-spy-target=".hero">Home</a>
+      <a href="research.html" data-spy-target="#proj-selfie">Projects</a>
       <a href="publications.html">Publications</a>
       <a href="members.html">Members</a>
     </div>
-    <button class="nav-toggle" aria-label="Menu">
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -53,11 +57,11 @@
 
 <!-- ===== HERO ===== -->
 <header class="hero">
-  <div class="container" style="text-align:center;">
+  <div class="container hero-stack">
     <!-- Logo Animation -->
     <div class="hero-intro" id="heroIntro">
       <div class="logo-anim-container" id="logoAnim">
-        <svg id="animSvg" viewBox="-120 0 820 600" xmlns="http://www.w3.org/2000/svg">
+        <svg id="animSvg" viewBox="-120 0 820 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <defs>
             <linearGradient id="agrad" gradientUnits="userSpaceOnUse" x1="89" y1="0" x2="491" y2="0">
               <stop offset="0%" stop-color="#050E3C"/><stop offset="25%" stop-color="#002455"/>
@@ -78,7 +82,7 @@
         </svg>
       </div>
     </div>
-    <div class="hero-content" style="text-align:center;">
+    <div class="hero-content">
       <p class="hero-sub">IXRI Lab — Interactive XR Intelligence Lab</p>
       <p class="hero-desc">We connect humans and AI through XR, augmenting human capabilities beyond the limits of space, time, and reality.</p>
       <div class="hero-actions">
@@ -90,33 +94,33 @@
 </header>
 
 <!-- ===== NEWS TICKER ===== -->
-<section id="news" style="padding:48px 0 56px; background:#f5f5f7; overflow:hidden;">
+<section id="news" class="news-ticker">
   <div class="container">
-    <h2 style="font-size:24px; font-weight:700; color:#1d1d1f; letter-spacing:-0.005em; margin-bottom:20px;">News</h2>
-    <div style="display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; padding-bottom:8px; scrollbar-width:none;">
-      <div class="fade-in" style="flex:0 0 280px; min-width:280px; scroll-snap-align:start; background:#fff; border-radius:16px; padding:24px; display:flex; flex-direction:column; gap:4px;">
-        <span style="font-size:12px; font-weight:500; color:#86868b;">June 2026</span>
-        <span style="display:inline-block; align-self:flex-start; font-size:11px; font-weight:600; color:#FF3838; background:rgba(220,0,0,0.06); padding:2px 8px; border-radius:4px; margin:2px 0;">Latest</span>
-        <h3 style="font-size:17px; font-weight:700; color:#1d1d1f; line-height:1.25; margin:4px 0;">IXRI Lab Launches</h3>
-        <p style="font-size:13px; color:#86868b; line-height:1.5; margin:0;">Lab officially founded at La Trobe University. Website goes live, brand identity established.</p>
-      </div>
-      <div class="fade-in fade-in-d1" style="flex:0 0 280px; min-width:280px; scroll-snap-align:start; background:#fff; border-radius:16px; padding:24px; display:flex; flex-direction:column; gap:4px;">
-        <span style="font-size:12px; font-weight:500; color:#86868b;">June 2026</span>
-        <h3 style="font-size:17px; font-weight:700; color:#1d1d1f; line-height:1.25; margin:4px 0;">First Projects Initiated</h3>
-        <p style="font-size:13px; color:#86868b; line-height:1.5; margin:0;">Ultimate Selfie, XRMemory, and Digital Twin &amp; Physical AI research begins.</p>
-      </div>
-      <div class="fade-in fade-in-d2" style="flex:0 0 280px; min-width:280px; scroll-snap-align:start; background:#fff; border-radius:16px; padding:24px; display:flex; flex-direction:column; gap:4px;">
-        <span style="font-size:12px; font-weight:500; color:#86868b;">June 2026</span>
-        <h3 style="font-size:17px; font-weight:700; color:#1d1d1f; line-height:1.25; margin:4px 0;">Brand Identity</h3>
-        <p style="font-size:13px; color:#86868b; line-height:1.5; margin:0;">Visual guidelines and brand system established for the lab.</p>
-      </div>
+    <h2 class="news-ticker-title">News</h2>
+    <div class="news-ticker-track">
+      <article class="news-card fade-in">
+        <span class="news-card-date">June 2026</span>
+        <span class="news-card-badge">Latest</span>
+        <h3 class="news-card-title">IXRI Lab Launches</h3>
+        <p class="news-card-desc">Lab officially founded at La Trobe University. Website goes live, brand identity established.</p>
+      </article>
+      <article class="news-card fade-in fade-in-d1">
+        <span class="news-card-date">June 2026</span>
+        <h3 class="news-card-title">First Projects Initiated</h3>
+        <p class="news-card-desc">Ultimate Selfie, XRMemory, and Digital Twin &amp; Physical AI research begins.</p>
+      </article>
+      <article class="news-card fade-in fade-in-d2">
+        <span class="news-card-date">June 2026</span>
+        <h3 class="news-card-title">Brand Identity</h3>
+        <p class="news-card-desc">Visual guidelines and brand system established for the lab.</p>
+      </article>
     </div>
   </div>
 </section>
 
 <!-- ===== ULTIMATE SELFIE — Dark ===== -->
 <section id="proj-selfie" class="section-block section-block-hero section-dark">
-  <div class="showcase fade-in" style="text-align:center;">
+  <div class="showcase fade-in">
     <p class="showcase-eyebrow" style="color:#FF3838;">Digital Self &amp; Autonomous Agency</p>
     <h2 class="showcase-title">Ultimate Selfie</h2>
     <p class="showcase-desc">Your digital twin that learns how you think, work, and relate. It operates autonomously while you rest, meets you through XR across realities, and syncs with you daily to stay one.</p>
@@ -124,14 +128,23 @@
       <a href="research.html#ultimate-selfie">Learn more</a>
     </div>
     <div class="showcase-img fade-in-scale">
-      <img src="images/ultimate_selfie.jpg" alt="Ultimate Selfie — Your digital self in the digital world" style="border-radius:20px;">
+      <picture>
+        <source type="image/webp" srcset="images/ultimate_selfie-480.webp 480w, images/ultimate_selfie-800.webp 800w, images/ultimate_selfie-1200.webp 1200w" sizes="(max-width: 600px) 92vw, (max-width: 980px) 80vw, 680px">
+        <img src="images/ultimate_selfie-800.jpg"
+             srcset="images/ultimate_selfie-480.jpg 480w, images/ultimate_selfie-800.jpg 800w, images/ultimate_selfie-1200.jpg 1200w"
+             sizes="(max-width: 600px) 92vw, (max-width: 980px) 80vw, 680px"
+             width="1200" height="509"
+             alt="Ultimate Selfie — Your digital self in the digital world"
+             loading="lazy" decoding="async"
+             style="border-radius:20px;">
+      </picture>
     </div>
   </div>
 </section>
 
 <!-- ===== XRMEMORY — Light ===== -->
 <section class="section-block section-block-hero section-light">
-  <div class="showcase fade-in" style="text-align:center;">
+  <div class="showcase fade-in">
     <p class="showcase-eyebrow" style="color:#4A1942;">Spatial Experience Capture &amp; Replay</p>
     <h2 class="showcase-title">XRMemory</h2>
     <p class="showcase-desc">Record the essence of spatial experiences. Replay them anywhere in the world. Restore the past as a place you can walk into again.</p>
@@ -139,14 +152,23 @@
       <a href="research.html#xrmemory">Learn more</a>
     </div>
     <div class="showcase-img fade-in-scale">
-      <img src="images/XRMemory.jpg" alt="XRMemory — Spatial experience capture and cross-environment replay" style="border-radius:20px;">
+      <picture>
+        <source type="image/webp" srcset="images/XRMemory-480.webp 480w, images/XRMemory-800.webp 800w, images/XRMemory-1200.webp 1200w" sizes="(max-width: 600px) 92vw, (max-width: 980px) 80vw, 680px">
+        <img src="images/XRMemory-800.jpg"
+             srcset="images/XRMemory-480.jpg 480w, images/XRMemory-800.jpg 800w, images/XRMemory-1200.jpg 1200w"
+             sizes="(max-width: 600px) 92vw, (max-width: 980px) 80vw, 680px"
+             width="1200" height="669"
+             alt="XRMemory — Spatial experience capture and cross-environment replay"
+             loading="lazy" decoding="async"
+             style="border-radius:20px;">
+      </picture>
     </div>
   </div>
 </section>
 
 <!-- ===== DIGITAL TWIN — Dark ===== -->
 <section class="section-block section-block-hero section-dark">
-  <div class="showcase fade-in" style="text-align:center;">
+  <div class="showcase fade-in">
     <p class="showcase-eyebrow" style="color:#FF3838;">Campus-Scale Embodied Intelligence</p>
     <h2 class="showcase-title">Digital Twin &amp;<br>Physical AI</h2>
     <p class="showcase-desc">A high-fidelity digital twin of La Trobe's Bundoora campus in NVIDIA Omniverse — where Physical AI agents learn to perceive and interact with the real world.</p>
@@ -154,7 +176,16 @@
       <a href="research.html#physical-ai">Learn more</a>
     </div>
     <div class="showcase-img fade-in-scale">
-      <img src="images/physical_ai.jpg" alt="Digital Twin and Physical AI at La Trobe University" style="border-radius:20px;">
+      <picture>
+        <source type="image/webp" srcset="images/physical_ai-480.webp 480w, images/physical_ai-800.webp 800w, images/physical_ai-1200.webp 1200w" sizes="(max-width: 600px) 92vw, (max-width: 980px) 80vw, 680px">
+        <img src="images/physical_ai-800.jpg"
+             srcset="images/physical_ai-480.jpg 480w, images/physical_ai-800.jpg 800w, images/physical_ai-1200.jpg 1200w"
+             sizes="(max-width: 600px) 92vw, (max-width: 980px) 80vw, 680px"
+             width="1200" height="669"
+             alt="Digital Twin and Physical AI at La Trobe University"
+             loading="lazy" decoding="async"
+             style="border-radius:20px;">
+      </picture>
     </div>
   </div>
 </section>
@@ -182,7 +213,7 @@
     <div class="footer-grid">
       <div>
         <div class="footer-logo">
-          <svg width="20" height="21" viewBox="0 0 578 600"><use href="#logo-gradient"/></svg>
+          <svg width="20" height="21" viewBox="0 0 578 600" aria-hidden="true"><use href="#logo-gradient"/></svg>
           <span>IXRI Lab</span>
         </div>
         <p class="footer-tagline">Interactive XR Intelligence Lab<br>Connecting Intelligences beyond Boundaries<br>La Trobe University · Since 2026</p>
@@ -209,86 +240,7 @@
   </div>
 </footer>
 
-<script>
-// Nav
-document.querySelector('.nav-toggle').addEventListener('click', function() {
-  document.querySelector('.nav-links').classList.toggle('open');
-  this.classList.toggle('open');
-});
-document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-  a.addEventListener('click', function(e) {
-    e.preventDefault();
-    var t = document.querySelector(a.getAttribute('href'));
-    if (t) t.scrollIntoView({behavior:'smooth',block:'start'});
-    document.querySelector('.nav-links').classList.remove('open');
-  });
-});
-window.addEventListener('scroll', function() {
-  document.querySelector('.nav').classList.toggle('scrolled', window.scrollY > 10);
-});
-
-// Scroll fade-in
-(function() {
-  var obs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.fade-in, .fade-in-scale').forEach(function(el) { obs.observe(el); });
-})();
-
-// ===== Logo Animation =====
-(function() {
-  var $ = function(id) { return document.getElementById(id); };
-  var svg=$('animSvg'), bL=$('bL'), bR=$('bR'), gL=$('gL'), gR=$('gR'),
-      c1=$('c1'), c2=$('c2'), tL1=$('tL1'), tL2=$('tL2'), tR1=$('tR1'), tR2=$('tR2');
-  if (!bL||!svg) return;
-
-  var len1=c1.getTotalLength(), len2=c2.getTotalLength();
-  c1.style.strokeDasharray=len1; c1.style.strokeDashoffset=len1;
-  c2.style.strokeDasharray=len2; c2.style.strokeDashoffset=len2;
-
-  var BAR_W=49, BAR_H=365;
-  var BL_CX=89+BAR_W/2, BL_CY=117+BAR_H/2;
-  var BR_CX=442+BAR_W/2, BR_CY=117+BAR_H/2;
-  bL.style.transformBox='fill-box'; bL.style.transformOrigin='center center';
-  bR.style.transformBox='fill-box'; bR.style.transformOrigin='center center';
-
-  function fade(el,to,dur){el.style.transition='opacity '+dur+'ms ease';el.setAttribute('opacity',String(to));}
-  function draw(el,dur){el.setAttribute('opacity','1');el.style.transition='stroke-dashoffset '+dur+'ms cubic-bezier(0.32,0.08,0.24,1)';el.style.strokeDashoffset='0';}
-  function typeText(el,text,d,cb){el.setAttribute('opacity','1');el.textContent='';var i=0;(function n(){if(i<text.length){el.textContent+=text[i];i++;setTimeout(n,d);}else if(cb)cb();})();}
-  function unTypeText(el,d,k,cb){var t=el.textContent,i=t.length;(function n(){if(i>k){i--;el.textContent=t.substring(0,i);setTimeout(n,d);}else if(cb)cb();})();}
-
-  setTimeout(function(){typeText(tL1,'Human',45,function(){setTimeout(function(){typeText(tL2,'Intelligence',45);},80);});},300);
-  setTimeout(function(){typeText(tR1,'Artificial',45,function(){setTimeout(function(){typeText(tR2,'Intelligence',45);},80);});},1000);
-  setTimeout(function(){fade(tL1,0,500);fade(tR1,0,500);},2300);
-  setTimeout(function(){unTypeText(tL2,35,1);unTypeText(tR2,35,1);},2500);
-  setTimeout(function(){
-    var bxL=tL2.getBBox(),bxR=tR2.getBBox();
-    var sxL=bxL.width/BAR_W,syL=bxL.height/BAR_H,sxR=bxR.width/BAR_W,syR=bxR.height/BAR_H;
-    var txL=(bxL.x+bxL.width/2)-BL_CX,tyL=(bxL.y+bxL.height/2)-BL_CY;
-    var txR=(bxR.x+bxR.width/2)-BR_CX,tyR=(bxR.y+bxR.height/2)-BR_CY;
-    bL.style.transform='translate('+txL+'px,'+tyL+'px) scale('+sxL+','+syL+')';
-    bR.style.transform='translate('+txR+'px,'+tyR+'px) scale('+sxR+','+syR+')';
-    tL2.setAttribute('opacity','0');tR2.setAttribute('opacity','0');
-    bL.setAttribute('opacity','1');bR.setAttribute('opacity','1');
-    requestAnimationFrame(function(){requestAnimationFrame(function(){
-      bL.style.transition='transform 1000ms cubic-bezier(0.32,0.08,0.24,1)';
-      bR.style.transition='transform 1000ms cubic-bezier(0.32,0.08,0.24,1)';
-      bL.style.transform='none';bR.style.transform='none';
-    });});
-  },3000);
-  setTimeout(function(){draw(c1,1100);draw(c2,1100);},3900);
-  setTimeout(function(){bL.style.transition='';bR.style.transition='';fade(bL,0,500);fade(bR,0,500);fade(gL,1,500);fade(gR,1,500);},5100);
-  setTimeout(function(){
-    $('logoAnim').classList.add('compact');
-    setTimeout(function(){
-      var h1=document.createElement('h1');h1.id='heroH1';
-      h1.innerHTML='Connecting Intelligences<br>beyond Boundaries';
-      $('heroIntro').appendChild(h1);
-      requestAnimationFrame(function(){requestAnimationFrame(function(){h1.classList.add('visible');});});
-    },900);
-    setTimeout(function(){document.querySelector('.hero-content').classList.add('visible');},1900);
-  },5400);
-})();
-</script>
+<script src="assets/site.js?v=2" defer></script>
+<script src="assets/hero-intro.js?v=1" defer></script>
 </body>
 </html>

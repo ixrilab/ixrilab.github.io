@@ -2,14 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
 <title>Members — IXRI Lab</title>
 <meta name="description" content="Meet the team behind IXRI Lab at La Trobe University.">
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=3">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=5">
 <meta property="og:title" content="Members — IXRI Lab">
 <meta property="og:description" content="Meet the team behind IXRI Lab at La Trobe University.">
 <meta property="og:image" content="images/dooyoung-kim.jpg">
@@ -34,8 +37,8 @@
 
 <nav class="nav">
   <div class="container nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="images/ixri-lockup-light-transparent.png" alt="IXRI Lab" class="nav-lockup">
+    <a href="index.html" class="nav-logo" aria-label="IXRI Lab — Home">
+      <img src="images/ixri-lockup-light.svg" alt="IXRI Lab" class="nav-lockup" width="125" height="20">
     </a>
     <div class="nav-links">
       <a href="index.html">Home</a>
@@ -43,7 +46,7 @@
       <a href="publications.html">Publications</a>
       <a href="members.html" class="active">Members</a>
     </div>
-    <button class="nav-toggle" aria-label="Menu">
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -63,7 +66,7 @@
     <h2 class="section-title fade-in">Director</h2>
     <div class="member-profile fade-in">
       <div class="member-photo">
-        <img src="images/dooyoung-kim.jpg" alt="Dr. Dooyoung Kim">
+        <img src="images/dooyoung-kim.jpg" alt="Dr. Dooyoung Kim" width="400" height="400" loading="lazy" decoding="async">
       </div>
       <div class="member-info">
         <h3>Dr. Dooyoung Kim</h3>
@@ -84,7 +87,7 @@
 <section class="section section-alt">
   <div class="container">
     <h2 class="section-title fade-in">Open Positions</h2>
-    <p class="fade-in" style="text-align:center; max-width:640px; margin:0 auto 36px; color:var(--text-secondary); font-size:15px; line-height:1.7;">We are actively looking for motivated researchers to join IXRI Lab. If you are passionate about XR, AI, or Human-Computer Interaction, we'd love to hear from you.</p>
+    <p class="network-intro fade-in">We are actively looking for motivated researchers to join IXRI Lab. If you are passionate about XR, AI, or Human-Computer Interaction, we'd love to hear from you.</p>
     <div class="work-grid">
       <div class="work-item fade-in">
         <h3 class="work-item-title">PhD Students</h3>
@@ -103,7 +106,7 @@
         <p>We welcome visiting scholars and research interns from partner institutions worldwide for short- or long-term collaboration.</p>
       </div>
     </div>
-    <div class="fade-in" style="text-align:center; margin-top:36px;">
+    <div class="cta-row fade-in">
       <a href="mailto:ixrilab@gmail.com" class="btn-pill">Get in Touch</a>
     </div>
   </div>
@@ -113,27 +116,27 @@
 <section class="section">
   <div class="container">
     <h2 class="section-title fade-in">Research Network</h2>
-    <p class="fade-in" style="text-align:center; max-width:640px; margin:0 auto 36px; color:var(--text-secondary); font-size:15px; line-height:1.7;">We collaborate with leading research groups across the globe on XR, spatial computing, and AI.</p>
-    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:24px; max-width:800px; margin:0 auto;">
-      <div class="fade-in" style="flex:0 0 220px; background:var(--bg-alt); border-radius:16px; padding:32px 24px; text-align:center;">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--text-secondary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:12px;"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-        <h3 style="font-size:17px; font-weight:700; color:var(--text-primary); margin-bottom:4px;">KAIST</h3>
-        <p style="font-size:13px; color:var(--text-light); margin:0;">South Korea</p>
+    <p class="network-intro fade-in">We collaborate with leading research groups across the globe on XR, spatial computing, and AI.</p>
+    <div class="network-grid">
+      <div class="network-card fade-in">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        <h3>KAIST</h3>
+        <p>South Korea</p>
       </div>
-      <div class="fade-in fade-in-d1" style="flex:0 0 220px; background:var(--bg-alt); border-radius:16px; padding:32px 24px; text-align:center;">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--text-secondary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:12px;"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-        <h3 style="font-size:17px; font-weight:700; color:var(--text-primary); margin-bottom:4px;">Columbia University</h3>
-        <p style="font-size:13px; color:var(--text-light); margin:0;">United States</p>
+      <div class="network-card fade-in fade-in-d1">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        <h3>Columbia University</h3>
+        <p>United States</p>
       </div>
-      <div class="fade-in fade-in-d2" style="flex:0 0 220px; background:var(--bg-alt); border-radius:16px; padding:32px 24px; text-align:center;">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--text-secondary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:12px;"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-        <h3 style="font-size:17px; font-weight:700; color:var(--text-primary); margin-bottom:4px;">University of Calgary</h3>
-        <p style="font-size:13px; color:var(--text-light); margin:0;">Canada</p>
+      <div class="network-card fade-in fade-in-d2">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        <h3>University of Calgary</h3>
+        <p>Canada</p>
       </div>
-      <div class="fade-in fade-in-d3" style="flex:0 0 220px; background:var(--bg-alt); border-radius:16px; padding:32px 24px; text-align:center;">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--text-secondary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:12px;"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-        <h3 style="font-size:17px; font-weight:700; color:var(--text-primary); margin-bottom:4px;">New York University</h3>
-        <p style="font-size:13px; color:var(--text-light); margin:0;">United States</p>
+      <div class="network-card fade-in fade-in-d3">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        <h3>New York University</h3>
+        <p>United States</p>
       </div>
     </div>
   </div>
@@ -196,20 +199,6 @@
   </div>
 </footer>
 
-<script>
-document.querySelector('.nav-toggle').addEventListener('click', function() {
-  document.querySelector('.nav-links').classList.toggle('open');
-  this.classList.toggle('open');
-});
-window.addEventListener('scroll', function() {
-  document.querySelector('.nav').classList.toggle('scrolled', window.scrollY > 10);
-});
-(function() {
-  var obs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.fade-in, .fade-in-scale').forEach(function(el) { obs.observe(el); });
-})();
-</script>
+<script src="assets/site.js?v=2" defer></script>
 </body>
 </html>
