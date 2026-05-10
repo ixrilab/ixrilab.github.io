@@ -20,6 +20,7 @@
   var bL = $('bL'), bR = $('bR'), gL = $('gL'), gR = $('gR');
   var c1 = $('c1'), c2 = $('c2');
   var tL1 = $('tL1'), tL2 = $('tL2'), tR1 = $('tR1'), tR2 = $('tR2');
+  var heroH1 = $('heroH1');
   var heroContent = document.querySelector('.hero-content');
   if (!bL || !svg) return;
 
@@ -79,11 +80,7 @@
     c1.setAttribute('opacity', '1'); c1.style.strokeDashoffset = '0';
     c2.setAttribute('opacity', '1'); c2.style.strokeDashoffset = '0';
     logoAnim.classList.add('compact');
-    var h1 = document.createElement('h1');
-    h1.id = 'heroH1';
-    h1.innerHTML = 'Connecting Intelligences<br>beyond Boundaries';
-    heroIntro.appendChild(h1);
-    h1.classList.add('visible');
+    if (heroH1) heroH1.classList.add('visible');
     if (heroContent) heroContent.classList.add('visible');
   }
 
@@ -206,25 +203,21 @@
       fade(gR, 1, 500);
     }, 5100);
 
-    /* 5.4s — compact the logo (FLIP transform) and reveal H1 + content */
+    /* 5.4s — compact the logo (FLIP transform) and then, once it's
+       largely settled, reveal the H1 and the hero subtitle/actions
+       together as a single coordinated growth. This is the only
+       "size change" the user sees besides the compact step. */
     setTimeout(function () {
       compactWithFLIP(2200);
 
+      // Reveal H1 and hero-content together — one smooth grow.
+      // Slight stagger (120ms) keeps the H1 leading the subtitle.
       setTimeout(function () {
-        var h1 = document.createElement('h1');
-        h1.id = 'heroH1';
-        h1.innerHTML = 'Connecting Intelligences<br>beyond Boundaries';
-        heroIntro.appendChild(h1);
-        requestAnimationFrame(function () {
-          requestAnimationFrame(function () {
-            h1.classList.add('visible');
-          });
-        });
-      }, 900);
-
+        if (heroH1) heroH1.classList.add('visible');
+      }, 1500);
       setTimeout(function () {
         if (heroContent) heroContent.classList.add('visible');
-      }, 1900);
+      }, 1620);
     }, 5400);
   }
 })();

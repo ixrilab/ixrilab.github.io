@@ -111,25 +111,100 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* =========================================
    HERO — Full-viewport, centered
+   The hero is locked at 100svh on every breakpoint so the white area
+   never resizes mid-animation. The animation centers initially because
+   #heroH1 and .hero-content start collapsed (grid-template-rows: 0fr)
+   and only the logo animation occupies layout. When their .visible
+   class is added, both expand smoothly in one coordinated transition.
    ========================================= */
 .hero {
+  min-height: 100vh;       /* fallback */
   min-height: 100svh;
   display: flex; align-items: center; justify-content: center;
   background: var(--bg-white);
-  padding-top: 44px;
+  padding-top: calc(44px + env(safe-area-inset-top));
+  padding-bottom: env(safe-area-inset-bottom);
   overflow: hidden;
 }
-.hero .container {
+.hero .container,
+.hero .hero-stack {
   display: flex; flex-direction: column; align-items: center;
+  justify-content: center;
   text-align: center; width: 100%;
 }
-.hero-content {
-  opacity: 0; transform: translateY(12px);
-  transition: opacity 0.6s cubic-bezier(0.32,0.08,0.24,1),
-              transform 0.6s cubic-bezier(0.32,0.08,0.24,1);
-  will-change: opacity, transform;
+
+/* Logo + heading stack inside the hero. Always column so the H1 sits
+   below the (compacted) logo at the end. */
+.hero-intro {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  width: 100%;
 }
-.hero-content.visible { opacity: 1; transform: translateY(0); }
+.logo-anim-container {
+  width: 380px; flex-shrink: 0;
+  margin: 0 auto;
+}
+.logo-anim-container.compact { width: 96px; }
+#animSvg { width: 100%; display: block; }
+
+/* H1 — pre-rendered in DOM but collapsed via grid-template-rows trick.
+   Uses 0fr → 1fr transition so it grows to its natural content height
+   smoothly, no max-height guesswork. */
+#heroH1 {
+  display: grid;
+  grid-template-rows: 0fr;
+  margin: 0;
+  width: 100%;
+  font-size: 56px; font-weight: 700; line-height: 1.05;
+  letter-spacing: -0.015em;
+  text-align: center;
+  background: var(--gradient);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: grid-template-rows 0.7s cubic-bezier(0.32, 0.08, 0.24, 1),
+              margin-top         0.7s cubic-bezier(0.32, 0.08, 0.24, 1),
+              opacity            0.55s cubic-bezier(0.32, 0.08, 0.24, 1) 0.1s,
+              transform          0.55s cubic-bezier(0.32, 0.08, 0.24, 1) 0.1s;
+}
+#heroH1 .hero-h1-inner {
+  overflow: hidden;
+  min-height: 0;
+  display: block;
+}
+#heroH1.visible {
+  grid-template-rows: 1fr;
+  margin-top: 18px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero content (subtitle + description + actions) — same collapse
+   trick. Reveals together with the H1 as one growth. */
+.hero-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  width: 100%;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: grid-template-rows 0.7s cubic-bezier(0.32, 0.08, 0.24, 1),
+              margin-top         0.7s cubic-bezier(0.32, 0.08, 0.24, 1),
+              opacity            0.55s cubic-bezier(0.32, 0.08, 0.24, 1) 0.1s,
+              transform          0.55s cubic-bezier(0.32, 0.08, 0.24, 1) 0.1s;
+}
+.hero-content > .hero-content-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+.hero-content.visible {
+  grid-template-rows: 1fr;
+  margin-top: 24px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .hero-sub {
   font-size: 17px; color: var(--text-secondary); font-weight: 400;
   margin-bottom: 8px;
@@ -147,33 +222,6 @@ img { max-width: 100%; height: auto; display: block; }
   .hero-actions a:hover { text-decoration: underline; }
 }
 .hero-actions a::after { content: " >"; font-weight: 300; }
-
-/* --- Logo Animation ---
-   Layout uses fixed slot widths so the JS can do FLIP transforms
-   without animating layout-affecting properties. */
-.hero-intro {
-  display: flex; align-items: center; justify-content: center;
-  gap: 28px; margin-bottom: 28px;
-}
-.logo-anim-container {
-  width: 380px; flex-shrink: 0;
-  margin: 0 auto;
-}
-.logo-anim-container.compact { width: 96px; }
-#animSvg { width: 100%; display: block; }
-#heroH1 {
-  font-size: 56px; font-weight: 700; line-height: 1.05;
-  letter-spacing: -0.015em; margin: 0;
-  text-align: left;
-  background: var(--gradient);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
-  opacity: 0; transform: translateY(8px);
-  transition: opacity 0.7s cubic-bezier(0.32,0.08,0.24,1),
-              transform 0.7s cubic-bezier(0.32,0.08,0.24,1);
-  will-change: opacity, transform;
-}
-#heroH1.visible { opacity: 1; transform: translateY(0); }
 
 /* =========================================
    SECTIONS — Full-viewport cinematic blocks
@@ -865,14 +913,21 @@ img { max-width: 100%; height: auto; display: block; }
   }
   .nav-toggle { display: block; }
 
-  .hero { min-height: auto; padding: 64px 0 48px; }
-  .hero-intro { flex-direction: column; gap: 6px; margin-bottom: 14px; }
+  /* Hero stays full-viewport on mobile so the white area never resizes */
+  .hero {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding-top: calc(48px + env(safe-area-inset-top));
+    padding-bottom: env(safe-area-inset-bottom);
+  }
   .logo-anim-container { width: 100%; max-width: 240px; }
   .logo-anim-container.compact { width: 56px; }
   #heroH1 {
     font-size: 30px; text-align: center;
     line-height: 1.12; letter-spacing: -0.01em;
   }
+  #heroH1.visible { margin-top: 14px; }
+  .hero-content.visible { margin-top: 18px; }
   #animSvg { max-height: 26vh; }
   .hero-desc { font-size: 17px; max-width: 360px; }
   .hero-actions { gap: 24px; }
