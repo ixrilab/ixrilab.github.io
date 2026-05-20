@@ -35,6 +35,33 @@ html:has(.subnav), html:has(.pub-toolbar) { scroll-padding-top: 96px; }
 @media (max-width: 734px) {
   html:has(.subnav), html:has(.pub-toolbar) { scroll-padding-top: 104px; }
 }
+
+/* =========================================
+   SCROLL SNAP — card-like swipe between sections
+   Enabled on pages whose <body> has the .snap-flow class
+   (Home and Research). `proximity` is gentler than `mandatory`:
+   small scrolls softly align to the nearest section, but fast
+   swipes/wheels pass through freely. Honours reduced-motion.
+   ========================================= */
+html:has(body.snap-flow) {
+  scroll-snap-type: y proximity;
+}
+@media (prefers-reduced-motion: reduce) {
+  html:has(body.snap-flow) { scroll-snap-type: none; }
+}
+body.snap-flow .hero,
+body.snap-flow .section-block,
+body.snap-flow .page-header,
+body.snap-flow .section {
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+/* Don't snap to the footer or to short trailing blocks. */
+body.snap-flow .footer,
+body.snap-flow .motto-section,
+body.snap-flow .news-ticker[hidden] {
+  scroll-snap-align: none;
+}
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   color: var(--text-primary);
@@ -118,8 +145,8 @@ img { max-width: 100%; height: auto; display: block; }
    class is added, both expand smoothly in one coordinated transition.
    ========================================= */
 .hero {
-  min-height: 100vh;       /* fallback */
-  min-height: 100svh;
+  min-height: 88vh;        /* fallback */
+  min-height: 88svh;
   display: flex; align-items: center; justify-content: center;
   background: var(--bg-white);
   padding-top: calc(44px + env(safe-area-inset-top));
@@ -227,18 +254,23 @@ img { max-width: 100%; height: auto; display: block; }
    SECTIONS — Full-viewport cinematic blocks
    ========================================= */
 .section-block {
-  padding: 120px 0;
+  padding: 88px 0;
   overflow: hidden;
   scroll-margin-top: 56px;
 }
+/* Removed forced 90svh min-height — sections are now sized by their
+   content + padding, so short sections (Join CTA) don't stretch to fill
+   nearly a whole viewport. */
 .section-block-hero {
-  min-height: 90svh;
   display: flex; align-items: center; justify-content: center;
 }
 .section, .page-header { scroll-margin-top: 56px; }
 .section-light { background: var(--bg-white); }
 .section-gray { background: var(--bg-gray); }
 .section-dark { background: var(--bg-black); color: #f5f5f7; }
+/* The Join CTA has only a short heading + sentence + button, so give it
+   a smaller padding than the project showcases. */
+.section-gradient.section-block { padding: 72px 0; }
 .section-dark a { color: var(--link-dark); }
 .section-gradient { background: var(--gradient); color: #fff; }
 .section-gradient a { color: rgba(255,255,255,0.9); }
@@ -913,10 +945,11 @@ img { max-width: 100%; height: auto; display: block; }
   }
   .nav-toggle { display: block; }
 
-  /* Hero stays full-viewport on mobile so the white area never resizes */
+  /* Hero — slightly less than full viewport so the next section peeks
+     into view, signalling there's more to scroll. */
   .hero {
-    min-height: 100vh;
-    min-height: 100svh;
+    min-height: 85vh;
+    min-height: 85svh;
     padding-top: calc(48px + env(safe-area-inset-top));
     padding-bottom: env(safe-area-inset-bottom);
   }
@@ -933,7 +966,8 @@ img { max-width: 100%; height: auto; display: block; }
   .hero-actions { gap: 24px; }
   .hero-actions a { font-size: 17px; padding: 6px 0; }
 
-  .section-block { padding: 64px 0; }
+  .section-block { padding: 56px 0; }
+  .section-gradient.section-block { padding: 48px 0; }
   .section-block-hero { min-height: auto; }
   .showcase-title { font-size: 30px; }
   .showcase-desc { font-size: 16px; }
