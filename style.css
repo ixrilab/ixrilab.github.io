@@ -864,6 +864,12 @@ img { max-width: 100%; height: auto; display: block; }
   flex-shrink: 0;
 }
 .pub-title-text { font-size: 15px; font-weight: 600; color: var(--text-primary); display: block; margin-bottom: 6px; line-height: 1.4; }
+/* When title is a clickable link to the paper, keep the same visual
+   weight as a regular title but underline on hover only. */
+a.pub-title-text { text-decoration: none; cursor: pointer; }
+@media (hover: hover) and (pointer: fine) {
+  a.pub-title-text:hover { color: var(--link); }
+}
 .pub-venue { font-size: 13px; color: var(--coral); font-weight: 500; display: block; margin-bottom: 4px; }
 .pub-award-badge { font-size: 11px; font-weight: 600; color: #b45309; background: #fef3c7; padding: 2px 8px; border-radius: 4px; }
 .pub-authors { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
