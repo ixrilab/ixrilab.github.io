@@ -852,9 +852,16 @@ img { max-width: 100%; height: auto; display: block; }
 .pub-list { list-style: none; }
 .pub-item { padding: 24px 0; border-bottom: 1px solid var(--border); }
 .pub-item:last-child { border-bottom: none; }
-.pub-item.award {
-  background: #fefce8; margin: 0 -20px; padding: 24px 20px;
-  border-radius: 16px; border-bottom: none; margin-bottom: 8px;
+/* Award papers — same layout as regular pub-item. A small trophy icon
+   is placed before the title (see .pub-award-icon below) so the
+   distinction is subtle but visible. */
+.pub-award-icon {
+  display: inline-block;
+  width: 15px; height: 15px;
+  margin-right: 6px;
+  vertical-align: -2px;
+  color: #b45309;
+  flex-shrink: 0;
 }
 .pub-title-text { font-size: 15px; font-weight: 600; color: var(--text-primary); display: block; margin-bottom: 6px; line-height: 1.4; }
 .pub-venue { font-size: 13px; color: var(--coral); font-weight: 500; display: block; margin-bottom: 4px; }
@@ -1010,7 +1017,6 @@ img { max-width: 100%; height: auto; display: block; }
 
   .pub-year-header { font-size: 22px; margin: 36px 0 14px; }
   .pub-item { padding: 20px 0; }
-  .pub-item.award { margin: 0 -12px; padding: 20px 12px; }
   .pub-teaser { padding: 10px; border-radius: 12px; }
 
   .footer { padding-bottom: calc(12px + env(safe-area-inset-bottom)); }
