@@ -8,8 +8,9 @@ const payload = JSON.parse(raw);
 assert.equal(payload.timezone, "Australia/Sydney");
 assert.ok(Array.isArray(payload.jobs) && payload.jobs.length > 0, "jobs must be a non-empty array");
 
-const inactivePattern = /종료|마감|조건 ?불충족|제외/i;
+const inactivePattern = /closed|expired|ineligible|excluded/i;
 const privatePattern = /[A-Z]:\\Users\\|OneDrive|@(gmail|hotmail|outlook)\.com/i;
+const hangulPattern = /[가-힣]/;
 
 for (const [index, job] of payload.jobs.entries()) {
   for (const field of ["id", "institution", "title", "category", "location", "status", "url", "checkedAt", "salary", "salaryBasis", "salaryConfidence"]) {
@@ -26,10 +27,11 @@ for (let index = 1; index < payload.jobs.length; index += 1) {
 }
 
 assert.doesNotMatch(raw, privatePattern, "dataset contains a prohibited personal or local identifier");
+assert.doesNotMatch(raw, hangulPattern, "public dataset must be English-only");
 
 console.log(JSON.stringify({
   jobs: payload.jobs.length,
-  faculty: payload.jobs.filter((job) => job.category === "교수").length,
+  faculty: payload.jobs.filter((job) => job.category === "Faculty").length,
   checkedAt: [...new Set(payload.jobs.map((job) => job.checkedAt))],
   status: "valid",
 }, null, 2));

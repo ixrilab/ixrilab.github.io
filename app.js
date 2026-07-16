@@ -1,7 +1,6 @@
 const DATA_URL = "./data/jobs.json";
 
 const state = { jobs: [], query: "", category: "all", region: "all", sort: "priority" };
-const categoryLabels = { 교수: "Faculty", 산업: "Industry", 연구: "Research" };
 
 const elements = {
   list: document.querySelector("#job-list"),
@@ -57,7 +56,7 @@ function renderCard(job, index) {
   institution.append(node("h3", "", job.institution));
   institution.append(node("p", "", job.location));
   const chips = node("div", "chip-row");
-  chips.append(node("span", "chip", categoryLabels[job.category] || job.category));
+  chips.append(node("span", "chip", job.category));
   if (job.ranking && job.ranking !== "N/A") chips.append(node("span", "chip", job.ranking));
   institution.append(chips);
 
@@ -70,7 +69,7 @@ function renderCard(job, index) {
   const meta = node("div", "meta");
   const deadline = node("div", `deadline${job.daysLeft !== null && job.daysLeft <= 30 ? " urgent" : ""}`);
   deadline.append(node("strong", "", job.daysLeft !== null ? `D-${job.daysLeft}` : "Open / verify"));
-  deadline.append(document.createTextNode(job.deadline === "공고 원문 확인" ? "Check original posting" : job.deadline));
+  deadline.append(document.createTextNode(job.deadline));
   const salary = node("div", "salary");
   salary.append(node("strong", "", job.salary));
   salary.append(document.createTextNode(`Confidence: ${job.salaryConfidence}`));
@@ -104,7 +103,7 @@ function populateRegions() {
 function updateSummary(payload) {
   const urgent = state.jobs.filter((job) => job.daysLeft !== null && job.daysLeft >= 0 && job.daysLeft <= 30).length;
   elements.activeCount.textContent = state.jobs.length;
-  elements.facultyCount.textContent = state.jobs.filter((job) => job.category === "교수").length;
+  elements.facultyCount.textContent = state.jobs.filter((job) => job.category === "Faculty").length;
   elements.urgentCount.textContent = urgent;
   const generated = new Date(payload.generatedAt);
   elements.updatedAt.textContent = Number.isNaN(generated.valueOf())

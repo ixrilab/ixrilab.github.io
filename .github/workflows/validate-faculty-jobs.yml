@@ -7,6 +7,7 @@ on:
       - "style.css"
       - "app.js"
       - "data/**"
+      - "data-tools/**"
       - "tests/**"
       - ".github/workflows/validate-faculty-jobs.yml"
   push:
@@ -16,6 +17,7 @@ on:
       - "style.css"
       - "app.js"
       - "data/**"
+      - "data-tools/**"
       - "tests/**"
       - ".github/workflows/validate-faculty-jobs.yml"
   workflow_dispatch:
@@ -33,3 +35,5 @@ jobs:
           node-version: "22"
       - name: Validate job data and privacy rules
         run: node tests/validate-data.mjs
+      - name: Check English normalization script
+        run: node --check data-tools/normalize-jobs-to-english.mjs

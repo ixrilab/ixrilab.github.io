@@ -5,8 +5,8 @@ This repository publishes an independent, static GitHub Pages application at the
 ## Data flow
 
 1. The daily career-radar automation verifies original job postings.
-2. Active and eligible roles are exported to `data/jobs.json`.
-3. `tests/validate-data.mjs` checks required fields, URLs, active status, ordering, and privacy markers.
+2. Active and eligible roles are exported, then `data-tools/normalize-jobs-to-english.mjs` converts the public dataset to English.
+3. `tests/validate-data.mjs` checks required fields, URLs, active status, ordering, privacy markers, and English-only output.
 4. Only validated data is committed and pushed.
 5. GitHub Pages publishes the updated JSON without a separate frontend build.
 
