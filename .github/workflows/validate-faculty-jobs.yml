@@ -3,12 +3,20 @@ name: Validate faculty job tracker
 on:
   pull_request:
     paths:
-      - "faculty-jobs/**"
+      - "index.html"
+      - "style.css"
+      - "app.js"
+      - "data/**"
+      - "tests/**"
       - ".github/workflows/validate-faculty-jobs.yml"
   push:
     branches: [main]
     paths:
-      - "faculty-jobs/**"
+      - "index.html"
+      - "style.css"
+      - "app.js"
+      - "data/**"
+      - "tests/**"
       - ".github/workflows/validate-faculty-jobs.yml"
   workflow_dispatch:
 
@@ -24,4 +32,4 @@ jobs:
         with:
           node-version: "22"
       - name: Validate job data and privacy rules
-        run: node faculty-jobs/tests/validate-data.mjs
+        run: node tests/validate-data.mjs

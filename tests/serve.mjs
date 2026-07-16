@@ -2,7 +2,7 @@ import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 
-const root = path.resolve(import.meta.dirname, "../..");
+const root = path.resolve(import.meta.dirname, "..");
 const types = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
@@ -24,5 +24,5 @@ createServer(async (request, response) => {
     response.end("Not found");
   }
 }).listen(4173, "127.0.0.1", () => {
-  console.log("http://127.0.0.1:4173/faculty-jobs/");
+  console.log("http://127.0.0.1:4173/");
 });

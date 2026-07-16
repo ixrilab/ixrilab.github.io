@@ -1,6 +1,6 @@
 # CS Faculty Job Tracker
 
-This directory is an independent, static GitHub Pages application served at `/faculty-jobs/`.
+This repository publishes an independent, static GitHub Pages application at the site root.
 
 ## Data flow
 
@@ -17,5 +17,5 @@ The tracker must not contain personal names, personal email addresses, local fil
 ## Validate locally
 
 ```powershell
-node .\faculty-jobs\tests\validate-data.mjs
+node .\tests\validate-data.mjs
 ```
