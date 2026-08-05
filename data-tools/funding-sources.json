@@ -1,0 +1,144 @@
+{
+  "timezone": "Australia/Sydney",
+  "purpose": "Official-source registry for the daily HCI, XR, Australia, Korea-Australia, and corporate research-funding scan.",
+  "sources": [
+    {
+      "name": "GrantConnect",
+      "category": "Australia",
+      "url": "https://www.grants.gov.au/",
+      "queryHints": ["HCI", "XR", "AI", "digital health", "human factors", "international collaboration"]
+    },
+    {
+      "name": "Australian Research Council",
+      "category": "Australia",
+      "url": "https://www.arc.gov.au/funding-research/funding-schemes",
+      "queryHints": ["Discovery", "DECRA", "Future Fellowships", "Linkage", "LIEF", "Industry Fellowships"]
+    },
+    {
+      "name": "NHMRC Funding Calendar",
+      "category": "Australia",
+      "url": "https://www.nhmrc.gov.au/funding/calendar",
+      "queryHints": ["digital health", "mental health", "partnership", "EMCR", "clinical", "implementation"]
+    },
+    {
+      "name": "MRFF Grant Opportunities Calendar",
+      "category": "Australia",
+      "url": "https://www.health.gov.au/our-work/mrff/grant-opportunities-calendar",
+      "queryHints": ["digital health", "frontier", "primary health care", "mental health", "medical technology"]
+    },
+    {
+      "name": "business.gov.au Grants and Programs",
+      "category": "Australia",
+      "url": "https://business.gov.au/grants-and-programs",
+      "queryHints": ["research collaboration", "commercialisation", "AI", "technology", "international"]
+    },
+    {
+      "name": "La Trobe Research Office",
+      "category": "Australia",
+      "url": "https://www.latrobe.edu.au/researchers/research-office",
+      "queryHints": ["internal deadline", "grant opportunity", "research agreement", "eligibility"]
+    },
+    {
+      "name": "Australia-Korea Foundation",
+      "category": "Korea-Australia",
+      "url": "https://www.dfat.gov.au/people-to-people/foundations-councils-institutes/australia-korea-foundation/grants",
+      "queryHints": ["artificial intelligence", "robotics", "advanced technology", "bilateral exchange"]
+    },
+    {
+      "name": "Global Science and Technology Diplomacy Fund",
+      "category": "Korea-Australia",
+      "url": "https://www.glodip.org.au/",
+      "queryHints": ["South Korea", "AI", "advanced manufacturing", "international science"]
+    },
+    {
+      "name": "IRIS Korean Research Portal",
+      "category": "Korea-Australia",
+      "url": "https://www.iris.go.kr/",
+      "queryHints": ["Australia", "international joint research", "global cooperation", "AI", "XR"]
+    },
+    {
+      "name": "National Research Foundation of Korea",
+      "category": "Korea-Australia",
+      "url": "https://www.nrf.re.kr/",
+      "queryHints": ["Australia", "bilateral", "international cooperation", "joint research"]
+    },
+    {
+      "name": "Korea Institute for Advancement of Technology",
+      "category": "Korea-Australia",
+      "url": "https://www.kiat.or.kr/front/board/boardList.do?MenuId=b159c9dac684471b87256f1e25404f5e",
+      "queryHints": ["Australia", "international industrial technology", "bilateral R&D", "global cooperation"]
+    },
+    {
+      "name": "Institute of Information and Communications Technology Planning and Evaluation",
+      "category": "Korea-Australia",
+      "url": "https://www.iitp.kr/",
+      "queryHints": ["international", "HCI", "XR", "AI", "digital technology"]
+    },
+    {
+      "name": "National IT Industry Promotion Agency",
+      "category": "Korea-Australia",
+      "url": "https://www.nipa.kr/",
+      "queryHints": ["global", "metaverse", "XR", "AI", "international collaboration"]
+    },
+    {
+      "name": "Korea Evaluation Institute of Industrial Technology",
+      "category": "Korea-Australia",
+      "url": "https://www.keit.re.kr/",
+      "queryHints": ["international R&D", "robotics", "human-machine interaction", "advanced manufacturing"]
+    },
+    {
+      "name": "Korea Health Industry Development Institute",
+      "category": "Korea-Australia",
+      "url": "https://www.khidi.or.kr/",
+      "queryHints": ["international health research", "digital health", "medical technology"]
+    },
+    {
+      "name": "Samsung Global Research Outreach",
+      "category": "Corporate",
+      "url": "https://semiconductor.samsung.com/sait/event/global-research-outreach/",
+      "queryHints": ["human-machine interface", "physical AI", "multimodal interaction"]
+    },
+    {
+      "name": "Epic MegaGrants",
+      "category": "Corporate",
+      "url": "https://www.unrealengine.com/megagrants",
+      "queryHints": ["XR", "real-time 3D", "simulation", "digital twin", "interactive"]
+    },
+    {
+      "name": "AWS Cloud Credit for Research",
+      "category": "Corporate",
+      "url": "https://aws.amazon.com/government-education/research-and-technical-computing/cloud-credit-for-research/",
+      "queryHints": ["faculty", "research credits", "AI", "visualization", "research tools"]
+    },
+    {
+      "name": "Google Research Programs",
+      "category": "Corporate",
+      "url": "https://research.google/programs-and-events/",
+      "queryHints": ["academic research", "human-computer interaction", "human-AI interaction", "XR"]
+    },
+    {
+      "name": "Microsoft Research Academic Programs",
+      "category": "Corporate",
+      "url": "https://www.microsoft.com/en-us/research/academic-programs/",
+      "queryHints": ["future of work", "human-AI", "HCI", "academic research"]
+    },
+    {
+      "name": "Amazon Research Awards",
+      "category": "Corporate",
+      "url": "https://www.amazon.science/research-awards",
+      "queryHints": ["faculty", "AI", "robotics", "human interaction"]
+    },
+    {
+      "name": "NVIDIA Academic Grant Program",
+      "category": "Corporate",
+      "url": "https://www.nvidia.com/en-us/industries/higher-education-research/academic-grant-program/",
+      "queryHints": ["AI", "robotics", "simulation", "visualization", "XR"]
+    },
+    {
+      "name": "Unity for Humanity",
+      "category": "Corporate",
+      "url": "https://unity.com/humanity",
+      "queryHints": ["XR", "social impact", "immersive", "real-time 3D"]
+    }
+  ]
+}

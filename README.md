@@ -1,14 +1,15 @@
-# CS Faculty Job Tracker
+# HCI · XR Career and Funding Radar
 
 This repository publishes an independent, static GitHub Pages application at the site root.
 
 ## Data flow
 
-1. The daily career-radar automation verifies original job postings.
-2. Active and eligible roles are exported, then `data-tools/normalize-jobs-to-english.mjs` converts the public dataset to English.
-3. `tests/validate-data.mjs` checks required fields, URLs, active status, ordering, privacy markers, and English-only output.
-4. Only validated data is committed and pushed.
-5. GitHub Pages publishes the updated JSON without a separate frontend build.
+1. The daily career-radar automation verifies original job postings and official funding sources.
+2. Active and eligible roles are exported, then `data-tools/normalize-jobs-to-english.mjs` converts the public jobs dataset to English.
+3. Funding opportunities are checked against `data-tools/funding-sources.json` and published to `data/funding.json` with explicit eligibility routes and confidence.
+4. `tests/validate-data.mjs` checks both datasets, URLs, statuses, ordering, privacy markers, English-only output, and the Jobs/Funding tab wiring.
+5. Only validated data is committed and pushed.
+6. GitHub Pages publishes the updated JSON without a separate frontend build.
 
 ## Privacy
 
