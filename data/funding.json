@@ -1,26 +1,7 @@
 {
-  "generatedAt": "2026-08-05T21:28:53+10:00",
+  "generatedAt": "2026-08-06T10:13:31+10:00",
   "timezone": "Australia/Sydney",
   "opportunities": [
-    {
-      "id": "samsung-gro-2026-hmi",
-      "funder": "Samsung Advanced Institute of Technology",
-      "title": "2026 Global Research Outreach — Human-Machine Interface",
-      "regionCategory": "Corporate",
-      "status": "Open",
-      "deadline": "2026-08-23",
-      "deadlineLabel": "23 Aug 2026 · 23:59 UTC",
-      "funding": "Applicant-proposed budget in USD",
-      "fundingType": "One-year sponsored university research",
-      "eligibilityRoute": "University professors and researchers worldwide may submit directly; the university must accept Samsung's research agreement.",
-      "partnerRequirement": "Joint proposals from multiple universities are accepted but are not required.",
-      "fieldFit": "Direct fit for HCI, XR, multimodal interaction, sensing, haptics, robotics, and human–machine interfaces.",
-      "recommendation": "Highest priority. Confirm the university research-agreement review path before submitting the three-page abstract proposal.",
-      "url": "https://semiconductor.samsung.com/sait/event/global-research-outreach/",
-      "checkedAt": "2026-08-05",
-      "confidence": "High",
-      "score": 98
-    },
     {
       "id": "epic-megagrants-2026-cycle-2",
       "funder": "Epic Games",
@@ -36,7 +17,7 @@
       "fieldFit": "Strong fit for XR, immersive analytics, virtual production, digital twins, simulation, and interactive 3D prototypes.",
       "recommendation": "High priority when a working Unreal prototype, public demo, or concrete production plan can be shown.",
       "url": "https://www.unrealengine.com/megagrants",
-      "checkedAt": "2026-08-05",
+      "checkedAt": "2026-08-06",
       "confidence": "High",
       "score": 95
     },
@@ -55,7 +36,7 @@
       "fieldFit": "Useful for compute-intensive HCI, human-centred AI, multimodal analytics, visualization, and XR back-end workloads.",
       "recommendation": "Apply when the project has a quantified cloud workload, public research output, benchmark, tool, or training plan.",
       "url": "https://aws.amazon.com/government-education/research-and-technical-computing/cloud-credit-for-research/",
-      "checkedAt": "2026-08-05",
+      "checkedAt": "2026-08-06",
       "confidence": "High",
       "score": 92
     },
@@ -74,7 +55,7 @@
       "fieldFit": "Conditional but potentially strong for genuinely frontier digital health, assistive XR, neurotechnology, or human–AI health systems.",
       "recommendation": "Pursue only for an ambitious health program with major clinical need, novelty, institutional sponsorship, and a highly credible team.",
       "url": "https://www.health.gov.au/news/mrff-frontiers-extended-to-support-bold-and-innovative-research",
-      "checkedAt": "2026-08-05",
+      "checkedAt": "2026-08-06",
       "confidence": "High",
       "score": 90
     },
@@ -93,7 +74,7 @@
       "fieldFit": "Potential fit for digital mental health, accessible interaction, telehealth, immersive interventions, and responsible human–AI systems.",
       "recommendation": "High priority only when the project directly addresses a listed scheme objective and minimum data can be lodged by 19 August.",
       "url": "https://www.health.gov.au/our-work/mrff/grant-opportunities-calendar",
-      "checkedAt": "2026-08-05",
+      "checkedAt": "2026-08-06",
       "confidence": "High",
       "score": 88
     },
@@ -112,7 +93,7 @@
       "fieldFit": "Potential fit for telehealth, equitable service access, clinician-facing interaction, patient experience, and digital care pathways.",
       "recommendation": "Develop a proposal only after matching the HCI or digital-health problem to an explicit grant objective and implementation setting.",
       "url": "https://www.health.gov.au/our-work/mrff/grant-opportunities-calendar",
-      "checkedAt": "2026-08-05",
+      "checkedAt": "2026-08-06",
       "confidence": "High",
       "score": 86
     },
@@ -131,9 +112,28 @@
       "fieldFit": "Potential fit for deployed digital health, human factors, accessibility, or XR research co-designed with a service or industry partner.",
       "recommendation": "Prioritise when an external partner already owns the problem, can contribute resources, and can implement the research outcome.",
       "url": "https://www.nhmrc.gov.au/funding/calendar",
-      "checkedAt": "2026-08-05",
+      "checkedAt": "2026-08-06",
       "confidence": "High",
       "score": 84
+    },
+    {
+      "id": "samsung-gro-2026-hmi",
+      "funder": "Samsung Advanced Institute of Technology",
+      "title": "2026 Global Research Outreach — Human-Machine Interface",
+      "regionCategory": "Corporate",
+      "status": "Conditional",
+      "deadline": "2026-08-23",
+      "deadlineLabel": "23 Aug 2026 · 23:59 UTC",
+      "funding": "Applicant-proposed budget in USD",
+      "fundingType": "One-year sponsored university research",
+      "eligibilityRoute": "University professors and researchers worldwide may submit directly; the university must accept Samsung's research agreement.",
+      "partnerRequirement": "Joint proposals from multiple universities are accepted but are not required.",
+      "fieldFit": "Conditional fit: the 2026 Human-Machine Interface topic is strongest for biosignals, neural interfaces, sensing, or closely aligned human-machine interaction research.",
+      "recommendation": "Pursue only with a credible biosignal, BCI, neural-interface, or closely aligned sensing collaborator; confirm the university research-agreement review path before submission.",
+      "url": "https://semiconductor.samsung.com/sait/event/global-research-outreach/",
+      "checkedAt": "2026-08-06",
+      "confidence": "High",
+      "score": 82
     },
     {
       "id": "mrff-emcr-initiative-2026",
@@ -150,7 +150,7 @@
       "fieldFit": "Potential fit for digital health and human-centred health technology, subject to the selected research stream.",
       "recommendation": "Do not start a new application now unless the minimum-data requirement was already satisfied; otherwise monitor the next round.",
       "url": "https://www.nhmrc.gov.au/funding/calendar",
-      "checkedAt": "2026-08-05",
+      "checkedAt": "2026-08-06",
       "confidence": "High",
       "score": 80
     },
@@ -169,7 +169,7 @@
       "fieldFit": "Strong bilateral fit for AI, robotics, advanced technology, research exchange, workshops, and public engagement rather than core lab research alone.",
       "recommendation": "Prepare the Korean partner, public-engagement outcome, bilateral impact case, and a one-year delivery plan ahead of the next annual round.",
       "url": "https://www.dfat.gov.au/people-to-people/foundations-councils-institutes/australia-korea-foundation/grants",
-      "checkedAt": "2026-08-05",
+      "checkedAt": "2026-08-06",
       "confidence": "High",
       "score": 78
     },
@@ -188,7 +188,7 @@
       "fieldFit": "Strong fit when HCI or XR is framed within AI, advanced manufacturing, quantum, health technology, or another announced priority theme.",
       "recommendation": "Maintain a Korea–Australia concept and partner team, but do not treat this as open until the official site publishes a new round.",
       "url": "https://www.glodip.org.au/",
-      "checkedAt": "2026-08-05",
+      "checkedAt": "2026-08-06",
       "confidence": "High",
       "score": 76
     },
@@ -207,7 +207,7 @@
       "fieldFit": "Potential fit for industrial XR, human–robot interaction, AI interfaces, simulation, advanced manufacturing, and assistive technology.",
       "recommendation": "Use this as a partner-led watch channel. Confirm the exact country call and both-side submission rules before developing a proposal.",
       "url": "https://www.kiat.or.kr/front/board/boardList.do?MenuId=b159c9dac684471b87256f1e25404f5e",
-      "checkedAt": "2026-08-05",
+      "checkedAt": "2026-08-06",
       "confidence": "Medium",
       "score": 74
     },
@@ -226,7 +226,7 @@
       "fieldFit": "Potential fit for HCI, human-centred AI, digital media, robotics, visualization, immersive systems, and interdisciplinary computing when listed in the call.",
       "recommendation": "Search IRIS and NRF notices daily and activate only after an official Korea–Australia call, topic scope, and overseas eligibility are confirmed.",
       "url": "https://www.iris.go.kr/",
-      "checkedAt": "2026-08-05",
+      "checkedAt": "2026-08-06",
       "confidence": "Medium",
       "score": 72
     }
