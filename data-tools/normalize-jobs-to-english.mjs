@@ -56,16 +56,33 @@ function salaryBasis(value) {
   return "Range stated in the original posting or official institutional salary information.";
 }
 
+function ranking(value, category) {
+  if (category === "Industry") return "Selected global HCI/XR employer";
+  return String(value)
+    .replace("KAIST 공식 근거:", "Official KAIST evidence:")
+    .replace("글로벌 HCI/XR 기업", "Selected global HCI/XR employer")
+    .replace("세계적 HCI/XR 기업", "Selected global HCI/XR employer")
+    .replace("산업직", "Industry role");
+}
+
+function salary(value) {
+  return String(value)
+    .replace(/\s*\/\s*년/g, " / year")
+    .replace(/\s*\/\s*월/g, " / month")
+    .replace(/또는/g, "or");
+}
+
 for (const job of payload.jobs) {
   job.category = categoryMap[job.category] ?? job.category;
   job.employment = employment(String(job.employment ?? ""), job.category);
   job.field = fieldMap.get(job.field) ?? "Relevant HCI/XR opportunity; review the original posting for detailed research fit.";
+  job.ranking = ranking(job.ranking, job.category);
   job.aboveLaTrobe = job.category === "Industry" ? "N/A (selected global HCI/XR employer)" : "Yes (ranked above La Trobe)";
   if (job.deadline === "공고 원문 확인") job.deadline = "Check original posting";
   job.status = String(job.status).includes("포털") ? "Recheck original portal" : "Active";
   job.visa = visa(job);
   job.recommendation = recommendation(job);
-  job.salary = String(job.salary).replace(/\s*\/\s*년/g, " / year");
+  job.salary = salary(job.salary);
   job.salaryBasis = salaryBasis(job.salaryBasis);
   job.salaryConfidence = confidenceMap[job.salaryConfidence] ?? job.salaryConfidence;
 }
