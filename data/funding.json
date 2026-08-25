@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T21:59:22.538Z",
+  "generatedAt": "2026-08-25T22:06:01.341Z",
   "timezone": "Australia/Sydney",
   "opportunities": [
     {
@@ -36,7 +36,7 @@
       "fieldFit": "Useful for compute-intensive HCI, human-centred AI, multimodal analytics, visualization, and XR back-end workloads.",
       "recommendation": "Apply when the project has a quantified cloud workload, public research output, benchmark, tool, or training plan.",
       "url": "https://aws.amazon.com/government-education/research-and-technical-computing/cloud-credit-for-research/",
-      "checkedAt": "2026-08-25",
+      "checkedAt": "2026-08-26",
       "confidence": "High",
       "score": 92
     },
@@ -55,7 +55,7 @@
       "fieldFit": "Conditional but potentially strong for genuinely frontier digital health, assistive XR, neurotechnology, or human–AI health systems.",
       "recommendation": "Pursue only for an ambitious health program with major clinical need, novelty, institutional sponsorship, and a highly credible team.",
       "url": "https://www.health.gov.au/news/mrff-frontiers-extended-to-support-bold-and-innovative-research",
-      "checkedAt": "2026-08-25",
+      "checkedAt": "2026-08-26",
       "confidence": "High",
       "score": 90
     },
@@ -74,7 +74,7 @@
       "fieldFit": "Potential fit for digital mental health, accessible interaction, telehealth, immersive interventions, and responsible human–AI systems.",
       "recommendation": "High priority only when the project directly addresses a listed scheme objective and minimum data can be lodged by 19 August.",
       "url": "https://www.health.gov.au/our-work/mrff/grant-opportunities-calendar",
-      "checkedAt": "2026-08-25",
+      "checkedAt": "2026-08-26",
       "confidence": "High",
       "score": 88
     },
@@ -93,7 +93,7 @@
       "fieldFit": "Potential fit for telehealth, equitable service access, clinician-facing interaction, patient experience, and digital care pathways.",
       "recommendation": "Develop a proposal only after matching the HCI or digital-health problem to an explicit grant objective and implementation setting.",
       "url": "https://www.health.gov.au/our-work/mrff/grant-opportunities-calendar",
-      "checkedAt": "2026-08-25",
+      "checkedAt": "2026-08-26",
       "confidence": "High",
       "score": 86
     },
@@ -112,7 +112,7 @@
       "fieldFit": "Potential fit for deployed digital health, human factors, accessibility, or XR research co-designed with a service or industry partner.",
       "recommendation": "Prioritise when an external partner already owns the problem, can contribute resources, and can implement the research outcome.",
       "url": "https://www.nhmrc.gov.au/funding/calendar",
-      "checkedAt": "2026-08-25",
+      "checkedAt": "2026-08-26",
       "confidence": "High",
       "score": 84
     },
@@ -131,7 +131,7 @@
       "fieldFit": "Potential fit for digital health and human-centred health technology, subject to the selected research stream.",
       "recommendation": "The 2026 round is closed; do not start a new application. Monitor the next official round.",
       "url": "https://www.nhmrc.gov.au/funding/calendar",
-      "checkedAt": "2026-08-25",
+      "checkedAt": "2026-08-26",
       "confidence": "High",
       "score": 80
     },
@@ -150,7 +150,7 @@
       "fieldFit": "Strong bilateral fit for AI, robotics, advanced technology, research exchange, workshops, and public engagement rather than core lab research alone.",
       "recommendation": "Prepare the Korean partner, public-engagement outcome, bilateral impact case, and a one-year delivery plan ahead of the next annual round.",
       "url": "https://www.dfat.gov.au/people-to-people/foundations-councils-institutes/australia-korea-foundation/grants",
-      "checkedAt": "2026-08-25",
+      "checkedAt": "2026-08-26",
       "confidence": "High",
       "score": 78
     },
@@ -169,7 +169,7 @@
       "fieldFit": "Strong fit when HCI or XR is framed within AI, advanced manufacturing, quantum, health technology, or another announced priority theme.",
       "recommendation": "Maintain a Korea–Australia concept and partner team, but do not treat this as open until the official site publishes a new round.",
       "url": "https://www.glodip.org.au/",
-      "checkedAt": "2026-08-25",
+      "checkedAt": "2026-08-26",
       "confidence": "High",
       "score": 76
     },
@@ -207,7 +207,7 @@
       "fieldFit": "Potential fit for HCI, human-centred AI, digital media, robotics, visualization, immersive systems, and interdisciplinary computing when listed in the call.",
       "recommendation": "Search IRIS and NRF notices daily and activate only after an official Korea–Australia call, topic scope, and overseas eligibility are confirmed.",
       "url": "https://www.iris.go.kr/",
-      "checkedAt": "2026-08-25",
+      "checkedAt": "2026-08-26",
       "confidence": "Medium",
       "score": 72
     }
