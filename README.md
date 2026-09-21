@@ -16,7 +16,7 @@ The repository does not contain the external research process that originally di
 ## Automation requirements
 
 - GitHub Actions must be enabled for the repository.
-- Workflow permissions must allow **Read and write permissions** so the refresh job can commit updated JSON. No long-lived personal access token or repository secret is required.
+- The refresh workflow explicitly requests only `contents: write` for its short-lived `GITHUB_TOKEN`; the repository's default workflow permission can remain read-only. If an organisation policy blocks that explicit grant, allow contents write for this workflow. No long-lived personal access token or repository secret is required.
 - GitHub Pages should publish the `main` branch from `/ (root)`. The custom domain is defined by `CNAME` as `ixrilab.com`.
 
 ## Privacy
