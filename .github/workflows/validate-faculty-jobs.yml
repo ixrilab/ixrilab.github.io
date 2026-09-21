@@ -40,7 +40,9 @@ jobs:
           node --check data-tools/refresh-tracker.mjs
           node --check data-tools/merge-faculty-jobs.mjs
           node --check data-tools/discover-faculty-jobs.mjs
+          node --check data-tools/audit-r1-portals.mjs
       - name: Test tracker refresh logic
         run: |
           node tests/refresh-tracker.mjs
           node tests/discover-faculty-jobs.mjs
+          node tests/audit-r1-portals.mjs

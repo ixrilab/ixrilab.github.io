@@ -6,16 +6,20 @@ const fundingUrl = new URL("../data/funding.json", import.meta.url);
 const sourcesUrl = new URL("../data-tools/funding-sources.json", import.meta.url);
 const facultyDiscoverySourcesUrl = new URL("../data-tools/faculty-discovery-sources.json", import.meta.url);
 const facultyDiscoveryUrl = new URL("../data/faculty-discovery.json", import.meta.url);
+const r1CoverageUrl = new URL("../data/r1-coverage.json", import.meta.url);
+const r1SearchScopeUrl = new URL("../data-tools/r1-search-scope.json", import.meta.url);
 const policyUrl = new URL("../data-tools/faculty-search-policy.json", import.meta.url);
 const indexUrl = new URL("../index.html", import.meta.url);
 const appUrl = new URL("../app.js", import.meta.url);
 
-const [jobsRaw, fundingRaw, sourcesRaw, facultyDiscoverySourcesRaw, facultyDiscoveryRaw, policyRaw, indexRaw, appRaw] = await Promise.all([
+const [jobsRaw, fundingRaw, sourcesRaw, facultyDiscoverySourcesRaw, facultyDiscoveryRaw, r1CoverageRaw, r1SearchScopeRaw, policyRaw, indexRaw, appRaw] = await Promise.all([
   readFile(jobsUrl, "utf8"),
   readFile(fundingUrl, "utf8"),
   readFile(sourcesUrl, "utf8"),
   readFile(facultyDiscoverySourcesUrl, "utf8"),
   readFile(facultyDiscoveryUrl, "utf8"),
+  readFile(r1CoverageUrl, "utf8"),
+  readFile(r1SearchScopeUrl, "utf8"),
   readFile(policyUrl, "utf8"),
   readFile(indexUrl, "utf8"),
   readFile(appUrl, "utf8"),
@@ -26,6 +30,8 @@ const fundingPayload = JSON.parse(fundingRaw);
 const sourcesPayload = JSON.parse(sourcesRaw);
 const facultyDiscoverySources = JSON.parse(facultyDiscoverySourcesRaw);
 const facultyDiscovery = JSON.parse(facultyDiscoveryRaw);
+const r1Coverage = JSON.parse(r1CoverageRaw);
+const r1SearchScope = JSON.parse(r1SearchScopeRaw);
 const policy = JSON.parse(policyRaw);
 
 assert.equal(jobsPayload.timezone, "Australia/Sydney");
@@ -39,6 +45,10 @@ assert.ok(Array.isArray(facultyDiscoverySources.sources) && facultyDiscoverySour
 assert.equal(facultyDiscovery.timezone, "Australia/Sydney");
 assert.ok(Array.isArray(facultyDiscovery.sourcesChecked), "faculty discovery audit is missing");
 assert.ok(Array.isArray(facultyDiscovery.candidates), "faculty discovery candidates are missing");
+assert.equal(r1Coverage.timezone, "Australia/Sydney");
+assert.equal(r1Coverage.source.expectedR1Count, 187);
+assert.equal(r1Coverage.summary.registered, 187);
+assert.ok(Array.isArray(r1Coverage.institutions) && r1Coverage.institutions.length === 187, "R1 coverage registry must contain all 187 institutions");
 
 const privatePattern = /[A-Z]:\\Users\\|OneDrive|@(gmail|hotmail|outlook)\.com/i;
 const hangulPattern = /[가-힣]/;
@@ -194,16 +204,51 @@ for (const [index, source] of facultyDiscoverySources.sources.entries()) {
   assert.match(source.lastManualAudit, isoDatePattern, `faculty discovery sources[${index}].lastManualAudit must be ISO date`);
 }
 
-const publicText = [jobsRaw, fundingRaw, sourcesRaw, facultyDiscoverySourcesRaw, facultyDiscoveryRaw, policyRaw, indexRaw, appRaw].join("\n");
+const allowedCoverageLevels = new Set(["Full portal scan", "Tracked postings only", "No portal adapter"]);
+const allowedAdapterStatuses = new Set(["Operational", "Failed", "Needs adapter"]);
+const allowedSearchScopes = new Set(["Core", "Direct-fit only", "Excluded"]);
+const r1Slugs = new Set();
+for (const [index, institution] of r1Coverage.institutions.entries()) {
+  for (const field of ["slug", "name", "city", "state", "carnegieUrl", "searchScope", "scopeReason", "coverageLevel", "adapterStatus"]) {
+    assert.ok(institution[field], `R1 coverage institutions[${index}].${field} is required`);
+  }
+  assert.ok(!r1Slugs.has(institution.slug), `R1 coverage slug ${institution.slug} is duplicated`);
+  r1Slugs.add(institution.slug);
+  assert.match(institution.carnegieUrl, /^https:\/\/carnegieclassifications\.acenet\.edu\/institution\//, `R1 coverage institutions[${index}] must use an official Carnegie URL`);
+  assert.ok(allowedCoverageLevels.has(institution.coverageLevel), `R1 coverage institutions[${index}].coverageLevel is unsupported`);
+  assert.ok(allowedAdapterStatuses.has(institution.adapterStatus), `R1 coverage institutions[${index}].adapterStatus is unsupported`);
+  assert.ok(allowedSearchScopes.has(institution.searchScope), `R1 coverage institutions[${index}].searchScope is unsupported`);
+  assert.ok(Array.isArray(institution.trackedJobs), `R1 coverage institutions[${index}].trackedJobs is required`);
+  if (institution.coverageLevel === "Full portal scan") {
+    assert.equal(institution.adapterStatus, "Operational", `R1 coverage institutions[${index}] full scan must be operational`);
+    assert.ok(institution.postingsInspected >= 0, `R1 coverage institutions[${index}] full scan needs evidence`);
+  }
+}
+assert.equal(r1Coverage.summary.fullPortalScan, r1Coverage.institutions.filter((item) => item.coverageLevel === "Full portal scan").length);
+assert.equal(r1Coverage.summary.trackedPostingsOnly, r1Coverage.institutions.filter((item) => item.coverageLevel === "Tracked postings only").length);
+assert.equal(r1Coverage.summary.noPortalAdapter, r1Coverage.institutions.filter((item) => item.coverageLevel === "No portal adapter").length);
+assert.equal(r1Coverage.summary.core, r1Coverage.institutions.filter((item) => item.searchScope === "Core").length);
+assert.equal(r1Coverage.summary.directFitOnly, r1Coverage.institutions.filter((item) => item.searchScope === "Direct-fit only").length);
+assert.equal(r1Coverage.summary.excluded, r1Coverage.institutions.filter((item) => item.searchScope === "Excluded").length);
+assert.equal(new Set([...r1SearchScope.core, ...r1SearchScope.directFitOnly]).size, r1SearchScope.core.length + r1SearchScope.directFitOnly.length, "R1 scope lists must not overlap");
+for (const slug of [...r1SearchScope.core, ...r1SearchScope.directFitOnly]) assert.ok(r1Slugs.has(slug), `R1 scope slug ${slug} is not in the Carnegie registry`);
+for (const source of facultyDiscoverySources.sources) {
+  assert.ok(r1Slugs.has(source.carnegieSlug), `Faculty discovery source ${source.id} must identify its Carnegie institution`);
+  assert.notEqual(r1Coverage.institutions.find((item) => item.slug === source.carnegieSlug)?.searchScope, "Excluded", `Faculty discovery source ${source.id} is outside the active search scope`);
+}
+
+const publicText = [jobsRaw, fundingRaw, sourcesRaw, facultyDiscoverySourcesRaw, facultyDiscoveryRaw, r1CoverageRaw, r1SearchScopeRaw, policyRaw, indexRaw, appRaw].join("\n");
 assert.doesNotMatch(publicText, privatePattern, "public files contain a prohibited personal or local identifier");
 assert.doesNotMatch(publicText, hangulPattern, "public UI and datasets must be English-only");
 assert.match(indexRaw, /role="tablist"/, "page must expose an accessible tab list");
 assert.match(indexRaw, /id="jobs-panel"/, "jobs panel is missing");
 assert.match(indexRaw, /id="funding-panel"/, "funding panel is missing");
+assert.match(indexRaw, /id="coverage-panel"/, "coverage panel is missing");
 assert.match(appRaw, /data\/funding\.json/, "funding data is not wired into the application");
 assert.match(appRaw, /job\.status !== "Closed"/, "the public summary must distinguish active from closed jobs");
 assert.match(appRaw, /collaborationFaculty/, "faculty collaboration evidence is not wired into the application");
 assert.match(appRaw, /postingAgeStatus/, "six-month posting-age warnings are not wired into the application");
+assert.match(appRaw, /data\/r1-coverage\.json/, "R1 coverage data is not wired into the application");
 assert.match(appRaw, /filter\(\(item\) => !hasPassedDeadline\(item\)\)/, "funding must be filtered against the current date in the browser");
 
 console.log(JSON.stringify({
@@ -215,6 +260,8 @@ console.log(JSON.stringify({
   fundingSources: sourcesPayload.sources.length,
   facultyDiscoverySources: facultyDiscoverySources.sources.length,
   facultyCandidates: facultyDiscovery.candidates.length,
+  r1Institutions: r1Coverage.institutions.length,
+  fullPortalScans: r1Coverage.summary.fullPortalScan,
   checkedAt: [...new Set([
     ...jobsPayload.jobs.map((job) => job.lastVerified),
     ...fundingPayload.opportunities.map((item) => item.checkedAt),

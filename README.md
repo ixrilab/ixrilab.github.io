@@ -7,10 +7,11 @@ This repository publishes an independent, static GitHub Pages application at the
 1. `data-tools/faculty-search-policy.json` defines the geographic limits, eligible appointment types, direct/strong/broad research-fit gates, pure-robotics exclusions, evidence requirements, and score weights.
 2. Faculty searches are researched against official university sources. Each public record includes exact appointment details, review and final dates, status, a profile-specific fit note, named collaboration faculty, target-venue evidence, and verification history.
 3. `.github/workflows/refresh-tracker.yml` runs daily and can also be started manually. It first scans supported official faculty-career indexes for newly posted candidates, then verifies every tracked URL, recalculates evidence scores and posting-age warnings, and changes expired or definitively closed faculty searches to `Closed` without deleting their history.
-4. Funding opportunities are checked against `data-tools/funding-sources.json` and published to `data/funding.json` with explicit eligibility routes and confidence.
-5. `tests/validate-data.mjs` enforces the faculty-only scope, country/institution rules, R1 flag for US positions, evidence links, score ordering, history retention, privacy markers, English-only output, and the Faculty/Funding tab wiring.
-6. Only validated data is committed and pushed with the workflow's short-lived `GITHUB_TOKEN`.
-7. GitHub Pages publishes the updated JSON without a separate frontend build.
+4. `data-tools/audit-r1-portals.mjs` synchronises the official 2025 Carnegie R1 registry and publishes `data/r1-coverage.json`. The separate `r1-search-scope.json` keeps all 187 institutions auditable while limiting active discovery to Core and explicitly direct-fit schools. Full scans, tracked postings, failures, and missing adapters remain distinct coverage states.
+5. Funding opportunities are checked against `data-tools/funding-sources.json` and published to `data/funding.json` with explicit eligibility routes and confidence.
+6. `tests/validate-data.mjs` enforces the faculty-only scope, country/institution rules, all 187 Carnegie R1 records, coverage-state integrity, evidence links, score ordering, history retention, privacy markers, English-only output, and the Faculty/Funding/Coverage tab wiring.
+7. Only validated data is committed and pushed with the workflow's short-lived `GITHUB_TOKEN`.
+8. GitHub Pages publishes the updated JSON without a separate frontend build.
 
 The scheduled workflow can discover candidates from the official portals listed in `data-tools/faculty-discovery-sources.json`; `data/faculty-discovery.json` records what was inspected and flags unreviewed candidates. It does not silently publish candidates because appointment type, research fit, collaborator evidence, and current application status still require a reviewed research pass. Institutions without a supported official-portal adapter must be audited separately rather than assumed covered.
 

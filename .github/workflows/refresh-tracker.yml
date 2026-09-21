@@ -23,6 +23,8 @@ jobs:
           node-version: "22"
       - name: Discover candidates from official faculty portals
         run: node data-tools/discover-faculty-jobs.mjs
+      - name: Measure Carnegie R1 portal coverage
+        run: node data-tools/audit-r1-portals.mjs
       - name: Refresh published opportunities
         run: node data-tools/refresh-tracker.mjs
       - name: Validate refreshed data
@@ -33,7 +35,7 @@ jobs:
         run: |
           git config user.name "IXRI Lab Tracker Bot"
           git config user.email "ixrilab-tracker-bot@users.noreply.github.com"
-          git add data/jobs.json data/funding.json data/faculty-discovery.json
+          git add data/jobs.json data/funding.json data/faculty-discovery.json data/r1-coverage.json
           if git diff --cached --quiet; then
             echo "No tracker data changed."
             exit 0

@@ -1,9 +1,10 @@
 const JOBS_DATA_URL = "./data/jobs.json";
 const FUNDING_DATA_URL = "./data/funding.json";
+const COVERAGE_DATA_URL = "./data/r1-coverage.json";
 const TRACKER_TIMEZONE = "Australia/Sydney";
 
 const state = {
-  activeTab: window.location.hash === "#funding" ? "funding" : "jobs",
+  activeTab: ["funding", "coverage"].includes(window.location.hash.slice(1)) ? window.location.hash.slice(1) : "jobs",
   jobs: [],
   jobPayload: null,
   jobQuery: "",
@@ -17,12 +18,20 @@ const state = {
   fundingCategory: "all",
   fundingStatus: "all",
   fundingSort: "priority",
+  coverage: [],
+  coveragePayload: null,
+  coverageQuery: "",
+  coverageLevel: "all",
+  coverageScope: "Core",
+  adapterStatus: "all",
+  coverageState: "all",
 };
 
 const elements = {
   tabs: [...document.querySelectorAll("[data-tab]")],
   jobsPanel: document.querySelector("#jobs-panel"),
   fundingPanel: document.querySelector("#funding-panel"),
+  coveragePanel: document.querySelector("#coverage-panel"),
   heroEyebrow: document.querySelector("#hero-eyebrow"),
   pageTitle: document.querySelector("#page-title"),
   heroCopy: document.querySelector("#hero-copy"),
@@ -50,6 +59,15 @@ const elements = {
   fundingStatus: document.querySelector("#funding-status"),
   fundingSort: document.querySelector("#funding-sort"),
   fundingResultCount: document.querySelector("#funding-result-count"),
+  coverageList: document.querySelector("#coverage-list"),
+  coverageEmpty: document.querySelector("#coverage-empty-state"),
+  coverageError: document.querySelector("#coverage-error-state"),
+  coverageSearch: document.querySelector("#coverage-search"),
+  coverageLevel: document.querySelector("#coverage-level"),
+  coverageScope: document.querySelector("#coverage-scope"),
+  adapterStatus: document.querySelector("#adapter-status"),
+  coverageState: document.querySelector("#coverage-state"),
+  coverageResultCount: document.querySelector("#coverage-result-count"),
 };
 
 function node(tag, className, text) {
@@ -122,7 +140,8 @@ function filteredJobs() {
     const statusMatches = state.jobStatus === "all"
       || (state.jobStatus === "active" && job.status !== "Closed")
       || job.status === state.jobStatus;
-    return (!query || searchable.includes(query)) &&
+    return isVisibleJob(job) &&
+      (!query || searchable.includes(query)) &&
       (state.jobFit === "all" || job.fitLevel === state.jobFit) &&
       (state.jobCountry === "all" || job.country === state.jobCountry) &&
       statusMatches;
@@ -133,6 +152,18 @@ function filteredJobs() {
     if (state.jobSort === "institution") return a.university.localeCompare(b.university) || b.priorityScore - a.priorityScore;
     return b.priorityScore - a.priorityScore;
   });
+}
+
+function searchScopeForJob(job) {
+  for (const institution of state.coverage) {
+    const tracked = (institution.trackedJobs || []).find((item) => item.id === job.id);
+    if (tracked) return tracked.searchScope;
+  }
+  return null;
+}
+
+function isVisibleJob(job) {
+  return job.country !== "United States" || !state.coverage.length || searchScopeForJob(job) !== "Excluded";
 }
 
 function renderJobCard(job, index) {
@@ -148,6 +179,7 @@ function renderJobCard(job, index) {
   const chips = node("div", "chip-row");
   chips.append(node("span", `chip fit-${job.fitLevel.toLowerCase()}`, `${job.fitLevel} fit`));
   chips.append(node("span", `chip status-chip status-${job.status.toLowerCase()}`, job.status));
+  if (searchScopeForJob(job) === "Direct-fit only") chips.append(node("span", "chip scope-warning", "Direct-fit-only school"));
   if (job.changeType && job.changeType !== "Unchanged") chips.append(node("span", "chip change-chip", job.changeType));
   if (job.postingAgeStatus === "Older than 6 months — reconfirm") chips.append(node("span", "chip age-warning", "6+ months — reconfirm"));
   if (job.postingAgeStatus === "Date unavailable") chips.append(node("span", "chip age-unknown", "Posted date unknown"));
@@ -198,8 +230,9 @@ function renderJobCard(job, index) {
 
 function renderJobs() {
   const jobs = filteredJobs();
+  const targetCount = state.jobs.filter(isVisibleJob).length;
   elements.jobList.replaceChildren(...jobs.map(renderJobCard));
-  elements.jobResultCount.textContent = `${jobs.length} of ${state.jobs.length} tracked searches`;
+  elements.jobResultCount.textContent = `${jobs.length} of ${targetCount} target searches · ${state.jobs.length - targetCount} excluded records hidden`;
   elements.jobEmpty.hidden = jobs.length !== 0;
 }
 
@@ -281,7 +314,93 @@ function renderFunding() {
   elements.fundingEmpty.hidden = opportunities.length !== 0;
 }
 
+function filteredCoverage() {
+  const query = state.coverageQuery.toLowerCase();
+  return state.coverage.filter((institution) => {
+    const searchable = [
+      institution.name,
+      institution.city,
+      institution.state,
+      institution.adapterType,
+      institution.coverageLevel,
+      institution.searchScope,
+      institution.scopeReason,
+      ...(institution.trackedJobs || []).map((job) => job.title),
+    ].filter(Boolean).join(" ").toLowerCase();
+    return (!query || searchable.includes(query))
+      && (state.coverageLevel === "all" || institution.coverageLevel === state.coverageLevel)
+      && (state.coverageScope === "all" || institution.searchScope === state.coverageScope)
+      && (state.adapterStatus === "all" || institution.adapterStatus === state.adapterStatus)
+      && (state.coverageState === "all" || institution.state === state.coverageState);
+  });
+}
+
+function renderCoverageRow(institution) {
+  const row = node("tr", `coverage-row coverage-${institution.adapterStatus.toLowerCase().replace(/\s+/g, "-")}`);
+  const school = node("td", "coverage-school");
+  const schoolLink = node("a", "", institution.name);
+  schoolLink.href = institution.carnegieUrl;
+  schoolLink.target = "_blank";
+  schoolLink.rel = "noopener noreferrer";
+  school.append(schoolLink, node("span", "", `${institution.city}, ${institution.state}`));
+
+  const scope = node("td", "");
+  scope.append(node("span", `scope-badge scope-${institution.searchScope.toLowerCase().replace(/\s+/g, "-")}`, institution.searchScope));
+  scope.append(node("small", "", institution.scopeReason));
+
+  const coverage = node("td", "");
+  coverage.append(node("span", `coverage-badge coverage-badge-${institution.coverageLevel.toLowerCase().replace(/\s+/g, "-")}`, institution.coverageLevel));
+  if (institution.trackedJobs?.length) coverage.append(node("small", "", `${institution.trackedJobs.length} tracked official posting${institution.trackedJobs.length === 1 ? "" : "s"}`));
+
+  const adapter = node("td", "");
+  adapter.append(node("strong", "", institution.adapterStatus));
+  adapter.append(node("small", "", institution.adapterType || "Not configured"));
+
+  const checked = node("td", "", institution.lastChecked || "Not yet scanned");
+  const evidence = node("td", "");
+  if (institution.postingsInspected !== null) {
+    evidence.append(node("strong", "", `${institution.postingsInspected} postings inspected`));
+    evidence.append(node("small", "", `${institution.candidatesFound || 0} research candidates found`));
+  } else if (institution.trackedJobs?.length) {
+    evidence.append(node("span", "", "Individual official URLs verified; full index not scanned"));
+  } else {
+    evidence.append(node("span", "", "Portal identification and adapter required"));
+  }
+  if (institution.portalUrl) {
+    const portalLink = node("a", "coverage-link", "Official portal ↗");
+    portalLink.href = institution.portalUrl;
+    portalLink.target = "_blank";
+    portalLink.rel = "noopener noreferrer";
+    evidence.append(portalLink);
+  }
+  row.append(school, scope, coverage, adapter, checked, evidence);
+  return row;
+}
+
+function renderCoverage() {
+  const institutions = filteredCoverage();
+  elements.coverageList.replaceChildren(...institutions.map(renderCoverageRow));
+  elements.coverageResultCount.textContent = `${institutions.length} of ${state.coverage.length} R1 institutions`;
+  elements.coverageEmpty.hidden = institutions.length !== 0;
+}
+
 function updateHero() {
+  if (state.activeTab === "coverage") {
+    const summary = state.coveragePayload?.summary;
+    elements.heroEyebrow.textContent = "2025 CARNEGIE R1 · OFFICIAL PORTALS";
+    elements.pageTitle.innerHTML = "Search coverage<br><em>you can audit.</em>";
+    elements.heroCopy.textContent = "All R1 institutions remain auditable, but active search is limited to Core and explicitly direct-fit schools. Coverage and scope are reported separately.";
+    elements.updatedAt.textContent = state.coveragePayload ? formatGeneratedAt(state.coveragePayload) : "Loading the latest coverage audit…";
+    elements.primaryCount.textContent = summary?.registered ?? "—";
+    elements.secondaryCount.textContent = summary ? summary.core + summary.directFitOnly : "—";
+    elements.urgentCount.textContent = summary?.excluded ?? "—";
+    elements.primaryLabel.textContent = "R1 institutions registered";
+    elements.secondaryLabel.textContent = "schools in active scope";
+    elements.urgentLabel.textContent = "R1s excluded from search";
+    document.title = "R1 Coverage · HCI · XR Career Radar";
+    return;
+  }
+
   if (state.activeTab === "funding") {
     const actionable = state.funding.filter((item) => ["Open", "Rolling"].includes(item.status)).length;
     const bilateral = state.funding.filter((item) => item.regionCategory === "Korea-Australia").length;
@@ -303,7 +422,7 @@ function updateHero() {
     return;
   }
 
-  const active = state.jobs.filter((job) => job.status !== "Closed");
+  const active = state.jobs.filter((job) => job.status !== "Closed" && isVisibleJob(job));
   const direct = active.filter((job) => job.fitLevel === "Direct").length;
   const ageChecks = active.filter((job) => job.postingAgeStatus !== "Under 6 months").length;
   elements.heroEyebrow.textContent = "US R1 · KOREA · SINGAPORE · SELECT UK";
@@ -320,10 +439,11 @@ function updateHero() {
 }
 
 function activateTab(tab, updateHash = true) {
-  const nextTab = tab === "funding" ? "funding" : "jobs";
+  const nextTab = ["funding", "coverage"].includes(tab) ? tab : "jobs";
   state.activeTab = nextTab;
   elements.jobsPanel.hidden = nextTab !== "jobs";
   elements.fundingPanel.hidden = nextTab !== "funding";
+  elements.coveragePanel.hidden = nextTab !== "coverage";
   for (const tabElement of elements.tabs) {
     const selected = tabElement.dataset.tab === nextTab;
     tabElement.classList.toggle("is-active", selected);
@@ -343,6 +463,15 @@ function populateCountries() {
   }
 }
 
+function populateCoverageStates() {
+  const states = [...new Set(state.coverage.map((institution) => institution.state).filter(Boolean))].sort();
+  for (const stateCode of states) {
+    const option = node("option", "", stateCode);
+    option.value = stateCode;
+    elements.coverageState.append(option);
+  }
+}
+
 function bindControls() {
   for (const tab of elements.tabs) {
     tab.addEventListener("click", (event) => {
@@ -352,7 +481,10 @@ function bindControls() {
     tab.addEventListener("keydown", (event) => {
       if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
       event.preventDefault();
-      activateTab(state.activeTab === "jobs" ? "funding" : "jobs");
+      const currentIndex = elements.tabs.findIndex((item) => item.dataset.tab === state.activeTab);
+      const direction = event.key === "ArrowRight" ? 1 : -1;
+      const nextIndex = (currentIndex + direction + elements.tabs.length) % elements.tabs.length;
+      activateTab(elements.tabs[nextIndex].dataset.tab);
       elements.tabs.find((item) => item.dataset.tab === state.activeTab)?.focus();
     });
   }
@@ -367,6 +499,11 @@ function bindControls() {
   elements.fundingCategory.addEventListener("change", (event) => { state.fundingCategory = event.target.value; renderFunding(); });
   elements.fundingStatus.addEventListener("change", (event) => { state.fundingStatus = event.target.value; renderFunding(); });
   elements.fundingSort.addEventListener("change", (event) => { state.fundingSort = event.target.value; renderFunding(); });
+  elements.coverageSearch.addEventListener("input", (event) => { state.coverageQuery = event.target.value.trim(); renderCoverage(); });
+  elements.coverageLevel.addEventListener("change", (event) => { state.coverageLevel = event.target.value; renderCoverage(); });
+  elements.coverageScope.addEventListener("change", (event) => { state.coverageScope = event.target.value; renderCoverage(); });
+  elements.adapterStatus.addEventListener("change", (event) => { state.adapterStatus = event.target.value; renderCoverage(); });
+  elements.coverageState.addEventListener("change", (event) => { state.coverageState = event.target.value; renderCoverage(); });
 }
 
 async function loadJobs() {
@@ -400,10 +537,30 @@ async function loadFunding() {
   }
 }
 
+async function loadCoverage() {
+  try {
+    const response = await fetch(COVERAGE_DATA_URL, { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const payload = await response.json();
+    if (!Array.isArray(payload.institutions) || !payload.summary) throw new Error("Invalid dataset");
+    state.coverage = payload.institutions;
+    state.coveragePayload = payload;
+    populateCoverageStates();
+    for (const institution of state.coverage) {
+      for (const tracked of institution.trackedJobs || []) tracked.searchScope = institution.searchScope;
+    }
+    renderJobs();
+    renderCoverage();
+  } catch (error) {
+    console.error("Unable to load R1 coverage data", error);
+    elements.coverageError.hidden = false;
+  }
+}
+
 async function init() {
   bindControls();
   activateTab(state.activeTab, false);
-  await Promise.allSettled([loadJobs(), loadFunding()]);
+  await Promise.allSettled([loadJobs(), loadFunding(), loadCoverage()]);
   updateHero();
 }
 

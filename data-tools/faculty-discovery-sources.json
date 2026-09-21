@@ -5,6 +5,7 @@
     {
       "id": "ut-austin-faculty-careers",
       "institution": "The University of Texas at Austin",
+      "carnegieSlug": "the-university-of-texas-at-austin",
       "country": "United States",
       "r1Verified": true,
       "type": "algolia-angular",
@@ -13,6 +14,28 @@
       "indexName": "POSITIONS_PROD_PYTHON",
       "lastManualAudit": "2026-09-21",
       "auditNote": "All current faculty postings were searched through the university's own index, including descriptions rather than titles alone."
+    },
+    {
+      "id": "uc-berkeley-ap-recruit",
+      "institution": "University of California, Berkeley",
+      "carnegieSlug": "university-of-california-berkeley",
+      "country": "United States",
+      "r1Verified": true,
+      "type": "uc-recruit-html",
+      "url": "https://aprecruit.berkeley.edu/apply",
+      "lastManualAudit": "2026-09-21",
+      "auditNote": "The complete public UC Recruit listing is inspected, and eligible Assistant/Open-rank faculty descriptions are checked for research-fit signals."
+    },
+    {
+      "id": "uc-irvine-ap-recruit",
+      "institution": "University of California, Irvine",
+      "carnegieSlug": "university-of-california-irvine",
+      "country": "United States",
+      "r1Verified": true,
+      "type": "uc-recruit-html",
+      "url": "https://recruit.ap.uci.edu/apply",
+      "lastManualAudit": "2026-09-21",
+      "auditNote": "The complete public UC Recruit listing is inspected, and eligible Assistant/Open-rank faculty descriptions are checked for research-fit signals."
     }
   ]
 }

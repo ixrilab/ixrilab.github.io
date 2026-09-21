@@ -21,6 +21,7 @@
     <nav class="section-tabs" aria-label="Tracker sections" role="tablist">
       <a class="section-tab is-active" href="#jobs" id="tab-jobs" role="tab" aria-selected="true" aria-controls="jobs-panel" data-tab="jobs">Faculty</a>
       <a class="section-tab" href="#funding" id="tab-funding" role="tab" aria-selected="false" aria-controls="funding-panel" data-tab="funding">Funding</a>
+      <a class="section-tab" href="#coverage" id="tab-coverage" role="tab" aria-selected="false" aria-controls="coverage-panel" data-tab="coverage">Coverage</a>
     </nav>
     <span class="update-pill"><i aria-hidden="true"></i> Daily data refresh</span>
   </header>
@@ -146,6 +147,77 @@
       <div id="funding-list" class="job-list funding-list" aria-live="polite"></div>
       <div id="funding-empty-state" class="empty-state" hidden>No funding opportunities match these filters.</div>
       <div id="funding-error-state" class="error-state" hidden>Funding data could not be loaded. Please try again later.</div>
+    </section>
+
+    <section class="tracker tab-panel" id="coverage-panel" role="tabpanel" aria-labelledby="tab-coverage" hidden>
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">OFFICIAL-PORTAL COVERAGE</p>
+          <h2>R1 search health</h2>
+        </div>
+        <p id="coverage-result-count" aria-live="polite"></p>
+      </div>
+
+      <div class="scope-note coverage-note">
+        <strong>Coverage standard</strong>
+        <p><b>Core</b> schools are searched routinely. <b>Direct-fit only</b> schools require a posting explicitly naming HCI, XR, spatial computing, or human-AI interaction. <b>Excluded</b> schools remain visible for auditing but are not searched or shown in the default job results. Coverage level is a separate measure of technical completeness.</p>
+      </div>
+
+      <form class="filters coverage-filters" id="coverage-filters" role="search">
+        <label class="search-field">
+          <span>Search</span>
+          <input id="coverage-search" type="search" placeholder="Institution, state, or platform">
+        </label>
+        <label>
+          <span>Search scope</span>
+          <select id="coverage-scope">
+            <option value="Core">Core schools</option>
+            <option value="Direct-fit only">Direct-fit only</option>
+            <option value="Excluded">Excluded</option>
+            <option value="all">All 187 R1 institutions</option>
+          </select>
+        </label>
+        <label>
+          <span>Coverage</span>
+          <select id="coverage-level">
+            <option value="all">All coverage levels</option>
+            <option value="Full portal scan">Full portal scan</option>
+            <option value="Tracked postings only">Tracked postings only</option>
+            <option value="No portal adapter">No portal adapter</option>
+          </select>
+        </label>
+        <label>
+          <span>Adapter status</span>
+          <select id="adapter-status">
+            <option value="all">All adapter states</option>
+            <option value="Operational">Operational</option>
+            <option value="Failed">Failed</option>
+            <option value="Needs adapter">Needs adapter</option>
+          </select>
+        </label>
+        <label>
+          <span>State</span>
+          <select id="coverage-state"><option value="all">All states</option></select>
+        </label>
+      </form>
+
+      <div class="coverage-table-wrap">
+        <table class="coverage-table">
+          <thead>
+            <tr>
+              <th>Institution</th>
+              <th>Search scope</th>
+              <th>Coverage</th>
+              <th>Adapter</th>
+              <th>Last full scan</th>
+              <th>Scan evidence</th>
+            </tr>
+          </thead>
+          <tbody id="coverage-list"></tbody>
+        </table>
+      </div>
+      <div id="coverage-empty-state" class="empty-state" hidden>No R1 institutions match these filters.</div>
+      <div id="coverage-error-state" class="error-state" hidden>R1 coverage data could not be loaded. Please try again later.</div>
     </section>
   </main>
 
