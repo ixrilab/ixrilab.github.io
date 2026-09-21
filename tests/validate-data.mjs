@@ -4,14 +4,18 @@ import { readFile } from "node:fs/promises";
 const jobsUrl = new URL("../data/jobs.json", import.meta.url);
 const fundingUrl = new URL("../data/funding.json", import.meta.url);
 const sourcesUrl = new URL("../data-tools/funding-sources.json", import.meta.url);
+const facultyDiscoverySourcesUrl = new URL("../data-tools/faculty-discovery-sources.json", import.meta.url);
+const facultyDiscoveryUrl = new URL("../data/faculty-discovery.json", import.meta.url);
 const policyUrl = new URL("../data-tools/faculty-search-policy.json", import.meta.url);
 const indexUrl = new URL("../index.html", import.meta.url);
 const appUrl = new URL("../app.js", import.meta.url);
 
-const [jobsRaw, fundingRaw, sourcesRaw, policyRaw, indexRaw, appRaw] = await Promise.all([
+const [jobsRaw, fundingRaw, sourcesRaw, facultyDiscoverySourcesRaw, facultyDiscoveryRaw, policyRaw, indexRaw, appRaw] = await Promise.all([
   readFile(jobsUrl, "utf8"),
   readFile(fundingUrl, "utf8"),
   readFile(sourcesUrl, "utf8"),
+  readFile(facultyDiscoverySourcesUrl, "utf8"),
+  readFile(facultyDiscoveryUrl, "utf8"),
   readFile(policyUrl, "utf8"),
   readFile(indexUrl, "utf8"),
   readFile(appUrl, "utf8"),
@@ -20,6 +24,8 @@ const [jobsRaw, fundingRaw, sourcesRaw, policyRaw, indexRaw, appRaw] = await Pro
 const jobsPayload = JSON.parse(jobsRaw);
 const fundingPayload = JSON.parse(fundingRaw);
 const sourcesPayload = JSON.parse(sourcesRaw);
+const facultyDiscoverySources = JSON.parse(facultyDiscoverySourcesRaw);
+const facultyDiscovery = JSON.parse(facultyDiscoveryRaw);
 const policy = JSON.parse(policyRaw);
 
 assert.equal(jobsPayload.timezone, "Australia/Sydney");
@@ -28,6 +34,11 @@ assert.equal(fundingPayload.timezone, "Australia/Sydney");
 assert.ok(Array.isArray(fundingPayload.opportunities) && fundingPayload.opportunities.length > 0, "funding opportunities must be a non-empty array");
 assert.equal(sourcesPayload.timezone, "Australia/Sydney");
 assert.ok(Array.isArray(sourcesPayload.sources) && sourcesPayload.sources.length >= 15, "funding source registry is incomplete");
+assert.equal(facultyDiscoverySources.timezone, "Australia/Sydney");
+assert.ok(Array.isArray(facultyDiscoverySources.sources) && facultyDiscoverySources.sources.length > 0, "faculty discovery source registry is empty");
+assert.equal(facultyDiscovery.timezone, "Australia/Sydney");
+assert.ok(Array.isArray(facultyDiscovery.sourcesChecked), "faculty discovery audit is missing");
+assert.ok(Array.isArray(facultyDiscovery.candidates), "faculty discovery candidates are missing");
 
 const privatePattern = /[A-Z]:\\Users\\|OneDrive|@(gmail|hotmail|outlook)\.com/i;
 const hangulPattern = /[가-힣]/;
@@ -47,6 +58,7 @@ const nonUsInstitutions = new Map(
 );
 
 const jobIds = new Set();
+const jobOfficialUrls = new Set();
 for (const [index, job] of jobsPayload.jobs.entries()) {
   for (const field of [
     "id",
@@ -70,6 +82,8 @@ for (const [index, job] of jobsPayload.jobs.entries()) {
   }
   assert.ok(!jobIds.has(job.id), `jobs[${index}].id must be unique`);
   jobIds.add(job.id);
+  assert.ok(!jobOfficialUrls.has(job.officialUrl), `jobs[${index}].officialUrl must be unique`);
+  jobOfficialUrls.add(job.officialUrl);
   assert.ok(allowedCountries.has(job.country), `jobs[${index}].country is outside policy`);
   assert.ok(allowedJobStatuses.has(job.status), `jobs[${index}].status is unsupported`);
   assert.ok(allowedFitLevels.has(job.fitLevel), `jobs[${index}].fitLevel is unsupported`);
@@ -169,7 +183,18 @@ for (const [index, source] of sourcesPayload.sources.entries()) {
   assert.ok(Array.isArray(source.queryHints) && source.queryHints.length > 0, `sources[${index}].queryHints is required`);
 }
 
-const publicText = [jobsRaw, fundingRaw, sourcesRaw, policyRaw, indexRaw, appRaw].join("\n");
+const facultySourceIds = new Set();
+for (const [index, source] of facultyDiscoverySources.sources.entries()) {
+  for (const field of ["id", "institution", "country", "type", "url", "lastManualAudit"]) {
+    assert.ok(source[field], `faculty discovery sources[${index}].${field} is required`);
+  }
+  assert.ok(!facultySourceIds.has(source.id), `faculty discovery source id ${source.id} is duplicated`);
+  facultySourceIds.add(source.id);
+  assert.match(source.url, /^https:\/\//, `faculty discovery sources[${index}].url must use HTTPS`);
+  assert.match(source.lastManualAudit, isoDatePattern, `faculty discovery sources[${index}].lastManualAudit must be ISO date`);
+}
+
+const publicText = [jobsRaw, fundingRaw, sourcesRaw, facultyDiscoverySourcesRaw, facultyDiscoveryRaw, policyRaw, indexRaw, appRaw].join("\n");
 assert.doesNotMatch(publicText, privatePattern, "public files contain a prohibited personal or local identifier");
 assert.doesNotMatch(publicText, hangulPattern, "public UI and datasets must be English-only");
 assert.match(indexRaw, /role="tablist"/, "page must expose an accessible tab list");
@@ -188,6 +213,8 @@ console.log(JSON.stringify({
   funding: fundingPayload.opportunities.length,
   actionableFunding: fundingPayload.opportunities.filter((item) => ["Open", "Rolling"].includes(item.status)).length,
   fundingSources: sourcesPayload.sources.length,
+  facultyDiscoverySources: facultyDiscoverySources.sources.length,
+  facultyCandidates: facultyDiscovery.candidates.length,
   checkedAt: [...new Set([
     ...jobsPayload.jobs.map((job) => job.lastVerified),
     ...fundingPayload.opportunities.map((item) => item.checkedAt),

@@ -1,0 +1,63 @@
+{
+  "generatedAt": "2026-09-21T04:17:16.617Z",
+  "timezone": "Australia/Sydney",
+  "sourcesChecked": [
+    {
+      "id": "ut-austin-faculty-careers",
+      "institution": "The University of Texas at Austin",
+      "checkedAt": "2026-09-21",
+      "status": "Verified",
+      "postingsInspected": 133,
+      "candidatesFound": 3
+    }
+  ],
+  "candidates": [
+    {
+      "sourceId": "ut-austin-faculty-careers",
+      "sourceJobId": "188439",
+      "institution": "The University of Texas at Austin",
+      "title": "Assistant Professor, Tenure-Track Faculty Position in Organizational Communication & Technology",
+      "unit": "Department of Communication Studies",
+      "officialUrl": "https://faculty.utexas.edu/career/188439",
+      "deadlineLabel": "Open until filled",
+      "matchedSignals": [
+        "human-AI interaction",
+        "technology-rich human collaboration"
+      ],
+      "eligibleAppointment": true,
+      "reviewStatus": "Tracked",
+      "knownJobId": "ut-austin-communication-org-tech-188439"
+    },
+    {
+      "sourceId": "ut-austin-faculty-careers",
+      "sourceJobId": "191973",
+      "institution": "The University of Texas at Austin",
+      "title": "Open-Rank Tenured/Tenure-Track Faculty Positions",
+      "unit": "Department Information",
+      "officialUrl": "https://faculty.utexas.edu/career/191973",
+      "deadlineLabel": "Open until filled",
+      "matchedSignals": [
+        "HCI",
+        "human-AI interaction"
+      ],
+      "eligibleAppointment": true,
+      "reviewStatus": "Tracked",
+      "knownJobId": "ut-austin-ischool-open-rank-191973"
+    },
+    {
+      "sourceId": "ut-austin-faculty-careers",
+      "sourceJobId": "189345",
+      "institution": "The University of Texas at Austin",
+      "title": "Tenure-Track Advertising Faculty Position in Strategic Communication Media & Data Analytics for Consumer Insights",
+      "unit": "Stan Richards School of Advertising & Public Relations",
+      "officialUrl": "https://faculty.utexas.edu/career/189345",
+      "deadlineLabel": "Open until filled",
+      "matchedSignals": [
+        "HCI"
+      ],
+      "eligibleAppointment": true,
+      "reviewStatus": "Tracked",
+      "knownJobId": "ut-austin-advertising-hci-ai-189345"
+    }
+  ]
+}

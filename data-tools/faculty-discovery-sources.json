@@ -1,0 +1,18 @@
+{
+  "timezone": "Australia/Sydney",
+  "purpose": "Official faculty-career hubs scanned for newly posted HCI, XR, spatial-computing, and human-AI faculty searches before manual fit review.",
+  "sources": [
+    {
+      "id": "ut-austin-faculty-careers",
+      "institution": "The University of Texas at Austin",
+      "country": "United States",
+      "r1Verified": true,
+      "type": "algolia-angular",
+      "url": "https://faculty.utexas.edu/career",
+      "applicationId": "D6BX9MVNKI",
+      "indexName": "POSITIONS_PROD_PYTHON",
+      "lastManualAudit": "2026-09-21",
+      "auditNote": "All current faculty postings were searched through the university's own index, including descriptions rather than titles alone."
+    }
+  ]
+}

@@ -39,5 +39,8 @@ jobs:
         run: |
           node --check data-tools/refresh-tracker.mjs
           node --check data-tools/merge-faculty-jobs.mjs
+          node --check data-tools/discover-faculty-jobs.mjs
       - name: Test tracker refresh logic
-        run: node tests/refresh-tracker.mjs
+        run: |
+          node tests/refresh-tracker.mjs
+          node tests/discover-faculty-jobs.mjs

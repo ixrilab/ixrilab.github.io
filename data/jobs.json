@@ -1,10 +1,84 @@
 {
-  "generatedAt": "2026-09-21T03:53:32.582Z",
+  "generatedAt": "2026-09-21T04:17:22.020Z",
   "timezone": "Australia/Sydney",
   "policyVersion": "2026-09-21",
   "profileBasis": "Dooyoung Kim's published research in space-adaptive XR, XRMemory, immersive human factors, interactive 3D intelligence, and spatially grounded human-AI systems.",
   "scoringNote": "Scores are out of 100: research fit 70, collaboration evidence 12, relevant institution strength 8, eligible rank 4, and posting-date/deadline clarity 6.",
   "jobs": [
+    {
+      "id": "ut-austin-ischool-open-rank-191973",
+      "country": "United States",
+      "university": "The University of Texas at Austin",
+      "department": "Department of Information, School of Computing",
+      "title": "Open-Rank Tenured/Tenure-Track Faculty Positions",
+      "rankTrack": "Open Rank (Assistant accepted)",
+      "rankTrackDetail": "Tenured or tenure-track Assistant, Associate, or Full Professor; multiple positions",
+      "researchArea": "Open area with Human-Centered AI, Human-Centered Data Science, Human-Computer Interaction and Design, information behavior, security, and digital curation explicitly named",
+      "priorityDate": "2026-10-15",
+      "finalDeadline": null,
+      "deadlineNote": "Review begins 15 October 2026; applications continue until the positions are filled",
+      "postedDate": "2026-09-15",
+      "postingAgeStatus": "Under 6 months",
+      "status": "Rolling",
+      "officialUrl": "https://faculty.utexas.edu/career/191973",
+      "fitLevel": "Direct",
+      "fitNote": "A high-priority direct fit: the official search explicitly names Human-Centered AI and Human-Computer Interaction and Design, accepts Assistant Professor applicants, welcomes human-centered computing and design backgrounds, and encourages cross-unit collaboration. XR is not named, so the application should frame space-adaptive XR and interactive 3D intelligence through HCI, design, and human-centered computing rather than as graphics alone.",
+      "institutionStrength": "Exceptional",
+      "institutionScore": 8,
+      "institutionEvidence": "Carnegie R1 and AAU member; the new School of Computing joins Information, Computer Science, and Statistics and Data Science and advertises substantial AI, HCI, responsible-AI, and shared research infrastructure.",
+      "institutionEvidenceUrl": "https://www.utexas.edu/academics/colleges-schools",
+      "r1Verified": true,
+      "collaborationEvidenceScore": 140,
+      "collaborationFaculty": [
+        {
+          "name": "Min Kyung Lee",
+          "unitRelationship": "Same department",
+          "areas": "Human-AI interaction, participatory AI, HCI, CSCW, and prior HRI and telepresence work",
+          "profileUrl": "https://ischool.utexas.edu/profiles/min-kyung-lee",
+          "venueEvidence": "Official profile records CHI, CSCW, DIS, and HRI recognition; no ISMAR, IEEE VR, or TVCG credit used."
+        },
+        {
+          "name": "Matthew Lease",
+          "unitRelationship": "Same department",
+          "areas": "AI and human-centered computing, HCI design, human-in-the-loop AI, and explainable interfaces",
+          "profileUrl": "https://ischool.utexas.edu/profiles/matthew-lease",
+          "venueEvidence": "Official profile establishes HCI and human-centered AI alignment; no target XR venue item used."
+        },
+        {
+          "name": "Earl Huff Jr.",
+          "unitRelationship": "Same department",
+          "areas": "HCI, human-AI interaction, accessibility, inclusive design, and learning technologies",
+          "profileUrl": "https://ischool.utexas.edu/profiles/earl-huff-jr",
+          "venueEvidence": "Official profile records CHI and CUI publications; no ISMAR, IEEE VR, or TVCG credit used."
+        },
+        {
+          "name": "Jiaxin Pei",
+          "unitRelationship": "Same department",
+          "areas": "Human-centered AI, human-AI collaboration, AI agents, HCI, and large language models",
+          "profileUrl": "https://ischool.utexas.edu/profiles/jiaxin-pei",
+          "venueEvidence": "Strong human-AI and agent alignment; no ISMAR, IEEE VR, TVCG, CHI, or UIST item used for scoring."
+        },
+        {
+          "name": "Andrew Dillon",
+          "unitRelationship": "Same department",
+          "areas": "HCI, UX, user-centered design, psychology of information use, and recent VR-related scholarship",
+          "profileUrl": "https://ischool.utexas.edu/profiles/andrew-dillon",
+          "venueEvidence": "Official profile documents HCI and a recent virtual-reality review; no ISMAR, IEEE VR, or TVCG credit used."
+        }
+      ],
+      "priorityScore": 93,
+      "firstSeen": "2026-09-21",
+      "lastVerified": "2026-09-21",
+      "verificationNote": "HTTP 200",
+      "changeType": "Newly Posted",
+      "changeLog": [
+        {
+          "date": "2026-09-21",
+          "type": "Newly Posted",
+          "detail": "Added after official-source verification."
+        }
+      ]
+    },
     {
       "id": "berkeley-ischool-hci-jpf05482",
       "country": "United States",
@@ -408,6 +482,335 @@
       ]
     },
     {
+      "id": "tamu-alec-hci-ai-187329",
+      "country": "United States",
+      "university": "Texas A&M University",
+      "department": "Department of Agricultural Leadership, Education, and Communications",
+      "title": "Tenure-Track Assistant Professor",
+      "rankTrack": "Assistant Professor",
+      "rankTrackDetail": "Assistant Professor, tenure-track; cohort search for up to four positions",
+      "researchArea": "Human-computer interaction, human-centered AI, immersive digital media and simulation, human-AI interaction, agentic AI, and participatory design in agriculture and related systems",
+      "priorityDate": "2026-08-24",
+      "finalDeadline": null,
+      "deadlineNote": "Review began 45 days after the 10 July 2026 posting; applications continue until the positions are filled",
+      "postedDate": "2026-07-10",
+      "postingAgeStatus": "Under 6 months",
+      "status": "Rolling",
+      "officialUrl": "https://faculty.tamu.edu/JobDetail?JobId=187329",
+      "fitLevel": "Strong",
+      "fitNote": "The official call unusually names HCI, human-centered and agentic AI, immersive digital media, immersive simulation, human-AI interaction, and participatory design, and it may hire up to four faculty. The constraint is substantial: the appointment sits in agricultural leadership, education, and communications, so the agenda must directly serve agriculture, natural resources, education, or rural/community systems.",
+      "institutionStrength": "Exceptional",
+      "institutionScore": 8,
+      "institutionEvidence": "Texas A&M is a Carnegie R1 and AAU institution with a large HCI, visualization, and immersive-systems research ecosystem.",
+      "institutionEvidenceUrl": "https://engineering.tamu.edu/cse/research/areas/human-computer-interaction.html",
+      "r1Verified": true,
+      "collaborationEvidenceScore": 140,
+      "collaborationFaculty": [
+        {
+          "name": "Meng Xia",
+          "unitRelationship": "Cross-unit Computer Science and Engineering",
+          "areas": "Human-AI interaction, data visualization, education technology, and augmented-reality storytelling",
+          "profileUrl": "https://engineering.tamu.edu/cse/profiles/xia-meng.html",
+          "venueEvidence": "Official profile includes CHI work and a TVCG VisTellAR publication; target-venue credit used."
+        },
+        {
+          "name": "Tracy Hammond",
+          "unitRelationship": "Cross-unit Computer Science and Engineering",
+          "areas": "HCI, sketch and gesture interaction, intelligent interfaces, and interactive systems",
+          "profileUrl": "https://engineering.tamu.edu/cse/profiles/tahammond.html",
+          "venueEvidence": "Official profile establishes deep HCI and CHI alignment; no ISMAR, IEEE VR, or TVCG credit used."
+        },
+        {
+          "name": "Frank Shipman",
+          "unitRelationship": "Cross-unit Computer Science and Engineering",
+          "areas": "HCI, intelligent interfaces, CSCW, hypermedia, and information interaction",
+          "profileUrl": "https://engineering.tamu.edu/cse/profiles/fshipman.html",
+          "venueEvidence": "Official profile establishes HCI/UIST alignment; no target XR venue credit used."
+        },
+        {
+          "name": "Ann McNamara",
+          "unitRelationship": "Cross-unit Visualization",
+          "areas": "Virtual and augmented reality, visualization, perception, and immersive environments",
+          "profileUrl": "https://people.tamu.edu/~annmcnamara/mcnamara_resume.pdf",
+          "venueEvidence": "Official CV lists IEEE VR and ISMAR publications/posters; target-venue credit used."
+        }
+      ],
+      "priorityScore": 63,
+      "lastVerified": "2026-09-21",
+      "verificationNote": "HTTP 200",
+      "firstSeen": "2026-09-21",
+      "changeType": "Newly Posted",
+      "changeLog": [
+        {
+          "date": "2026-09-21",
+          "type": "Newly Posted",
+          "detail": "Added after official-source verification."
+        }
+      ]
+    },
+    {
+      "id": "cornell-wcm-ai-implementation-2026",
+      "country": "United States",
+      "university": "Cornell University (Weill Cornell Medicine)",
+      "department": "Division of Health Informatics and Artificial Intelligence, Department of Population Health Sciences",
+      "title": "Tenure-Track Assistant Professor Faculty Position, AI Implementation in Clinical Practice",
+      "rankTrack": "Assistant Professor",
+      "rankTrackDetail": "Assistant Professor, tenure-track",
+      "researchArea": "Clinical AI implementation, human factors, human-AI interaction, usability, interface design, explainability, visualization, and team-based decision-making",
+      "priorityDate": null,
+      "finalDeadline": "2026-12-01",
+      "deadlineNote": "Applications due 1 December 2026; no separate priority-review date stated",
+      "postedDate": null,
+      "postingAgeStatus": "Date unavailable",
+      "status": "Open",
+      "officialUrl": "https://phs.weill.cornell.edu/about-us/career-opportunities/tenure-track-assistant-professor-faculty-position-ai-implementation",
+      "fitLevel": "Strong",
+      "fitNote": "The ad explicitly targets human factors, human-AI interaction, usability, interface design, visualization, trust, and workload, and it names Cornell Tech collaboration. It is not a general HCI/XR search: a credible application must make clinical-AI deployment and healthcare workflow evaluation central rather than treating health as an application afterthought.",
+      "institutionStrength": "Exceptional",
+      "institutionScore": 8,
+      "institutionEvidence": "Cornell is a Carnegie R1 and AAU institution; the posting explicitly connects Weill Cornell Medicine with Cornell Tech and New York clinical partners.",
+      "institutionEvidenceUrl": "https://tech.cornell.edu/research/human-centered-computing/",
+      "r1Verified": true,
+      "collaborationEvidenceScore": 120,
+      "collaborationFaculty": [
+        {
+          "name": "Qian Yang",
+          "unitRelationship": "Cornell Tech cross-campus collaborator",
+          "areas": "Human-AI interaction, AI product and interaction design, and tools for designing with AI",
+          "profileUrl": "https://infosci.cornell.edu/people/qian-yang",
+          "venueEvidence": "Official profile establishes direct human-AI/HCI alignment; CHI evidence used, with no ISMAR, IEEE VR, or TVCG credit."
+        },
+        {
+          "name": "Shiri Azenkot",
+          "unitRelationship": "Cornell Tech cross-campus collaborator",
+          "areas": "HCI, accessibility, wearable and smart-glasses interaction, and XR",
+          "profileUrl": "https://tech.cornell.edu/people/shiri-azenkot/",
+          "venueEvidence": "Official profile records CHI, ASSETS, UIST, and UbiComp work; no ISMAR, IEEE VR, or TVCG credit used."
+        },
+        {
+          "name": "Tanzeem Choudhury",
+          "unitRelationship": "Cornell Tech cross-campus collaborator",
+          "areas": "Health AI, ubiquitous sensing, wearable systems, and digital mental health",
+          "profileUrl": "https://pac.cs.cornell.edu/",
+          "venueEvidence": "Direct digital-health and ubiquitous-computing alignment; no target XR venue credit used."
+        },
+        {
+          "name": "Deborah Estrin",
+          "unitRelationship": "Cornell Tech cross-campus collaborator",
+          "areas": "Digital health, mobile sensing, public-interest technology, and patient-generated data",
+          "profileUrl": "https://tech.cornell.edu/people/deborah-estrin/",
+          "venueEvidence": "Strong digital-health collaboration evidence; no target XR venue credit used."
+        }
+      ],
+      "priorityScore": 62,
+      "lastVerified": "2026-09-21",
+      "verificationNote": "HTTP 200",
+      "firstSeen": "2026-09-21",
+      "changeType": "Newly Posted",
+      "changeLog": [
+        {
+          "date": "2026-09-21",
+          "type": "Newly Posted",
+          "detail": "Added after official-source verification."
+        }
+      ]
+    },
+    {
+      "id": "cornell-wcm-agentic-ai-2026",
+      "country": "United States",
+      "university": "Cornell University (Weill Cornell Medicine)",
+      "department": "Division of Health Informatics and Artificial Intelligence, Department of Population Health Sciences",
+      "title": "Tenure-Track Assistant Professor Faculty Position, Agentic AI",
+      "rankTrack": "Assistant Professor",
+      "rankTrackDetail": "Assistant Professor, tenure-track",
+      "researchArea": "Agentic AI for healthcare, multi-agent systems, multimodal agents, human-AI collaboration, safety, trustworthiness, governance, and human oversight",
+      "priorityDate": null,
+      "finalDeadline": "2026-12-01",
+      "deadlineNote": "Applications due 1 December 2026; no separate priority-review date stated",
+      "postedDate": null,
+      "postingAgeStatus": "Date unavailable",
+      "status": "Open",
+      "officialUrl": "https://phs.weill.cornell.edu/about-us/career-opportunities/tenure-track-assistant-professor-faculty-position-agentic-ai",
+      "fitLevel": "Strong",
+      "fitNote": "The search explicitly includes human-AI collaboration, trustworthiness, human oversight, and multimodal agents, with Cornell Tech named as a collaboration route. The limiting factor is domain: the research program must be convincingly grounded in healthcare agents and clinical systems, so spatial/XR work alone would not satisfy the call.",
+      "institutionStrength": "Exceptional",
+      "institutionScore": 8,
+      "institutionEvidence": "Cornell is a Carnegie R1 and AAU institution; the posting explicitly connects Weill Cornell Medicine with Cornell Tech and New York clinical partners.",
+      "institutionEvidenceUrl": "https://tech.cornell.edu/research/human-centered-computing/",
+      "r1Verified": true,
+      "collaborationEvidenceScore": 120,
+      "collaborationFaculty": [
+        {
+          "name": "Qian Yang",
+          "unitRelationship": "Cornell Tech cross-campus collaborator",
+          "areas": "Human-AI interaction, AI product and interaction design, and tools for designing with AI",
+          "profileUrl": "https://infosci.cornell.edu/people/qian-yang",
+          "venueEvidence": "Official profile establishes direct human-AI/HCI alignment; CHI evidence used, with no ISMAR, IEEE VR, or TVCG credit."
+        },
+        {
+          "name": "Wendy Ju",
+          "unitRelationship": "Cornell Tech cross-campus collaborator",
+          "areas": "Human-robot interaction, automation interfaces, interaction design, and intelligent systems",
+          "profileUrl": "https://dli.tech.cornell.edu/members/ju",
+          "venueEvidence": "Direct human-agent and HRI alignment; no ISMAR, IEEE VR, or TVCG credit used."
+        },
+        {
+          "name": "Nicola Dell",
+          "unitRelationship": "Cornell Tech cross-campus collaborator",
+          "areas": "HCI, AI, health technologies, security, and social impact",
+          "profileUrl": "https://tech.cornell.edu/people/nicola-dell/",
+          "venueEvidence": "Official profile establishes HCI and technology-for-health alignment; no target XR venue credit used."
+        },
+        {
+          "name": "Tanzeem Choudhury",
+          "unitRelationship": "Cornell Tech cross-campus collaborator",
+          "areas": "Health AI, ubiquitous sensing, wearable systems, and digital mental health",
+          "profileUrl": "https://pac.cs.cornell.edu/",
+          "venueEvidence": "Direct health-AI and intelligent-systems alignment; no target XR venue credit used."
+        }
+      ],
+      "priorityScore": 62,
+      "lastVerified": "2026-09-21",
+      "verificationNote": "HTTP 200",
+      "firstSeen": "2026-09-21",
+      "changeType": "Newly Posted",
+      "changeLog": [
+        {
+          "date": "2026-09-21",
+          "type": "Newly Posted",
+          "detail": "Added after official-source verification."
+        }
+      ]
+    },
+    {
+      "id": "ut-austin-advertising-hci-ai-189345",
+      "country": "United States",
+      "university": "The University of Texas at Austin",
+      "department": "Stan Richards School of Advertising & Public Relations, Moody College of Communication",
+      "title": "Tenure-Track Advertising Faculty Position in Strategic Communication Media & Data Analytics for Consumer Insights",
+      "rankTrack": "Assistant Professor",
+      "rankTrackDetail": "Full-time tenure-track Assistant Professor",
+      "researchArea": "AI in strategic communication, media and consumer analytics, advertising applications of AI, and human-computer interaction",
+      "priorityDate": "2026-10-01",
+      "finalDeadline": null,
+      "deadlineNote": "Screening begins 1 October 2026 and continues until the position is filled",
+      "postedDate": "2026-08-11",
+      "postingAgeStatus": "Under 6 months",
+      "status": "Rolling",
+      "officialUrl": "https://faculty.utexas.edu/career/189345",
+      "fitLevel": "Strong",
+      "fitNote": "The posting explicitly accepts HCI and AI research and the school has faculty using AR/VR and studying interactive media. The application case is nevertheless discipline-constrained: it expects advertising, strategic-communication, or persuasion theory and prefers advertising/media experience, so this should sit below direct HCI and XR searches.",
+      "institutionStrength": "Exceptional",
+      "institutionScore": 8,
+      "institutionEvidence": "Carnegie R1 and AAU member with a highly ranked communication school, an established media-analytics program, and the cross-college Texas Immersive Institute.",
+      "institutionEvidenceUrl": "https://advertising.utexas.edu/",
+      "r1Verified": true,
+      "collaborationEvidenceScore": 80,
+      "collaborationFaculty": [
+        {
+          "name": "Lucy Atkinson",
+          "unitRelationship": "Same school",
+          "areas": "Augmented and virtual reality for science and environmental communication, AI, and consumer psychology",
+          "profileUrl": "https://advertising.utexas.edu/faculty/lucy-atkinson",
+          "venueEvidence": "Official profile verifies AR/VR work; no ISMAR, IEEE VR, or TVCG item verified."
+        },
+        {
+          "name": "Jeeyun Oh",
+          "unitRelationship": "Same school",
+          "areas": "New-media interfaces, algorithms, interactive media, user engagement, and HCI",
+          "profileUrl": "https://advertising.utexas.edu/faculty/jeeyun-oh",
+          "venueEvidence": "Strong interface and HCI alignment; no target XR venue item verified."
+        },
+        {
+          "name": "Matthew Eastin",
+          "unitRelationship": "Same school",
+          "areas": "Immersive technology adoption, mixed and virtual reality, AI engagement, and consumer behaviour",
+          "profileUrl": "https://advertising.utexas.edu/faculty/matthew-eastin",
+          "venueEvidence": "Official profile verifies mixed/virtual-reality research; no ISMAR, IEEE VR, or TVCG item verified."
+        },
+        {
+          "name": "Laura Bright",
+          "unitRelationship": "Same school",
+          "areas": "Media analytics, consumer behaviour, social media, digital wellbeing, and privacy",
+          "profileUrl": "https://advertising.utexas.edu/faculty/laura-bright",
+          "venueEvidence": "Analytics and interactive-advertising alignment; no target XR venue item verified."
+        }
+      ],
+      "priorityScore": 61,
+      "firstSeen": "2026-09-21",
+      "lastVerified": "2026-09-21",
+      "verificationNote": "HTTP 200",
+      "changeType": "Newly Posted",
+      "changeLog": [
+        {
+          "date": "2026-09-21",
+          "type": "Newly Posted",
+          "detail": "Added after official-source verification."
+        }
+      ]
+    },
+    {
+      "id": "ut-austin-communication-org-tech-188439",
+      "country": "United States",
+      "university": "The University of Texas at Austin",
+      "department": "Department of Communication Studies, Moody College of Communication",
+      "title": "Assistant Professor, Tenure-Track Faculty Position in Organizational Communication & Technology",
+      "rankTrack": "Assistant Professor",
+      "rankTrackDetail": "Full-time tenure-track Assistant Professor",
+      "researchArea": "Organizational communication and digital technologies, including AI, human-AI collaboration, trust in AI, algorithmic systems, remote and hybrid work, and digital media",
+      "priorityDate": "2026-09-15",
+      "finalDeadline": null,
+      "deadlineNote": "Screening began 15 September 2026 and continues until the position is filled",
+      "postedDate": "2026-08-04",
+      "postingAgeStatus": "Under 6 months",
+      "status": "Rolling",
+      "officialUrl": "https://faculty.utexas.edu/career/188439",
+      "fitEvidenceUrl": "https://commstudies.utexas.edu/news/cms-hiring-org-comm-and-tech",
+      "fitLevel": "Strong",
+      "fitNote": "The search explicitly names human-AI collaboration, trust in AI, and technology-rich work, making it relevant to the human-AI side of the profile. It is not an XR or HCI systems search, however, and the stated expectation of published organizational-communication scholarship is a material application-fit risk that should be addressed before applying.",
+      "institutionStrength": "Exceptional",
+      "institutionScore": 8,
+      "institutionEvidence": "Carnegie R1 and AAU member with a major interdisciplinary research ecosystem spanning Moody College, the School of Information, Good Systems, Texas Robotics, and the Texas Immersive Institute.",
+      "institutionEvidenceUrl": "https://research.utexas.edu/",
+      "r1Verified": true,
+      "collaborationEvidenceScore": 80,
+      "collaborationFaculty": [
+        {
+          "name": "Keri Stephens",
+          "unitRelationship": "Same department",
+          "areas": "Organizational communication technology, artificial intelligence, mobile technologies, and technology policy",
+          "profileUrl": "https://commstudies.utexas.edu/faculty/keri-stephens",
+          "venueEvidence": "Strong topical alignment; no ISMAR, IEEE VR, or TVCG evidence verified."
+        },
+        {
+          "name": "Jasmine Wu",
+          "unitRelationship": "Same department",
+          "areas": "Collaboration technologies, workplace communication, teams, and computational methods",
+          "profileUrl": "https://commstudies.utexas.edu/faculty/jasmine-wu",
+          "venueEvidence": "Strong collaboration-technology alignment; no ISMAR, IEEE VR, or TVCG evidence verified."
+        },
+        {
+          "name": "Min Kyung Lee",
+          "unitRelationship": "Cross-campus School of Information and Good Systems collaborator",
+          "areas": "Human-AI interaction, participatory AI, algorithmic management, HCI, and prior HRI",
+          "profileUrl": "https://minlee.ischool.utexas.edu/",
+          "venueEvidence": "Official publication list includes CHI and CSCW work; no ISMAR, IEEE VR, or TVCG item used for scoring."
+        }
+      ],
+      "priorityScore": 59,
+      "firstSeen": "2026-09-21",
+      "lastVerified": "2026-09-21",
+      "verificationNote": "HTTP 200",
+      "changeType": "Newly Posted",
+      "changeLog": [
+        {
+          "date": "2026-09-21",
+          "type": "Newly Posted",
+          "detail": "Added after official-source verification."
+        }
+      ]
+    },
+    {
       "id": "ntu-ccds-computing-tt-2026",
       "country": "Singapore",
       "university": "Nanyang Technological University",
@@ -561,52 +964,6 @@
         }
       ],
       "priorityScore": 56,
-      "firstSeen": "2026-09-21",
-      "lastVerified": "2026-09-21",
-      "verificationNote": "HTTP 200",
-      "changeType": "Newly Posted",
-      "changeLog": [
-        {
-          "date": "2026-09-21",
-          "type": "Newly Posted",
-          "detail": "Added after official-source verification."
-        }
-      ]
-    },
-    {
-      "id": "tamu-alec-human-centered-ai-187329",
-      "country": "United States",
-      "university": "Texas A&M University",
-      "department": "Agricultural Leadership, Education, and Communications",
-      "title": "Tenure-Track Assistant Professor — Human-Centered AI Cohort",
-      "rankTrack": "Assistant Professor",
-      "rankTrackDetail": "Assistant Professor, tenure-track; cohort of up to four",
-      "researchArea": "Human-centred AI, immersive simulation, human-AI collaboration, participatory design, and semi-autonomous systems",
-      "priorityDate": "2026-08-24",
-      "finalDeadline": null,
-      "deadlineNote": "Review underway; open until filled",
-      "postedDate": "2026-07-10",
-      "postingAgeStatus": "Under 6 months",
-      "status": "Open",
-      "officialUrl": "https://faculty.tamu.edu/JobDetail?JobId=187329",
-      "fitLevel": "Strong",
-      "fitNote": "The ad explicitly accepts HCI/Human-Centered AI and immersive simulation, but the tenure home is agriculture, education, and community leadership. Apply only with a convincing domain-facing XR agenda.",
-      "institutionStrength": "Very Strong",
-      "institutionScore": 5,
-      "institutionEvidence": "Carnegie R1 and AAU member with a substantial visualisation and immersive-computing ecosystem.",
-      "institutionEvidenceUrl": "https://visualization.tamu.edu/",
-      "r1Verified": true,
-      "collaborationEvidenceScore": 60,
-      "collaborationFaculty": [
-        {
-          "name": "Edgar J. Rojas-Munoz",
-          "unitRelationship": "Cross-unit visual computing and visualisation ecosystem",
-          "areas": "Mixed Reality for Social Good, XR/HCI, and immersive education",
-          "profileUrl": "https://people.tamu.edu/~ed.rojas/",
-          "venueEvidence": "Official materials document IEEE VR work and ISMAR participation/publication."
-        }
-      ],
-      "priorityScore": 55,
       "firstSeen": "2026-09-21",
       "lastVerified": "2026-09-21",
       "verificationNote": "HTTP 200",

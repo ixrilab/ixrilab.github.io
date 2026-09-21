@@ -6,13 +6,13 @@ This repository publishes an independent, static GitHub Pages application at the
 
 1. `data-tools/faculty-search-policy.json` defines the geographic limits, eligible appointment types, direct/strong/broad research-fit gates, pure-robotics exclusions, evidence requirements, and score weights.
 2. Faculty searches are researched against official university sources. Each public record includes exact appointment details, review and final dates, status, a profile-specific fit note, named collaboration faculty, target-venue evidence, and verification history.
-3. `.github/workflows/refresh-tracker.yml` runs daily and can also be started manually. It verifies every official URL, recalculates evidence scores and posting-age warnings, and changes expired or definitively closed faculty searches to `Closed` without deleting their history.
+3. `.github/workflows/refresh-tracker.yml` runs daily and can also be started manually. It first scans supported official faculty-career indexes for newly posted candidates, then verifies every tracked URL, recalculates evidence scores and posting-age warnings, and changes expired or definitively closed faculty searches to `Closed` without deleting their history.
 4. Funding opportunities are checked against `data-tools/funding-sources.json` and published to `data/funding.json` with explicit eligibility routes and confidence.
 5. `tests/validate-data.mjs` enforces the faculty-only scope, country/institution rules, R1 flag for US positions, evidence links, score ordering, history retention, privacy markers, English-only output, and the Faculty/Funding tab wiring.
 6. Only validated data is committed and pushed with the workflow's short-lived `GITHUB_TOKEN`.
 7. GitHub Pages publishes the updated JSON without a separate frontend build.
 
-The scheduled workflow validates and tracks known searches; it does not run a general-purpose web search and therefore cannot discover new vacancies on its own. New searches still require a reviewed research pass against official university sources. This is intentional: silently scraping generic search results would reintroduce the low-signal open-area and robotics false positives that the policy excludes.
+The scheduled workflow can discover candidates from the official portals listed in `data-tools/faculty-discovery-sources.json`; `data/faculty-discovery.json` records what was inspected and flags unreviewed candidates. It does not silently publish candidates because appointment type, research fit, collaborator evidence, and current application status still require a reviewed research pass. Institutions without a supported official-portal adapter must be audited separately rather than assumed covered.
 
 For a reviewed research pass, prepare a JSON payload with a `jobs` array and preview the comparison with:
 
