@@ -38,6 +38,7 @@ const allowedConfidence = new Set(["High", "Medium", "Low"]);
 const allowedJobStatuses = new Set(["Open", "Rolling", "Closed"]);
 const allowedFitLevels = new Set(["Direct", "Strong", "Broad"]);
 const allowedAgeStatuses = new Set(["Under 6 months", "Older than 6 months — reconfirm", "Date unavailable"]);
+const institutionWeights = { Exceptional: 8, "Very Strong": 5, Strong: 3 };
 const allowedCountries = new Set(Object.keys(policy.geography));
 const nonUsInstitutions = new Map(
   Object.entries(policy.geography)
@@ -77,8 +78,12 @@ for (const [index, job] of jobsPayload.jobs.entries()) {
   assert.match(job.firstSeen, isoDatePattern, `jobs[${index}].firstSeen must be ISO date`);
   assert.match(job.lastVerified, isoDatePattern, `jobs[${index}].lastVerified must be ISO date`);
   assert.ok(Number.isFinite(job.priorityScore), `jobs[${index}].priorityScore must be numeric`);
+  assert.ok(job.priorityScore >= 0 && job.priorityScore <= 100, `jobs[${index}].priorityScore must be on a 100-point scale`);
   assert.ok(Number.isFinite(job.institutionScore), `jobs[${index}].institutionScore must be numeric`);
-  assert.ok(Number.isFinite(job.collaborationScore), `jobs[${index}].collaborationScore must be numeric`);
+  assert.ok(job.institutionScore >= 0 && job.institutionScore <= 8, `jobs[${index}].institutionScore exceeds its weight`);
+  assert.equal(job.institutionScore, institutionWeights[job.institutionStrength], `jobs[${index}].institutionScore does not match its strength tier`);
+  assert.ok(Number.isFinite(job.collaborationEvidenceScore), `jobs[${index}].collaborationEvidenceScore must be numeric`);
+  assert.ok(job.collaborationEvidenceScore >= 0 && job.collaborationEvidenceScore <= 180, `jobs[${index}].collaborationEvidenceScore is invalid`);
   assert.ok(job.priorityDate === null || isoDatePattern.test(job.priorityDate), `jobs[${index}].priorityDate must be null or ISO date`);
   assert.ok(job.finalDeadline === null || isoDatePattern.test(job.finalDeadline), `jobs[${index}].finalDeadline must be null or ISO date`);
   assert.ok(job.postedDate === null || isoDatePattern.test(job.postedDate), `jobs[${index}].postedDate must be null or ISO date`);

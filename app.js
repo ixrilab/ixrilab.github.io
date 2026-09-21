@@ -77,17 +77,19 @@ function daysUntil(deadline) {
 }
 
 function scoreBreakdown(job) {
-  const fit = { Direct: 1000, Strong: 600, Broad: 200 }[job.fitLevel] || 0;
+  const fit = { Direct: 70, Strong: 40, Broad: 15 }[job.fitLevel] || 0;
   const rank = {
-    "Assistant Professor": 30,
-    "Assistant/Associate Professor": 25,
-    "Open Rank (Assistant accepted)": 20,
+    "Assistant Professor": 4,
+    "Assistant/Associate Professor": 3,
+    "Open Rank (Assistant accepted)": 2,
   }[job.rankTrack] || 0;
-  const remaining = daysUntil(job.finalDeadline);
-  const urgency = remaining !== null && remaining >= 0 && remaining <= 30
-    ? Math.min(9, Math.ceil((31 - remaining) / 4))
-    : 0;
-  return `Fit ${fit} · collaborators ${job.collaborationScore} · institution ${job.institutionScore} · rank ${rank} · urgency ${urgency}`;
+  const priorityRemaining = daysUntil(job.priorityDate);
+  const finalRemaining = daysUntil(job.finalDeadline);
+  const timing = (job.postingAgeStatus === "Under 6 months" ? 2 : 0)
+    + (priorityRemaining !== null && priorityRemaining >= 0 ? 2 : 0)
+    + (finalRemaining !== null && finalRemaining >= 0 ? 2 : 0);
+  const collaboration = Math.round(Math.min(job.collaborationEvidenceScore || 0, 180) / 180 * 12);
+  return `Fit ${fit} · collaborators ${collaboration} · institution ${job.institutionScore} · rank ${rank} · posting clarity ${timing}`;
 }
 
 function hasPassedDeadline(item) {
@@ -138,7 +140,7 @@ function renderJobCard(job, index) {
   const priority = node("div", "priority");
   priority.append(node("span", "rank-number", String(index + 1).padStart(2, "0")));
   priority.append(node("strong", "score", String(job.priorityScore)));
-  priority.append(node("span", "score-label", "evidence score"));
+  priority.append(node("span", "score-label", "match / 100"));
 
   const institution = node("div", "institution");
   institution.append(node("h3", "", job.university));

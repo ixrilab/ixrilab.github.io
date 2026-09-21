@@ -19,12 +19,13 @@ const CLOSED_PATTERNS = [
   /this opportunity (?:is )?closed/i,
 ];
 
-const FIT_WEIGHTS = { Direct: 1000, Strong: 600, Broad: 200 };
+const FIT_WEIGHTS = { Direct: 70, Strong: 40, Broad: 15 };
 const RANK_WEIGHTS = {
-  "Assistant Professor": 30,
-  "Assistant/Associate Professor": 25,
-  "Open Rank (Assistant accepted)": 20,
+  "Assistant Professor": 4,
+  "Assistant/Associate Professor": 3,
+  "Open Rank (Assistant accepted)": 2,
 };
+const INSTITUTION_WEIGHTS = { Exceptional: 8, "Very Strong": 5, Strong: 3 };
 
 function todayInTimezone(now = new Date()) {
   return new Intl.DateTimeFormat("en-CA", {
@@ -53,16 +54,24 @@ function postingAgeStatus(postedDate, today) {
     : "Under 6 months";
 }
 
+function scoreComponents(job, today) {
+  const posted = postingAgeStatus(job.postedDate, today);
+  const priorityRemaining = daysUntil(job.priorityDate, today);
+  const finalRemaining = daysUntil(job.finalDeadline, today);
+  const timing = (posted === "Under 6 months" ? 2 : 0)
+    + (priorityRemaining !== null && priorityRemaining >= 0 ? 2 : 0)
+    + (finalRemaining !== null && finalRemaining >= 0 ? 2 : 0);
+  return {
+    fit: FIT_WEIGHTS[job.fitLevel] || 0,
+    collaboration: Math.round(Math.min(job.collaborationEvidenceScore || 0, 180) / 180 * 12),
+    institution: INSTITUTION_WEIGHTS[job.institutionStrength] || 0,
+    rank: RANK_WEIGHTS[job.rankTrack] || 0,
+    timing,
+  };
+}
+
 function priorityScore(job, today) {
-  const remaining = daysUntil(job.finalDeadline, today);
-  const urgency = remaining !== null && remaining >= 0 && remaining <= 30
-    ? Math.min(9, Math.ceil((31 - remaining) / 4))
-    : 0;
-  return (FIT_WEIGHTS[job.fitLevel] || 0)
-    + (job.collaborationScore || 0)
-    + (job.institutionScore || 0)
-    + (RANK_WEIGHTS[job.rankTrack] || 0)
-    + urgency;
+  return Object.values(scoreComponents(job, today)).reduce((total, value) => total + value, 0);
 }
 
 function isDefinitelyClosed(text) {
@@ -252,4 +261,4 @@ if (isEntryPoint) {
   if (summary.jobs.active === 0 || summary.funding.kept === 0) throw new Error("Refresh would leave no active public opportunities");
 }
 
-export { daysUntil, isDefinitelyClosed, postingAgeStatus, priorityScore, refreshFunding, refreshJobs, refreshTracker, todayInTimezone };
+export { daysUntil, isDefinitelyClosed, postingAgeStatus, priorityScore, refreshFunding, refreshJobs, refreshTracker, scoreComponents, todayInTimezone };

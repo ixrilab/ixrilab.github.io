@@ -32,20 +32,44 @@ const base = {
   officialUrl: "https://example.com/job",
   fitLevel: "Direct",
   fitNote: "Direct HCI fit.",
-  institutionScore: 80,
-  collaborationScore: 100,
+  institutionStrength: "Very Strong",
+  institutionScore: 5,
+  collaborationEvidenceScore: 100,
   firstSeen: "2026-09-01",
   lastVerified: "2026-09-01",
   changeType: "Unchanged",
   changeLog: [],
 };
 
-assert.equal(priorityScore(base, "2026-09-21"), 1210);
+assert.equal(priorityScore(base, "2026-09-21"), 86);
 assert.ok(
-  priorityScore({ ...base, fitLevel: "Direct", institutionScore: 0, collaborationScore: 0 }, "2026-09-21")
-    > priorityScore({ ...base, fitLevel: "Strong", institutionScore: 120, collaborationScore: 180 }, "2026-09-21"),
+  priorityScore({
+    ...base,
+    fitLevel: "Direct",
+    institutionStrength: "Strong",
+    rankTrack: "Open Rank (Assistant accepted)",
+    collaborationEvidenceScore: 0,
+  }, "2026-09-21")
+    > priorityScore({
+      ...base,
+      fitLevel: "Strong",
+      institutionStrength: "Exceptional",
+      collaborationEvidenceScore: 180,
+      postedDate: "2026-09-01",
+      priorityDate: "2026-10-01",
+      finalDeadline: "2026-10-01",
+    }, "2026-09-21"),
   "a weaker fit tier must never outrank a stronger fit tier",
 );
+assert.equal(priorityScore({
+  ...base,
+  fitLevel: "Direct",
+  institutionStrength: "Exceptional",
+  collaborationEvidenceScore: 180,
+  postedDate: "2026-09-01",
+  priorityDate: "2026-10-01",
+  finalDeadline: "2026-10-01",
+}, "2026-09-21"), 100);
 
 const items = [
   { ...base, id: "expired", finalDeadline: "2026-09-20", officialUrl: "https://example.com/expired" },
@@ -96,4 +120,4 @@ const newByMerge = mergeFacultyJobs([], [{ ...base, id: "new" }], "2026-09-21")[
 assert.equal(newByMerge.changeType, "Newly Posted");
 assert.equal(newByMerge.firstSeen, "2026-09-21");
 
-console.log(JSON.stringify({ status: "valid", tests: 27 }, null, 2));
+console.log(JSON.stringify({ status: "valid", tests: 28 }, null, 2));

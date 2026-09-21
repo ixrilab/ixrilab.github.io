@@ -24,13 +24,15 @@ Add `--write` after reviewing the preview. The merge preserves missing historica
 
 ## Faculty score
 
-The score is evidence-based and deliberately fit-first:
+The score is out of 100, evidence-based, and deliberately fit-first:
 
-- Direct / Strong / Broad fit: 1000 / 600 / 200 points.
-- Verified collaboration faculty: up to 180 points, with extra weight for evidenced ISMAR, IEEE VR, or TVCG publications and a smaller CHI/UIST bonus.
-- Relevant institutional research environment: 120 / 80 / 40 points for Exceptional / Very Strong / Strong evidence.
-- Eligible rank: 30 points for Assistant Professor, 25 for Assistant/Associate, and 20 for open rank accepting Assistant applicants.
-- Deadline urgency: at most 9 points, so it cannot lift a weak-fit role above a stronger-fit role.
+- Direct / Strong / Broad fit: 70 / 40 / 15 points.
+- Verified collaboration faculty: up to 12 points, with extra evidence weight for ISMAR, IEEE VR, or TVCG publications and a smaller CHI/UIST bonus.
+- Relevant institutional research environment: 8 / 5 / 3 points for Exceptional / Very Strong / Strong evidence.
+- Eligible rank: 4 points for Assistant Professor, 3 for Assistant/Associate, and 2 for open rank accepting Assistant applicants.
+- Posting clarity: up to 6 points—2 for a verified posted date under six months old, 2 for a current review date, and 2 for a current final deadline.
+
+Unknown or old posted dates, missing or passed review dates, and missing final deadlines receive zero for that component. The ranges ensure that even the strongest possible `Strong` position cannot outrank a qualifying `Direct` position solely because of prestige or date completeness.
 
 An official posted date at least six calendar months old produces an `Older than 6 months — reconfirm` warning. Missing posted dates remain `Date unavailable`; the tracker never invents a date from when a role was discovered.
 

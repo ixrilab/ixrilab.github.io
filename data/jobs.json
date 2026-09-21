@@ -1,117 +1,44 @@
 {
-  "generatedAt": "2026-09-21T03:40:58.337Z",
+  "generatedAt": "2026-09-21T03:53:32.582Z",
   "timezone": "Australia/Sydney",
   "policyVersion": "2026-09-21",
   "profileBasis": "Dooyoung Kim's published research in space-adaptive XR, XRMemory, immersive human factors, interactive 3D intelligence, and spatially grounded human-AI systems.",
-  "scoringNote": "Fit tier dominates. Within a tier, verified collaborator and target-venue evidence comes before relevant institutional strength, eligible rank, and deadline urgency.",
+  "scoringNote": "Scores are out of 100: research fit 70, collaboration evidence 12, relevant institution strength 8, eligible rank 4, and posting-date/deadline clarity 6.",
   "jobs": [
     {
-      "id": "postech-cse-all-areas-2026",
-      "country": "South Korea",
-      "university": "POSTECH",
-      "department": "Department of Computer Science and Engineering / Graduate School of AI",
-      "title": "Full-time Faculty Recruitment — All Areas of Computer Science",
-      "rankTrack": "Open Rank (Assistant accepted)",
-      "rankTrackDetail": "Full-time faculty; the official material explicitly supports new assistant-professor appointments but does not use the English phrase tenure-track.",
-      "researchArea": "All CS fields, with HCI explicitly listed under Applied Computing; the department plans more than ten hires through 2027.",
-      "priorityDate": null,
-      "finalDeadline": null,
-      "deadlineNote": "Continuous review",
-      "postedDate": null,
-      "postingAgeStatus": "Date unavailable",
-      "status": "Rolling",
-      "officialUrl": "https://facultyapplication.postech.ac.kr/invitation/computer-science-engineering/postech-%EC%BB%B4%ED%93%A8%ED%84%B0%EA%B3%B5%ED%95%99%EA%B3%BC-%EA%B5%90%EC%88%98-%EC%B4%88%EB%B9%99-%EA%B3%B5%EA%B3%A0-2/",
-      "fitEvidenceUrl": "https://cse.postech.ac.kr/csepostech/people/pool.do",
-      "fitLevel": "Direct",
-      "fitNote": "The call is broad, but the department's own hiring taxonomy explicitly includes HCI. Seungmoon Choi's haptics, touch-based VR, and perception work creates unusually strong ISMAR/IEEE VR/TVCG collaboration potential.",
-      "institutionStrength": "Very Strong",
-      "institutionScore": 80,
-      "institutionEvidence": "POSTECH reports a strong engineering and computing research environment; this score is secondary to the explicit HCI domain and collaborator evidence.",
-      "institutionEvidenceUrl": "https://pacmsmain02.postech.ac.kr/kor/university-introduction/university_evaluation.do",
-      "collaborationScore": 140,
-      "collaborationFaculty": [
-        {
-          "name": "Seungmoon Choi",
-          "unitRelationship": "Same department",
-          "areas": "Haptics, touch-based VR, HCI, and applied perception",
-          "profileUrl": "https://choism.postech.ac.kr/",
-          "venueEvidence": "Official lab list includes multiple TVCG papers and IEEE VR/ISMAR work."
-        },
-        {
-          "name": "Eunkyung Jo",
-          "unitRelationship": "Same department",
-          "areas": "Health HCI, CSCW, and AI-mediated interaction",
-          "profileUrl": "https://www.eunkyungjo.com/",
-          "venueEvidence": "CHI record; no ISMAR/IEEE VR/TVCG item verified."
-        },
-        {
-          "name": "Inseok Hwang",
-          "unitRelationship": "Same department",
-          "areas": "Mobile and ubiquitous HCI, IoT, and interactive systems in real-world spaces",
-          "profileUrl": "https://www.inseokhwang.com/",
-          "venueEvidence": "CHI/UbiComp/MobiSys record; no target XR venue item verified."
-        }
-      ],
-      "priorityScore": 1240,
-      "firstSeen": "2026-09-21",
-      "lastVerified": "2026-09-21",
-      "verificationNote": "HTTP 200",
-      "changeType": "Newly Posted",
-      "changeLog": [
-        {
-          "date": "2026-09-21",
-          "type": "Newly Posted",
-          "detail": "Added after official-source verification."
-        }
-      ]
-    },
-    {
-      "id": "ntu-wkwsci-hci-assistant-2026",
-      "country": "Singapore",
-      "university": "Nanyang Technological University",
-      "department": "Wee Kim Wee School of Communication and Information",
-      "title": "Assistant Professor (Tenure-Track) in Human-Computer Interaction",
+      "id": "berkeley-ischool-hci-jpf05482",
+      "country": "United States",
+      "university": "University of California, Berkeley",
+      "department": "School of Information",
+      "title": "Assistant Professor — Human-Computer Interaction",
       "rankTrack": "Assistant Professor",
       "rankTrackDetail": "Assistant Professor, tenure-track",
-      "researchArea": "Human-centred technologies, interaction systems, and digital user experiences",
-      "priorityDate": null,
-      "finalDeadline": null,
-      "deadlineNote": "Not stated",
+      "researchArea": "HCI, human-AI interaction and collaboration, ubiquitous and embodied computing, HRI, and emerging interaction modalities",
+      "priorityDate": "2026-11-02",
+      "finalDeadline": "2026-11-02",
+      "deadlineNote": "Applications due 2 November 2026 at 11:59 PM Pacific",
       "postedDate": null,
       "postingAgeStatus": "Date unavailable",
       "status": "Open",
-      "officialUrl": "https://www.ntu.edu.sg/wkwsci/about-us/careers---wkwsci",
+      "officialUrl": "https://aprecruit.berkeley.edu/JPF05482",
       "fitLevel": "Direct",
-      "fitNote": "This is the cleanest title-level match: an assistant-rank HCI search with same-school faculty working in XR, embodiment, human-AI communication, HRI, and digital humans.",
+      "fitNote": "A top-quality, assistant-rank HCI search that explicitly includes human-AI, embodied computing, HRI, and new interaction modalities. The profile is broader than XR but directly supports its human-centred systems agenda.",
       "institutionStrength": "Exceptional",
-      "institutionScore": 120,
-      "institutionEvidence": "The school reports a top global communication and media research environment and operates a dedicated XR Studio.",
-      "institutionEvidenceUrl": "https://www.ntu.edu.sg/wkwsci/news-events/news/detail/wkwsci-launches-new-extended-reality-%28xr%29-studio-to-power-the-future-of-media-learning",
-      "collaborationScore": 60,
+      "institutionScore": 8,
+      "institutionEvidence": "Carnegie R1 and AAU member with a globally recognised HCI and design research ecosystem.",
+      "institutionEvidenceUrl": "https://www.ischool.berkeley.edu/research",
+      "r1Verified": true,
+      "collaborationEvidenceScore": 40,
       "collaborationFaculty": [
         {
-          "name": "Benjamin Li Junting",
-          "unitRelationship": "Same school",
-          "areas": "VR and immersive technology, HCI, avatars, embodiment, and wellbeing",
-          "profileUrl": "https://dr.ntu.edu.sg/cris/rp/rp00256",
-          "venueEvidence": "No ISMAR/IEEE VR/TVCG item verified on the official profile."
-        },
-        {
-          "name": "David Chang Gi Jeong",
-          "unitRelationship": "Same school",
-          "areas": "Human-AI communication, HRI, embodied AI, digital humans, and XR",
-          "profileUrl": "https://dr.ntu.edu.sg/entities/person/David-Chang-Gi-Jeong",
-          "venueEvidence": "No target XR venue item verified on the official profile."
-        },
-        {
-          "name": "Kwan Min Lee",
-          "unitRelationship": "Same school",
-          "areas": "UX, HCI, HRI, VR, and interactive media",
-          "profileUrl": "https://dr.ntu.edu.sg/cris/rp/rp01117",
-          "venueEvidence": "No target XR venue item verified on the official profile."
+          "name": "Bjorn Hartmann",
+          "unitRelationship": "Cross-unit EECS and Berkeley design ecosystem",
+          "areas": "HCI, human-AI interaction, mixed reality, and immersive interaction",
+          "profileUrl": "https://vcresearch.berkeley.edu/faculty/bjorn-hartmann",
+          "venueEvidence": "CHI/UIST/TOCHI evidence; no target XR venue item verified."
         }
       ],
-      "priorityScore": 1210,
+      "priorityScore": 89,
       "firstSeen": "2026-09-21",
       "lastVerified": "2026-09-21",
       "verificationNote": "HTTP 200",
@@ -143,11 +70,11 @@
       "fitLevel": "Direct",
       "fitNote": "The search is explicitly HCI and values deployed interactive systems. Aditi Majumder adds a strong spatial-display and IEEE VR collaboration bridge.",
       "institutionStrength": "Exceptional",
-      "institutionScore": 120,
+      "institutionScore": 8,
       "institutionEvidence": "Carnegie R1 institution with a dedicated Informatics department and established HCI research community.",
       "institutionEvidenceUrl": "https://ics.uci.edu/about/about-school-of-information-and-computer-sciences/",
       "r1Verified": true,
-      "collaborationScore": 60,
+      "collaborationEvidenceScore": 60,
       "collaborationFaculty": [
         {
           "name": "Aditi Majumder",
@@ -157,7 +84,7 @@
           "venueEvidence": "Official page records an IEEE VR Best Paper and IEEE VR leadership."
         }
       ],
-      "priorityScore": 1200,
+      "priorityScore": 88,
       "firstSeen": "2026-09-21",
       "lastVerified": "2026-09-21",
       "verificationNote": "HTTP 200",
@@ -171,39 +98,112 @@
       ]
     },
     {
-      "id": "berkeley-ischool-hci-jpf05482",
-      "country": "United States",
-      "university": "University of California, Berkeley",
-      "department": "School of Information",
-      "title": "Assistant Professor — Human-Computer Interaction",
+      "id": "ntu-wkwsci-hci-assistant-2026",
+      "country": "Singapore",
+      "university": "Nanyang Technological University",
+      "department": "Wee Kim Wee School of Communication and Information",
+      "title": "Assistant Professor (Tenure-Track) in Human-Computer Interaction",
       "rankTrack": "Assistant Professor",
       "rankTrackDetail": "Assistant Professor, tenure-track",
-      "researchArea": "HCI, human-AI interaction and collaboration, ubiquitous and embodied computing, HRI, and emerging interaction modalities",
-      "priorityDate": "2026-11-02",
-      "finalDeadline": "2026-11-02",
-      "deadlineNote": "Applications due 2 November 2026 at 11:59 PM Pacific",
+      "researchArea": "Human-centred technologies, interaction systems, and digital user experiences",
+      "priorityDate": null,
+      "finalDeadline": null,
+      "deadlineNote": "Not stated",
       "postedDate": null,
       "postingAgeStatus": "Date unavailable",
       "status": "Open",
-      "officialUrl": "https://aprecruit.berkeley.edu/JPF05482",
+      "officialUrl": "https://www.ntu.edu.sg/wkwsci/about-us/careers---wkwsci",
       "fitLevel": "Direct",
-      "fitNote": "A top-quality, assistant-rank HCI search that explicitly includes human-AI, embodied computing, HRI, and new interaction modalities. The profile is broader than XR but directly supports its human-centred systems agenda.",
+      "fitNote": "This is the cleanest title-level match: an assistant-rank HCI search with same-school faculty working in XR, embodiment, human-AI communication, HRI, and digital humans.",
       "institutionStrength": "Exceptional",
-      "institutionScore": 120,
-      "institutionEvidence": "Carnegie R1 and AAU member with a globally recognised HCI and design research ecosystem.",
-      "institutionEvidenceUrl": "https://www.ischool.berkeley.edu/research",
-      "r1Verified": true,
-      "collaborationScore": 40,
+      "institutionScore": 8,
+      "institutionEvidence": "The school reports a top global communication and media research environment and operates a dedicated XR Studio.",
+      "institutionEvidenceUrl": "https://www.ntu.edu.sg/wkwsci/news-events/news/detail/wkwsci-launches-new-extended-reality-%28xr%29-studio-to-power-the-future-of-media-learning",
+      "collaborationEvidenceScore": 60,
       "collaborationFaculty": [
         {
-          "name": "Bjorn Hartmann",
-          "unitRelationship": "Cross-unit EECS and Berkeley design ecosystem",
-          "areas": "HCI, human-AI interaction, mixed reality, and immersive interaction",
-          "profileUrl": "https://vcresearch.berkeley.edu/faculty/bjorn-hartmann",
-          "venueEvidence": "CHI/UIST/TOCHI evidence; no target XR venue item verified."
+          "name": "Benjamin Li Junting",
+          "unitRelationship": "Same school",
+          "areas": "VR and immersive technology, HCI, avatars, embodiment, and wellbeing",
+          "profileUrl": "https://dr.ntu.edu.sg/cris/rp/rp00256",
+          "venueEvidence": "No ISMAR/IEEE VR/TVCG item verified on the official profile."
+        },
+        {
+          "name": "David Chang Gi Jeong",
+          "unitRelationship": "Same school",
+          "areas": "Human-AI communication, HRI, embodied AI, digital humans, and XR",
+          "profileUrl": "https://dr.ntu.edu.sg/entities/person/David-Chang-Gi-Jeong",
+          "venueEvidence": "No target XR venue item verified on the official profile."
+        },
+        {
+          "name": "Kwan Min Lee",
+          "unitRelationship": "Same school",
+          "areas": "UX, HCI, HRI, VR, and interactive media",
+          "profileUrl": "https://dr.ntu.edu.sg/cris/rp/rp01117",
+          "venueEvidence": "No target XR venue item verified on the official profile."
         }
       ],
-      "priorityScore": 1190,
+      "priorityScore": 86,
+      "firstSeen": "2026-09-21",
+      "lastVerified": "2026-09-21",
+      "verificationNote": "HTTP 200",
+      "changeType": "Newly Posted",
+      "changeLog": [
+        {
+          "date": "2026-09-21",
+          "type": "Newly Posted",
+          "detail": "Added after official-source verification."
+        }
+      ]
+    },
+    {
+      "id": "postech-cse-all-areas-2026",
+      "country": "South Korea",
+      "university": "POSTECH",
+      "department": "Department of Computer Science and Engineering / Graduate School of AI",
+      "title": "Full-time Faculty Recruitment — All Areas of Computer Science",
+      "rankTrack": "Open Rank (Assistant accepted)",
+      "rankTrackDetail": "Full-time faculty; the official material explicitly supports new assistant-professor appointments but does not use the English phrase tenure-track.",
+      "researchArea": "All CS fields, with HCI explicitly listed under Applied Computing; the department plans more than ten hires through 2027.",
+      "priorityDate": null,
+      "finalDeadline": null,
+      "deadlineNote": "Continuous review",
+      "postedDate": null,
+      "postingAgeStatus": "Date unavailable",
+      "status": "Rolling",
+      "officialUrl": "https://facultyapplication.postech.ac.kr/invitation/computer-science-engineering/postech-%EC%BB%B4%ED%93%A8%ED%84%B0%EA%B3%B5%ED%95%99%EA%B3%BC-%EA%B5%90%EC%88%98-%EC%B4%88%EB%B9%99-%EA%B3%B5%EA%B3%A0-2/",
+      "fitEvidenceUrl": "https://cse.postech.ac.kr/csepostech/people/pool.do",
+      "fitLevel": "Direct",
+      "fitNote": "The call is broad, but the department's own hiring taxonomy explicitly includes HCI. Seungmoon Choi's haptics, touch-based VR, and perception work creates unusually strong ISMAR/IEEE VR/TVCG collaboration potential.",
+      "institutionStrength": "Very Strong",
+      "institutionScore": 5,
+      "institutionEvidence": "POSTECH reports a strong engineering and computing research environment; this score is secondary to the explicit HCI domain and collaborator evidence.",
+      "institutionEvidenceUrl": "https://pacmsmain02.postech.ac.kr/kor/university-introduction/university_evaluation.do",
+      "collaborationEvidenceScore": 140,
+      "collaborationFaculty": [
+        {
+          "name": "Seungmoon Choi",
+          "unitRelationship": "Same department",
+          "areas": "Haptics, touch-based VR, HCI, and applied perception",
+          "profileUrl": "https://choism.postech.ac.kr/",
+          "venueEvidence": "Official lab list includes multiple TVCG papers and IEEE VR/ISMAR work."
+        },
+        {
+          "name": "Eunkyung Jo",
+          "unitRelationship": "Same department",
+          "areas": "Health HCI, CSCW, and AI-mediated interaction",
+          "profileUrl": "https://www.eunkyungjo.com/",
+          "venueEvidence": "CHI record; no ISMAR/IEEE VR/TVCG item verified."
+        },
+        {
+          "name": "Inseok Hwang",
+          "unitRelationship": "Same department",
+          "areas": "Mobile and ubiquitous HCI, IoT, and interactive systems in real-world spaces",
+          "profileUrl": "https://www.inseokhwang.com/",
+          "venueEvidence": "CHI/UbiComp/MobiSys record; no target XR venue item verified."
+        }
+      ],
+      "priorityScore": 86,
       "firstSeen": "2026-09-21",
       "lastVerified": "2026-09-21",
       "verificationNote": "HTTP 200",
@@ -235,11 +235,11 @@
       "fitLevel": "Direct",
       "fitNote": "The official search explicitly prioritises graphics including VR/AR and HCI, and explicitly excludes AI/ML-only profiles. Jian Huang offers a TVCG-heavy visualisation and HoloLens collaboration bridge.",
       "institutionStrength": "Very Strong",
-      "institutionScore": 80,
+      "institutionScore": 5,
       "institutionEvidence": "Carnegie R1 and AAU member with a large engineering and computing research environment.",
       "institutionEvidenceUrl": "https://eecs.utk.edu/research/",
       "r1Verified": true,
-      "collaborationScore": 60,
+      "collaborationEvidenceScore": 60,
       "collaborationFaculty": [
         {
           "name": "Jian Huang",
@@ -249,7 +249,53 @@
           "venueEvidence": "Official publication list includes numerous IEEE TVCG papers."
         }
       ],
-      "priorityScore": 1170,
+      "priorityScore": 85,
+      "firstSeen": "2026-09-21",
+      "lastVerified": "2026-09-21",
+      "verificationNote": "HTTP 200",
+      "changeType": "Newly Posted",
+      "changeLog": [
+        {
+          "date": "2026-09-21",
+          "type": "Newly Posted",
+          "detail": "Added after official-source verification."
+        }
+      ]
+    },
+    {
+      "id": "ttu-honors-design-hci-46159",
+      "country": "United States",
+      "university": "Texas Tech University",
+      "department": "Honors College",
+      "title": "Assistant Professor in Design-Focused Human-Computer Interaction",
+      "rankTrack": "Assistant Professor",
+      "rankTrackDetail": "Assistant Professor, nine-month tenure-track",
+      "researchArea": "Design-focused HCI and interdisciplinary interactive systems",
+      "priorityDate": null,
+      "finalDeadline": "2026-12-01",
+      "deadlineNote": "Applications close 1 December 2026",
+      "postedDate": null,
+      "postingAgeStatus": "Date unavailable",
+      "status": "Open",
+      "officialUrl": "https://sjobs.brassring.com/TGnewUI/Search/home/HomeWithPreLoad?ad_id=189DB900-BD1A-41FF-BA94-405EF69003B9&partnerid=25898&siteid=5637&PageType=JobDetails&jobid=923624",
+      "fitLevel": "Direct",
+      "fitNote": "The exact title is design-focused HCI and the interdisciplinary framing supports XR interface work. The collaboration case relies on cross-unit visualisation/XR rather than a dense same-college XR cluster.",
+      "institutionStrength": "Strong",
+      "institutionScore": 3,
+      "institutionEvidence": "Carnegie R1 eligibility is verified; no additional prestige premium is applied.",
+      "institutionEvidenceUrl": "https://www.ttu.edu/research/",
+      "r1Verified": true,
+      "collaborationEvidenceScore": 60,
+      "collaborationFaculty": [
+        {
+          "name": "Tommy Dang",
+          "unitRelationship": "Cross-unit Computer Science",
+          "areas": "Interactive data visualisation, visual analytics, VR, and AR",
+          "profileUrl": "https://www.myweb.ttu.edu/tnhondan/",
+          "venueEvidence": "Official page lists IEEE TVCG papers and IEEE VR activity."
+        }
+      ],
+      "priorityScore": 83,
       "firstSeen": "2026-09-21",
       "lastVerified": "2026-09-21",
       "verificationNote": "HTTP 200",
@@ -282,10 +328,10 @@
       "fitLevel": "Direct",
       "fitNote": "The advertised HMI, human-centred design, and mobility UX areas are direct, but the application case must be framed around automated-vehicle interaction rather than general XR.",
       "institutionStrength": "Very Strong",
-      "institutionScore": 80,
+      "institutionScore": 5,
       "institutionEvidence": "KAIST reports a high-capacity science and engineering research environment; the mobility unit has a sizeable dedicated faculty base.",
       "institutionEvidenceUrl": "https://admission.kaist.ac.kr/intl-undergraduate/about/why",
-      "collaborationScore": 40,
+      "collaborationEvidenceScore": 40,
       "collaborationFaculty": [
         {
           "name": "Tiantian (Nicole) Chen",
@@ -302,53 +348,7 @@
           "venueEvidence": "No target XR venue item verified on the official page."
         }
       ],
-      "priorityScore": 1140,
-      "firstSeen": "2026-09-21",
-      "lastVerified": "2026-09-21",
-      "verificationNote": "HTTP 200",
-      "changeType": "Newly Posted",
-      "changeLog": [
-        {
-          "date": "2026-09-21",
-          "type": "Newly Posted",
-          "detail": "Added after official-source verification."
-        }
-      ]
-    },
-    {
-      "id": "ttu-honors-design-hci-46159",
-      "country": "United States",
-      "university": "Texas Tech University",
-      "department": "Honors College",
-      "title": "Assistant Professor in Design-Focused Human-Computer Interaction",
-      "rankTrack": "Assistant Professor",
-      "rankTrackDetail": "Assistant Professor, nine-month tenure-track",
-      "researchArea": "Design-focused HCI and interdisciplinary interactive systems",
-      "priorityDate": null,
-      "finalDeadline": "2026-12-01",
-      "deadlineNote": "Applications close 1 December 2026",
-      "postedDate": null,
-      "postingAgeStatus": "Date unavailable",
-      "status": "Open",
-      "officialUrl": "https://sjobs.brassring.com/TGnewUI/Search/home/HomeWithPreLoad?ad_id=189DB900-BD1A-41FF-BA94-405EF69003B9&partnerid=25898&siteid=5637&PageType=JobDetails&jobid=923624",
-      "fitLevel": "Direct",
-      "fitNote": "The exact title is design-focused HCI and the interdisciplinary framing supports XR interface work. The collaboration case relies on cross-unit visualisation/XR rather than a dense same-college XR cluster.",
-      "institutionStrength": "Strong",
-      "institutionScore": 40,
-      "institutionEvidence": "Carnegie R1 eligibility is verified; no additional prestige premium is applied.",
-      "institutionEvidenceUrl": "https://www.ttu.edu/research/",
-      "r1Verified": true,
-      "collaborationScore": 60,
-      "collaborationFaculty": [
-        {
-          "name": "Tommy Dang",
-          "unitRelationship": "Cross-unit Computer Science",
-          "areas": "Interactive data visualisation, visual analytics, VR, and AR",
-          "profileUrl": "https://www.myweb.ttu.edu/tnhondan/",
-          "venueEvidence": "Official page lists IEEE TVCG papers and IEEE VR activity."
-        }
-      ],
-      "priorityScore": 1130,
+      "priorityScore": 80,
       "firstSeen": "2026-09-21",
       "lastVerified": "2026-09-21",
       "verificationNote": "HTTP 200",
@@ -380,11 +380,11 @@
       "fitLevel": "Direct",
       "fitNote": "The ad explicitly prioritises HCI and human-AI interaction. The fit is strong for human-centred interfaces, although the immediate same-department overlap is more health/CSCW than XR.",
       "institutionStrength": "Very Strong",
-      "institutionScore": 80,
+      "institutionScore": 5,
       "institutionEvidence": "Carnegie R1 and AAU member; unit-level HCI fit is the main reason for inclusion.",
       "institutionEvidenceUrl": "https://ed.buffalo.edu/information/research.html",
       "r1Verified": true,
-      "collaborationScore": 20,
+      "collaborationEvidenceScore": 20,
       "collaborationFaculty": [
         {
           "name": "Xi Lu",
@@ -394,7 +394,7 @@
           "venueEvidence": "No ISMAR/IEEE VR/TVCG item verified."
         }
       ],
-      "priorityScore": 1130,
+      "priorityScore": 80,
       "firstSeen": "2026-09-21",
       "lastVerified": "2026-09-21",
       "verificationNote": "HTTP 200",
@@ -427,10 +427,10 @@
       "fitLevel": "Strong",
       "fitNote": "The vacancy itself is broad, but the same-college GIVR group and Samantha Chan's IEEE VR/ISMAR record make this a credible XR/HCI home rather than generic open-area computing.",
       "institutionStrength": "Exceptional",
-      "institutionScore": 120,
+      "institutionScore": 8,
       "institutionEvidence": "The university reports a globally strong computing environment; the relevant evidence is the same-college GIVR group.",
       "institutionEvidenceUrl": "https://www.ntu.edu.sg/about-us/facts-figures/university-rankings",
-      "collaborationScore": 100,
+      "collaborationEvidenceScore": 100,
       "collaborationFaculty": [
         {
           "name": "Samantha Chan",
@@ -454,7 +454,205 @@
           "venueEvidence": "No target XR venue item verified."
         }
       ],
-      "priorityScore": 845,
+      "priorityScore": 58,
+      "firstSeen": "2026-09-21",
+      "lastVerified": "2026-09-21",
+      "verificationNote": "HTTP 200",
+      "changeType": "Newly Posted",
+      "changeLog": [
+        {
+          "date": "2026-09-21",
+          "type": "Newly Posted",
+          "detail": "Added after official-source verification."
+        }
+      ]
+    },
+    {
+      "id": "bu-cds-human-centered-ai-2027",
+      "country": "United States",
+      "university": "Boston University",
+      "department": "Faculty of Computing and Data Sciences",
+      "title": "Tenure-Track Assistant Professor — Human-Centered DS/AI",
+      "rankTrack": "Assistant Professor",
+      "rankTrackDetail": "Assistant Professor, tenure-track",
+      "researchArea": "Human-centred computing, HCI, explainable AI, participatory AI, and computational behavioural science",
+      "priorityDate": "2026-12-01",
+      "finalDeadline": "2027-04-30",
+      "deadlineNote": "Fall-interview cutoff 31 October; priority 1 December; rolling through 30 April 2027",
+      "postedDate": null,
+      "postingAgeStatus": "Date unavailable",
+      "status": "Open",
+      "officialUrl": "https://www.bu.edu/cds-faculty/culture-community/join-us/faculty-positions/hcai/",
+      "fitLevel": "Strong",
+      "fitNote": "The search explicitly encourages HCI and human-centred computing, but does not target spatial or immersive interaction. Chang Xiao provides the strongest concrete AR/VR and interactive-graphics bridge.",
+      "institutionStrength": "Very Strong",
+      "institutionScore": 5,
+      "institutionEvidence": "Carnegie R1 and AAU member with cross-unit computing and HCI capacity.",
+      "institutionEvidenceUrl": "https://www.bu.edu/cds-faculty/",
+      "r1Verified": true,
+      "collaborationEvidenceScore": 40,
+      "collaborationFaculty": [
+        {
+          "name": "Chang Xiao",
+          "unitRelationship": "Cross-unit Computer Science",
+          "areas": "HCI, human-AI interaction, graphics, and AR/VR",
+          "profileUrl": "https://www.bu.edu/cs/profiles/chang-xiao/",
+          "venueEvidence": "CHI/UIST/SIGGRAPH evidence; no ISMAR/IEEE VR/TVCG item verified."
+        }
+      ],
+      "priorityScore": 56,
+      "firstSeen": "2026-09-21",
+      "lastVerified": "2026-09-21",
+      "verificationNote": "HTTP 200",
+      "changeType": "Newly Posted",
+      "changeLog": [
+        {
+          "date": "2026-09-21",
+          "type": "Newly Posted",
+          "detail": "Added after official-source verification."
+        }
+      ]
+    },
+    {
+      "id": "ttu-psych-human-factors-45900",
+      "country": "United States",
+      "university": "Texas Tech University",
+      "department": "Department of Psychological Sciences",
+      "title": "Assistant Professor — Human Factors",
+      "rankTrack": "Assistant Professor",
+      "rankTrackDetail": "Assistant Professor, nine-month tenure-track",
+      "researchArea": "Human factors, human-AI teaming, trust in automation, cyber-physical interaction, simulation, and human-centred design",
+      "priorityDate": null,
+      "finalDeadline": "2026-10-05",
+      "deadlineNote": "Applications close 5 October 2026",
+      "postedDate": null,
+      "postingAgeStatus": "Date unavailable",
+      "status": "Open",
+      "officialUrl": "https://sjobs.brassring.com/TGnewUI/Search/home/HomeWithPreLoad?ad_id=3C42F934-B50E-4C14-A3CB-A166C8B7B028&partnerid=25898&siteid=5637&PageType=JobDetails&jobid=921628",
+      "fitLevel": "Strong",
+      "fitNote": "This supports human-AI teaming and XR human-factors work, but it is a psychology search rather than a spatial-computing search. Same-unit perception and HRI faculty plus cross-unit TVCG/VR expertise make collaboration plausible.",
+      "institutionStrength": "Strong",
+      "institutionScore": 3,
+      "institutionEvidence": "Carnegie R1 eligibility is verified; no additional prestige premium is applied.",
+      "institutionEvidenceUrl": "https://www.ttu.edu/research/",
+      "r1Verified": true,
+      "collaborationEvidenceScore": 100,
+      "collaborationFaculty": [
+        {
+          "name": "Balagopal Raveendranath",
+          "unitRelationship": "Same department",
+          "areas": "Perception and motor control in real, augmented, and virtual environments; VR training",
+          "profileUrl": "https://www.depts.ttu.edu/psy/people/braveendranath/",
+          "venueEvidence": "No target XR venue item verified."
+        },
+        {
+          "name": "Keith Jones",
+          "unitRelationship": "Same department",
+          "areas": "HCI and human-robot interaction",
+          "profileUrl": "https://www.depts.ttu.edu/psy/people/kjones/index.php",
+          "venueEvidence": "No target XR venue item verified."
+        },
+        {
+          "name": "Tommy Dang",
+          "unitRelationship": "Cross-unit Computer Science",
+          "areas": "Interactive visualisation, VR, and AR",
+          "profileUrl": "https://www.myweb.ttu.edu/tnhondan/",
+          "venueEvidence": "Official page lists IEEE TVCG papers and IEEE VR activity."
+        }
+      ],
+      "priorityScore": 56,
+      "firstSeen": "2026-09-21",
+      "lastVerified": "2026-09-21",
+      "verificationNote": "HTTP 200",
+      "changeType": "Newly Posted",
+      "changeLog": [
+        {
+          "date": "2026-09-21",
+          "type": "Newly Posted",
+          "detail": "Added after official-source verification."
+        }
+      ]
+    },
+    {
+      "id": "tamu-alec-human-centered-ai-187329",
+      "country": "United States",
+      "university": "Texas A&M University",
+      "department": "Agricultural Leadership, Education, and Communications",
+      "title": "Tenure-Track Assistant Professor — Human-Centered AI Cohort",
+      "rankTrack": "Assistant Professor",
+      "rankTrackDetail": "Assistant Professor, tenure-track; cohort of up to four",
+      "researchArea": "Human-centred AI, immersive simulation, human-AI collaboration, participatory design, and semi-autonomous systems",
+      "priorityDate": "2026-08-24",
+      "finalDeadline": null,
+      "deadlineNote": "Review underway; open until filled",
+      "postedDate": "2026-07-10",
+      "postingAgeStatus": "Under 6 months",
+      "status": "Open",
+      "officialUrl": "https://faculty.tamu.edu/JobDetail?JobId=187329",
+      "fitLevel": "Strong",
+      "fitNote": "The ad explicitly accepts HCI/Human-Centered AI and immersive simulation, but the tenure home is agriculture, education, and community leadership. Apply only with a convincing domain-facing XR agenda.",
+      "institutionStrength": "Very Strong",
+      "institutionScore": 5,
+      "institutionEvidence": "Carnegie R1 and AAU member with a substantial visualisation and immersive-computing ecosystem.",
+      "institutionEvidenceUrl": "https://visualization.tamu.edu/",
+      "r1Verified": true,
+      "collaborationEvidenceScore": 60,
+      "collaborationFaculty": [
+        {
+          "name": "Edgar J. Rojas-Munoz",
+          "unitRelationship": "Cross-unit visual computing and visualisation ecosystem",
+          "areas": "Mixed Reality for Social Good, XR/HCI, and immersive education",
+          "profileUrl": "https://people.tamu.edu/~ed.rojas/",
+          "venueEvidence": "Official materials document IEEE VR work and ISMAR participation/publication."
+        }
+      ],
+      "priorityScore": 55,
+      "firstSeen": "2026-09-21",
+      "lastVerified": "2026-09-21",
+      "verificationNote": "HTTP 200",
+      "changeType": "Newly Posted",
+      "changeLog": [
+        {
+          "date": "2026-09-21",
+          "type": "Newly Posted",
+          "detail": "Added after official-source verification."
+        }
+      ]
+    },
+    {
+      "id": "uw-hcde-assistant-185759",
+      "country": "United States",
+      "university": "University of Washington",
+      "department": "Human Centered Design and Engineering, College of Engineering",
+      "title": "Assistant Professor of Human Centered Design and Engineering",
+      "rankTrack": "Assistant Professor",
+      "rankTrackDetail": "Assistant Professor, tenure-track",
+      "researchArea": "Human-centred design, sociotechnical systems, human-centred AI, automation, and human agency",
+      "priorityDate": "2026-11-01",
+      "finalDeadline": null,
+      "deadlineNote": "Priority review 1 November 2026; open until filled",
+      "postedDate": null,
+      "postingAgeStatus": "Date unavailable",
+      "status": "Open",
+      "officialUrl": "https://ap.washington.edu/ahr/position-details/?job_id=185759",
+      "fitLevel": "Strong",
+      "fitNote": "UW HCDE is an excellent HCI environment, but the advertised themes lean toward sustainability, civic infrastructure, and future of work rather than XR. Jon Froehlich supplies a strong cross-unit AR/VR and ubiquitous-computing bridge.",
+      "institutionStrength": "Exceptional",
+      "institutionScore": 8,
+      "institutionEvidence": "Carnegie R1 and AAU member with a dedicated HCDE unit and the cross-campus DUB HCI community.",
+      "institutionEvidenceUrl": "https://dub.washington.edu/",
+      "r1Verified": true,
+      "collaborationEvidenceScore": 20,
+      "collaborationFaculty": [
+        {
+          "name": "Jon Froehlich",
+          "unitRelationship": "Cross-unit Allen School, connected through DUB and MHCID",
+          "areas": "HCI, AR/VR/MR, ubiquitous and embedded systems, accessibility, and Human+AI",
+          "profileUrl": "https://www.cs.washington.edu/people/faculty/jon-e-froehlich/",
+          "venueEvidence": "No ISMAR/IEEE VR/TVCG item verified on the official profile."
+        }
+      ],
+      "priorityScore": 55,
       "firstSeen": "2026-09-21",
       "lastVerified": "2026-09-21",
       "verificationNote": "HTTP 200",
@@ -487,10 +685,10 @@
       "fitLevel": "Strong",
       "fitNote": "The call is broad, but HCI, ubiquitous computing, visualisation, and XR are established official research areas. Ooi Wei Tsang offers interactive 3D/AR overlap; David Hsu offers human-robot collaboration adjacency.",
       "institutionStrength": "Exceptional",
-      "institutionScore": 120,
+      "institutionScore": 8,
       "institutionEvidence": "The School of Computing reports a globally leading computing research environment; this supports but does not replace fit evidence.",
       "institutionEvidenceUrl": "https://www.comp.nus.edu.sg/news/nus-soc-4th-globally-in-computer-science-and-information-systems-3rd-in-data-science-ai-2026/",
-      "collaborationScore": 40,
+      "collaborationEvidenceScore": 40,
       "collaborationFaculty": [
         {
           "name": "Ooi Wei Tsang",
@@ -507,7 +705,7 @@
           "venueEvidence": "HRI adjacency; no target XR venue item verified."
         }
       ],
-      "priorityScore": 780,
+      "priorityScore": 53,
       "firstSeen": "2026-09-21",
       "lastVerified": "2026-09-21",
       "verificationNote": "HTTP 200",
@@ -521,191 +719,39 @@
       ]
     },
     {
-      "id": "ttu-psych-human-factors-45900",
+      "id": "odu-human-factors-f0646a",
       "country": "United States",
-      "university": "Texas Tech University",
-      "department": "Department of Psychological Sciences",
-      "title": "Assistant Professor — Human Factors",
+      "university": "Old Dominion University",
+      "department": "Department of Psychology",
+      "title": "Assistant Professor, Human Factors Psychology",
       "rankTrack": "Assistant Professor",
-      "rankTrackDetail": "Assistant Professor, nine-month tenure-track",
-      "researchArea": "Human factors, human-AI teaming, trust in automation, cyber-physical interaction, simulation, and human-centred design",
-      "priorityDate": null,
-      "finalDeadline": "2026-10-05",
-      "deadlineNote": "Applications close 5 October 2026",
+      "rankTrackDetail": "Assistant Professor, tenure-track",
+      "researchArea": "Human factors, human-AI teaming, and HCI in security, transportation, or healthcare",
+      "priorityDate": "2026-10-01",
+      "finalDeadline": null,
+      "deadlineNote": "Review begins 1 October 2026; open until filled",
       "postedDate": null,
       "postingAgeStatus": "Date unavailable",
       "status": "Open",
-      "officialUrl": "https://sjobs.brassring.com/TGnewUI/Search/home/HomeWithPreLoad?ad_id=3C42F934-B50E-4C14-A3CB-A166C8B7B028&partnerid=25898&siteid=5637&PageType=JobDetails&jobid=921628",
+      "officialUrl": "https://jobs.odu.edu/postings/26630",
       "fitLevel": "Strong",
-      "fitNote": "This supports human-AI teaming and XR human-factors work, but it is a psychology search rather than a spatial-computing search. Same-unit perception and HRI faculty plus cross-unit TVCG/VR expertise make collaboration plausible.",
+      "fitNote": "The human-AI teaming and HCI fit is clear, but the role is human-factors psychology rather than XR. Sampath Jayarathna adds eye-tracking, VR learning, accessibility, and TVCG evidence.",
       "institutionStrength": "Strong",
-      "institutionScore": 40,
-      "institutionEvidence": "Carnegie R1 eligibility is verified; no additional prestige premium is applied.",
-      "institutionEvidenceUrl": "https://www.ttu.edu/research/",
+      "institutionScore": 3,
+      "institutionEvidence": "Carnegie R1 eligibility and an HFES-accredited human-factors environment; no prestige premium beyond the relevant program.",
+      "institutionEvidenceUrl": "https://www.odu.edu/psychology/academics/human-factors",
       "r1Verified": true,
-      "collaborationScore": 100,
+      "collaborationEvidenceScore": 60,
       "collaborationFaculty": [
         {
-          "name": "Balagopal Raveendranath",
-          "unitRelationship": "Same department",
-          "areas": "Perception and motor control in real, augmented, and virtual environments; VR training",
-          "profileUrl": "https://www.depts.ttu.edu/psy/people/braveendranath/",
-          "venueEvidence": "No target XR venue item verified."
-        },
-        {
-          "name": "Keith Jones",
-          "unitRelationship": "Same department",
-          "areas": "HCI and human-robot interaction",
-          "profileUrl": "https://www.depts.ttu.edu/psy/people/kjones/index.php",
-          "venueEvidence": "No target XR venue item verified."
-        },
-        {
-          "name": "Tommy Dang",
+          "name": "Sampath Jayarathna",
           "unitRelationship": "Cross-unit Computer Science",
-          "areas": "Interactive visualisation, VR, and AR",
-          "profileUrl": "https://www.myweb.ttu.edu/tnhondan/",
-          "venueEvidence": "Official page lists IEEE TVCG papers and IEEE VR activity."
+          "areas": "Eye tracking, VR learning, usability, and accessibility",
+          "profileUrl": "https://www.cs.odu.edu/~sampath/",
+          "venueEvidence": "Official page lists a 2025 IEEE TVCG accessibility paper."
         }
       ],
-      "priorityScore": 775,
-      "firstSeen": "2026-09-21",
-      "lastVerified": "2026-09-21",
-      "verificationNote": "HTTP 200",
-      "changeType": "Newly Posted",
-      "changeLog": [
-        {
-          "date": "2026-09-21",
-          "type": "Newly Posted",
-          "detail": "Added after official-source verification."
-        }
-      ]
-    },
-    {
-      "id": "tamu-alec-human-centered-ai-187329",
-      "country": "United States",
-      "university": "Texas A&M University",
-      "department": "Agricultural Leadership, Education, and Communications",
-      "title": "Tenure-Track Assistant Professor — Human-Centered AI Cohort",
-      "rankTrack": "Assistant Professor",
-      "rankTrackDetail": "Assistant Professor, tenure-track; cohort of up to four",
-      "researchArea": "Human-centred AI, immersive simulation, human-AI collaboration, participatory design, and semi-autonomous systems",
-      "priorityDate": "2026-08-24",
-      "finalDeadline": null,
-      "deadlineNote": "Review underway; open until filled",
-      "postedDate": "2026-07-10",
-      "postingAgeStatus": "Under 6 months",
-      "status": "Open",
-      "officialUrl": "https://faculty.tamu.edu/JobDetail?JobId=187329",
-      "fitLevel": "Strong",
-      "fitNote": "The ad explicitly accepts HCI/Human-Centered AI and immersive simulation, but the tenure home is agriculture, education, and community leadership. Apply only with a convincing domain-facing XR agenda.",
-      "institutionStrength": "Very Strong",
-      "institutionScore": 80,
-      "institutionEvidence": "Carnegie R1 and AAU member with a substantial visualisation and immersive-computing ecosystem.",
-      "institutionEvidenceUrl": "https://visualization.tamu.edu/",
-      "r1Verified": true,
-      "collaborationScore": 60,
-      "collaborationFaculty": [
-        {
-          "name": "Edgar J. Rojas-Munoz",
-          "unitRelationship": "Cross-unit visual computing and visualisation ecosystem",
-          "areas": "Mixed Reality for Social Good, XR/HCI, and immersive education",
-          "profileUrl": "https://people.tamu.edu/~ed.rojas/",
-          "venueEvidence": "Official materials document IEEE VR work and ISMAR participation/publication."
-        }
-      ],
-      "priorityScore": 770,
-      "firstSeen": "2026-09-21",
-      "lastVerified": "2026-09-21",
-      "verificationNote": "HTTP 200",
-      "changeType": "Newly Posted",
-      "changeLog": [
-        {
-          "date": "2026-09-21",
-          "type": "Newly Posted",
-          "detail": "Added after official-source verification."
-        }
-      ]
-    },
-    {
-      "id": "uw-hcde-assistant-185759",
-      "country": "United States",
-      "university": "University of Washington",
-      "department": "Human Centered Design and Engineering, College of Engineering",
-      "title": "Assistant Professor of Human Centered Design and Engineering",
-      "rankTrack": "Assistant Professor",
-      "rankTrackDetail": "Assistant Professor, tenure-track",
-      "researchArea": "Human-centred design, sociotechnical systems, human-centred AI, automation, and human agency",
-      "priorityDate": "2026-11-01",
-      "finalDeadline": null,
-      "deadlineNote": "Priority review 1 November 2026; open until filled",
-      "postedDate": null,
-      "postingAgeStatus": "Date unavailable",
-      "status": "Open",
-      "officialUrl": "https://ap.washington.edu/ahr/position-details/?job_id=185759",
-      "fitLevel": "Strong",
-      "fitNote": "UW HCDE is an excellent HCI environment, but the advertised themes lean toward sustainability, civic infrastructure, and future of work rather than XR. Jon Froehlich supplies a strong cross-unit AR/VR and ubiquitous-computing bridge.",
-      "institutionStrength": "Exceptional",
-      "institutionScore": 120,
-      "institutionEvidence": "Carnegie R1 and AAU member with a dedicated HCDE unit and the cross-campus DUB HCI community.",
-      "institutionEvidenceUrl": "https://dub.washington.edu/",
-      "r1Verified": true,
-      "collaborationScore": 20,
-      "collaborationFaculty": [
-        {
-          "name": "Jon Froehlich",
-          "unitRelationship": "Cross-unit Allen School, connected through DUB and MHCID",
-          "areas": "HCI, AR/VR/MR, ubiquitous and embedded systems, accessibility, and Human+AI",
-          "profileUrl": "https://www.cs.washington.edu/people/faculty/jon-e-froehlich/",
-          "venueEvidence": "No ISMAR/IEEE VR/TVCG item verified on the official profile."
-        }
-      ],
-      "priorityScore": 770,
-      "firstSeen": "2026-09-21",
-      "lastVerified": "2026-09-21",
-      "verificationNote": "HTTP 200",
-      "changeType": "Newly Posted",
-      "changeLog": [
-        {
-          "date": "2026-09-21",
-          "type": "Newly Posted",
-          "detail": "Added after official-source verification."
-        }
-      ]
-    },
-    {
-      "id": "bu-cds-human-centered-ai-2027",
-      "country": "United States",
-      "university": "Boston University",
-      "department": "Faculty of Computing and Data Sciences",
-      "title": "Tenure-Track Assistant Professor — Human-Centered DS/AI",
-      "rankTrack": "Assistant Professor",
-      "rankTrackDetail": "Assistant Professor, tenure-track",
-      "researchArea": "Human-centred computing, HCI, explainable AI, participatory AI, and computational behavioural science",
-      "priorityDate": "2026-12-01",
-      "finalDeadline": "2027-04-30",
-      "deadlineNote": "Fall-interview cutoff 31 October; priority 1 December; rolling through 30 April 2027",
-      "postedDate": null,
-      "postingAgeStatus": "Date unavailable",
-      "status": "Open",
-      "officialUrl": "https://www.bu.edu/cds-faculty/culture-community/join-us/faculty-positions/hcai/",
-      "fitLevel": "Strong",
-      "fitNote": "The search explicitly encourages HCI and human-centred computing, but does not target spatial or immersive interaction. Chang Xiao provides the strongest concrete AR/VR and interactive-graphics bridge.",
-      "institutionStrength": "Very Strong",
-      "institutionScore": 80,
-      "institutionEvidence": "Carnegie R1 and AAU member with cross-unit computing and HCI capacity.",
-      "institutionEvidenceUrl": "https://www.bu.edu/cds-faculty/",
-      "r1Verified": true,
-      "collaborationScore": 40,
-      "collaborationFaculty": [
-        {
-          "name": "Chang Xiao",
-          "unitRelationship": "Cross-unit Computer Science",
-          "areas": "HCI, human-AI interaction, graphics, and AR/VR",
-          "profileUrl": "https://www.bu.edu/cs/profiles/chang-xiao/",
-          "venueEvidence": "CHI/UIST/SIGGRAPH evidence; no ISMAR/IEEE VR/TVCG item verified."
-        }
-      ],
-      "priorityScore": 750,
+      "priorityScore": 53,
       "firstSeen": "2026-09-21",
       "lastVerified": "2026-09-21",
       "verificationNote": "HTTP 200",
@@ -737,11 +783,11 @@
       "fitLevel": "Strong",
       "fitNote": "The ad explicitly includes HCI/UX and interactive VR, but applications must be framed around health communication. Yuqi Zhou offers unusually direct XR haptics, collaborative AR, IEEE VR, ISMAR, and TVCG overlap.",
       "institutionStrength": "Strong",
-      "institutionScore": 40,
+      "institutionScore": 3,
       "institutionEvidence": "Carnegie R1 eligibility is verified; the score relies more on the exact XR collaborator than institutional prestige.",
       "institutionEvidenceUrl": "https://research.ua.edu/",
       "r1Verified": true,
-      "collaborationScore": 60,
+      "collaborationEvidenceScore": 60,
       "collaborationFaculty": [
         {
           "name": "Yuqi Zhou",
@@ -751,53 +797,7 @@
           "venueEvidence": "Official profile lists IEEE VR, ISMAR, and multiple TVCG papers."
         }
       ],
-      "priorityScore": 732,
-      "firstSeen": "2026-09-21",
-      "lastVerified": "2026-09-21",
-      "verificationNote": "HTTP 202",
-      "changeType": "Newly Posted",
-      "changeLog": [
-        {
-          "date": "2026-09-21",
-          "type": "Newly Posted",
-          "detail": "Added after official-source verification."
-        }
-      ]
-    },
-    {
-      "id": "odu-human-factors-f0646a",
-      "country": "United States",
-      "university": "Old Dominion University",
-      "department": "Department of Psychology",
-      "title": "Assistant Professor, Human Factors Psychology",
-      "rankTrack": "Assistant Professor",
-      "rankTrackDetail": "Assistant Professor, tenure-track",
-      "researchArea": "Human factors, human-AI teaming, and HCI in security, transportation, or healthcare",
-      "priorityDate": "2026-10-01",
-      "finalDeadline": null,
-      "deadlineNote": "Review begins 1 October 2026; open until filled",
-      "postedDate": null,
-      "postingAgeStatus": "Date unavailable",
-      "status": "Open",
-      "officialUrl": "https://jobs.odu.edu/postings/26630",
-      "fitLevel": "Strong",
-      "fitNote": "The human-AI teaming and HCI fit is clear, but the role is human-factors psychology rather than XR. Sampath Jayarathna adds eye-tracking, VR learning, accessibility, and TVCG evidence.",
-      "institutionStrength": "Strong",
-      "institutionScore": 40,
-      "institutionEvidence": "Carnegie R1 eligibility and an HFES-accredited human-factors environment; no prestige premium beyond the relevant program.",
-      "institutionEvidenceUrl": "https://www.odu.edu/psychology/academics/human-factors",
-      "r1Verified": true,
-      "collaborationScore": 60,
-      "collaborationFaculty": [
-        {
-          "name": "Sampath Jayarathna",
-          "unitRelationship": "Cross-unit Computer Science",
-          "areas": "Eye tracking, VR learning, usability, and accessibility",
-          "profileUrl": "https://www.cs.odu.edu/~sampath/",
-          "venueEvidence": "Official page lists a 2025 IEEE TVCG accessibility paper."
-        }
-      ],
-      "priorityScore": 730,
+      "priorityScore": 53,
       "firstSeen": "2026-09-21",
       "lastVerified": "2026-09-21",
       "verificationNote": "HTTP 200",
@@ -829,11 +829,11 @@
       "fitLevel": "Strong",
       "fitNote": "This is a direct human-AI interface search, but the application must credibly centre health and decision-making rather than spatial XR. Michael Byrne offers same-department HCI and human-factors depth.",
       "institutionStrength": "Very Strong",
-      "institutionScore": 80,
+      "institutionScore": 5,
       "institutionEvidence": "Carnegie R1 and AAU member with an established HCI and human-factors program.",
       "institutionEvidenceUrl": "https://psychology.rice.edu/research/human-factors-human-computer-interaction",
       "r1Verified": true,
-      "collaborationScore": 20,
+      "collaborationEvidenceScore": 20,
       "collaborationFaculty": [
         {
           "name": "Michael Byrne",
@@ -843,7 +843,7 @@
           "venueEvidence": "No ISMAR/IEEE VR/TVCG item verified."
         }
       ],
-      "priorityScore": 730,
+      "priorityScore": 52,
       "firstSeen": "2026-09-21",
       "lastVerified": "2026-09-21",
       "verificationNote": "HTTP 200",
@@ -875,11 +875,11 @@
       "fitLevel": "Broad",
       "fitNote": "Stanford is an exceptional environment and the ad names human-AI interaction, but this is fundamentally a biomedical data-science search. Treat it as a selective option only if the proposed agenda is genuinely health-centred; do not let prestige inflate the fit.",
       "institutionStrength": "Exceptional",
-      "institutionScore": 120,
+      "institutionScore": 8,
       "institutionEvidence": "Carnegie R1 and AAU member with strong HAI and spatial-imaging infrastructure.",
       "institutionEvidenceUrl": "https://hai.stanford.edu/",
       "r1Verified": true,
-      "collaborationScore": 80,
+      "collaborationEvidenceScore": 80,
       "collaborationFaculty": [
         {
           "name": "Roxana Daneshjou",
@@ -896,10 +896,10 @@
           "venueEvidence": "Official materials list IEEE VR Best Journal Paper and many TVCG/IEEE VR/ISMAR papers."
         }
       ],
-      "priorityScore": 420,
+      "priorityScore": 32,
       "firstSeen": "2026-09-21",
       "lastVerified": "2026-09-21",
-      "verificationNote": "HTTP 202",
+      "verificationNote": "HTTP 200",
       "changeType": "Newly Posted",
       "changeLog": [
         {
