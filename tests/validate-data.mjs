@@ -114,6 +114,8 @@ assert.match(indexRaw, /role="tablist"/, "page must expose an accessible tab lis
 assert.match(indexRaw, /id="jobs-panel"/, "jobs panel is missing");
 assert.match(indexRaw, /id="funding-panel"/, "funding panel is missing");
 assert.match(appRaw, /data\/funding\.json/, "funding data is not wired into the application");
+assert.match(appRaw, /filter\(\(job\) => !hasPassedDeadline\(job\)\)/, "jobs must be filtered against the current date in the browser");
+assert.match(appRaw, /filter\(\(item\) => !hasPassedDeadline\(item\)\)/, "funding must be filtered against the current date in the browser");
 
 console.log(JSON.stringify({
   jobs: jobsPayload.jobs.length,

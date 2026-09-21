@@ -1,5 +1,6 @@
 const JOBS_DATA_URL = "./data/jobs.json";
 const FUNDING_DATA_URL = "./data/funding.json";
+const TRACKER_TIMEZONE = "Australia/Sydney";
 
 const state = {
   activeTab: window.location.hash === "#funding" ? "funding" : "jobs",
@@ -63,7 +64,18 @@ function deadlineValue(item) {
 
 function daysUntil(deadline) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(deadline || "")) return null;
-  return Math.ceil((Date.parse(`${deadline}T23:59:59+10:00`) - Date.now()) / 86400000);
+  const today = new Intl.DateTimeFormat("en-CA", {
+    timeZone: TRACKER_TIMEZONE,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
+  return Math.round((Date.parse(`${deadline}T00:00:00Z`) - Date.parse(`${today}T00:00:00Z`)) / 86400000);
+}
+
+function hasPassedDeadline(item) {
+  const remaining = daysUntil(item.deadline);
+  return remaining !== null && remaining < 0;
 }
 
 function formatGeneratedAt(payload) {
@@ -115,8 +127,9 @@ function renderJobCard(job, index) {
   role.append(node("p", "recommendation", job.recommendation));
 
   const meta = node("div", "meta");
-  const deadline = node("div", `deadline${job.daysLeft !== null && job.daysLeft <= 30 ? " urgent" : ""}`);
-  deadline.append(node("strong", "", job.daysLeft !== null ? `D-${job.daysLeft}` : "Open / verify"));
+  const remaining = daysUntil(job.deadline);
+  const deadline = node("div", `deadline${remaining !== null && remaining <= 30 ? " urgent" : ""}`);
+  deadline.append(node("strong", "", remaining !== null ? `D-${remaining}` : "Open / verify"));
   deadline.append(document.createTextNode(job.deadline));
   const salary = node("div", "salary");
   salary.append(node("strong", "", job.salary));
@@ -239,7 +252,10 @@ function updateHero() {
     return;
   }
 
-  const urgent = state.jobs.filter((job) => job.daysLeft !== null && job.daysLeft >= 0 && job.daysLeft <= 30).length;
+  const urgent = state.jobs.filter((job) => {
+    const days = daysUntil(job.deadline);
+    return days !== null && days >= 0 && days <= 30;
+  }).length;
   elements.heroEyebrow.textContent = "GLOBAL ACADEMIC OPPORTUNITIES";
   elements.pageTitle.innerHTML = "Faculty openings<br><em>worth tracking.</em>";
   elements.heroCopy.textContent = "Ranked computer science roles, adjacent research positions, and selected industry opportunities—checked against original sources.";
@@ -308,7 +324,7 @@ async function loadJobs() {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const payload = await response.json();
     if (!Array.isArray(payload.jobs)) throw new Error("Invalid dataset");
-    state.jobs = payload.jobs;
+    state.jobs = payload.jobs.filter((job) => !hasPassedDeadline(job));
     state.jobPayload = payload;
     populateRegions();
     renderJobs();
@@ -324,7 +340,7 @@ async function loadFunding() {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const payload = await response.json();
     if (!Array.isArray(payload.opportunities)) throw new Error("Invalid dataset");
-    state.funding = payload.opportunities;
+    state.funding = payload.opportunities.filter((item) => !hasPassedDeadline(item));
     state.fundingPayload = payload;
     renderFunding();
   } catch (error) {

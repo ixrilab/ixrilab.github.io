@@ -1,0 +1,40 @@
+name: Refresh job and funding tracker
+
+on:
+  schedule:
+    - cron: "7 22 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-opportunity-tracker
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Refresh published opportunities
+        run: node data-tools/refresh-tracker.mjs
+      - name: Validate refreshed data
+        run: |
+          node tests/refresh-tracker.mjs
+          node tests/validate-data.mjs
+      - name: Commit refreshed data
+        run: |
+          git config user.name "IXRI Lab Tracker Bot"
+          git config user.email "ixrilab-tracker-bot@users.noreply.github.com"
+          git add data/jobs.json data/funding.json
+          if git diff --cached --quiet; then
+            echo "No tracker data changed."
+            exit 0
+          fi
+          git commit -m "Refresh opportunity tracker $(date -u +%F)"
+          git push

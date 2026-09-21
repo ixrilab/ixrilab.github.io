@@ -1,26 +1,7 @@
 {
-  "generatedAt": "2026-08-26T22:04:00.000Z",
+  "generatedAt": "2026-09-21T01:38:18.717Z",
   "timezone": "Australia/Sydney",
   "opportunities": [
-    {
-      "id": "epic-megagrants-2026-cycle-2",
-      "funder": "Epic Games",
-      "title": "Epic MegaGrants — 2026 Cycle 2",
-      "regionCategory": "Corporate",
-      "status": "Open",
-      "deadline": "2026-09-04",
-      "deadlineLabel": "4 Sep 2026 · 23:59 ET",
-      "funding": "Grant amount varies by project",
-      "fundingType": "Project grant",
-      "eligibilityRoute": "Small teams, solo developers, and innovators using Unreal Engine or Unreal Editor for Fortnite may apply globally.",
-      "partnerRequirement": "No university or Korean partner is required; a credible real-time 3D project is essential.",
-      "fieldFit": "Strong fit for XR, immersive analytics, virtual production, digital twins, simulation, and interactive 3D prototypes.",
-      "recommendation": "High priority when a working Unreal prototype, public demo, or concrete production plan can be shown.",
-      "url": "https://www.unrealengine.com/megagrants",
-      "checkedAt": "2026-08-27",
-      "confidence": "High",
-      "score": 95
-    },
     {
       "id": "aws-cloud-credit-for-research",
       "funder": "Amazon Web Services",
@@ -36,7 +17,7 @@
       "fieldFit": "Useful for compute-intensive HCI, human-centred AI, multimodal analytics, visualization, and XR back-end workloads.",
       "recommendation": "Apply when the project has a quantified cloud workload, public research output, benchmark, tool, or training plan.",
       "url": "https://aws.amazon.com/government-education/research-and-technical-computing/cloud-credit-for-research/",
-      "checkedAt": "2026-08-27",
+      "checkedAt": "2026-09-21",
       "confidence": "High",
       "score": 92
     },
@@ -58,25 +39,6 @@
       "checkedAt": "2026-08-27",
       "confidence": "High",
       "score": 90
-    },
-    {
-      "id": "mrff-mental-health-2026",
-      "funder": "Australian Government — MRFF",
-      "title": "2026 Mental Health Research Grant Opportunity",
-      "regionCategory": "Australia",
-      "status": "Open",
-      "deadline": "2026-09-16",
-      "deadlineLabel": "Minimum data: 19 Aug · Close: 16 Sep 2026",
-      "funding": "See Grant Opportunity Guidelines",
-      "fundingType": "Institutional health and medical research grant",
-      "eligibilityRoute": "Submission is through an eligible Australian organisation; scheme stream and CI rules must be checked with the Research Office.",
-      "partnerRequirement": "Clinical, community, or service partners may be needed depending on the selected stream.",
-      "fieldFit": "Potential fit for digital mental health, accessible interaction, telehealth, immersive interventions, and responsible human–AI systems.",
-      "recommendation": "High priority only when the project directly addresses a listed scheme objective and minimum data can be lodged by 19 August.",
-      "url": "https://www.health.gov.au/our-work/mrff/grant-opportunities-calendar",
-      "checkedAt": "2026-08-27",
-      "confidence": "High",
-      "score": 88
     },
     {
       "id": "mrff-primary-health-care-2026",
@@ -169,28 +131,9 @@
       "fieldFit": "Strong fit when HCI or XR is framed within AI, advanced manufacturing, quantum, health technology, or another announced priority theme.",
       "recommendation": "Maintain a Korea–Australia concept and partner team, but do not treat this as open until the official site publishes a new round.",
       "url": "https://www.glodip.org.au/",
-      "checkedAt": "2026-08-27",
+      "checkedAt": "2026-09-21",
       "confidence": "High",
       "score": 76
-    },
-    {
-      "id": "kiat-korea-australia-rd-watch",
-      "funder": "Korea Institute for Advancement of Technology",
-      "title": "Korea–Australia Industrial Technology Cooperation Call Watch",
-      "regionCategory": "Korea-Australia",
-      "status": "Monitoring",
-      "deadline": null,
-      "deadlineLabel": "Australia-specific call not currently verified",
-      "funding": "Call-specific Korean public R&D funding",
-      "fundingType": "International industrial R&D program",
-      "eligibilityRoute": "A Korean lead organisation normally applies to KIAT; an Australian university participates only when the specific bilateral or multilateral call permits it.",
-      "partnerRequirement": "A Korean industry or research lead and a formally eligible overseas consortium are normally required.",
-      "fieldFit": "Potential fit for industrial XR, human–robot interaction, AI interfaces, simulation, advanced manufacturing, and assistive technology.",
-      "recommendation": "Use this as a partner-led watch channel. Confirm the exact country call and both-side submission rules before developing a proposal.",
-      "url": "https://www.kiat.or.kr/front/board/boardList.do?MenuId=b159c9dac684471b87256f1e25404f5e",
-      "checkedAt": "2026-08-17",
-      "confidence": "Medium",
-      "score": 74
     },
     {
       "id": "nrf-msit-korea-australia-watch",
@@ -207,7 +150,7 @@
       "fieldFit": "Potential fit for HCI, human-centred AI, digital media, robotics, visualization, immersive systems, and interdisciplinary computing when listed in the call.",
       "recommendation": "Search IRIS and NRF notices daily and activate only after an official Korea–Australia call, topic scope, and overseas eligibility are confirmed.",
       "url": "https://www.iris.go.kr/",
-      "checkedAt": "2026-08-27",
+      "checkedAt": "2026-09-21",
       "confidence": "Medium",
       "score": 72
     }

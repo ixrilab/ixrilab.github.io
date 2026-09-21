@@ -37,3 +37,5 @@ jobs:
         run: node tests/validate-data.mjs
       - name: Check English normalization script
         run: node --check data-tools/normalize-jobs-to-english.mjs
+      - name: Test tracker refresh logic
+        run: node tests/refresh-tracker.mjs
