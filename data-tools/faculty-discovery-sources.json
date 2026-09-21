@@ -23,8 +23,11 @@
       "r1Verified": true,
       "type": "uc-recruit-html",
       "url": "https://aprecruit.berkeley.edu/apply",
+      "excludedJobIds": [
+        "JPF05409"
+      ],
       "lastManualAudit": "2026-09-21",
-      "auditNote": "The complete public UC Recruit listing is inspected, and eligible Assistant/Open-rank faculty descriptions are checked for research-fit signals."
+      "auditNote": "The complete public UC Recruit listing is inspected, and eligible Assistant/Open-rank faculty descriptions are checked for research-fit signals. JPF05409 is manually excluded because it is a theatrical-design search rather than an HCI/XR research-faculty search."
     },
     {
       "id": "uc-irvine-ap-recruit",

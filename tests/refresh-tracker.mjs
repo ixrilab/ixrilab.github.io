@@ -41,7 +41,9 @@ const base = {
   changeLog: [],
 };
 
-assert.equal(priorityScore(base, "2026-09-21"), 86);
+assert.equal(priorityScore(base, "2026-09-21"), 82);
+assert.equal(priorityScore({ ...base, postedDate: "2026-03-21" }, "2026-09-21"), 66);
+assert.equal(priorityScore({ ...base, postedDate: "2026-03-22" }, "2026-09-21"), 88);
 assert.ok(
   priorityScore({
     ...base,
@@ -120,4 +122,4 @@ const newByMerge = mergeFacultyJobs([], [{ ...base, id: "new" }], "2026-09-21")[
 assert.equal(newByMerge.changeType, "Newly Posted");
 assert.equal(newByMerge.firstSeen, "2026-09-21");
 
-console.log(JSON.stringify({ status: "valid", tests: 28 }, null, 2));
+console.log(JSON.stringify({ status: "valid", tests: 30 }, null, 2));

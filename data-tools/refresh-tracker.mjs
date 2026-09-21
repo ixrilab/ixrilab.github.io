@@ -67,11 +67,13 @@ function scoreComponents(job, today) {
     institution: INSTITUTION_WEIGHTS[job.institutionStrength] || 0,
     rank: RANK_WEIGHTS[job.rankTrack] || 0,
     timing,
+    agePenalty: posted === "Older than 6 months — reconfirm" ? -20 : posted === "Date unavailable" ? -4 : 0,
   };
 }
 
 function priorityScore(job, today) {
-  return Object.values(scoreComponents(job, today)).reduce((total, value) => total + value, 0);
+  const score = Object.values(scoreComponents(job, today)).reduce((total, value) => total + value, 0);
+  return Math.max(0, Math.min(100, score));
 }
 
 function isDefinitelyClosed(text) {

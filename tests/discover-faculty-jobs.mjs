@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 
-import { matchedSignals, parseUcRecruitRows, stripHtml } from "../data-tools/discover-faculty-jobs.mjs";
+import { matchedSignals, parsePostedDate, parseUcRecruitRows, stripHtml } from "../data-tools/discover-faculty-jobs.mjs";
 
 assert.equal(stripHtml("<p>Human &amp; AI <strong>work</strong></p>"), "Human AI work");
 assert.deepEqual(matchedSignals("Human-computer interaction and mixed reality systems"), ["HCI", "XR/VR/AR"]);
@@ -9,6 +9,9 @@ assert.deepEqual(matchedSignals("Human-AI collaboration and trust in AI for orga
   "technology-rich human collaboration",
 ]);
 assert.deepEqual(matchedSignals("Protein-protein interaction in molecular biosciences"), []);
+assert.equal(parsePostedDate("Sep 15, 2026"), "2026-09-15");
+assert.equal(parsePostedDate("Open Sep 8, 2026 – Nov 2, 2026"), "2026-09-08");
+assert.equal(parsePostedDate("Dates not stated"), null);
 
 const ucRows = parseUcRecruitRows(`
   <tbody data-section="School of Information">
@@ -24,6 +27,7 @@ assert.deepEqual(ucRows, [{
   unit: "School of Information",
   officialUrl: "https://recruit.example.edu/JPF12345",
   deadlineLabel: "Open Sep 1, 2026 through Dec 1, 2026",
+  postedDate: "2026-09-01",
 }]);
 
-console.log(JSON.stringify({ status: "valid", tests: 5 }, null, 2));
+console.log(JSON.stringify({ status: "valid", tests: 8 }, null, 2));

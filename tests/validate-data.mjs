@@ -118,6 +118,15 @@ for (const [index, job] of jobsPayload.jobs.entries()) {
     }
     assert.match(person.profileUrl, /^https:\/\//, `jobs[${index}] collaborator URL must use HTTPS`);
   }
+  if (job.recentFacultySignals) {
+    assert.ok(Array.isArray(job.recentFacultySignals) && job.recentFacultySignals.length > 0, `jobs[${index}].recentFacultySignals must be a non-empty array`);
+    for (const [facultyIndex, person] of job.recentFacultySignals.entries()) {
+      for (const field of ["name", "joined", "strengthSignal", "barInference", "sourceUrl"]) {
+        assert.ok(person[field], `jobs[${index}].recentFacultySignals[${facultyIndex}].${field} is required`);
+      }
+      assert.match(person.sourceUrl, /^https:\/\//, `jobs[${index}] recent-hire source URL must use HTTPS`);
+    }
+  }
   if (job.country === "United States") {
     assert.equal(job.r1Verified, true, `jobs[${index}] US university must be R1-verified`);
   } else {
@@ -126,6 +135,11 @@ for (const [index, job] of jobsPayload.jobs.entries()) {
   if (/robot(?:ics|ic)/i.test(`${job.title} ${job.researchArea}`)) {
     assert.match(`${job.researchArea} ${job.fitNote}`, /human|interaction|HRI|XR|spatial/i, `jobs[${index}] is a pure robotics false positive`);
   }
+}
+
+for (const id of ["ut-austin-ischool-open-rank-191973", "berkeley-ischool-hci-jpf05482", "uci-informatics-hci-jpf10388"]) {
+  const job = jobsPayload.jobs.find((item) => item.id === id);
+  assert.ok(job?.recentFacultySignals?.length, `${id} must include recent-hire bar signals`);
 }
 
 for (let index = 1; index < jobsPayload.jobs.length; index += 1) {

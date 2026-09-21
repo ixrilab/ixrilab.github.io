@@ -107,7 +107,12 @@ function scoreBreakdown(job) {
     + (priorityRemaining !== null && priorityRemaining >= 0 ? 2 : 0)
     + (finalRemaining !== null && finalRemaining >= 0 ? 2 : 0);
   const collaboration = Math.round(Math.min(job.collaborationEvidenceScore || 0, 180) / 180 * 12);
-  return `Fit ${fit} · collaborators ${collaboration} · institution ${job.institutionScore} · rank ${rank} · posting clarity ${timing}`;
+  const agePenalty = job.postingAgeStatus === "Older than 6 months — reconfirm"
+    ? -20
+    : job.postingAgeStatus === "Date unavailable"
+      ? -4
+      : 0;
+  return `Fit ${fit} · collaborators ${collaboration} · institution ${job.institutionScore} · rank ${rank} · posting clarity ${timing} · age ${agePenalty}`;
 }
 
 function hasPassedDeadline(item) {
@@ -208,6 +213,23 @@ function renderJobCard(job, index) {
     collaborators.append(list);
     role.append(collaborators);
   }
+  if (job.recentFacultySignals?.length) {
+    const hires = node("div", "recent-hires");
+    hires.append(node("strong", "", "Recent-hire bar signals (inference)"));
+    const list = node("ul", "");
+    for (const person of job.recentFacultySignals) {
+      const item = node("li", "");
+      const link = node("a", "", person.name);
+      link.href = person.sourceUrl;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      item.append(link, document.createTextNode(` · joined ${person.joined} — ${person.strengthSignal}`));
+      item.append(node("span", "bar-inference", `What likely cleared the bar: ${person.barInference}`));
+      list.append(item);
+    }
+    hires.append(list, node("small", "", "These are evidence-based signals, not disclosed hiring-committee decisions."));
+    role.append(hires);
+  }
 
   const meta = node("div", "meta");
   const remaining = daysUntil(job.finalDeadline);
@@ -216,7 +238,7 @@ function renderJobCard(job, index) {
   deadline.append(document.createTextNode(`Final: ${job.finalDeadline || "Not stated"}`));
   const review = node("div", "salary");
   review.append(node("strong", "", `Review: ${job.priorityDate || "Not stated"}`));
-  review.append(document.createTextNode(`Verified ${job.lastVerified}`));
+  review.append(document.createTextNode(`Posted: ${job.postedDate || "Not stated"} · Verified ${job.lastVerified}`));
   const link = node("a", "source-link", "Official posting ↗");
   link.href = job.officialUrl;
   link.target = "_blank";

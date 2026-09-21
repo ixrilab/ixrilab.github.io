@@ -153,7 +153,7 @@
     "evidenceRule": "Every collaboration or institution-strength point must be supported by a public URL. Target-venue credit is awarded only when a named, current faculty member has an evidenced ISMAR, IEEE VR, or TVCG publication and meaningful topical overlap."
   },
   "sourceRule": "Use an official university careers or faculty-search page as the published URL and source of truth. Aggregators may be used only to discover a search and must be cross-checked against an official source.",
-  "postingAgeRule": "When an official posted date is available and is at least six calendar months old, keep the record but display an Older than 6 months — reconfirm warning. Do not infer a posted date from the discovery date, and do not close a role solely because it is old.",
+  "postingAgeRule": "Use only an official posted/open date. Apply a 4-point penalty when it is unavailable and a 20-point penalty when it is at least six calendar months old; keep the record and display an Older than 6 months — reconfirm warning. Do not infer a posted date from the discovery date, and do not close a role solely because it is old.",
   "recordFields": [
     "Country",
     "University",

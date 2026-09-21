@@ -280,6 +280,22 @@ input:focus, select:focus { outline: 3px solid rgba(29,165,140,.17); border-colo
 .collaborators a { color: #176d5b; font-weight: 750; }
 .venue-evidence { display: block; color: #735a1d; font-size: 10px; }
 
+.recent-hires {
+  margin-top: 14px;
+  padding: 13px 14px;
+  border: 1px solid #d9e3df;
+  border-radius: 12px;
+  color: var(--muted);
+  background: #f5f9f7;
+  font-size: 11px;
+}
+
+.recent-hires > strong { color: var(--ink); }
+.recent-hires ul { margin: 8px 0; padding-left: 18px; display: grid; gap: 9px; }
+.recent-hires a { color: #176d5b; font-weight: 750; }
+.recent-hires small { display: block; color: #6d7d83; font-size: 9px; }
+.bar-inference { display: block; margin-top: 2px; color: #4d625d; }
+
 .meta { display: grid; gap: 12px; }
 .deadline { color: var(--muted); font-size: 11px; }
 .deadline strong { display: block; color: var(--ink); font-size: 16px; }

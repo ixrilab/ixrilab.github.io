@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T04:57:38.260Z",
+  "generatedAt": "2026-09-21T11:05:46.363Z",
   "timezone": "Australia/Sydney",
   "sourcesChecked": [
     {
@@ -15,8 +15,8 @@
       "institution": "University of California, Berkeley",
       "checkedAt": "2026-09-21",
       "status": "Verified",
-      "postingsInspected": 175,
-      "candidatesFound": 2
+      "postingsInspected": 173,
+      "candidatesFound": 1
     },
     {
       "id": "uc-irvine-ap-recruit",
@@ -29,21 +29,6 @@
   ],
   "candidates": [
     {
-      "sourceId": "uc-berkeley-ap-recruit",
-      "sourceJobId": "JPF05409",
-      "institution": "University of California, Berkeley",
-      "title": "Assistant Professor - Theatrical Design - Department of Theater, Dance Performance Studies",
-      "unit": "College of Letters Science - Arts Humanities / Theater, Dance Perf Studies",
-      "officialUrl": "https://aprecruit.berkeley.edu/JPF05409",
-      "deadlineLabel": "Apply by Sep 30, 2026 for full consideration Open Jul 21, 2026 Sep 30, 2026",
-      "matchedSignals": [
-        "XR/VR/AR"
-      ],
-      "eligibleAppointment": true,
-      "reviewStatus": "Needs review",
-      "knownJobId": null
-    },
-    {
       "sourceId": "ut-austin-faculty-careers",
       "sourceJobId": "188439",
       "institution": "The University of Texas at Austin",
@@ -51,6 +36,7 @@
       "unit": "Department of Communication Studies",
       "officialUrl": "https://faculty.utexas.edu/career/188439",
       "deadlineLabel": "Open until filled",
+      "postedDate": "2026-07-29",
       "matchedSignals": [
         "human-AI interaction",
         "technology-rich human collaboration"
@@ -67,6 +53,7 @@
       "unit": "Department Information",
       "officialUrl": "https://faculty.utexas.edu/career/191973",
       "deadlineLabel": "Open until filled",
+      "postedDate": "2026-09-15",
       "matchedSignals": [
         "HCI",
         "human-AI interaction"
@@ -83,6 +70,7 @@
       "unit": "Stan Richards School of Advertising & Public Relations",
       "officialUrl": "https://faculty.utexas.edu/career/189345",
       "deadlineLabel": "Open until filled",
+      "postedDate": "2026-08-11",
       "matchedSignals": [
         "HCI"
       ],
@@ -98,6 +86,7 @@
       "unit": "School of Information / School of Information",
       "officialUrl": "https://aprecruit.berkeley.edu/JPF05482",
       "deadlineLabel": "Apply by Nov 2, 2026 for full consideration Open Sep 8, 2026 Nov 2, 2026",
+      "postedDate": "2026-09-08",
       "matchedSignals": [
         "HCI",
         "human-AI interaction"
@@ -114,6 +103,7 @@
       "unit": "Donald Bren School of Information and Computer Sciences / Informatics",
       "officialUrl": "https://recruit.ap.uci.edu/JPF10388",
       "deadlineLabel": "Apply by Dec 5, 2026 for full consideration Open Sep 2, 2026 Apr 1, 2027",
+      "postedDate": "2026-09-02",
       "matchedSignals": [
         "HCI"
       ],

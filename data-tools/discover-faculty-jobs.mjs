@@ -37,6 +37,13 @@ function matchedSignals(text) {
   return RESEARCH_SIGNALS.filter(([, pattern]) => pattern.test(text)).map(([label]) => label);
 }
 
+function parsePostedDate(label = "") {
+  const match = label.match(/(?:^|\bOpen\s+)(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\.?\s+(\d{1,2}),\s+(\d{4})/i);
+  if (!match) return null;
+  const months = { jan: "01", feb: "02", mar: "03", apr: "04", may: "05", jun: "06", jul: "07", aug: "08", sep: "09", oct: "10", nov: "11", dec: "12" };
+  return `${match[3]}-${months[match[1].slice(0, 3).toLowerCase()]}-${String(match[2]).padStart(2, "0")}`;
+}
+
 function parseUcRecruitRows(html, source) {
   const rows = [];
   const rowPattern = /<tr id="(JPF\d+)" class="linked match"[\s\S]*?<td class="name"[\s\S]*?<div class=['"]name['"]>([\s\S]*?)<\/div>[\s\S]*?<td class="submission-dates"[^>]*>([\s\S]*?)<\/td><\/tr>/g;
@@ -45,6 +52,7 @@ function parseUcRecruitRows(html, source) {
     const sectionMatches = [...prefix.matchAll(/<tbody[^>]+data-section="([^"]+)"/g)];
     const unit = stripHtml(sectionMatches.at(-1)?.[1] || "Unit not stated");
     const sourceJobId = match[1];
+    const deadlineLabel = stripHtml(match[3]) || "Dates not stated";
     rows.push({
       sourceId: source.id,
       sourceJobId,
@@ -52,7 +60,8 @@ function parseUcRecruitRows(html, source) {
       title: stripHtml(match[2]),
       unit,
       officialUrl: new URL(`/${sourceJobId}`, source.url).href,
-      deadlineLabel: stripHtml(match[3]) || "Dates not stated",
+      deadlineLabel,
+      postedDate: parsePostedDate(deadlineLabel),
     });
   }
   return rows;
@@ -111,7 +120,7 @@ async function scanAlgoliaSource(source, fetcher = fetchText) {
   const credentials = await algoliaCredentials(source, fetcher);
   const endpoint = `https://${credentials.applicationId}-dsn.algolia.net/1/indexes/${source.indexName}/query`;
   const body = JSON.stringify({
-    params: "query=&hitsPerPage=1000&attributesToRetrieve=objectID,name,description,unit_name,unit_ancestry,close_date_display,legacy_position_id&attributesToHighlight=&attributesToSnippet=",
+    params: "query=&hitsPerPage=1000&attributesToRetrieve=objectID,name,description,unit_name,unit_ancestry,open_date_display,close_date_display,legacy_position_id&attributesToHighlight=&attributesToSnippet=",
   });
   const raw = await fetcher(endpoint, {
     method: "POST",
@@ -134,6 +143,7 @@ async function scanAlgoliaSource(source, fetcher = fetchText) {
       unit: hit.unit_name || hit.unit_ancestry || "Unit not stated",
       officialUrl: new URL(`/career/${hit.objectID}`, source.url).href,
       deadlineLabel: hit.close_date_display || "Open until filled",
+      postedDate: parsePostedDate(hit.open_date_display || ""),
       matchedSignals: matchedSignals(text),
       eligibleAppointment: APPOINTMENT_PATTERN.test(text) && !EXCLUDED_APPOINTMENT_PATTERN.test(title),
     };
@@ -198,7 +208,8 @@ async function discoverFacultyJobs({ now = new Date(), fetcher = fetchText, writ
         : source.type === "uc-recruit-html"
           ? await scanUcRecruitSource(source, fetcher)
           : [];
-      const relevant = hits.filter((hit) => hit.eligibleAppointment && hit.matchedSignals.length > 0);
+      const excludedJobIds = new Set(source.excludedJobIds || []);
+      const relevant = hits.filter((hit) => hit.eligibleAppointment && hit.matchedSignals.length > 0 && !excludedJobIds.has(hit.sourceJobId));
       for (const hit of relevant) {
         const knownJobId = knownUrls.get(hit.officialUrl.replace(/\/$/, "")) || null;
         candidates.push({
@@ -243,4 +254,4 @@ if (isEntryPoint) {
   if (output.sourcesChecked.some((source) => source.status === "Failed")) process.exitCode = 1;
 }
 
-export { discoverFacultyJobs, matchedSignals, parseUcRecruitRows, scanAlgoliaSource, scanUcRecruitSource, stripHtml };
+export { discoverFacultyJobs, matchedSignals, parsePostedDate, parseUcRecruitRows, scanAlgoliaSource, scanUcRecruitSource, stripHtml };
