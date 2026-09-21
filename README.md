@@ -1,17 +1,38 @@
-# HCI · XR Career and Funding Radar
+# HCI · XR Faculty and Funding Radar
 
 This repository publishes an independent, static GitHub Pages application at the site root.
 
 ## Data flow
 
-1. `.github/workflows/refresh-tracker.yml` runs daily and can also be started manually. It verifies original posting URLs, removes opportunities with passed deadlines or definitive closure responses, and recalculates job countdowns.
-2. Active and eligible roles are exported, then `data-tools/normalize-jobs-to-english.mjs` converts the public jobs dataset to English.
-3. Funding opportunities are checked against `data-tools/funding-sources.json` and published to `data/funding.json` with explicit eligibility routes and confidence.
-4. `tests/validate-data.mjs` checks both datasets, URLs, statuses, ordering, privacy markers, English-only output, and the Jobs/Funding tab wiring.
-5. Only validated data is committed and pushed with the workflow's short-lived `GITHUB_TOKEN`.
-6. GitHub Pages publishes the updated JSON without a separate frontend build.
+1. `data-tools/faculty-search-policy.json` defines the geographic limits, eligible appointment types, direct/strong/broad research-fit gates, pure-robotics exclusions, evidence requirements, and score weights.
+2. Faculty searches are researched against official university sources. Each public record includes exact appointment details, review and final dates, status, a profile-specific fit note, named collaboration faculty, target-venue evidence, and verification history.
+3. `.github/workflows/refresh-tracker.yml` runs daily and can also be started manually. It verifies every official URL, recalculates evidence scores and posting-age warnings, and changes expired or definitively closed faculty searches to `Closed` without deleting their history.
+4. Funding opportunities are checked against `data-tools/funding-sources.json` and published to `data/funding.json` with explicit eligibility routes and confidence.
+5. `tests/validate-data.mjs` enforces the faculty-only scope, country/institution rules, R1 flag for US positions, evidence links, score ordering, history retention, privacy markers, English-only output, and the Faculty/Funding tab wiring.
+6. Only validated data is committed and pushed with the workflow's short-lived `GITHUB_TOKEN`.
+7. GitHub Pages publishes the updated JSON without a separate frontend build.
 
-The repository does not contain the external research process that originally discovered new opportunities. The built-in workflow keeps the published tracker accurate and current; newly discovered opportunities still need to be added to the JSON by a separate research process or a reviewed pull request.
+The scheduled workflow validates and tracks known searches; it does not run a general-purpose web search and therefore cannot discover new vacancies on its own. New searches still require a reviewed research pass against official university sources. This is intentional: silently scraping generic search results would reintroduce the low-signal open-area and robotics false positives that the policy excludes.
+
+For a reviewed research pass, prepare a JSON payload with a `jobs` array and preview the comparison with:
+
+```powershell
+node .\data-tools\merge-faculty-jobs.mjs --incoming .\reviewed-jobs.json
+```
+
+Add `--write` after reviewing the preview. The merge preserves missing historical rows and automatically records `Newly Posted`, `Deadline/Review Date Changed`, `Status Changed`, or `Closed` events in each job's change log.
+
+## Faculty score
+
+The score is evidence-based and deliberately fit-first:
+
+- Direct / Strong / Broad fit: 1000 / 600 / 200 points.
+- Verified collaboration faculty: up to 180 points, with extra weight for evidenced ISMAR, IEEE VR, or TVCG publications and a smaller CHI/UIST bonus.
+- Relevant institutional research environment: 120 / 80 / 40 points for Exceptional / Very Strong / Strong evidence.
+- Eligible rank: 30 points for Assistant Professor, 25 for Assistant/Associate, and 20 for open rank accepting Assistant applicants.
+- Deadline urgency: at most 9 points, so it cannot lift a weak-fit role above a stronger-fit role.
+
+An official posted date at least six calendar months old produces an `Older than 6 months — reconfirm` warning. Missing posted dates remain `Date unavailable`; the tracker never invents a date from when a role was discovered.
 
 ## Automation requirements
 

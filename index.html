@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#071d2b">
   <title>HCI · XR Career & Funding Radar</title>
-  <meta name="description" content="A daily tracker for global HCI and XR jobs, Australian research funding, Korea–Australia collaboration calls, and corporate research programs.">
+  <meta name="description" content="An evidence-ranked tracker for HCI, XR, spatial computing, and human-AI faculty searches, plus research funding opportunities.">
   <link rel="stylesheet" href="style.css">
   <script src="app.js" defer></script>
 </head>
@@ -19,7 +19,7 @@
       </span>
     </div>
     <nav class="section-tabs" aria-label="Tracker sections" role="tablist">
-      <a class="section-tab is-active" href="#jobs" id="tab-jobs" role="tab" aria-selected="true" aria-controls="jobs-panel" data-tab="jobs">Jobs</a>
+      <a class="section-tab is-active" href="#jobs" id="tab-jobs" role="tab" aria-selected="true" aria-controls="jobs-panel" data-tab="jobs">Faculty</a>
       <a class="section-tab" href="#funding" id="tab-funding" role="tab" aria-selected="false" aria-controls="funding-panel" data-tab="funding">Funding</a>
     </nav>
     <span class="update-pill"><i aria-hidden="true"></i> Daily data refresh</span>
@@ -49,30 +49,43 @@
         <p id="result-count" aria-live="polite"></p>
       </div>
 
+      <div class="scope-note">
+        <strong>Ranking lens</strong>
+        <p>Research fit dominates the score. Verified collaborators—especially faculty publishing at ISMAR, IEEE VR, or TVCG—come next, followed by the relevant institutional research environment, eligible rank, and deadline. Pure robotics and generic AI/CS searches are excluded.</p>
+      </div>
+
       <form class="filters" id="filters" role="search">
         <label class="search-field">
           <span>Search</span>
           <input id="search" type="search" placeholder="Institution, role, or research area">
         </label>
         <label>
-          <span>Category</span>
-          <select id="category">
-            <option value="all">All categories</option>
-            <option value="Faculty">Faculty</option>
-            <option value="Industry">Industry</option>
-            <option value="Research">Research</option>
+          <span>Research fit</span>
+          <select id="fit">
+            <option value="all">All fit levels</option>
+            <option value="Direct">Direct</option>
+            <option value="Strong">Strong</option>
+            <option value="Broad">Broad</option>
           </select>
         </label>
         <label>
-          <span>Region</span>
-          <select id="region"><option value="all">All regions</option></select>
+          <span>Country</span>
+          <select id="country"><option value="all">All countries</option></select>
+        </label>
+        <label>
+          <span>Status</span>
+          <select id="job-status">
+            <option value="active">Open only</option>
+            <option value="Closed">Closed history</option>
+            <option value="all">All statuses</option>
+          </select>
         </label>
         <label>
           <span>Sort</span>
           <select id="sort">
             <option value="priority">Priority</option>
             <option value="deadline">Deadline</option>
-            <option value="institution">Institution</option>
+            <option value="institution">University</option>
           </select>
         </label>
       </form>
@@ -137,7 +150,7 @@
   </main>
 
   <footer>
-    <p>Listings are compiled from official public sources. Always verify eligibility, internal university deadlines, funding terms, salary, and sponsorship on the original posting.</p>
+    <p>Listings are compiled from official public sources. Scores are decision support, not guarantees. Reconfirm appointment terms, eligibility, deadlines, and named faculty availability before applying.</p>
   </footer>
 </body>
 </html>

@@ -7,8 +7,9 @@ const state = {
   jobs: [],
   jobPayload: null,
   jobQuery: "",
-  jobCategory: "all",
-  jobRegion: "all",
+  jobFit: "all",
+  jobCountry: "all",
+  jobStatus: "active",
   jobSort: "priority",
   funding: [],
   fundingPayload: null,
@@ -36,8 +37,9 @@ const elements = {
   jobEmpty: document.querySelector("#empty-state"),
   jobError: document.querySelector("#error-state"),
   jobSearch: document.querySelector("#search"),
-  jobCategory: document.querySelector("#category"),
-  jobRegion: document.querySelector("#region"),
+  jobFit: document.querySelector("#fit"),
+  jobCountry: document.querySelector("#country"),
+  jobStatus: document.querySelector("#job-status"),
   jobSort: document.querySelector("#sort"),
   jobResultCount: document.querySelector("#result-count"),
   fundingList: document.querySelector("#funding-list"),
@@ -58,8 +60,9 @@ function node(tag, className, text) {
 }
 
 function deadlineValue(item) {
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(item.deadline || "")) return Number.POSITIVE_INFINITY;
-  return Date.parse(`${item.deadline}T23:59:59Z`);
+  const deadline = item.finalDeadline ?? item.deadline;
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(deadline || "")) return Number.POSITIVE_INFINITY;
+  return Date.parse(`${deadline}T23:59:59Z`);
 }
 
 function daysUntil(deadline) {
@@ -71,6 +74,20 @@ function daysUntil(deadline) {
     day: "2-digit",
   }).format(new Date());
   return Math.round((Date.parse(`${deadline}T00:00:00Z`) - Date.parse(`${today}T00:00:00Z`)) / 86400000);
+}
+
+function scoreBreakdown(job) {
+  const fit = { Direct: 1000, Strong: 600, Broad: 200 }[job.fitLevel] || 0;
+  const rank = {
+    "Assistant Professor": 30,
+    "Assistant/Associate Professor": 25,
+    "Open Rank (Assistant accepted)": 20,
+  }[job.rankTrack] || 0;
+  const remaining = daysUntil(job.finalDeadline);
+  const urgency = remaining !== null && remaining >= 0 && remaining <= 30
+    ? Math.min(9, Math.ceil((31 - remaining) / 4))
+    : 0;
+  return `Fit ${fit} · collaborators ${job.collaborationScore} · institution ${job.institutionScore} · rank ${rank} · urgency ${urgency}`;
 }
 
 function hasPassedDeadline(item) {
@@ -92,16 +109,27 @@ function formatGeneratedAt(payload) {
 function filteredJobs() {
   const query = state.jobQuery.toLowerCase();
   const jobs = state.jobs.filter((job) => {
-    const searchable = [job.institution, job.title, job.field, job.location, job.employment].join(" ").toLowerCase();
+    const searchable = [
+      job.university,
+      job.department,
+      job.title,
+      job.researchArea,
+      job.fitNote,
+      ...(job.collaborationFaculty || []).flatMap((person) => [person.name, person.areas, person.venueEvidence]),
+    ].join(" ").toLowerCase();
+    const statusMatches = state.jobStatus === "all"
+      || (state.jobStatus === "active" && job.status !== "Closed")
+      || job.status === state.jobStatus;
     return (!query || searchable.includes(query)) &&
-      (state.jobCategory === "all" || job.category === state.jobCategory) &&
-      (state.jobRegion === "all" || job.location === state.jobRegion);
+      (state.jobFit === "all" || job.fitLevel === state.jobFit) &&
+      (state.jobCountry === "all" || job.country === state.jobCountry) &&
+      statusMatches;
   });
 
   return jobs.sort((a, b) => {
-    if (state.jobSort === "deadline") return deadlineValue(a) - deadlineValue(b) || b.score - a.score;
-    if (state.jobSort === "institution") return a.institution.localeCompare(b.institution) || b.score - a.score;
-    return b.score - a.score || b.workbookScore - a.workbookScore;
+    if (state.jobSort === "deadline") return deadlineValue(a) - deadlineValue(b) || b.priorityScore - a.priorityScore;
+    if (state.jobSort === "institution") return a.university.localeCompare(b.university) || b.priorityScore - a.priorityScore;
+    return b.priorityScore - a.priorityScore;
   });
 }
 
@@ -109,37 +137,58 @@ function renderJobCard(job, index) {
   const card = node("article", "job-card");
   const priority = node("div", "priority");
   priority.append(node("span", "rank-number", String(index + 1).padStart(2, "0")));
-  priority.append(node("strong", "score", String(job.score)));
-  priority.append(node("span", "score-label", "priority"));
+  priority.append(node("strong", "score", String(job.priorityScore)));
+  priority.append(node("span", "score-label", "evidence score"));
 
   const institution = node("div", "institution");
-  institution.append(node("h3", "", job.institution));
-  institution.append(node("p", "", job.location));
+  institution.append(node("h3", "", job.university));
+  institution.append(node("p", "", `${job.country} · ${job.department}`));
   const chips = node("div", "chip-row");
-  chips.append(node("span", "chip", job.category));
-  if (job.ranking && job.ranking !== "N/A") chips.append(node("span", "chip", job.ranking));
+  chips.append(node("span", `chip fit-${job.fitLevel.toLowerCase()}`, `${job.fitLevel} fit`));
+  chips.append(node("span", `chip status-chip status-${job.status.toLowerCase()}`, job.status));
+  if (job.changeType && job.changeType !== "Unchanged") chips.append(node("span", "chip change-chip", job.changeType));
+  if (job.postingAgeStatus === "Older than 6 months — reconfirm") chips.append(node("span", "chip age-warning", "6+ months — reconfirm"));
+  if (job.postingAgeStatus === "Date unavailable") chips.append(node("span", "chip age-unknown", "Posted date unknown"));
   institution.append(chips);
+  institution.append(node("p", "score-breakdown", scoreBreakdown(job)));
 
   const role = node("div", "role");
   role.append(node("h3", "", job.title));
-  role.append(node("p", "employment", job.employment));
-  role.append(node("p", "field", job.field));
-  role.append(node("p", "recommendation", job.recommendation));
+  role.append(node("p", "employment", job.rankTrack));
+  role.append(node("p", "field", job.researchArea));
+  role.append(node("p", "recommendation", job.fitNote));
+  if (job.collaborationFaculty?.length) {
+    const collaborators = node("div", "collaborators");
+    collaborators.append(node("strong", "", "Potential collaborators"));
+    const list = node("ul", "");
+    for (const person of job.collaborationFaculty) {
+      const item = node("li", "");
+      const link = node("a", "", person.name);
+      link.href = person.profileUrl;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      item.append(link, document.createTextNode(` — ${person.areas}`));
+      if (person.venueEvidence) item.append(node("span", "venue-evidence", person.venueEvidence));
+      list.append(item);
+    }
+    collaborators.append(list);
+    role.append(collaborators);
+  }
 
   const meta = node("div", "meta");
-  const remaining = daysUntil(job.deadline);
-  const deadline = node("div", `deadline${remaining !== null && remaining <= 30 ? " urgent" : ""}`);
-  deadline.append(node("strong", "", remaining !== null ? `D-${remaining}` : "Open / verify"));
-  deadline.append(document.createTextNode(job.deadline));
-  const salary = node("div", "salary");
-  salary.append(node("strong", "", job.salary));
-  salary.append(document.createTextNode(`Confidence: ${job.salaryConfidence}`));
-  const link = node("a", "source-link", "View original ↗");
-  link.href = job.url;
+  const remaining = daysUntil(job.finalDeadline);
+  const deadline = node("div", `deadline${remaining !== null && remaining >= 0 && remaining <= 30 ? " urgent" : ""}`);
+  deadline.append(node("strong", "", remaining !== null && remaining >= 0 ? `D-${remaining}` : job.status));
+  deadline.append(document.createTextNode(`Final: ${job.finalDeadline || "Not stated"}`));
+  const review = node("div", "salary");
+  review.append(node("strong", "", `Review: ${job.priorityDate || "Not stated"}`));
+  review.append(document.createTextNode(`Verified ${job.lastVerified}`));
+  const link = node("a", "source-link", "Official posting ↗");
+  link.href = job.officialUrl;
   link.target = "_blank";
   link.rel = "noopener noreferrer";
   link.setAttribute("aria-label", `Open original posting for ${job.title}`);
-  meta.append(deadline, salary, link);
+  meta.append(deadline, review, link);
 
   card.append(priority, institution, role, meta);
   return card;
@@ -148,7 +197,7 @@ function renderJobCard(job, index) {
 function renderJobs() {
   const jobs = filteredJobs();
   elements.jobList.replaceChildren(...jobs.map(renderJobCard));
-  elements.jobResultCount.textContent = `${jobs.length} of ${state.jobs.length} openings`;
+  elements.jobResultCount.textContent = `${jobs.length} of ${state.jobs.length} tracked searches`;
   elements.jobEmpty.hidden = jobs.length !== 0;
 }
 
@@ -252,21 +301,20 @@ function updateHero() {
     return;
   }
 
-  const urgent = state.jobs.filter((job) => {
-    const days = daysUntil(job.deadline);
-    return days !== null && days >= 0 && days <= 30;
-  }).length;
-  elements.heroEyebrow.textContent = "GLOBAL ACADEMIC OPPORTUNITIES";
+  const active = state.jobs.filter((job) => job.status !== "Closed");
+  const direct = active.filter((job) => job.fitLevel === "Direct").length;
+  const ageChecks = active.filter((job) => job.postingAgeStatus !== "Under 6 months").length;
+  elements.heroEyebrow.textContent = "US R1 · KOREA · SINGAPORE · SELECT UK";
   elements.pageTitle.innerHTML = "Faculty openings<br><em>worth tracking.</em>";
-  elements.heroCopy.textContent = "Ranked computer science roles, adjacent research positions, and selected industry opportunities—checked against original sources.";
+  elements.heroCopy.textContent = "Tenure-track and permanent faculty searches ranked by research fit, evidenced collaborators, and relevant institutional strength—not by deadline alone.";
   elements.updatedAt.textContent = state.jobPayload ? formatGeneratedAt(state.jobPayload) : "Loading the latest job scan…";
-  elements.primaryCount.textContent = state.jobPayload ? state.jobs.length : "—";
-  elements.secondaryCount.textContent = state.jobPayload ? state.jobs.filter((job) => job.category === "Faculty").length : "—";
-  elements.urgentCount.textContent = state.jobPayload ? urgent : "—";
-  elements.primaryLabel.textContent = "active roles";
-  elements.secondaryLabel.textContent = "faculty roles";
-  elements.urgentLabel.textContent = "close in 30 days";
-  document.title = "Jobs Radar · HCI · XR Career Radar";
+  elements.primaryCount.textContent = state.jobPayload ? active.length : "—";
+  elements.secondaryCount.textContent = state.jobPayload ? direct : "—";
+  elements.urgentCount.textContent = state.jobPayload ? ageChecks : "—";
+  elements.primaryLabel.textContent = "open faculty searches";
+  elements.secondaryLabel.textContent = "direct-fit searches";
+  elements.urgentLabel.textContent = "posting ages to confirm";
+  document.title = "Faculty Radar · HCI · XR Career Radar";
 }
 
 function activateTab(tab, updateHash = true) {
@@ -284,12 +332,12 @@ function activateTab(tab, updateHash = true) {
   updateHero();
 }
 
-function populateRegions() {
-  const regions = [...new Set(state.jobs.map((job) => job.location).filter(Boolean))].sort();
-  for (const region of regions) {
-    const option = node("option", "", region);
-    option.value = region;
-    elements.jobRegion.append(option);
+function populateCountries() {
+  const countries = [...new Set(state.jobs.map((job) => job.country).filter(Boolean))].sort();
+  for (const country of countries) {
+    const option = node("option", "", country);
+    option.value = country;
+    elements.jobCountry.append(option);
   }
 }
 
@@ -309,8 +357,9 @@ function bindControls() {
 
   window.addEventListener("hashchange", () => activateTab(window.location.hash.slice(1), false));
   elements.jobSearch.addEventListener("input", (event) => { state.jobQuery = event.target.value.trim(); renderJobs(); });
-  elements.jobCategory.addEventListener("change", (event) => { state.jobCategory = event.target.value; renderJobs(); });
-  elements.jobRegion.addEventListener("change", (event) => { state.jobRegion = event.target.value; renderJobs(); });
+  elements.jobFit.addEventListener("change", (event) => { state.jobFit = event.target.value; renderJobs(); });
+  elements.jobCountry.addEventListener("change", (event) => { state.jobCountry = event.target.value; renderJobs(); });
+  elements.jobStatus.addEventListener("change", (event) => { state.jobStatus = event.target.value; renderJobs(); });
   elements.jobSort.addEventListener("change", (event) => { state.jobSort = event.target.value; renderJobs(); });
   elements.fundingSearch.addEventListener("input", (event) => { state.fundingQuery = event.target.value.trim(); renderFunding(); });
   elements.fundingCategory.addEventListener("change", (event) => { state.fundingCategory = event.target.value; renderFunding(); });
@@ -324,9 +373,9 @@ async function loadJobs() {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const payload = await response.json();
     if (!Array.isArray(payload.jobs)) throw new Error("Invalid dataset");
-    state.jobs = payload.jobs.filter((job) => !hasPassedDeadline(job));
+    state.jobs = payload.jobs;
     state.jobPayload = payload;
-    populateRegions();
+    populateCountries();
     renderJobs();
   } catch (error) {
     console.error("Unable to load faculty job data", error);

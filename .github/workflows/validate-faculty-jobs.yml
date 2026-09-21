@@ -35,7 +35,9 @@ jobs:
           node-version: "22"
       - name: Validate job data and privacy rules
         run: node tests/validate-data.mjs
-      - name: Check English normalization script
-        run: node --check data-tools/normalize-jobs-to-english.mjs
+      - name: Check tracker scripts
+        run: |
+          node --check data-tools/refresh-tracker.mjs
+          node --check data-tools/merge-faculty-jobs.mjs
       - name: Test tracker refresh logic
         run: node tests/refresh-tracker.mjs

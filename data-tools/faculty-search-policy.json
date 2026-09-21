@@ -1,0 +1,172 @@
+{
+  "version": "2026-09-21",
+  "profileSource": "https://dooyoung.me/lab/research.html",
+  "publicationsSource": "https://dooyoung.me/lab/publications.html",
+  "objective": "Find currently open tenure-track or permanent faculty positions where an XR/HCI/Human-AI researcher can make a specific, evidence-backed application case.",
+  "geography": {
+    "United States": {
+      "institutionRule": "Carnegie Classification R1 universities only",
+      "appointmentRule": "Tenure-track or tenured faculty searches only"
+    },
+    "South Korea": {
+      "institutions": [
+        "Seoul National University",
+        "KAIST",
+        "POSTECH"
+      ],
+      "appointmentRule": "Permanent or tenure-track faculty appointments only"
+    },
+    "Singapore": {
+      "institutions": [
+        "National University of Singapore",
+        "Nanyang Technological University"
+      ],
+      "appointmentRule": "Permanent or tenure-track faculty appointments only"
+    },
+    "United Kingdom": {
+      "institutions": [
+        "University of Oxford",
+        "University of Cambridge",
+        "Imperial College London",
+        "University College London",
+        "University of Edinburgh",
+        "University of Bristol",
+        "University of Bath",
+        "University of Southampton",
+        "University of Manchester",
+        "University of Nottingham",
+        "Newcastle University",
+        "Lancaster University",
+        "University of Glasgow",
+        "King's College London",
+        "University of Surrey",
+        "University of Sheffield",
+        "University of Birmingham",
+        "University of York",
+        "University of Leeds"
+      ],
+      "appointmentRule": "Open-ended or permanent academic appointments only"
+    }
+  },
+  "directFitSignals": [
+    "human-computer interaction",
+    "HCI",
+    "augmented reality",
+    "virtual reality",
+    "extended reality",
+    "mixed reality",
+    "AR/VR/XR",
+    "spatial computing",
+    "3D user interfaces",
+    "immersive computing",
+    "immersive media",
+    "human-AI interaction",
+    "human-AI collaboration",
+    "human-centered AI",
+    "human-centred AI",
+    "AI interfaces",
+    "interactive AI",
+    "intelligent user interfaces",
+    "embodied interaction",
+    "interactive systems",
+    "ubiquitous computing",
+    "pervasive computing"
+  ],
+  "profileSpecificSignals": [
+    "spatial experience capture and replay",
+    "spatial memory",
+    "mixed reality remote collaboration",
+    "telepresence",
+    "adaptive virtual environments",
+    "spatial interaction",
+    "semantic scene graphs",
+    "multisensory interaction",
+    "embodied intelligence",
+    "digital twins",
+    "autonomous agents"
+  ],
+  "conditionalSignals": [
+    "human-robot interaction",
+    "HRI",
+    "physical AI",
+    "robotics"
+  ],
+  "conditionalRule": "HRI or Physical AI qualifies only when the posting explicitly centres human interaction, shared spatial context, augmented perception, human-agent collaboration, or an XR/HCI interface. Pure robotics, autonomy, control, sensing, manufacturing, or robot learning does not qualify.",
+  "excludedAppointments": [
+    "teaching-only",
+    "teaching track",
+    "adjunct",
+    "visiting",
+    "fixed term",
+    "postdoctoral",
+    "postdoc",
+    "research fellow",
+    "research scientist",
+    "temporary faculty"
+  ],
+  "excludedResearchSignals": [
+    "autonomous vehicles",
+    "robot control",
+    "robot learning",
+    "robot manipulation",
+    "industrial robotics",
+    "agricultural robotics",
+    "robot sensing",
+    "robot perception"
+  ],
+  "fitLevels": {
+    "Direct": "The search itself explicitly names one or more direct-fit areas and the candidate's XR/HCI record maps to the requested area without relying on generic CS language.",
+    "Strong": "The search names a closely connected area or department and the fit is supported by specific posting language plus the candidate's interaction-focused research record.",
+    "Broad": "An open-area search accepts the candidate's rank and discipline, and a documented faculty cluster or research-area statement supports the fit. Generic open-area CS language alone is insufficient."
+  },
+  "ranking": {
+    "fitWeights": {
+      "Direct": 1000,
+      "Strong": 600,
+      "Broad": 200
+    },
+    "rankWeights": {
+      "Assistant Professor": 30,
+      "Assistant/Associate Professor": 25,
+      "Open Rank (Assistant accepted)": 20
+    },
+    "collaborationWeights": {
+      "maximum": 180,
+      "closelyAlignedFaculty": 20,
+      "ISMAR_IEEEVR_TVCG_Evidence": 40,
+      "CHI_UIST_Evidence": 20
+    },
+    "institutionWeights": {
+      "Exceptional": 120,
+      "Very Strong": 80,
+      "Strong": 40
+    },
+    "deadlineUrgencyMaximum": 9,
+    "rule": "Sort by fit level first. Within a fit tier, reward verified collaboration faculty and target-venue evidence, then the institution's relevant research environment, eligible rank, and finally deadline urgency. Prestige and urgency can never promote a weaker fit tier above a stronger one.",
+    "evidenceRule": "Every collaboration or institution-strength point must be supported by a public URL. Target-venue credit is awarded only when a named, current faculty member has an evidenced ISMAR, IEEE VR, or TVCG publication and meaningful topical overlap."
+  },
+  "sourceRule": "Use an official university careers or faculty-search page as the published URL and source of truth. Aggregators may be used only to discover a search and must be cross-checked against an official source.",
+  "postingAgeRule": "When an official posted date is available and is at least six calendar months old, keep the record but display an Older than 6 months — reconfirm warning. Do not infer a posted date from the discovery date, and do not close a role solely because it is old.",
+  "recordFields": [
+    "Country",
+    "University",
+    "Department/School",
+    "Exact Job Title",
+    "Rank/Track",
+    "Research Area",
+    "Priority/Review Date",
+    "Final Deadline",
+    "Status",
+    "Official Job URL",
+    "Fit Note",
+    "Potential Collaborators",
+    "Last Verified"
+  ],
+  "changeTypes": [
+    "Newly Posted",
+    "Deadline/Review Date Changed",
+    "Status Changed",
+    "Closed"
+  ],
+  "historyRule": "Do not delete an in-scope search when it closes. Change its status to Closed and append a dated change-log event."
+}
