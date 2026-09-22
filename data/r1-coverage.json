@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T04:58:09.273Z",
+  "generatedAt": "2026-09-22T00:44:07.623Z",
   "timezone": "Australia/Sydney",
   "source": {
     "name": "2025 Carnegie Research Activity Designations",
@@ -7,7 +7,7 @@
     "expectedR1Count": 187,
     "status": "Verified",
     "detail": "All eight official result pages matched the expected R1 count.",
-    "checkedAt": "2026-09-21"
+    "checkedAt": "2026-09-22"
   },
   "summary": {
     "registered": 187,
@@ -1662,7 +1662,7 @@
       "adapterType": "algolia-angular",
       "portalUrl": "https://faculty.utexas.edu/career",
       "sourceId": "ut-austin-faculty-careers",
-      "lastChecked": "2026-09-21",
+      "lastChecked": "2026-09-22",
       "postingsInspected": 133,
       "candidatesFound": 3,
       "trackedJobs": [
@@ -1922,9 +1922,9 @@
       "adapterType": "uc-recruit-html",
       "portalUrl": "https://aprecruit.berkeley.edu/apply",
       "sourceId": "uc-berkeley-ap-recruit",
-      "lastChecked": "2026-09-21",
-      "postingsInspected": 175,
-      "candidatesFound": 2,
+      "lastChecked": "2026-09-22",
+      "postingsInspected": 173,
+      "candidatesFound": 1,
       "trackedJobs": [
         {
           "id": "berkeley-ischool-hci-jpf05482",
@@ -1965,8 +1965,8 @@
       "adapterType": "uc-recruit-html",
       "portalUrl": "https://recruit.ap.uci.edu/apply",
       "sourceId": "uc-irvine-ap-recruit",
-      "lastChecked": "2026-09-21",
-      "postingsInspected": 291,
+      "lastChecked": "2026-09-22",
+      "postingsInspected": 292,
       "candidatesFound": 1,
       "trackedJobs": [
         {
