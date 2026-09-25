@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24T00:25:11.191Z",
+  "generatedAt": "2026-09-25T00:29:11.961Z",
   "timezone": "Australia/Sydney",
   "opportunities": [
     {
@@ -17,7 +17,7 @@
       "fieldFit": "Useful for compute-intensive HCI, human-centred AI, multimodal analytics, visualization, and XR back-end workloads.",
       "recommendation": "Apply when the project has a quantified cloud workload, public research output, benchmark, tool, or training plan.",
       "url": "https://aws.amazon.com/government-education/research-and-technical-computing/cloud-credit-for-research/",
-      "checkedAt": "2026-09-24",
+      "checkedAt": "2026-09-25",
       "confidence": "High",
       "score": 92
     },
@@ -131,7 +131,7 @@
       "fieldFit": "Strong fit when HCI or XR is framed within AI, advanced manufacturing, quantum, health technology, or another announced priority theme.",
       "recommendation": "Maintain a Korea–Australia concept and partner team, but do not treat this as open until the official site publishes a new round.",
       "url": "https://www.glodip.org.au/",
-      "checkedAt": "2026-09-24",
+      "checkedAt": "2026-09-25",
       "confidence": "High",
       "score": 76
     },
@@ -150,7 +150,7 @@
       "fieldFit": "Potential fit for HCI, human-centred AI, digital media, robotics, visualization, immersive systems, and interdisciplinary computing when listed in the call.",
       "recommendation": "Search IRIS and NRF notices daily and activate only after an official Korea–Australia call, topic scope, and overseas eligibility are confirmed.",
       "url": "https://www.iris.go.kr/",
-      "checkedAt": "2026-09-24",
+      "checkedAt": "2026-09-25",
       "confidence": "Medium",
       "score": 72
     }

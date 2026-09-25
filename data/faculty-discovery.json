@@ -1,33 +1,49 @@
 {
-  "generatedAt": "2026-09-24T00:25:03.732Z",
+  "generatedAt": "2026-09-25T00:29:04.662Z",
   "timezone": "Australia/Sydney",
   "sourcesChecked": [
     {
       "id": "ut-austin-faculty-careers",
       "institution": "The University of Texas at Austin",
-      "checkedAt": "2026-09-24",
+      "checkedAt": "2026-09-25",
       "status": "Verified",
-      "postingsInspected": 139,
-      "candidatesFound": 3
+      "postingsInspected": 144,
+      "candidatesFound": 4
     },
     {
       "id": "uc-berkeley-ap-recruit",
       "institution": "University of California, Berkeley",
-      "checkedAt": "2026-09-24",
+      "checkedAt": "2026-09-25",
       "status": "Verified",
-      "postingsInspected": 175,
+      "postingsInspected": 177,
       "candidatesFound": 1
     },
     {
       "id": "uc-irvine-ap-recruit",
       "institution": "University of California, Irvine",
-      "checkedAt": "2026-09-24",
+      "checkedAt": "2026-09-25",
       "status": "Verified",
-      "postingsInspected": 296,
+      "postingsInspected": 298,
       "candidatesFound": 1
     }
   ],
   "candidates": [
+    {
+      "sourceId": "ut-austin-faculty-careers",
+      "sourceJobId": "192597",
+      "institution": "The University of Texas at Austin",
+      "title": "Associate or Full Professor of Curriculum and Instruction with a Specialization in Learning Technologies",
+      "unit": "Department of Curriculum & Instruction",
+      "officialUrl": "https://faculty.utexas.edu/career/192597",
+      "deadlineLabel": "Open until filled",
+      "postedDate": "2026-09-24",
+      "matchedSignals": [
+        "human-AI interaction"
+      ],
+      "eligibleAppointment": true,
+      "reviewStatus": "Needs review",
+      "knownJobId": null
+    },
     {
       "sourceId": "ut-austin-faculty-careers",
       "sourceJobId": "188439",
