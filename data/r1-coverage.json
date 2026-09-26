@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T00:29:11.502Z",
+  "generatedAt": "2026-09-26T00:33:01.205Z",
   "timezone": "Australia/Sydney",
   "source": {
     "name": "2025 Carnegie Research Activity Designations",
@@ -7,7 +7,7 @@
     "expectedR1Count": 187,
     "status": "Verified",
     "detail": "All eight official result pages matched the expected R1 count.",
-    "checkedAt": "2026-09-25"
+    "checkedAt": "2026-09-26"
   },
   "summary": {
     "registered": 187,
@@ -1662,8 +1662,8 @@
       "adapterType": "algolia-angular",
       "portalUrl": "https://faculty.utexas.edu/career",
       "sourceId": "ut-austin-faculty-careers",
-      "lastChecked": "2026-09-25",
-      "postingsInspected": 144,
+      "lastChecked": "2026-09-26",
+      "postingsInspected": 147,
       "candidatesFound": 4,
       "trackedJobs": [
         {
@@ -1922,8 +1922,8 @@
       "adapterType": "uc-recruit-html",
       "portalUrl": "https://aprecruit.berkeley.edu/apply",
       "sourceId": "uc-berkeley-ap-recruit",
-      "lastChecked": "2026-09-25",
-      "postingsInspected": 177,
+      "lastChecked": "2026-09-26",
+      "postingsInspected": 179,
       "candidatesFound": 1,
       "trackedJobs": [
         {
@@ -1965,8 +1965,8 @@
       "adapterType": "uc-recruit-html",
       "portalUrl": "https://recruit.ap.uci.edu/apply",
       "sourceId": "uc-irvine-ap-recruit",
-      "lastChecked": "2026-09-25",
-      "postingsInspected": 298,
+      "lastChecked": "2026-09-26",
+      "postingsInspected": 299,
       "candidatesFound": 1,
       "trackedJobs": [
         {
