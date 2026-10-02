@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T01:13:42.843Z",
+  "generatedAt": "2026-10-02T01:35:55.053Z",
   "timezone": "Australia/Sydney",
   "policyVersion": "2026-09-21",
   "profileBasis": "Dooyoung Kim's published research in space-adaptive XR, XRMemory, immersive human factors, interactive 3D intelligence, and spatially grounded human-AI systems.",
@@ -84,7 +84,7 @@
       ],
       "priorityScore": 93,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-02",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -139,7 +139,7 @@
       ],
       "priorityScore": 91,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-02",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -194,7 +194,7 @@
       ],
       "priorityScore": 90,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-02",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -253,7 +253,7 @@
       ],
       "priorityScore": 82,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-02",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -313,7 +313,7 @@
       ],
       "priorityScore": 82,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-02",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -359,7 +359,7 @@
       ],
       "priorityScore": 81,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-02",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -405,7 +405,7 @@
       ],
       "priorityScore": 79,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-02",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -459,7 +459,7 @@
       "priorityScore": 76,
       "firstSeen": "2026-09-21",
       "lastVerified": "2026-10-01",
-      "verificationNote": "HTTP 200",
+      "verificationNote": "Not re-verified: fetch failed",
       "changeType": "Unchanged",
       "changeLog": [
         {
@@ -504,7 +504,7 @@
       ],
       "priorityScore": 76,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-02",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -570,7 +570,7 @@
         }
       ],
       "priorityScore": 63,
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-02",
       "verificationNote": "HTTP 200",
       "firstSeen": "2026-09-21",
       "changeType": "Unchanged",
@@ -636,9 +636,9 @@
           "venueEvidence": "Analytics and interactive-advertising alignment; no target XR venue item verified."
         }
       ],
-      "priorityScore": 61,
+      "priorityScore": 59,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-02",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -699,7 +699,7 @@
       ],
       "priorityScore": 59,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-02",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -765,7 +765,7 @@
         }
       ],
       "priorityScore": 58,
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-02",
       "verificationNote": "HTTP 200",
       "firstSeen": "2026-09-21",
       "changeType": "Unchanged",
@@ -832,7 +832,7 @@
         }
       ],
       "priorityScore": 58,
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-02",
       "verificationNote": "HTTP 200",
       "firstSeen": "2026-09-21",
       "changeType": "Unchanged",
@@ -893,7 +893,7 @@
       ],
       "priorityScore": 54,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-02",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -939,7 +939,7 @@
       ],
       "priorityScore": 52,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-02",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -999,7 +999,7 @@
       ],
       "priorityScore": 52,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-02",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -1045,7 +1045,7 @@
       ],
       "priorityScore": 51,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-02",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -1098,53 +1098,7 @@
       ],
       "priorityScore": 49,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-01",
-      "verificationNote": "HTTP 200",
-      "changeType": "Unchanged",
-      "changeLog": [
-        {
-          "date": "2026-09-21",
-          "type": "Newly Posted",
-          "detail": "Added after official-source verification."
-        }
-      ]
-    },
-    {
-      "id": "odu-human-factors-f0646a",
-      "country": "United States",
-      "university": "Old Dominion University",
-      "department": "Department of Psychology",
-      "title": "Assistant Professor, Human Factors Psychology",
-      "rankTrack": "Assistant Professor",
-      "rankTrackDetail": "Assistant Professor, tenure-track",
-      "researchArea": "Human factors, human-AI teaming, and HCI in security, transportation, or healthcare",
-      "priorityDate": "2026-10-01",
-      "finalDeadline": null,
-      "deadlineNote": "Review begins 1 October 2026; open until filled",
-      "postedDate": null,
-      "postingAgeStatus": "Date unavailable",
-      "status": "Open",
-      "officialUrl": "https://jobs.odu.edu/postings/26630",
-      "fitLevel": "Strong",
-      "fitNote": "The human-AI teaming and HCI fit is clear, but the role is human-factors psychology rather than XR. Sampath Jayarathna adds eye-tracking, VR learning, accessibility, and TVCG evidence.",
-      "institutionStrength": "Strong",
-      "institutionScore": 3,
-      "institutionEvidence": "Carnegie R1 eligibility and an HFES-accredited human-factors environment; no prestige premium beyond the relevant program.",
-      "institutionEvidenceUrl": "https://www.odu.edu/psychology/academics/human-factors",
-      "r1Verified": true,
-      "collaborationEvidenceScore": 60,
-      "collaborationFaculty": [
-        {
-          "name": "Sampath Jayarathna",
-          "unitRelationship": "Cross-unit Computer Science",
-          "areas": "Eye tracking, VR learning, usability, and accessibility",
-          "profileUrl": "https://www.cs.odu.edu/~sampath/",
-          "venueEvidence": "Official page lists a 2025 IEEE TVCG accessibility paper."
-        }
-      ],
-      "priorityScore": 49,
-      "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-02",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -1190,7 +1144,53 @@
       ],
       "priorityScore": 49,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-02",
+      "verificationNote": "HTTP 200",
+      "changeType": "Unchanged",
+      "changeLog": [
+        {
+          "date": "2026-09-21",
+          "type": "Newly Posted",
+          "detail": "Added after official-source verification."
+        }
+      ]
+    },
+    {
+      "id": "odu-human-factors-f0646a",
+      "country": "United States",
+      "university": "Old Dominion University",
+      "department": "Department of Psychology",
+      "title": "Assistant Professor, Human Factors Psychology",
+      "rankTrack": "Assistant Professor",
+      "rankTrackDetail": "Assistant Professor, tenure-track",
+      "researchArea": "Human factors, human-AI teaming, and HCI in security, transportation, or healthcare",
+      "priorityDate": "2026-10-01",
+      "finalDeadline": null,
+      "deadlineNote": "Review begins 1 October 2026; open until filled",
+      "postedDate": null,
+      "postingAgeStatus": "Date unavailable",
+      "status": "Open",
+      "officialUrl": "https://jobs.odu.edu/postings/26630",
+      "fitLevel": "Strong",
+      "fitNote": "The human-AI teaming and HCI fit is clear, but the role is human-factors psychology rather than XR. Sampath Jayarathna adds eye-tracking, VR learning, accessibility, and TVCG evidence.",
+      "institutionStrength": "Strong",
+      "institutionScore": 3,
+      "institutionEvidence": "Carnegie R1 eligibility and an HFES-accredited human-factors environment; no prestige premium beyond the relevant program.",
+      "institutionEvidenceUrl": "https://www.odu.edu/psychology/academics/human-factors",
+      "r1Verified": true,
+      "collaborationEvidenceScore": 60,
+      "collaborationFaculty": [
+        {
+          "name": "Sampath Jayarathna",
+          "unitRelationship": "Cross-unit Computer Science",
+          "areas": "Eye tracking, VR learning, usability, and accessibility",
+          "profileUrl": "https://www.cs.odu.edu/~sampath/",
+          "venueEvidence": "Official page lists a 2025 IEEE TVCG accessibility paper."
+        }
+      ],
+      "priorityScore": 47,
+      "firstSeen": "2026-09-21",
+      "lastVerified": "2026-10-02",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -1234,9 +1234,9 @@
           "venueEvidence": "No ISMAR/IEEE VR/TVCG item verified."
         }
       ],
-      "priorityScore": 48,
+      "priorityScore": 46,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-02",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -1289,7 +1289,7 @@
       ],
       "priorityScore": 28,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-02",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
