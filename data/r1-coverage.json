@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-03T01:05:19.448Z",
+  "generatedAt": "2026-10-04T00:30:57.321Z",
   "timezone": "Australia/Sydney",
   "source": {
     "name": "2025 Carnegie Research Activity Designations",
     "url": "https://carnegieclassifications.acenet.edu/institutions/?research2025%5B0%5D=1",
     "expectedR1Count": 187,
-    "status": "Failed",
-    "detail": "Retained the last verified registry: fetch failed",
-    "checkedAt": "2026-10-03"
+    "status": "Verified",
+    "detail": "All eight official result pages matched the expected R1 count.",
+    "checkedAt": "2026-10-04"
   },
   "summary": {
     "registered": 187,
@@ -1662,7 +1662,7 @@
       "adapterType": "algolia-angular",
       "portalUrl": "https://faculty.utexas.edu/career",
       "sourceId": "ut-austin-faculty-careers",
-      "lastChecked": "2026-10-03",
+      "lastChecked": "2026-10-04",
       "postingsInspected": 156,
       "candidatesFound": 4,
       "trackedJobs": [
@@ -1922,8 +1922,8 @@
       "adapterType": "uc-recruit-html",
       "portalUrl": "https://aprecruit.berkeley.edu/apply",
       "sourceId": "uc-berkeley-ap-recruit",
-      "lastChecked": "2026-10-03",
-      "postingsInspected": 167,
+      "lastChecked": "2026-10-04",
+      "postingsInspected": 165,
       "candidatesFound": 1,
       "trackedJobs": [
         {
@@ -1965,7 +1965,7 @@
       "adapterType": "uc-recruit-html",
       "portalUrl": "https://recruit.ap.uci.edu/apply",
       "sourceId": "uc-irvine-ap-recruit",
-      "lastChecked": "2026-10-03",
+      "lastChecked": "2026-10-04",
       "postingsInspected": 290,
       "candidatesFound": 1,
       "trackedJobs": [
