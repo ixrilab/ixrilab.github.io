@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T00:47:41.009Z",
+  "generatedAt": "2026-10-06T02:12:17.602Z",
   "timezone": "Australia/Sydney",
   "policyVersion": "2026-09-21",
   "profileBasis": "Dooyoung Kim's published research in space-adaptive XR, XRMemory, immersive human factors, interactive 3D intelligence, and spatially grounded human-AI systems.",
@@ -84,7 +84,7 @@
       ],
       "priorityScore": 93,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-05",
+      "lastVerified": "2026-10-06",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -139,7 +139,7 @@
       ],
       "priorityScore": 91,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-05",
+      "lastVerified": "2026-10-06",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -194,7 +194,7 @@
       ],
       "priorityScore": 90,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-05",
+      "lastVerified": "2026-10-06",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -253,7 +253,7 @@
       ],
       "priorityScore": 82,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-05",
+      "lastVerified": "2026-10-06",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -313,7 +313,7 @@
       ],
       "priorityScore": 82,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-05",
+      "lastVerified": "2026-10-06",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -359,7 +359,7 @@
       ],
       "priorityScore": 81,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-05",
+      "lastVerified": "2026-10-06",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -405,7 +405,7 @@
       ],
       "priorityScore": 79,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-05",
+      "lastVerified": "2026-10-06",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -459,7 +459,7 @@
       "priorityScore": 76,
       "firstSeen": "2026-09-21",
       "lastVerified": "2026-10-05",
-      "verificationNote": "HTTP 200",
+      "verificationNote": "Not re-verified: fetch failed",
       "changeType": "Unchanged",
       "changeLog": [
         {
@@ -504,7 +504,7 @@
       ],
       "priorityScore": 76,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-05",
+      "lastVerified": "2026-10-06",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -570,7 +570,7 @@
         }
       ],
       "priorityScore": 63,
-      "lastVerified": "2026-10-05",
+      "lastVerified": "2026-10-06",
       "verificationNote": "HTTP 200",
       "firstSeen": "2026-09-21",
       "changeType": "Unchanged",
@@ -638,7 +638,7 @@
       ],
       "priorityScore": 59,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-05",
+      "lastVerified": "2026-10-06",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -699,7 +699,7 @@
       ],
       "priorityScore": 59,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-05",
+      "lastVerified": "2026-10-06",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -765,7 +765,7 @@
         }
       ],
       "priorityScore": 58,
-      "lastVerified": "2026-10-05",
+      "lastVerified": "2026-10-06",
       "verificationNote": "HTTP 200",
       "firstSeen": "2026-09-21",
       "changeType": "Unchanged",
@@ -832,7 +832,7 @@
         }
       ],
       "priorityScore": 58,
-      "lastVerified": "2026-10-05",
+      "lastVerified": "2026-10-06",
       "verificationNote": "HTTP 200",
       "firstSeen": "2026-09-21",
       "changeType": "Unchanged",
@@ -893,7 +893,7 @@
       ],
       "priorityScore": 54,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-05",
+      "lastVerified": "2026-10-06",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -939,67 +939,7 @@
       ],
       "priorityScore": 52,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-05",
-      "verificationNote": "HTTP 200",
-      "changeType": "Unchanged",
-      "changeLog": [
-        {
-          "date": "2026-09-21",
-          "type": "Newly Posted",
-          "detail": "Added after official-source verification."
-        }
-      ]
-    },
-    {
-      "id": "ttu-psych-human-factors-45900",
-      "country": "United States",
-      "university": "Texas Tech University",
-      "department": "Department of Psychological Sciences",
-      "title": "Assistant Professor — Human Factors",
-      "rankTrack": "Assistant Professor",
-      "rankTrackDetail": "Assistant Professor, nine-month tenure-track",
-      "researchArea": "Human factors, human-AI teaming, trust in automation, cyber-physical interaction, simulation, and human-centred design",
-      "priorityDate": null,
-      "finalDeadline": "2026-10-05",
-      "deadlineNote": "Applications close 5 October 2026",
-      "postedDate": null,
-      "postingAgeStatus": "Date unavailable",
-      "status": "Open",
-      "officialUrl": "https://sjobs.brassring.com/TGnewUI/Search/home/HomeWithPreLoad?ad_id=3C42F934-B50E-4C14-A3CB-A166C8B7B028&partnerid=25898&siteid=5637&PageType=JobDetails&jobid=921628",
-      "fitLevel": "Strong",
-      "fitNote": "This supports human-AI teaming and XR human-factors work, but it is a psychology search rather than a spatial-computing search. Same-unit perception and HRI faculty plus cross-unit TVCG/VR expertise make collaboration plausible.",
-      "institutionStrength": "Strong",
-      "institutionScore": 3,
-      "institutionEvidence": "Carnegie R1 eligibility is verified; no additional prestige premium is applied.",
-      "institutionEvidenceUrl": "https://www.ttu.edu/research/",
-      "r1Verified": true,
-      "collaborationEvidenceScore": 100,
-      "collaborationFaculty": [
-        {
-          "name": "Balagopal Raveendranath",
-          "unitRelationship": "Same department",
-          "areas": "Perception and motor control in real, augmented, and virtual environments; VR training",
-          "profileUrl": "https://www.depts.ttu.edu/psy/people/braveendranath/",
-          "venueEvidence": "No target XR venue item verified."
-        },
-        {
-          "name": "Keith Jones",
-          "unitRelationship": "Same department",
-          "areas": "HCI and human-robot interaction",
-          "profileUrl": "https://www.depts.ttu.edu/psy/people/kjones/index.php",
-          "venueEvidence": "No target XR venue item verified."
-        },
-        {
-          "name": "Tommy Dang",
-          "unitRelationship": "Cross-unit Computer Science",
-          "areas": "Interactive visualisation, VR, and AR",
-          "profileUrl": "https://www.myweb.ttu.edu/tnhondan/",
-          "venueEvidence": "Official page lists IEEE TVCG papers and IEEE VR activity."
-        }
-      ],
-      "priorityScore": 52,
-      "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-05",
+      "lastVerified": "2026-10-06",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -1045,7 +985,7 @@
       ],
       "priorityScore": 51,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-05",
+      "lastVerified": "2026-10-06",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -1098,7 +1038,7 @@
       ],
       "priorityScore": 49,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-05",
+      "lastVerified": "2026-10-06",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -1144,7 +1084,7 @@
       ],
       "priorityScore": 49,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-05",
+      "lastVerified": "2026-10-06",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -1190,7 +1130,7 @@
       ],
       "priorityScore": 47,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-05",
+      "lastVerified": "2026-10-06",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -1236,7 +1176,7 @@
       ],
       "priorityScore": 46,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-05",
+      "lastVerified": "2026-10-06",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -1289,7 +1229,7 @@
       ],
       "priorityScore": 28,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-05",
+      "lastVerified": "2026-10-06",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -1299,6 +1239,72 @@
           "detail": "Added after official-source verification."
         }
       ]
+    },
+    {
+      "id": "ttu-psych-human-factors-45900",
+      "country": "United States",
+      "university": "Texas Tech University",
+      "department": "Department of Psychological Sciences",
+      "title": "Assistant Professor — Human Factors",
+      "rankTrack": "Assistant Professor",
+      "rankTrackDetail": "Assistant Professor, nine-month tenure-track",
+      "researchArea": "Human factors, human-AI teaming, trust in automation, cyber-physical interaction, simulation, and human-centred design",
+      "priorityDate": null,
+      "finalDeadline": "2026-10-05",
+      "deadlineNote": "Applications close 5 October 2026",
+      "postedDate": null,
+      "postingAgeStatus": "Date unavailable",
+      "status": "Closed",
+      "officialUrl": "https://sjobs.brassring.com/TGnewUI/Search/home/HomeWithPreLoad?ad_id=3C42F934-B50E-4C14-A3CB-A166C8B7B028&partnerid=25898&siteid=5637&PageType=JobDetails&jobid=921628",
+      "fitLevel": "Strong",
+      "fitNote": "This supports human-AI teaming and XR human-factors work, but it is a psychology search rather than a spatial-computing search. Same-unit perception and HRI faculty plus cross-unit TVCG/VR expertise make collaboration plausible.",
+      "institutionStrength": "Strong",
+      "institutionScore": 3,
+      "institutionEvidence": "Carnegie R1 eligibility is verified; no additional prestige premium is applied.",
+      "institutionEvidenceUrl": "https://www.ttu.edu/research/",
+      "r1Verified": true,
+      "collaborationEvidenceScore": 100,
+      "collaborationFaculty": [
+        {
+          "name": "Balagopal Raveendranath",
+          "unitRelationship": "Same department",
+          "areas": "Perception and motor control in real, augmented, and virtual environments; VR training",
+          "profileUrl": "https://www.depts.ttu.edu/psy/people/braveendranath/",
+          "venueEvidence": "No target XR venue item verified."
+        },
+        {
+          "name": "Keith Jones",
+          "unitRelationship": "Same department",
+          "areas": "HCI and human-robot interaction",
+          "profileUrl": "https://www.depts.ttu.edu/psy/people/kjones/index.php",
+          "venueEvidence": "No target XR venue item verified."
+        },
+        {
+          "name": "Tommy Dang",
+          "unitRelationship": "Cross-unit Computer Science",
+          "areas": "Interactive visualisation, VR, and AR",
+          "profileUrl": "https://www.myweb.ttu.edu/tnhondan/",
+          "venueEvidence": "Official page lists IEEE TVCG papers and IEEE VR activity."
+        }
+      ],
+      "priorityScore": 50,
+      "firstSeen": "2026-09-21",
+      "lastVerified": "2026-10-06",
+      "verificationNote": "Final deadline passed on 2026-10-05",
+      "changeType": "Closed",
+      "changeLog": [
+        {
+          "date": "2026-09-21",
+          "type": "Newly Posted",
+          "detail": "Added after official-source verification."
+        },
+        {
+          "date": "2026-10-06",
+          "type": "Closed",
+          "detail": "Final deadline passed on 2026-10-05"
+        }
+      ],
+      "closedAt": "2026-10-06"
     }
   ]
 }
