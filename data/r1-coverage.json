@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T02:12:15.035Z",
+  "generatedAt": "2026-10-07T01:26:34.838Z",
   "timezone": "Australia/Sydney",
   "source": {
     "name": "2025 Carnegie Research Activity Designations",
@@ -7,7 +7,7 @@
     "expectedR1Count": 187,
     "status": "Verified",
     "detail": "All eight official result pages matched the expected R1 count.",
-    "checkedAt": "2026-10-06"
+    "checkedAt": "2026-10-07"
   },
   "summary": {
     "registered": 187,
@@ -1523,7 +1523,7 @@
           "id": "ttu-psych-human-factors-45900",
           "title": "Assistant Professor — Human Factors",
           "officialUrl": "https://sjobs.brassring.com/TGnewUI/Search/home/HomeWithPreLoad?ad_id=3C42F934-B50E-4C14-A3CB-A166C8B7B028&partnerid=25898&siteid=5637&PageType=JobDetails&jobid=921628",
-          "status": "Open"
+          "status": "Closed"
         }
       ]
     },
@@ -1662,8 +1662,8 @@
       "adapterType": "algolia-angular",
       "portalUrl": "https://faculty.utexas.edu/career",
       "sourceId": "ut-austin-faculty-careers",
-      "lastChecked": "2026-10-06",
-      "postingsInspected": 158,
+      "lastChecked": "2026-10-07",
+      "postingsInspected": 161,
       "candidatesFound": 4,
       "trackedJobs": [
         {
@@ -1922,8 +1922,8 @@
       "adapterType": "uc-recruit-html",
       "portalUrl": "https://aprecruit.berkeley.edu/apply",
       "sourceId": "uc-berkeley-ap-recruit",
-      "lastChecked": "2026-10-06",
-      "postingsInspected": 169,
+      "lastChecked": "2026-10-07",
+      "postingsInspected": 168,
       "candidatesFound": 1,
       "trackedJobs": [
         {
@@ -1965,8 +1965,8 @@
       "adapterType": "uc-recruit-html",
       "portalUrl": "https://recruit.ap.uci.edu/apply",
       "sourceId": "uc-irvine-ap-recruit",
-      "lastChecked": "2026-10-06",
-      "postingsInspected": 297,
+      "lastChecked": "2026-10-07",
+      "postingsInspected": 298,
       "candidatesFound": 1,
       "trackedJobs": [
         {
