@@ -1,29 +1,29 @@
 {
-  "generatedAt": "2026-10-13T02:58:58.572Z",
+  "generatedAt": "2026-10-14T01:08:14.925Z",
   "timezone": "Australia/Sydney",
   "sourcesChecked": [
     {
       "id": "ut-austin-faculty-careers",
       "institution": "The University of Texas at Austin",
-      "checkedAt": "2026-10-13",
+      "checkedAt": "2026-10-14",
       "status": "Verified",
-      "postingsInspected": 164,
+      "postingsInspected": 166,
       "candidatesFound": 4
     },
     {
       "id": "uc-berkeley-ap-recruit",
       "institution": "University of California, Berkeley",
-      "checkedAt": "2026-10-13",
+      "checkedAt": "2026-10-14",
       "status": "Verified",
-      "postingsInspected": 180,
+      "postingsInspected": 183,
       "candidatesFound": 1
     },
     {
       "id": "uc-irvine-ap-recruit",
       "institution": "University of California, Irvine",
-      "checkedAt": "2026-10-13",
+      "checkedAt": "2026-10-14",
       "status": "Verified",
-      "postingsInspected": 298,
+      "postingsInspected": 299,
       "candidatesFound": 1
     }
   ],
