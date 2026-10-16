@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T00:27:24.632Z",
+  "generatedAt": "2026-10-16T00:17:55.541Z",
   "timezone": "Australia/Sydney",
   "policyVersion": "2026-09-21",
   "profileBasis": "Dooyoung Kim's published research in space-adaptive XR, XRMemory, immersive human factors, interactive 3D intelligence, and spatially grounded human-AI systems.",
@@ -82,9 +82,9 @@
           "sourceUrl": "https://ischool.utexas.edu/profiles/jiaxin-pei"
         }
       ],
-      "priorityScore": 93,
+      "priorityScore": 91,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-15",
+      "lastVerified": "2026-10-16",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -139,7 +139,7 @@
       ],
       "priorityScore": 91,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-15",
+      "lastVerified": "2026-10-16",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -194,7 +194,7 @@
       ],
       "priorityScore": 90,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-15",
+      "lastVerified": "2026-10-16",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -253,7 +253,7 @@
       ],
       "priorityScore": 82,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-15",
+      "lastVerified": "2026-10-16",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -313,53 +313,7 @@
       ],
       "priorityScore": 82,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-15",
-      "verificationNote": "HTTP 200",
-      "changeType": "Unchanged",
-      "changeLog": [
-        {
-          "date": "2026-09-21",
-          "type": "Newly Posted",
-          "detail": "Added after official-source verification."
-        }
-      ]
-    },
-    {
-      "id": "utk-eecs-cs-fall-2027",
-      "country": "United States",
-      "university": "University of Tennessee, Knoxville",
-      "department": "Min H. Kao Department of Electrical Engineering and Computer Science",
-      "title": "Tenure-Track Assistant Professor Positions in Computer Science — Two Positions",
-      "rankTrack": "Assistant Professor",
-      "rankTrackDetail": "Assistant Professor, tenure-track; two hires",
-      "researchArea": "Computer graphics including VR/AR, and HCI",
-      "priorityDate": "2026-10-15",
-      "finalDeadline": null,
-      "deadlineNote": "Review begins 15 October 2026; open until filled",
-      "postedDate": null,
-      "postingAgeStatus": "Date unavailable",
-      "status": "Open",
-      "officialUrl": "https://apply.interfolio.com/192692",
-      "fitLevel": "Direct",
-      "fitNote": "The official search explicitly prioritises graphics including VR/AR and HCI, and explicitly excludes AI/ML-only profiles. Jian Huang offers a TVCG-heavy visualisation and HoloLens collaboration bridge.",
-      "institutionStrength": "Very Strong",
-      "institutionScore": 5,
-      "institutionEvidence": "Carnegie R1 and AAU member with a large engineering and computing research environment.",
-      "institutionEvidenceUrl": "https://eecs.utk.edu/research/",
-      "r1Verified": true,
-      "collaborationEvidenceScore": 60,
-      "collaborationFaculty": [
-        {
-          "name": "Jian Huang",
-          "unitRelationship": "Same department",
-          "areas": "Visualisation, collaborative and remote visualisation, and HoloLens delivery",
-          "profileUrl": "https://eecs.utk.edu/people/jian-huang/",
-          "venueEvidence": "Official publication list includes numerous IEEE TVCG papers."
-        }
-      ],
-      "priorityScore": 81,
-      "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-15",
+      "lastVerified": "2026-10-16",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -405,7 +359,53 @@
       ],
       "priorityScore": 79,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-15",
+      "lastVerified": "2026-10-16",
+      "verificationNote": "HTTP 200",
+      "changeType": "Unchanged",
+      "changeLog": [
+        {
+          "date": "2026-09-21",
+          "type": "Newly Posted",
+          "detail": "Added after official-source verification."
+        }
+      ]
+    },
+    {
+      "id": "utk-eecs-cs-fall-2027",
+      "country": "United States",
+      "university": "University of Tennessee, Knoxville",
+      "department": "Min H. Kao Department of Electrical Engineering and Computer Science",
+      "title": "Tenure-Track Assistant Professor Positions in Computer Science — Two Positions",
+      "rankTrack": "Assistant Professor",
+      "rankTrackDetail": "Assistant Professor, tenure-track; two hires",
+      "researchArea": "Computer graphics including VR/AR, and HCI",
+      "priorityDate": "2026-10-15",
+      "finalDeadline": null,
+      "deadlineNote": "Review begins 15 October 2026; open until filled",
+      "postedDate": null,
+      "postingAgeStatus": "Date unavailable",
+      "status": "Open",
+      "officialUrl": "https://apply.interfolio.com/192692",
+      "fitLevel": "Direct",
+      "fitNote": "The official search explicitly prioritises graphics including VR/AR and HCI, and explicitly excludes AI/ML-only profiles. Jian Huang offers a TVCG-heavy visualisation and HoloLens collaboration bridge.",
+      "institutionStrength": "Very Strong",
+      "institutionScore": 5,
+      "institutionEvidence": "Carnegie R1 and AAU member with a large engineering and computing research environment.",
+      "institutionEvidenceUrl": "https://eecs.utk.edu/research/",
+      "r1Verified": true,
+      "collaborationEvidenceScore": 60,
+      "collaborationFaculty": [
+        {
+          "name": "Jian Huang",
+          "unitRelationship": "Same department",
+          "areas": "Visualisation, collaborative and remote visualisation, and HoloLens delivery",
+          "profileUrl": "https://eecs.utk.edu/people/jian-huang/",
+          "venueEvidence": "Official publication list includes numerous IEEE TVCG papers."
+        }
+      ],
+      "priorityScore": 79,
+      "firstSeen": "2026-09-21",
+      "lastVerified": "2026-10-16",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -458,7 +458,7 @@
       ],
       "priorityScore": 76,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-15",
+      "lastVerified": "2026-10-16",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -504,7 +504,7 @@
       ],
       "priorityScore": 76,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-15",
+      "lastVerified": "2026-10-16",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -570,7 +570,7 @@
         }
       ],
       "priorityScore": 63,
-      "lastVerified": "2026-10-15",
+      "lastVerified": "2026-10-16",
       "verificationNote": "HTTP 200",
       "firstSeen": "2026-09-21",
       "changeType": "Unchanged",
@@ -638,7 +638,7 @@
       ],
       "priorityScore": 59,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-15",
+      "lastVerified": "2026-10-16",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -699,7 +699,7 @@
       ],
       "priorityScore": 59,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-15",
+      "lastVerified": "2026-10-16",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -765,7 +765,7 @@
         }
       ],
       "priorityScore": 58,
-      "lastVerified": "2026-10-15",
+      "lastVerified": "2026-10-16",
       "verificationNote": "HTTP 200",
       "firstSeen": "2026-09-21",
       "changeType": "Unchanged",
@@ -832,7 +832,7 @@
         }
       ],
       "priorityScore": 58,
-      "lastVerified": "2026-10-15",
+      "lastVerified": "2026-10-16",
       "verificationNote": "HTTP 200",
       "firstSeen": "2026-09-21",
       "changeType": "Unchanged",
@@ -893,7 +893,7 @@
       ],
       "priorityScore": 54,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-15",
+      "lastVerified": "2026-10-16",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -939,7 +939,7 @@
       ],
       "priorityScore": 52,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-15",
+      "lastVerified": "2026-10-16",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -985,7 +985,7 @@
       ],
       "priorityScore": 51,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-15",
+      "lastVerified": "2026-10-16",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -1038,53 +1038,7 @@
       ],
       "priorityScore": 49,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-15",
-      "verificationNote": "HTTP 200",
-      "changeType": "Unchanged",
-      "changeLog": [
-        {
-          "date": "2026-09-21",
-          "type": "Newly Posted",
-          "detail": "Added after official-source verification."
-        }
-      ]
-    },
-    {
-      "id": "alabama-health-communication-530406",
-      "country": "United States",
-      "university": "University of Alabama",
-      "department": "College of Communication and Information Sciences",
-      "title": "Health Communication and Information — Assistant Professor",
-      "rankTrack": "Assistant Professor",
-      "rankTrackDetail": "Assistant Professor, tenure-track",
-      "researchArea": "Health HCI/UX, assistive and social robots, accessibility, and interactive VR",
-      "priorityDate": "2026-09-20",
-      "finalDeadline": "2026-10-15",
-      "deadlineNote": "Full-consideration date passed; final deadline 15 October 2026",
-      "postedDate": null,
-      "postingAgeStatus": "Date unavailable",
-      "status": "Open",
-      "officialUrl": "https://jobs.uasystem.edu/cw/en-us/job/530406/health-communication-and-information-assistant-professor-college-of-communication-information-sciences-530406",
-      "fitLevel": "Strong",
-      "fitNote": "The ad explicitly includes HCI/UX and interactive VR, but applications must be framed around health communication. Yuqi Zhou offers unusually direct XR haptics, collaborative AR, IEEE VR, ISMAR, and TVCG overlap.",
-      "institutionStrength": "Strong",
-      "institutionScore": 3,
-      "institutionEvidence": "Carnegie R1 eligibility is verified; the score relies more on the exact XR collaborator than institutional prestige.",
-      "institutionEvidenceUrl": "https://research.ua.edu/",
-      "r1Verified": true,
-      "collaborationEvidenceScore": 60,
-      "collaborationFaculty": [
-        {
-          "name": "Yuqi Zhou",
-          "unitRelationship": "Cross-unit Computer Science and Engineering",
-          "areas": "XR haptics, collaborative AR, cloud VR, and spatial synchronisation",
-          "profileUrl": "https://eng.ua.edu/eng-directory/dr-yuqi-zhou/",
-          "venueEvidence": "Official profile lists IEEE VR, ISMAR, and multiple TVCG papers."
-        }
-      ],
-      "priorityScore": 49,
-      "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-15",
+      "lastVerified": "2026-10-16",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -1130,7 +1084,7 @@
       ],
       "priorityScore": 47,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-15",
+      "lastVerified": "2026-10-16",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -1176,7 +1130,7 @@
       ],
       "priorityScore": 46,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-15",
+      "lastVerified": "2026-10-16",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -1229,7 +1183,7 @@
       ],
       "priorityScore": 28,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-15",
+      "lastVerified": "2026-10-16",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -1305,6 +1259,58 @@
         }
       ],
       "closedAt": "2026-10-06"
+    },
+    {
+      "id": "alabama-health-communication-530406",
+      "country": "United States",
+      "university": "University of Alabama",
+      "department": "College of Communication and Information Sciences",
+      "title": "Health Communication and Information — Assistant Professor",
+      "rankTrack": "Assistant Professor",
+      "rankTrackDetail": "Assistant Professor, tenure-track",
+      "researchArea": "Health HCI/UX, assistive and social robots, accessibility, and interactive VR",
+      "priorityDate": "2026-09-20",
+      "finalDeadline": "2026-10-15",
+      "deadlineNote": "Full-consideration date passed; final deadline 15 October 2026",
+      "postedDate": null,
+      "postingAgeStatus": "Date unavailable",
+      "status": "Closed",
+      "officialUrl": "https://jobs.uasystem.edu/cw/en-us/job/530406/health-communication-and-information-assistant-professor-college-of-communication-information-sciences-530406",
+      "fitLevel": "Strong",
+      "fitNote": "The ad explicitly includes HCI/UX and interactive VR, but applications must be framed around health communication. Yuqi Zhou offers unusually direct XR haptics, collaborative AR, IEEE VR, ISMAR, and TVCG overlap.",
+      "institutionStrength": "Strong",
+      "institutionScore": 3,
+      "institutionEvidence": "Carnegie R1 eligibility is verified; the score relies more on the exact XR collaborator than institutional prestige.",
+      "institutionEvidenceUrl": "https://research.ua.edu/",
+      "r1Verified": true,
+      "collaborationEvidenceScore": 60,
+      "collaborationFaculty": [
+        {
+          "name": "Yuqi Zhou",
+          "unitRelationship": "Cross-unit Computer Science and Engineering",
+          "areas": "XR haptics, collaborative AR, cloud VR, and spatial synchronisation",
+          "profileUrl": "https://eng.ua.edu/eng-directory/dr-yuqi-zhou/",
+          "venueEvidence": "Official profile lists IEEE VR, ISMAR, and multiple TVCG papers."
+        }
+      ],
+      "priorityScore": 47,
+      "firstSeen": "2026-09-21",
+      "lastVerified": "2026-10-16",
+      "verificationNote": "Final deadline passed on 2026-10-15",
+      "changeType": "Closed",
+      "changeLog": [
+        {
+          "date": "2026-09-21",
+          "type": "Newly Posted",
+          "detail": "Added after official-source verification."
+        },
+        {
+          "date": "2026-10-16",
+          "type": "Closed",
+          "detail": "Final deadline passed on 2026-10-15"
+        }
+      ],
+      "closedAt": "2026-10-16"
     }
   ]
 }
