@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T00:17:54.621Z",
+  "generatedAt": "2026-10-17T00:20:35.511Z",
   "timezone": "Australia/Sydney",
   "source": {
     "name": "2025 Carnegie Research Activity Designations",
@@ -7,7 +7,7 @@
     "expectedR1Count": 187,
     "status": "Verified",
     "detail": "All eight official result pages matched the expected R1 count.",
-    "checkedAt": "2026-10-16"
+    "checkedAt": "2026-10-17"
   },
   "summary": {
     "registered": 187,
@@ -1566,7 +1566,7 @@
           "id": "alabama-health-communication-530406",
           "title": "Health Communication and Information — Assistant Professor",
           "officialUrl": "https://jobs.uasystem.edu/cw/en-us/job/530406/health-communication-and-information-assistant-professor-college-of-communication-information-sciences-530406",
-          "status": "Open"
+          "status": "Closed"
         }
       ]
     },
@@ -1662,7 +1662,7 @@
       "adapterType": "algolia-angular",
       "portalUrl": "https://faculty.utexas.edu/career",
       "sourceId": "ut-austin-faculty-careers",
-      "lastChecked": "2026-10-16",
+      "lastChecked": "2026-10-17",
       "postingsInspected": 166,
       "candidatesFound": 4,
       "trackedJobs": [
@@ -1922,8 +1922,8 @@
       "adapterType": "uc-recruit-html",
       "portalUrl": "https://aprecruit.berkeley.edu/apply",
       "sourceId": "uc-berkeley-ap-recruit",
-      "lastChecked": "2026-10-16",
-      "postingsInspected": 184,
+      "lastChecked": "2026-10-17",
+      "postingsInspected": 179,
       "candidatesFound": 1,
       "trackedJobs": [
         {
@@ -1965,7 +1965,7 @@
       "adapterType": "uc-recruit-html",
       "portalUrl": "https://recruit.ap.uci.edu/apply",
       "sourceId": "uc-irvine-ap-recruit",
-      "lastChecked": "2026-10-16",
+      "lastChecked": "2026-10-17",
       "postingsInspected": 307,
       "candidatesFound": 1,
       "trackedJobs": [
