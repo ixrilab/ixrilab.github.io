@@ -220,6 +220,9 @@ async function refreshFunding(items, { today, inspect = inspectUrl }) {
       return null;
     }
     const refreshed = { ...item };
+    refreshed.linkStatus = result.state === "active" ? "reachable" : "unverified";
+    refreshed.linkCheckNote = result.detail;
+    refreshed.linkCheckAttemptedAt = today;
     if (result.state === "active") {
       refreshed.checkedAt = today;
       summary.verified += 1;
@@ -233,34 +236,39 @@ async function refreshFunding(items, { today, inspect = inspectUrl }) {
   return { items: results.filter(Boolean), summary };
 }
 
-async function refreshTracker({ now = new Date(), inspect = inspectUrl, write = true } = {}) {
+async function refreshTracker({ now = new Date(), inspect = inspectUrl, write = true, load = (url) => readFile(url, "utf8").then(JSON.parse) } = {}) {
   const today = todayInTimezone(now);
   const [jobsPayload, fundingPayload] = await Promise.all([
-    readFile(JOBS_URL, "utf8").then(JSON.parse),
-    readFile(FUNDING_URL, "utf8").then(JSON.parse),
+    load(JOBS_URL),
+    load(FUNDING_URL),
   ]);
-  const [jobsResult, fundingResult] = await Promise.all([
+  const [jobsRun, fundingRun] = await Promise.allSettled([
     refreshJobs(jobsPayload.jobs, { today, inspect }),
     refreshFunding(fundingPayload.opportunities, { today, inspect }),
   ]);
-  jobsPayload.generatedAt = now.toISOString();
-  jobsPayload.jobs = jobsResult.items;
-  fundingPayload.generatedAt = now.toISOString();
-  fundingPayload.opportunities = fundingResult.items.sort((a, b) => b.score - a.score);
-  if (write) {
-    await Promise.all([
-      writeFile(JOBS_URL, `${JSON.stringify(jobsPayload, null, 2)}\n`, "utf8"),
-      writeFile(FUNDING_URL, `${JSON.stringify(fundingPayload, null, 2)}\n`, "utf8"),
-    ]);
+  const writes = [];
+  if (jobsRun.status === "fulfilled") {
+    jobsPayload.generatedAt = now.toISOString();
+    jobsPayload.jobs = jobsRun.value.items;
+    if (write) writes.push(writeFile(JOBS_URL, `${JSON.stringify(jobsPayload, null, 2)}\n`, "utf8"));
   }
-  return { date: today, jobs: jobsResult.summary, funding: fundingResult.summary, wroteFiles: write };
+  if (fundingRun.status === "fulfilled") {
+    fundingPayload.generatedAt = now.toISOString();
+    fundingPayload.opportunities = fundingRun.value.items.sort((a, b) => b.score - a.score);
+    if (write) writes.push(writeFile(FUNDING_URL, `${JSON.stringify(fundingPayload, null, 2)}\n`, "utf8"));
+  }
+  await Promise.all(writes);
+  const summaryFor = (result) => result.status === "fulfilled"
+    ? result.value.summary
+    : { error: String(result.reason?.message || result.reason) };
+  return { date: today, jobs: summaryFor(jobsRun), funding: summaryFor(fundingRun), wroteFiles: writes.length > 0 };
 }
 
 const isEntryPoint = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
 if (isEntryPoint) {
   const summary = await refreshTracker({ write: !process.argv.includes("--dry-run") });
   console.log(JSON.stringify(summary, null, 2));
-  if (summary.jobs.active === 0 || summary.funding.kept === 0) throw new Error("Refresh would leave no active public opportunities");
+  if (summary.jobs.error || summary.funding.error) process.exitCode = 1;
 }
 
 export { daysUntil, isDefinitelyClosed, postingAgeStatus, priorityScore, refreshFunding, refreshJobs, refreshTracker, scoreComponents, todayInTimezone };

@@ -23,15 +23,19 @@
       <a class="section-tab" href="#funding" id="tab-funding" role="tab" aria-selected="false" aria-controls="funding-panel" data-tab="funding">Funding</a>
       <a class="section-tab" href="#coverage" id="tab-coverage" role="tab" aria-selected="false" aria-controls="coverage-panel" data-tab="coverage">Coverage</a>
     </nav>
-    <span class="update-pill"><i aria-hidden="true"></i> Daily data refresh</span>
+    <div class="header-actions">
+      <a class="project-link" href="/xrmemory/">XRMemory ↗</a>
+      <span class="update-pill" id="refresh-pill" role="status">Checking refresh status…</span>
+    </div>
   </header>
 
   <main>
+    <p class="refresh-notice" id="refresh-notice" role="status" hidden></p>
     <section class="hero" aria-labelledby="page-title">
       <div>
         <p class="eyebrow" id="hero-eyebrow">GLOBAL ACADEMIC OPPORTUNITIES</p>
         <h1 id="page-title">Faculty openings<br><em>worth tracking.</em></h1>
-        <p class="hero-copy" id="hero-copy">Ranked computer science roles, adjacent research positions, and selected industry opportunities—checked against original sources.</p>
+        <p class="hero-copy" id="hero-copy">Tenure-track and permanent faculty searches ranked by research fit, evidenced collaborators, and relevant institutional strength.</p>
         <p id="updated-at" class="updated-at">Loading the latest dataset…</p>
       </div>
       <aside class="summary" aria-label="Dataset summary">

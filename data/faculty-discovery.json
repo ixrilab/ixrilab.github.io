@@ -1,29 +1,29 @@
 {
-  "generatedAt": "2026-10-23T00:34:14.906Z",
+  "generatedAt": "2026-11-04T02:24:30.373Z",
   "timezone": "Australia/Sydney",
   "sourcesChecked": [
     {
       "id": "ut-austin-faculty-careers",
       "institution": "The University of Texas at Austin",
-      "checkedAt": "2026-10-23",
+      "checkedAt": "2026-11-04",
       "status": "Verified",
-      "postingsInspected": 167,
+      "postingsInspected": 175,
       "candidatesFound": 4
     },
     {
       "id": "uc-berkeley-ap-recruit",
       "institution": "University of California, Berkeley",
-      "checkedAt": "2026-10-23",
+      "checkedAt": "2026-11-04",
       "status": "Verified",
-      "postingsInspected": 179,
-      "candidatesFound": 1
+      "postingsInspected": 168,
+      "candidatesFound": 0
     },
     {
       "id": "uc-irvine-ap-recruit",
       "institution": "University of California, Irvine",
-      "checkedAt": "2026-10-23",
+      "checkedAt": "2026-11-04",
       "status": "Verified",
-      "postingsInspected": 315,
+      "postingsInspected": 320,
       "candidatesFound": 1
     }
   ],
@@ -95,30 +95,13 @@
       "knownJobId": "ut-austin-advertising-hci-ai-189345"
     },
     {
-      "sourceId": "uc-berkeley-ap-recruit",
-      "sourceJobId": "JPF05482",
-      "institution": "University of California, Berkeley",
-      "title": "Assistant Professor - Human-Computer Interaction (HCI) - School of Information",
-      "unit": "School of Information / School of Information",
-      "officialUrl": "https://aprecruit.berkeley.edu/JPF05482",
-      "deadlineLabel": "Apply by Nov 2, 2026 for full consideration Open Sep 8, 2026 Nov 2, 2026",
-      "postedDate": "2026-09-08",
-      "matchedSignals": [
-        "HCI",
-        "human-AI interaction"
-      ],
-      "eligibleAppointment": true,
-      "reviewStatus": "Tracked",
-      "knownJobId": "berkeley-ischool-hci-jpf05482"
-    },
-    {
       "sourceId": "uc-irvine-ap-recruit",
       "sourceJobId": "JPF10388",
       "institution": "University of California, Irvine",
       "title": "Open Rank Faculty Position for Department of Informatics in Human-Computer Interaction",
       "unit": "Donald Bren School of Information and Computer Sciences / Informatics",
       "officialUrl": "https://recruit.ap.uci.edu/JPF10388",
-      "deadlineLabel": "Apply by Dec 5, 2026 for full consideration Open Sep 2, 2026 Apr 1, 2027",
+      "deadlineLabel": "Apply by Nov 5, 2026 for full consideration Open Sep 2, 2026 Apr 1, 2027",
       "postedDate": "2026-09-02",
       "matchedSignals": [
         "HCI"

@@ -6,20 +6,24 @@ on:
       - "index.html"
       - "style.css"
       - "app.js"
+      - "xrmemory/**"
       - "data/**"
       - "data-tools/**"
       - "tests/**"
       - ".github/workflows/validate-faculty-jobs.yml"
+      - ".github/workflows/refresh-tracker.yml"
   push:
     branches: [main]
     paths:
       - "index.html"
       - "style.css"
       - "app.js"
+      - "xrmemory/**"
       - "data/**"
       - "data-tools/**"
       - "tests/**"
       - ".github/workflows/validate-faculty-jobs.yml"
+      - ".github/workflows/refresh-tracker.yml"
   workflow_dispatch:
 
 permissions:
@@ -41,8 +45,11 @@ jobs:
           node --check data-tools/merge-faculty-jobs.mjs
           node --check data-tools/discover-faculty-jobs.mjs
           node --check data-tools/audit-r1-portals.mjs
+          node --check data-tools/run-refresh.mjs
+          node --check app.js
       - name: Test tracker refresh logic
         run: |
           node tests/refresh-tracker.mjs
           node tests/discover-faculty-jobs.mjs
           node tests/audit-r1-portals.mjs
+          node tests/run-refresh.mjs

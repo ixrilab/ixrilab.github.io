@@ -5,6 +5,7 @@ import {
   postingAgeStatus,
   priorityScore,
   refreshJobs,
+  refreshFunding,
   todayInTimezone,
 } from "../data-tools/refresh-tracker.mjs";
 import { mergeFacultyJobs } from "../data-tools/merge-faculty-jobs.mjs";
@@ -122,4 +123,14 @@ const newByMerge = mergeFacultyJobs([], [{ ...base, id: "new" }], "2026-09-21")[
 assert.equal(newByMerge.changeType, "Newly Posted");
 assert.equal(newByMerge.firstSeen, "2026-09-21");
 
-console.log(JSON.stringify({ status: "valid", tests: 30 }, null, 2));
+const fundingResult = await refreshFunding([
+  { id: "active", url: "https://example.com/active", checkedAt: "2026-09-01" },
+  { id: "blocked", url: "https://example.com/blocked", checkedAt: "2026-09-01" },
+  { id: "expired", url: "https://example.com/expired", deadline: "2026-09-20" },
+], { today: "2026-09-21", inspect: async (url) => states.get(url.split("/").at(-1)) });
+assert.equal(fundingResult.items.find((item) => item.id === "blocked").checkedAt, "2026-09-01", "a blocked funding source must retain its previous successful check date");
+assert.equal(fundingResult.items.find((item) => item.id === "blocked").linkStatus, "unverified");
+assert.equal(fundingResult.items.find((item) => item.id === "active").checkedAt, "2026-09-21");
+assert.equal(fundingResult.items.some((item) => item.id === "expired"), false);
+
+console.log(JSON.stringify({ status: "valid", suite: "faculty and funding refresh" }, null, 2));

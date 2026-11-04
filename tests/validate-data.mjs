@@ -11,6 +11,8 @@ const r1SearchScopeUrl = new URL("../data-tools/r1-search-scope.json", import.me
 const policyUrl = new URL("../data-tools/faculty-search-policy.json", import.meta.url);
 const indexUrl = new URL("../index.html", import.meta.url);
 const appUrl = new URL("../app.js", import.meta.url);
+const refreshUrl = new URL("../data/refresh-status.json", import.meta.url);
+const xrMemoryUrl = new URL("../xrmemory/index.html", import.meta.url);
 
 const [jobsRaw, fundingRaw, sourcesRaw, facultyDiscoverySourcesRaw, facultyDiscoveryRaw, r1CoverageRaw, r1SearchScopeRaw, policyRaw, indexRaw, appRaw] = await Promise.all([
   readFile(jobsUrl, "utf8"),
@@ -33,6 +35,14 @@ const facultyDiscovery = JSON.parse(facultyDiscoveryRaw);
 const r1Coverage = JSON.parse(r1CoverageRaw);
 const r1SearchScope = JSON.parse(r1SearchScopeRaw);
 const policy = JSON.parse(policyRaw);
+const [refreshRaw, xrMemoryRaw] = await Promise.all([readFile(refreshUrl, "utf8"), readFile(xrMemoryUrl, "utf8")]);
+const refreshPayload = JSON.parse(refreshRaw);
+assert.ok(Number.isFinite(Date.parse(refreshPayload.generatedAt)), "refresh attempt timestamp is invalid");
+assert.equal(refreshPayload.timezone, "Australia/Sydney");
+assert.ok(["ok", "partial", "failed"].includes(refreshPayload.status), "refresh status is invalid");
+for (const stage of ["faculty", "funding", "discovery", "coverage"]) {
+  assert.ok(["ok", "partial", "failed"].includes(refreshPayload.stages[stage]?.status), `${stage} refresh status is missing`);
+}
 
 assert.equal(jobsPayload.timezone, "Australia/Sydney");
 assert.ok(Array.isArray(jobsPayload.jobs) && jobsPayload.jobs.length > 0, "jobs must be a non-empty array");
@@ -251,7 +261,7 @@ for (const source of facultyDiscoverySources.sources) {
   assert.notEqual(r1Coverage.institutions.find((item) => item.slug === source.carnegieSlug)?.searchScope, "Excluded", `Faculty discovery source ${source.id} is outside the active search scope`);
 }
 
-const publicText = [jobsRaw, fundingRaw, sourcesRaw, facultyDiscoverySourcesRaw, facultyDiscoveryRaw, r1CoverageRaw, r1SearchScopeRaw, policyRaw, indexRaw, appRaw].join("\n");
+const publicText = [jobsRaw, fundingRaw, sourcesRaw, facultyDiscoverySourcesRaw, facultyDiscoveryRaw, r1CoverageRaw, r1SearchScopeRaw, policyRaw, indexRaw, appRaw, refreshRaw, xrMemoryRaw].join("\n");
 assert.doesNotMatch(publicText, privatePattern, "public files contain a prohibited personal or local identifier");
 assert.doesNotMatch(publicText, hangulPattern, "public UI and datasets must be English-only");
 assert.match(indexRaw, /role="tablist"/, "page must expose an accessible tab list");

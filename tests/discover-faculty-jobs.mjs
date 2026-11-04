@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 
-import { matchedSignals, parsePostedDate, parseUcRecruitRows, stripHtml } from "../data-tools/discover-faculty-jobs.mjs";
+import { matchedSignals, parseAlgoliaCredentials, parsePostedDate, parseUcRecruitRows, scanAlgoliaSource, stripHtml } from "../data-tools/discover-faculty-jobs.mjs";
 
 assert.equal(stripHtml("<p>Human &amp; AI <strong>work</strong></p>"), "Human AI work");
 assert.deepEqual(matchedSignals("Human-computer interaction and mixed reality systems"), ["HCI", "XR/VR/AR"]);
@@ -30,4 +30,23 @@ assert.deepEqual(ucRows, [{
   postedDate: "2026-09-01",
 }]);
 
-console.log(JSON.stringify({ status: "valid", tests: 8 }, null, 2));
+const source = { id: "ut-test", institution: "Example", url: "https://example.edu/career", applicationId: "TESTAPP", indexName: "POSITIONS" };
+const inline = 'indexName:"POSITIONS",searchClient:client()("TESTAPP","test-search-key")';
+const hoisted = 'const fv=(0,module.client)("TESTAPP","test-search-key");' + " ".repeat(1_500) + 'indexName:"POSITIONS",searchClient:fv';
+for (const script of [inline, hoisted]) {
+  assert.deepEqual(parseAlgoliaCredentials(script, source), { applicationId: "TESTAPP", apiKey: "test-search-key" });
+}
+assert.throws(() => parseAlgoliaCredentials(inline, { ...source, applicationId: "OTHERAPP" }), /configuration missing/);
+assert.throws(() => parseAlgoliaCredentials(inline, { ...source, indexName: "OTHERINDEX" }), /index configuration/);
+assert.throws(() => parseAlgoliaCredentials(inline + ';other("TESTAPP","another-key")', source), /ambiguous/);
+const scanned = await scanAlgoliaSource(source, async (url, options) => {
+  if (url === source.url) return '<script src="/main.123.js"></script>';
+  if (url.endsWith("/main.123.js")) return hoisted;
+  assert.equal(options.headers["X-Algolia-Application-Id"], "TESTAPP");
+  assert.equal(options.headers["X-Algolia-API-Key"], "test-search-key");
+  return JSON.stringify({ hits: [{ objectID: "42", name: "Assistant Professor in HCI", description: "Human-computer interaction", open_date_display: "Sep 1, 2026" }] });
+});
+assert.equal(scanned[0].officialUrl, "https://example.edu/career/42");
+assert.equal(scanned[0].eligibleAppointment, true);
+
+console.log(JSON.stringify({ status: "valid", suite: "faculty discovery" }, null, 2));

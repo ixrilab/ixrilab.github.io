@@ -1,0 +1,37 @@
+{
+  "generatedAt": "2026-11-04T02:24:30.373Z",
+  "timezone": "Australia/Sydney",
+  "status": "partial",
+  "stages": {
+    "discovery": {
+      "status": "ok",
+      "verified": 3,
+      "total": 3,
+      "failedSources": []
+    },
+    "faculty": {
+      "status": "ok",
+      "retained": 23,
+      "verified": 18,
+      "expired": 0,
+      "closed": 0,
+      "unverified": 0,
+      "active": 18,
+      "closedTotal": 5
+    },
+    "funding": {
+      "status": "partial",
+      "kept": 7,
+      "verified": 3,
+      "expired": 0,
+      "closed": 0,
+      "unverified": 4
+    },
+    "coverage": {
+      "status": "ok",
+      "fullPortalScans": 3,
+      "failedAdapters": 0,
+      "registryStatus": "Verified"
+    }
+  }
+}

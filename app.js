@@ -1,6 +1,7 @@
 const JOBS_DATA_URL = "./data/jobs.json";
 const FUNDING_DATA_URL = "./data/funding.json";
 const COVERAGE_DATA_URL = "./data/r1-coverage.json";
+const REFRESH_DATA_URL = "./data/refresh-status.json";
 const TRACKER_TIMEZONE = "Australia/Sydney";
 
 const state = {
@@ -25,6 +26,7 @@ const state = {
   coverageScope: "Core",
   adapterStatus: "all",
   coverageState: "all",
+  refreshPayload: null,
 };
 
 const elements = {
@@ -67,6 +69,8 @@ const elements = {
   coverageScope: document.querySelector("#coverage-scope"),
   adapterStatus: document.querySelector("#adapter-status"),
   coverageState: document.querySelector("#coverage-state"),
+  refreshPill: document.querySelector("#refresh-pill"),
+  refreshNotice: document.querySelector("#refresh-notice"),
   coverageResultCount: document.querySelector("#coverage-result-count"),
 };
 
@@ -296,6 +300,7 @@ function renderFundingCard(item, index) {
   const chips = node("div", "chip-row");
   chips.append(node("span", "chip", item.regionCategory));
   chips.append(node("span", `chip status-chip status-${item.status.toLowerCase()}`, item.status));
+  if (item.linkStatus === "unverified") chips.append(node("span", "chip age-warning", "Source recheck needed"));
   funder.append(chips);
 
   const detail = node("div", "role");
@@ -324,6 +329,10 @@ function renderFundingCard(item, index) {
   link.rel = "noopener noreferrer";
   link.setAttribute("aria-label", `Open official source for ${item.title}`);
   meta.append(deadline, amount, link);
+  meta.append(node("p", "verification-date", `Last successful source check: ${item.checkedAt}`));
+  if (item.linkStatus === "unverified") {
+    meta.append(node("p", "verification-date verification-warning", `Latest attempt ${item.linkCheckAttemptedAt}: source could not be rechecked (${item.linkCheckNote}).`));
+  }
 
   card.append(priority, funder, detail, meta);
   return card;
@@ -406,7 +415,36 @@ function renderCoverage() {
   elements.coverageEmpty.hidden = institutions.length !== 0;
 }
 
+function updateRefreshStatus() {
+  const payload = state.activeTab === "funding" ? state.fundingPayload
+    : state.activeTab === "coverage" ? state.coveragePayload : state.jobPayload;
+  const age = Date.now() - Date.parse(payload?.generatedAt || "");
+  const overdue = Number.isFinite(age) && age > 48 * 60 * 60 * 1000;
+  const health = state.refreshPayload;
+  const messages = [];
+  if (overdue) messages.push("This dataset has not refreshed in over two days. Check the saved dates before using a listing.");
+  const labels = { faculty: "Faculty", funding: "Funding", discovery: "New faculty discovery", coverage: "Coverage" };
+  for (const [key, stage] of Object.entries(health?.stages || {})) {
+    if (stage.status === "failed") messages.push(`${labels[key]} refresh failed; the last saved data is retained.`);
+    else if (stage.unverified) messages.push(`${labels[key]}: ${stage.unverified} source links could not be rechecked. Their previous verification dates are retained.`);
+    if (key === "discovery" && stage.failedSources?.length) {
+      messages.push(`Discovery unavailable for: ${stage.failedSources.map((source) => source.institution).join(", ")}.`);
+    }
+    if (key === "coverage" && stage.registryStatus === "Failed") messages.push("Coverage uses the last verified institution registry.");
+  }
+  if (!health && payload) messages.push("Refresh status is unavailable. Use the dataset and verification dates shown below.");
+  const status = overdue || health?.status === "failed" ? "failed"
+    : !health || health.status !== "ok" ? "partial" : "ok";
+  elements.refreshPill.dataset.status = status;
+  elements.refreshPill.textContent = overdue ? "Data refresh overdue"
+    : !health ? "Refresh status unavailable"
+      : health.status === "ok" ? "Latest refresh complete" : "Refresh has warnings";
+  elements.refreshNotice.hidden = messages.length === 0;
+  elements.refreshNotice.textContent = messages.join(" ");
+}
+
 function updateHero() {
+  updateRefreshStatus();
   if (state.activeTab === "coverage") {
     const summary = state.coveragePayload?.summary;
     elements.heroEyebrow.textContent = "2025 CARNEGIE R1 · OFFICIAL PORTALS";
@@ -437,7 +475,7 @@ function updateHero() {
     elements.primaryCount.textContent = state.fundingPayload ? actionable : "—";
     elements.secondaryCount.textContent = state.fundingPayload ? bilateral : "—";
     elements.urgentCount.textContent = state.fundingPayload ? urgent : "—";
-    elements.primaryLabel.textContent = "actionable now";
+    elements.primaryLabel.textContent = "listed open or rolling";
     elements.secondaryLabel.textContent = "bilateral routes";
     elements.urgentLabel.textContent = "close in 30 days";
     document.title = "Funding Radar · HCI · XR Career Radar";
@@ -579,10 +617,22 @@ async function loadCoverage() {
   }
 }
 
+async function loadRefreshStatus() {
+  try {
+    const response = await fetch(REFRESH_DATA_URL, { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const payload = await response.json();
+    if (!["ok", "partial", "failed"].includes(payload.status) || !payload.stages) throw new Error("Invalid refresh status");
+    state.refreshPayload = payload;
+  } catch (error) {
+    console.warn("Refresh status unavailable", error);
+  }
+}
+
 async function init() {
   bindControls();
   activateTab(state.activeTab, false);
-  await Promise.allSettled([loadJobs(), loadFunding(), loadCoverage()]);
+  await Promise.allSettled([loadJobs(), loadFunding(), loadCoverage(), loadRefreshStatus()]);
   updateHero();
 }
 

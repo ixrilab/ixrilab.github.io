@@ -101,19 +101,27 @@ async function fetchText(url, options = {}) {
   }
 }
 
+function parseAlgoliaCredentials(script, source) {
+  const escape = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const index = new RegExp(`\\bindexName\\s*:\\s*(["'])${escape(source.indexName)}\\1`);
+  if (!index.test(script)) throw new Error("search index configuration not found");
+
+  // Bundlers may hoist the client into a variable far away from indexName.
+  // Match the configured application's literal arguments, without executing JS
+  // or depending on a minified function name or a fixed-size text window.
+  const pair = new RegExp(`\\(\\s*(["'])${escape(source.applicationId)}\\1\\s*,\\s*(["'])([A-Za-z0-9+/=_-]+)\\2\\s*\\)`, "g");
+  const keys = [...new Set([...script.matchAll(pair)].map((match) => match[3]))];
+  if (keys.length !== 1) throw new Error("public search configuration missing or ambiguous");
+  return { applicationId: source.applicationId, apiKey: keys[0] };
+}
+
 async function algoliaCredentials(source, fetcher = fetchText) {
   const page = await fetcher(source.url);
-  const scriptPath = page.match(/<script[^>]+src="([^"]*main-es2015[^"]+\.js)"/i)?.[1];
+  const scriptPath = page.match(/<script[^>]+src=["']([^"']*main[^"']*\.m?js(?:\?[^"']*)?)["']/i)?.[1];
   if (!scriptPath) throw new Error("main application script not found");
   const scriptUrl = new URL(scriptPath, source.url).href;
   const script = await fetcher(scriptUrl);
-  const marker = `indexName:"${source.indexName}"`;
-  const start = script.indexOf(marker);
-  if (start === -1) throw new Error("search index configuration not found");
-  const configuration = script.slice(start, start + 600);
-  const credentials = configuration.match(/searchClient:\w+\(\)\("([A-Z0-9]+)","([a-zA-Z0-9]+)"\)/);
-  if (!credentials || credentials[1] !== source.applicationId) throw new Error("public search credentials not found");
-  return { applicationId: credentials[1], apiKey: credentials[2] };
+  return parseAlgoliaCredentials(script, source);
 }
 
 async function scanAlgoliaSource(source, fetcher = fetchText) {
@@ -254,4 +262,4 @@ if (isEntryPoint) {
   if (output.sourcesChecked.some((source) => source.status === "Failed")) process.exitCode = 1;
 }
 
-export { discoverFacultyJobs, matchedSignals, parsePostedDate, parseUcRecruitRows, scanAlgoliaSource, scanUcRecruitSource, stripHtml };
+export { discoverFacultyJobs, matchedSignals, parseAlgoliaCredentials, parsePostedDate, parseUcRecruitRows, scanAlgoliaSource, scanUcRecruitSource, stripHtml };

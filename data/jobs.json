@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T00:34:25.538Z",
+  "generatedAt": "2026-11-04T02:24:30.373Z",
   "timezone": "Australia/Sydney",
   "policyVersion": "2026-09-21",
   "profileBasis": "Dooyoung Kim's published research in space-adaptive XR, XRMemory, immersive human factors, interactive 3D intelligence, and spatially grounded human-AI systems.",
@@ -84,62 +84,7 @@
       ],
       "priorityScore": 91,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-23",
-      "verificationNote": "HTTP 200",
-      "changeType": "Unchanged",
-      "changeLog": [
-        {
-          "date": "2026-09-21",
-          "type": "Newly Posted",
-          "detail": "Added after official-source verification."
-        }
-      ]
-    },
-    {
-      "id": "berkeley-ischool-hci-jpf05482",
-      "country": "United States",
-      "university": "University of California, Berkeley",
-      "department": "School of Information",
-      "title": "Assistant Professor — Human-Computer Interaction",
-      "rankTrack": "Assistant Professor",
-      "rankTrackDetail": "Assistant Professor, tenure-track",
-      "researchArea": "HCI, human-AI interaction and collaboration, ubiquitous and embodied computing, HRI, and emerging interaction modalities",
-      "priorityDate": "2026-11-02",
-      "finalDeadline": "2026-11-02",
-      "deadlineNote": "Applications due 2 November 2026 at 11:59 PM Pacific",
-      "postedDate": "2026-09-08",
-      "postingAgeStatus": "Under 6 months",
-      "status": "Open",
-      "officialUrl": "https://aprecruit.berkeley.edu/JPF05482",
-      "fitLevel": "Direct",
-      "fitNote": "A top-quality, assistant-rank HCI search that explicitly includes human-AI, embodied computing, HRI, and new interaction modalities. The profile is broader than XR but directly supports its human-centred systems agenda.",
-      "institutionStrength": "Exceptional",
-      "institutionScore": 8,
-      "institutionEvidence": "Carnegie R1 and AAU member with a globally recognised HCI and design research ecosystem.",
-      "institutionEvidenceUrl": "https://www.ischool.berkeley.edu/research",
-      "r1Verified": true,
-      "collaborationEvidenceScore": 40,
-      "collaborationFaculty": [
-        {
-          "name": "Bjorn Hartmann",
-          "unitRelationship": "Cross-unit EECS and Berkeley design ecosystem",
-          "areas": "HCI, human-AI interaction, mixed reality, and immersive interaction",
-          "profileUrl": "https://vcresearch.berkeley.edu/faculty/bjorn-hartmann",
-          "venueEvidence": "CHI/UIST/TOCHI evidence; no target XR venue item verified."
-        }
-      ],
-      "recentFacultySignals": [
-        {
-          "name": "Diag Davenport",
-          "joined": "2024",
-          "strengthSignal": "Princeton postdoctoral training and a distinctive combination of economics, psychology, algorithms, and machine learning applied to equity and public policy, with awards and work in PNAS and Nature Human Behaviour.",
-          "barInference": "methodological originality, campus-wide public-interest relevance, and a research identity that creates value across Information and Public Policy rather than fitting only one narrow venue community.",
-          "sourceUrl": "https://www.ischool.berkeley.edu/news/2024/diag-davenport-joins-uc-berkeley-focus-tech-policy"
-        }
-      ],
-      "priorityScore": 91,
-      "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-23",
+      "lastVerified": "2026-11-04",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -194,7 +139,7 @@
       ],
       "priorityScore": 90,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-23",
+      "lastVerified": "2026-11-04",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -253,7 +198,7 @@
       ],
       "priorityScore": 82,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-23",
+      "lastVerified": "2026-11-04",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -313,7 +258,7 @@
       ],
       "priorityScore": 82,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-23",
+      "lastVerified": "2026-11-04",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -359,7 +304,7 @@
       ],
       "priorityScore": 79,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-23",
+      "lastVerified": "2026-11-04",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -405,7 +350,7 @@
       ],
       "priorityScore": 79,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-23",
+      "lastVerified": "2026-11-04",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -458,7 +403,7 @@
       ],
       "priorityScore": 76,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-23",
+      "lastVerified": "2026-11-04",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -504,7 +449,7 @@
       ],
       "priorityScore": 76,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-23",
+      "lastVerified": "2026-11-04",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -570,7 +515,7 @@
         }
       ],
       "priorityScore": 63,
-      "lastVerified": "2026-10-23",
+      "lastVerified": "2026-11-04",
       "verificationNote": "HTTP 200",
       "firstSeen": "2026-09-21",
       "changeType": "Unchanged",
@@ -638,7 +583,7 @@
       ],
       "priorityScore": 59,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-23",
+      "lastVerified": "2026-11-04",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -699,142 +644,8 @@
       ],
       "priorityScore": 59,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-23",
+      "lastVerified": "2026-11-04",
       "verificationNote": "HTTP 200",
-      "changeType": "Unchanged",
-      "changeLog": [
-        {
-          "date": "2026-09-21",
-          "type": "Newly Posted",
-          "detail": "Added after official-source verification."
-        }
-      ]
-    },
-    {
-      "id": "cornell-wcm-ai-implementation-2026",
-      "country": "United States",
-      "university": "Cornell University (Weill Cornell Medicine)",
-      "department": "Division of Health Informatics and Artificial Intelligence, Department of Population Health Sciences",
-      "title": "Tenure-Track Assistant Professor Faculty Position, AI Implementation in Clinical Practice",
-      "rankTrack": "Assistant Professor",
-      "rankTrackDetail": "Assistant Professor, tenure-track",
-      "researchArea": "Clinical AI implementation, human factors, human-AI interaction, usability, interface design, explainability, visualization, and team-based decision-making",
-      "priorityDate": null,
-      "finalDeadline": "2026-12-01",
-      "deadlineNote": "Applications due 1 December 2026; no separate priority-review date stated",
-      "postedDate": null,
-      "postingAgeStatus": "Date unavailable",
-      "status": "Open",
-      "officialUrl": "https://phs.weill.cornell.edu/about-us/career-opportunities/tenure-track-assistant-professor-faculty-position-ai-implementation",
-      "fitLevel": "Strong",
-      "fitNote": "The ad explicitly targets human factors, human-AI interaction, usability, interface design, visualization, trust, and workload, and it names Cornell Tech collaboration. It is not a general HCI/XR search: a credible application must make clinical-AI deployment and healthcare workflow evaluation central rather than treating health as an application afterthought.",
-      "institutionStrength": "Exceptional",
-      "institutionScore": 8,
-      "institutionEvidence": "Cornell is a Carnegie R1 and AAU institution; the posting explicitly connects Weill Cornell Medicine with Cornell Tech and New York clinical partners.",
-      "institutionEvidenceUrl": "https://tech.cornell.edu/research/human-centered-computing/",
-      "r1Verified": true,
-      "collaborationEvidenceScore": 120,
-      "collaborationFaculty": [
-        {
-          "name": "Qian Yang",
-          "unitRelationship": "Cornell Tech cross-campus collaborator",
-          "areas": "Human-AI interaction, AI product and interaction design, and tools for designing with AI",
-          "profileUrl": "https://infosci.cornell.edu/people/qian-yang",
-          "venueEvidence": "Official profile establishes direct human-AI/HCI alignment; CHI evidence used, with no ISMAR, IEEE VR, or TVCG credit."
-        },
-        {
-          "name": "Shiri Azenkot",
-          "unitRelationship": "Cornell Tech cross-campus collaborator",
-          "areas": "HCI, accessibility, wearable and smart-glasses interaction, and XR",
-          "profileUrl": "https://tech.cornell.edu/people/shiri-azenkot/",
-          "venueEvidence": "Official profile records CHI, ASSETS, UIST, and UbiComp work; no ISMAR, IEEE VR, or TVCG credit used."
-        },
-        {
-          "name": "Tanzeem Choudhury",
-          "unitRelationship": "Cornell Tech cross-campus collaborator",
-          "areas": "Health AI, ubiquitous sensing, wearable systems, and digital mental health",
-          "profileUrl": "https://pac.cs.cornell.edu/",
-          "venueEvidence": "Direct digital-health and ubiquitous-computing alignment; no target XR venue credit used."
-        },
-        {
-          "name": "Deborah Estrin",
-          "unitRelationship": "Cornell Tech cross-campus collaborator",
-          "areas": "Digital health, mobile sensing, public-interest technology, and patient-generated data",
-          "profileUrl": "https://tech.cornell.edu/people/deborah-estrin/",
-          "venueEvidence": "Strong digital-health collaboration evidence; no target XR venue credit used."
-        }
-      ],
-      "priorityScore": 58,
-      "lastVerified": "2026-10-23",
-      "verificationNote": "HTTP 200",
-      "firstSeen": "2026-09-21",
-      "changeType": "Unchanged",
-      "changeLog": [
-        {
-          "date": "2026-09-21",
-          "type": "Newly Posted",
-          "detail": "Added after official-source verification."
-        }
-      ]
-    },
-    {
-      "id": "cornell-wcm-agentic-ai-2026",
-      "country": "United States",
-      "university": "Cornell University (Weill Cornell Medicine)",
-      "department": "Division of Health Informatics and Artificial Intelligence, Department of Population Health Sciences",
-      "title": "Tenure-Track Assistant Professor Faculty Position, Agentic AI",
-      "rankTrack": "Assistant Professor",
-      "rankTrackDetail": "Assistant Professor, tenure-track",
-      "researchArea": "Agentic AI for healthcare, multi-agent systems, multimodal agents, human-AI collaboration, safety, trustworthiness, governance, and human oversight",
-      "priorityDate": null,
-      "finalDeadline": "2026-12-01",
-      "deadlineNote": "Applications due 1 December 2026; no separate priority-review date stated",
-      "postedDate": null,
-      "postingAgeStatus": "Date unavailable",
-      "status": "Open",
-      "officialUrl": "https://phs.weill.cornell.edu/about-us/career-opportunities/tenure-track-assistant-professor-faculty-position-agentic-ai",
-      "fitLevel": "Strong",
-      "fitNote": "The search explicitly includes human-AI collaboration, trustworthiness, human oversight, and multimodal agents, with Cornell Tech named as a collaboration route. The limiting factor is domain: the research program must be convincingly grounded in healthcare agents and clinical systems, so spatial/XR work alone would not satisfy the call.",
-      "institutionStrength": "Exceptional",
-      "institutionScore": 8,
-      "institutionEvidence": "Cornell is a Carnegie R1 and AAU institution; the posting explicitly connects Weill Cornell Medicine with Cornell Tech and New York clinical partners.",
-      "institutionEvidenceUrl": "https://tech.cornell.edu/research/human-centered-computing/",
-      "r1Verified": true,
-      "collaborationEvidenceScore": 120,
-      "collaborationFaculty": [
-        {
-          "name": "Qian Yang",
-          "unitRelationship": "Cornell Tech cross-campus collaborator",
-          "areas": "Human-AI interaction, AI product and interaction design, and tools for designing with AI",
-          "profileUrl": "https://infosci.cornell.edu/people/qian-yang",
-          "venueEvidence": "Official profile establishes direct human-AI/HCI alignment; CHI evidence used, with no ISMAR, IEEE VR, or TVCG credit."
-        },
-        {
-          "name": "Wendy Ju",
-          "unitRelationship": "Cornell Tech cross-campus collaborator",
-          "areas": "Human-robot interaction, automation interfaces, interaction design, and intelligent systems",
-          "profileUrl": "https://dli.tech.cornell.edu/members/ju",
-          "venueEvidence": "Direct human-agent and HRI alignment; no ISMAR, IEEE VR, or TVCG credit used."
-        },
-        {
-          "name": "Nicola Dell",
-          "unitRelationship": "Cornell Tech cross-campus collaborator",
-          "areas": "HCI, AI, health technologies, security, and social impact",
-          "profileUrl": "https://tech.cornell.edu/people/nicola-dell/",
-          "venueEvidence": "Official profile establishes HCI and technology-for-health alignment; no target XR venue credit used."
-        },
-        {
-          "name": "Tanzeem Choudhury",
-          "unitRelationship": "Cornell Tech cross-campus collaborator",
-          "areas": "Health AI, ubiquitous sensing, wearable systems, and digital mental health",
-          "profileUrl": "https://pac.cs.cornell.edu/",
-          "venueEvidence": "Direct health-AI and intelligent-systems alignment; no target XR venue credit used."
-        }
-      ],
-      "priorityScore": 58,
-      "lastVerified": "2026-10-23",
-      "verificationNote": "HTTP 200",
-      "firstSeen": "2026-09-21",
       "changeType": "Unchanged",
       "changeLog": [
         {
@@ -893,7 +704,7 @@
       ],
       "priorityScore": 54,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-23",
+      "lastVerified": "2026-11-04",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -939,53 +750,7 @@
       ],
       "priorityScore": 52,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-23",
-      "verificationNote": "HTTP 200",
-      "changeType": "Unchanged",
-      "changeLog": [
-        {
-          "date": "2026-09-21",
-          "type": "Newly Posted",
-          "detail": "Added after official-source verification."
-        }
-      ]
-    },
-    {
-      "id": "uw-hcde-assistant-185759",
-      "country": "United States",
-      "university": "University of Washington",
-      "department": "Human Centered Design and Engineering, College of Engineering",
-      "title": "Assistant Professor of Human Centered Design and Engineering",
-      "rankTrack": "Assistant Professor",
-      "rankTrackDetail": "Assistant Professor, tenure-track",
-      "researchArea": "Human-centred design, sociotechnical systems, human-centred AI, automation, and human agency",
-      "priorityDate": "2026-11-01",
-      "finalDeadline": null,
-      "deadlineNote": "Priority review 1 November 2026; open until filled",
-      "postedDate": null,
-      "postingAgeStatus": "Date unavailable",
-      "status": "Open",
-      "officialUrl": "https://ap.washington.edu/ahr/position-details/?job_id=185759",
-      "fitLevel": "Strong",
-      "fitNote": "UW HCDE is an excellent HCI environment, but the advertised themes lean toward sustainability, civic infrastructure, and future of work rather than XR. Jon Froehlich supplies a strong cross-unit AR/VR and ubiquitous-computing bridge.",
-      "institutionStrength": "Exceptional",
-      "institutionScore": 8,
-      "institutionEvidence": "Carnegie R1 and AAU member with a dedicated HCDE unit and the cross-campus DUB HCI community.",
-      "institutionEvidenceUrl": "https://dub.washington.edu/",
-      "r1Verified": true,
-      "collaborationEvidenceScore": 20,
-      "collaborationFaculty": [
-        {
-          "name": "Jon Froehlich",
-          "unitRelationship": "Cross-unit Allen School, connected through DUB and MHCID",
-          "areas": "HCI, AR/VR/MR, ubiquitous and embedded systems, accessibility, and Human+AI",
-          "profileUrl": "https://www.cs.washington.edu/people/faculty/jon-e-froehlich/",
-          "venueEvidence": "No ISMAR/IEEE VR/TVCG item verified on the official profile."
-        }
-      ],
-      "priorityScore": 51,
-      "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-23",
+      "lastVerified": "2026-11-04",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -1038,7 +803,53 @@
       ],
       "priorityScore": 49,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-23",
+      "lastVerified": "2026-11-04",
+      "verificationNote": "HTTP 200",
+      "changeType": "Unchanged",
+      "changeLog": [
+        {
+          "date": "2026-09-21",
+          "type": "Newly Posted",
+          "detail": "Added after official-source verification."
+        }
+      ]
+    },
+    {
+      "id": "uw-hcde-assistant-185759",
+      "country": "United States",
+      "university": "University of Washington",
+      "department": "Human Centered Design and Engineering, College of Engineering",
+      "title": "Assistant Professor of Human Centered Design and Engineering",
+      "rankTrack": "Assistant Professor",
+      "rankTrackDetail": "Assistant Professor, tenure-track",
+      "researchArea": "Human-centred design, sociotechnical systems, human-centred AI, automation, and human agency",
+      "priorityDate": "2026-11-01",
+      "finalDeadline": null,
+      "deadlineNote": "Priority review 1 November 2026; open until filled",
+      "postedDate": null,
+      "postingAgeStatus": "Date unavailable",
+      "status": "Open",
+      "officialUrl": "https://ap.washington.edu/ahr/position-details/?job_id=185759",
+      "fitLevel": "Strong",
+      "fitNote": "UW HCDE is an excellent HCI environment, but the advertised themes lean toward sustainability, civic infrastructure, and future of work rather than XR. Jon Froehlich supplies a strong cross-unit AR/VR and ubiquitous-computing bridge.",
+      "institutionStrength": "Exceptional",
+      "institutionScore": 8,
+      "institutionEvidence": "Carnegie R1 and AAU member with a dedicated HCDE unit and the cross-campus DUB HCI community.",
+      "institutionEvidenceUrl": "https://dub.washington.edu/",
+      "r1Verified": true,
+      "collaborationEvidenceScore": 20,
+      "collaborationFaculty": [
+        {
+          "name": "Jon Froehlich",
+          "unitRelationship": "Cross-unit Allen School, connected through DUB and MHCID",
+          "areas": "HCI, AR/VR/MR, ubiquitous and embedded systems, accessibility, and Human+AI",
+          "profileUrl": "https://www.cs.washington.edu/people/faculty/jon-e-froehlich/",
+          "venueEvidence": "No ISMAR/IEEE VR/TVCG item verified on the official profile."
+        }
+      ],
+      "priorityScore": 49,
+      "firstSeen": "2026-09-21",
+      "lastVerified": "2026-11-04",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -1084,7 +895,7 @@
       ],
       "priorityScore": 47,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-23",
+      "lastVerified": "2026-11-04",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -1130,7 +941,7 @@
       ],
       "priorityScore": 46,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-23",
+      "lastVerified": "2026-11-04",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -1181,9 +992,9 @@
           "venueEvidence": "Official materials list IEEE VR Best Journal Paper and many TVCG/IEEE VR/ISMAR papers."
         }
       ],
-      "priorityScore": 28,
+      "priorityScore": 26,
       "firstSeen": "2026-09-21",
-      "lastVerified": "2026-10-23",
+      "lastVerified": "2026-11-04",
       "verificationNote": "HTTP 200",
       "changeType": "Unchanged",
       "changeLog": [
@@ -1193,6 +1004,213 @@
           "detail": "Added after official-source verification."
         }
       ]
+    },
+    {
+      "id": "berkeley-ischool-hci-jpf05482",
+      "country": "United States",
+      "university": "University of California, Berkeley",
+      "department": "School of Information",
+      "title": "Assistant Professor — Human-Computer Interaction",
+      "rankTrack": "Assistant Professor",
+      "rankTrackDetail": "Assistant Professor, tenure-track",
+      "researchArea": "HCI, human-AI interaction and collaboration, ubiquitous and embodied computing, HRI, and emerging interaction modalities",
+      "priorityDate": "2026-11-02",
+      "finalDeadline": "2026-11-02",
+      "deadlineNote": "Applications due 2 November 2026 at 11:59 PM Pacific",
+      "postedDate": "2026-09-08",
+      "postingAgeStatus": "Under 6 months",
+      "status": "Closed",
+      "officialUrl": "https://aprecruit.berkeley.edu/JPF05482",
+      "fitLevel": "Direct",
+      "fitNote": "A top-quality, assistant-rank HCI search that explicitly includes human-AI, embodied computing, HRI, and new interaction modalities. The profile is broader than XR but directly supports its human-centred systems agenda.",
+      "institutionStrength": "Exceptional",
+      "institutionScore": 8,
+      "institutionEvidence": "Carnegie R1 and AAU member with a globally recognised HCI and design research ecosystem.",
+      "institutionEvidenceUrl": "https://www.ischool.berkeley.edu/research",
+      "r1Verified": true,
+      "collaborationEvidenceScore": 40,
+      "collaborationFaculty": [
+        {
+          "name": "Bjorn Hartmann",
+          "unitRelationship": "Cross-unit EECS and Berkeley design ecosystem",
+          "areas": "HCI, human-AI interaction, mixed reality, and immersive interaction",
+          "profileUrl": "https://vcresearch.berkeley.edu/faculty/bjorn-hartmann",
+          "venueEvidence": "CHI/UIST/TOCHI evidence; no target XR venue item verified."
+        }
+      ],
+      "recentFacultySignals": [
+        {
+          "name": "Diag Davenport",
+          "joined": "2024",
+          "strengthSignal": "Princeton postdoctoral training and a distinctive combination of economics, psychology, algorithms, and machine learning applied to equity and public policy, with awards and work in PNAS and Nature Human Behaviour.",
+          "barInference": "methodological originality, campus-wide public-interest relevance, and a research identity that creates value across Information and Public Policy rather than fitting only one narrow venue community.",
+          "sourceUrl": "https://www.ischool.berkeley.edu/news/2024/diag-davenport-joins-uc-berkeley-focus-tech-policy"
+        }
+      ],
+      "priorityScore": 87,
+      "firstSeen": "2026-09-21",
+      "lastVerified": "2026-11-04",
+      "verificationNote": "Final deadline passed on 2026-11-02",
+      "changeType": "Closed",
+      "changeLog": [
+        {
+          "date": "2026-09-21",
+          "type": "Newly Posted",
+          "detail": "Added after official-source verification."
+        },
+        {
+          "date": "2026-11-04",
+          "type": "Closed",
+          "detail": "Final deadline passed on 2026-11-02"
+        }
+      ],
+      "closedAt": "2026-11-04"
+    },
+    {
+      "id": "cornell-wcm-ai-implementation-2026",
+      "country": "United States",
+      "university": "Cornell University (Weill Cornell Medicine)",
+      "department": "Division of Health Informatics and Artificial Intelligence, Department of Population Health Sciences",
+      "title": "Tenure-Track Assistant Professor Faculty Position, AI Implementation in Clinical Practice",
+      "rankTrack": "Assistant Professor",
+      "rankTrackDetail": "Assistant Professor, tenure-track",
+      "researchArea": "Clinical AI implementation, human factors, human-AI interaction, usability, interface design, explainability, visualization, and team-based decision-making",
+      "priorityDate": null,
+      "finalDeadline": "2026-12-01",
+      "deadlineNote": "Applications due 1 December 2026; no separate priority-review date stated",
+      "postedDate": null,
+      "postingAgeStatus": "Date unavailable",
+      "status": "Closed",
+      "officialUrl": "https://phs.weill.cornell.edu/about-us/career-opportunities/tenure-track-assistant-professor-faculty-position-ai-implementation",
+      "fitLevel": "Strong",
+      "fitNote": "The ad explicitly targets human factors, human-AI interaction, usability, interface design, visualization, trust, and workload, and it names Cornell Tech collaboration. It is not a general HCI/XR search: a credible application must make clinical-AI deployment and healthcare workflow evaluation central rather than treating health as an application afterthought.",
+      "institutionStrength": "Exceptional",
+      "institutionScore": 8,
+      "institutionEvidence": "Cornell is a Carnegie R1 and AAU institution; the posting explicitly connects Weill Cornell Medicine with Cornell Tech and New York clinical partners.",
+      "institutionEvidenceUrl": "https://tech.cornell.edu/research/human-centered-computing/",
+      "r1Verified": true,
+      "collaborationEvidenceScore": 120,
+      "collaborationFaculty": [
+        {
+          "name": "Qian Yang",
+          "unitRelationship": "Cornell Tech cross-campus collaborator",
+          "areas": "Human-AI interaction, AI product and interaction design, and tools for designing with AI",
+          "profileUrl": "https://infosci.cornell.edu/people/qian-yang",
+          "venueEvidence": "Official profile establishes direct human-AI/HCI alignment; CHI evidence used, with no ISMAR, IEEE VR, or TVCG credit."
+        },
+        {
+          "name": "Shiri Azenkot",
+          "unitRelationship": "Cornell Tech cross-campus collaborator",
+          "areas": "HCI, accessibility, wearable and smart-glasses interaction, and XR",
+          "profileUrl": "https://tech.cornell.edu/people/shiri-azenkot/",
+          "venueEvidence": "Official profile records CHI, ASSETS, UIST, and UbiComp work; no ISMAR, IEEE VR, or TVCG credit used."
+        },
+        {
+          "name": "Tanzeem Choudhury",
+          "unitRelationship": "Cornell Tech cross-campus collaborator",
+          "areas": "Health AI, ubiquitous sensing, wearable systems, and digital mental health",
+          "profileUrl": "https://pac.cs.cornell.edu/",
+          "venueEvidence": "Direct digital-health and ubiquitous-computing alignment; no target XR venue credit used."
+        },
+        {
+          "name": "Deborah Estrin",
+          "unitRelationship": "Cornell Tech cross-campus collaborator",
+          "areas": "Digital health, mobile sensing, public-interest technology, and patient-generated data",
+          "profileUrl": "https://tech.cornell.edu/people/deborah-estrin/",
+          "venueEvidence": "Strong digital-health collaboration evidence; no target XR venue credit used."
+        }
+      ],
+      "priorityScore": 58,
+      "lastVerified": "2026-11-04",
+      "verificationNote": "HTTP 404",
+      "firstSeen": "2026-09-21",
+      "changeType": "Closed",
+      "changeLog": [
+        {
+          "date": "2026-09-21",
+          "type": "Newly Posted",
+          "detail": "Added after official-source verification."
+        },
+        {
+          "date": "2026-11-04",
+          "type": "Closed",
+          "detail": "HTTP 404"
+        }
+      ],
+      "closedAt": "2026-11-04"
+    },
+    {
+      "id": "cornell-wcm-agentic-ai-2026",
+      "country": "United States",
+      "university": "Cornell University (Weill Cornell Medicine)",
+      "department": "Division of Health Informatics and Artificial Intelligence, Department of Population Health Sciences",
+      "title": "Tenure-Track Assistant Professor Faculty Position, Agentic AI",
+      "rankTrack": "Assistant Professor",
+      "rankTrackDetail": "Assistant Professor, tenure-track",
+      "researchArea": "Agentic AI for healthcare, multi-agent systems, multimodal agents, human-AI collaboration, safety, trustworthiness, governance, and human oversight",
+      "priorityDate": null,
+      "finalDeadline": "2026-12-01",
+      "deadlineNote": "Applications due 1 December 2026; no separate priority-review date stated",
+      "postedDate": null,
+      "postingAgeStatus": "Date unavailable",
+      "status": "Closed",
+      "officialUrl": "https://phs.weill.cornell.edu/about-us/career-opportunities/tenure-track-assistant-professor-faculty-position-agentic-ai",
+      "fitLevel": "Strong",
+      "fitNote": "The search explicitly includes human-AI collaboration, trustworthiness, human oversight, and multimodal agents, with Cornell Tech named as a collaboration route. The limiting factor is domain: the research program must be convincingly grounded in healthcare agents and clinical systems, so spatial/XR work alone would not satisfy the call.",
+      "institutionStrength": "Exceptional",
+      "institutionScore": 8,
+      "institutionEvidence": "Cornell is a Carnegie R1 and AAU institution; the posting explicitly connects Weill Cornell Medicine with Cornell Tech and New York clinical partners.",
+      "institutionEvidenceUrl": "https://tech.cornell.edu/research/human-centered-computing/",
+      "r1Verified": true,
+      "collaborationEvidenceScore": 120,
+      "collaborationFaculty": [
+        {
+          "name": "Qian Yang",
+          "unitRelationship": "Cornell Tech cross-campus collaborator",
+          "areas": "Human-AI interaction, AI product and interaction design, and tools for designing with AI",
+          "profileUrl": "https://infosci.cornell.edu/people/qian-yang",
+          "venueEvidence": "Official profile establishes direct human-AI/HCI alignment; CHI evidence used, with no ISMAR, IEEE VR, or TVCG credit."
+        },
+        {
+          "name": "Wendy Ju",
+          "unitRelationship": "Cornell Tech cross-campus collaborator",
+          "areas": "Human-robot interaction, automation interfaces, interaction design, and intelligent systems",
+          "profileUrl": "https://dli.tech.cornell.edu/members/ju",
+          "venueEvidence": "Direct human-agent and HRI alignment; no ISMAR, IEEE VR, or TVCG credit used."
+        },
+        {
+          "name": "Nicola Dell",
+          "unitRelationship": "Cornell Tech cross-campus collaborator",
+          "areas": "HCI, AI, health technologies, security, and social impact",
+          "profileUrl": "https://tech.cornell.edu/people/nicola-dell/",
+          "venueEvidence": "Official profile establishes HCI and technology-for-health alignment; no target XR venue credit used."
+        },
+        {
+          "name": "Tanzeem Choudhury",
+          "unitRelationship": "Cornell Tech cross-campus collaborator",
+          "areas": "Health AI, ubiquitous sensing, wearable systems, and digital mental health",
+          "profileUrl": "https://pac.cs.cornell.edu/",
+          "venueEvidence": "Direct health-AI and intelligent-systems alignment; no target XR venue credit used."
+        }
+      ],
+      "priorityScore": 58,
+      "lastVerified": "2026-11-04",
+      "verificationNote": "HTTP 404",
+      "firstSeen": "2026-09-21",
+      "changeType": "Closed",
+      "changeLog": [
+        {
+          "date": "2026-09-21",
+          "type": "Newly Posted",
+          "detail": "Added after official-source verification."
+        },
+        {
+          "date": "2026-11-04",
+          "type": "Closed",
+          "detail": "HTTP 404"
+        }
+      ],
+      "closedAt": "2026-11-04"
     },
     {
       "id": "ttu-psych-human-factors-45900",
