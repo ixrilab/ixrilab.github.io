@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T02:28:55.492Z",
+  "generatedAt": "2026-11-05T02:16:55.567Z",
   "timezone": "Australia/Sydney",
   "opportunities": [
     {
@@ -17,34 +17,12 @@
       "fieldFit": "Useful for compute-intensive HCI, human-centred AI, multimodal analytics, visualization, and XR back-end workloads.",
       "recommendation": "Apply when the project has a quantified cloud workload, public research output, benchmark, tool, or training plan.",
       "url": "https://aws.amazon.com/government-education/research-and-technical-computing/cloud-credit-for-research/",
-      "checkedAt": "2026-11-04",
+      "checkedAt": "2026-11-05",
       "confidence": "High",
       "score": 92,
       "linkStatus": "reachable",
       "linkCheckNote": "HTTP 200",
-      "linkCheckAttemptedAt": "2026-11-04"
-    },
-    {
-      "id": "mrff-primary-health-care-2026",
-      "funder": "Australian Government — MRFF",
-      "title": "2026 Primary Health Care Research Grant Opportunity",
-      "regionCategory": "Australia",
-      "status": "Open",
-      "deadline": "2026-11-04",
-      "deadlineLabel": "Minimum data: 7 Oct · Close: 4 Nov 2026",
-      "funding": "See Grant Opportunity Guidelines",
-      "fundingType": "Institutional health and medical research grant",
-      "eligibilityRoute": "Submission is through an eligible Australian organisation; confirm stream, CI, and internal deadline requirements.",
-      "partnerRequirement": "A primary-care, health-service, community, or implementation partner may be important for competitiveness.",
-      "fieldFit": "Potential fit for telehealth, equitable service access, clinician-facing interaction, patient experience, and digital care pathways.",
-      "recommendation": "Develop a proposal only after matching the HCI or digital-health problem to an explicit grant objective and implementation setting.",
-      "url": "https://www.health.gov.au/our-work/mrff/grant-opportunities-calendar",
-      "checkedAt": "2026-08-27",
-      "confidence": "High",
-      "score": 86,
-      "linkStatus": "unverified",
-      "linkCheckNote": "timeout",
-      "linkCheckAttemptedAt": "2026-11-04"
+      "linkCheckAttemptedAt": "2026-11-05"
     },
     {
       "id": "nhmrc-partnership-projects-prc3-2026",
@@ -66,7 +44,7 @@
       "score": 84,
       "linkStatus": "unverified",
       "linkCheckNote": "timeout",
-      "linkCheckAttemptedAt": "2026-11-04"
+      "linkCheckAttemptedAt": "2026-11-05"
     },
     {
       "id": "mrff-emcr-initiative-2026",
@@ -88,7 +66,7 @@
       "score": 80,
       "linkStatus": "unverified",
       "linkCheckNote": "timeout",
-      "linkCheckAttemptedAt": "2026-11-04"
+      "linkCheckAttemptedAt": "2026-11-05"
     },
     {
       "id": "australia-korea-foundation-next-round",
@@ -110,7 +88,7 @@
       "score": 78,
       "linkStatus": "unverified",
       "linkCheckNote": "timeout",
-      "linkCheckAttemptedAt": "2026-11-04"
+      "linkCheckAttemptedAt": "2026-11-05"
     },
     {
       "id": "gstdf-korea-next-round",
@@ -127,12 +105,12 @@
       "fieldFit": "Strong fit when HCI or XR is framed within AI, advanced manufacturing, quantum, health technology, or another announced priority theme.",
       "recommendation": "Maintain a Korea–Australia concept and partner team, but do not treat this as open until the official site publishes a new round.",
       "url": "https://www.glodip.org.au/",
-      "checkedAt": "2026-11-04",
+      "checkedAt": "2026-11-05",
       "confidence": "High",
       "score": 76,
       "linkStatus": "reachable",
       "linkCheckNote": "HTTP 200",
-      "linkCheckAttemptedAt": "2026-11-04"
+      "linkCheckAttemptedAt": "2026-11-05"
     },
     {
       "id": "nrf-msit-korea-australia-watch",
@@ -149,12 +127,12 @@
       "fieldFit": "Potential fit for HCI, human-centred AI, digital media, robotics, visualization, immersive systems, and interdisciplinary computing when listed in the call.",
       "recommendation": "Search IRIS and NRF notices daily and activate only after an official Korea–Australia call, topic scope, and overseas eligibility are confirmed.",
       "url": "https://www.iris.go.kr/",
-      "checkedAt": "2026-11-04",
+      "checkedAt": "2026-11-05",
       "confidence": "Medium",
       "score": 72,
       "linkStatus": "reachable",
       "linkCheckNote": "HTTP 200",
-      "linkCheckAttemptedAt": "2026-11-04"
+      "linkCheckAttemptedAt": "2026-11-05"
     }
   ]
 }
