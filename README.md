@@ -58,4 +58,4 @@ Run `node .\data-tools\refresh-tracker.mjs --dry-run` to inspect live-source res
 
 Run `node data-tools/run-refresh.mjs` for the full refresh, or add `--dry-run` to avoid writing datasets. Exit code 1 means a stage failed; source verification warnings are printed without stopping the workflow. Run `node tests/run-refresh.mjs` to verify failure isolation.
 
-`xrmemory/index.html` serves the separate `/xrmemory/` placeholder page. It has no project claims or demo functionality; content can be added later.
+`xrmemory/` serves the separate Korean XRMemory review guide, scope checklist, and workflow instructions. Personal reviewer records and passwords, including encrypted copies, are excluded from this repository. The page links to the existing private review portal, whose access permissions remain separate.

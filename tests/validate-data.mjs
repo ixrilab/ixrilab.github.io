@@ -263,7 +263,9 @@ for (const source of facultyDiscoverySources.sources) {
 
 const publicText = [jobsRaw, fundingRaw, sourcesRaw, facultyDiscoverySourcesRaw, facultyDiscoveryRaw, r1CoverageRaw, r1SearchScopeRaw, policyRaw, indexRaw, appRaw, refreshRaw, xrMemoryRaw].join("\n");
 assert.doesNotMatch(publicText, privatePattern, "public files contain a prohibited personal or local identifier");
-assert.doesNotMatch(publicText, hangulPattern, "public UI and datasets must be English-only");
+// XRMemory is a separate Korean review guide; keep the career tracker English-only.
+const trackerText = [jobsRaw, fundingRaw, sourcesRaw, facultyDiscoverySourcesRaw, facultyDiscoveryRaw, r1CoverageRaw, r1SearchScopeRaw, policyRaw, indexRaw, appRaw, refreshRaw].join("\n");
+assert.doesNotMatch(trackerText, hangulPattern, "tracker UI and datasets must be English-only");
 assert.match(indexRaw, /role="tablist"/, "page must expose an accessible tab list");
 assert.match(indexRaw, /id="jobs-panel"/, "jobs panel is missing");
 assert.match(indexRaw, /id="funding-panel"/, "funding panel is missing");
