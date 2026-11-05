@@ -1,6 +1,7 @@
 import {CODEBOOK_VERSION,CODEBOOK_DATE,ROUTES,criterionState,routeState,scopeState} from './codebook-data.mjs';
 const h=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let checks={};
+export function resetCodebookChecks(){checks={};}
 const STATE={yes:['근거 확인','green'],no:['미충족','amber'],unsure:['확인 필요','amber'],unset:['미확인','gray']};
 function itemView(item){
  if(item.any)return `<fieldset class="cb-any"><legend><span class="cb-id">${item.id}</span>${h(item.text)} <span class="pill blue">둘 중 하나</span></legend>${item.any.map(itemView).join('')}</fieldset>`;
