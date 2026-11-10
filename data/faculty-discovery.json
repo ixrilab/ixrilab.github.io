@@ -1,27 +1,27 @@
 {
-  "generatedAt": "2026-11-09T01:39:27.895Z",
+  "generatedAt": "2026-11-10T04:03:14.849Z",
   "timezone": "Australia/Sydney",
   "sourcesChecked": [
     {
       "id": "ut-austin-faculty-careers",
       "institution": "The University of Texas at Austin",
-      "checkedAt": "2026-11-09",
+      "checkedAt": "2026-11-10",
       "status": "Verified",
-      "postingsInspected": 178,
-      "candidatesFound": 4
+      "postingsInspected": 175,
+      "candidatesFound": 3
     },
     {
       "id": "uc-berkeley-ap-recruit",
       "institution": "University of California, Berkeley",
-      "checkedAt": "2026-11-09",
+      "checkedAt": "2026-11-10",
       "status": "Verified",
-      "postingsInspected": 161,
+      "postingsInspected": 162,
       "candidatesFound": 0
     },
     {
       "id": "uc-irvine-ap-recruit",
       "institution": "University of California, Irvine",
-      "checkedAt": "2026-11-09",
+      "checkedAt": "2026-11-10",
       "status": "Verified",
       "postingsInspected": 324,
       "candidatesFound": 1
@@ -43,23 +43,6 @@
       "eligibleAppointment": true,
       "reviewStatus": "Needs review",
       "knownJobId": null
-    },
-    {
-      "sourceId": "ut-austin-faculty-careers",
-      "sourceJobId": "188439",
-      "institution": "The University of Texas at Austin",
-      "title": "Assistant Professor, Tenure-Track Faculty Position in Organizational Communication & Technology",
-      "unit": "Department of Communication Studies",
-      "officialUrl": "https://faculty.utexas.edu/career/188439",
-      "deadlineLabel": "Open until filled",
-      "postedDate": "2026-07-29",
-      "matchedSignals": [
-        "human-AI interaction",
-        "technology-rich human collaboration"
-      ],
-      "eligibleAppointment": true,
-      "reviewStatus": "Tracked",
-      "knownJobId": "ut-austin-communication-org-tech-188439"
     },
     {
       "sourceId": "ut-austin-faculty-careers",
@@ -101,7 +84,7 @@
       "title": "Open Rank Faculty Position for Department of Informatics in Human-Computer Interaction",
       "unit": "Donald Bren School of Information and Computer Sciences / Informatics",
       "officialUrl": "https://recruit.ap.uci.edu/JPF10388",
-      "deadlineLabel": "Most recent review date was Nov 5, 2026 Applications accepted until Apr 1, 2027 Open Sep 2, 2026 Apr 1, 2027",
+      "deadlineLabel": "Apply by Dec 5, 2026 for full consideration Open Sep 2, 2026 Apr 1, 2027",
       "postedDate": "2026-09-02",
       "matchedSignals": [
         "HCI"
