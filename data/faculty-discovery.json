@@ -1,29 +1,29 @@
 {
-  "generatedAt": "2026-11-10T04:03:14.849Z",
+  "generatedAt": "2026-11-11T01:51:12.058Z",
   "timezone": "Australia/Sydney",
   "sourcesChecked": [
     {
       "id": "ut-austin-faculty-careers",
       "institution": "The University of Texas at Austin",
-      "checkedAt": "2026-11-10",
+      "checkedAt": "2026-11-11",
       "status": "Verified",
-      "postingsInspected": 175,
-      "candidatesFound": 3
+      "postingsInspected": 173,
+      "candidatesFound": 2
     },
     {
       "id": "uc-berkeley-ap-recruit",
       "institution": "University of California, Berkeley",
-      "checkedAt": "2026-11-10",
+      "checkedAt": "2026-11-11",
       "status": "Verified",
-      "postingsInspected": 162,
+      "postingsInspected": 159,
       "candidatesFound": 0
     },
     {
       "id": "uc-irvine-ap-recruit",
       "institution": "University of California, Irvine",
-      "checkedAt": "2026-11-10",
+      "checkedAt": "2026-11-11",
       "status": "Verified",
-      "postingsInspected": 324,
+      "postingsInspected": 323,
       "candidatesFound": 1
     }
   ],
@@ -60,22 +60,6 @@
       "eligibleAppointment": true,
       "reviewStatus": "Tracked",
       "knownJobId": "ut-austin-ischool-open-rank-191973"
-    },
-    {
-      "sourceId": "ut-austin-faculty-careers",
-      "sourceJobId": "189345",
-      "institution": "The University of Texas at Austin",
-      "title": "Tenure-Track Advertising Faculty Position in Strategic Communication Media & Data Analytics for Consumer Insights",
-      "unit": "Stan Richards School of Advertising & Public Relations",
-      "officialUrl": "https://faculty.utexas.edu/career/189345",
-      "deadlineLabel": "Open until filled",
-      "postedDate": "2026-08-11",
-      "matchedSignals": [
-        "HCI"
-      ],
-      "eligibleAppointment": true,
-      "reviewStatus": "Tracked",
-      "knownJobId": "ut-austin-advertising-hci-ai-189345"
     },
     {
       "sourceId": "uc-irvine-ap-recruit",
