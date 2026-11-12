@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T01:51:12.058Z",
+  "generatedAt": "2026-11-12T02:51:16.472Z",
   "timezone": "Australia/Sydney",
   "status": "partial",
   "stages": {
@@ -21,11 +21,11 @@
     },
     "funding": {
       "status": "partial",
-      "kept": 6,
+      "kept": 5,
       "verified": 3,
-      "expired": 0,
+      "expired": 1,
       "closed": 0,
-      "unverified": 3
+      "unverified": 2
     },
     "coverage": {
       "status": "ok",
