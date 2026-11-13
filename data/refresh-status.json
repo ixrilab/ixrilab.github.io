@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T02:51:16.472Z",
+  "generatedAt": "2026-11-13T02:32:53.802Z",
   "timezone": "Australia/Sydney",
   "status": "partial",
   "stages": {
@@ -23,7 +23,7 @@
       "status": "partial",
       "kept": 5,
       "verified": 3,
-      "expired": 1,
+      "expired": 0,
       "closed": 0,
       "unverified": 2
     },
