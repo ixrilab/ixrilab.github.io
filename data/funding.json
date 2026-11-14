@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T02:32:53.802Z",
+  "generatedAt": "2026-11-14T02:16:22.761Z",
   "timezone": "Australia/Sydney",
   "opportunities": [
     {
@@ -17,12 +17,12 @@
       "fieldFit": "Useful for compute-intensive HCI, human-centred AI, multimodal analytics, visualization, and XR back-end workloads.",
       "recommendation": "Apply when the project has a quantified cloud workload, public research output, benchmark, tool, or training plan.",
       "url": "https://aws.amazon.com/government-education/research-and-technical-computing/cloud-credit-for-research/",
-      "checkedAt": "2026-11-13",
+      "checkedAt": "2026-11-14",
       "confidence": "High",
       "score": 92,
       "linkStatus": "reachable",
       "linkCheckNote": "HTTP 200",
-      "linkCheckAttemptedAt": "2026-11-13"
+      "linkCheckAttemptedAt": "2026-11-14"
     },
     {
       "id": "mrff-emcr-initiative-2026",
@@ -44,7 +44,7 @@
       "score": 80,
       "linkStatus": "unverified",
       "linkCheckNote": "timeout",
-      "linkCheckAttemptedAt": "2026-11-13"
+      "linkCheckAttemptedAt": "2026-11-14"
     },
     {
       "id": "australia-korea-foundation-next-round",
@@ -66,7 +66,7 @@
       "score": 78,
       "linkStatus": "unverified",
       "linkCheckNote": "timeout",
-      "linkCheckAttemptedAt": "2026-11-13"
+      "linkCheckAttemptedAt": "2026-11-14"
     },
     {
       "id": "gstdf-korea-next-round",
@@ -83,12 +83,12 @@
       "fieldFit": "Strong fit when HCI or XR is framed within AI, advanced manufacturing, quantum, health technology, or another announced priority theme.",
       "recommendation": "Maintain a Korea–Australia concept and partner team, but do not treat this as open until the official site publishes a new round.",
       "url": "https://www.glodip.org.au/",
-      "checkedAt": "2026-11-13",
+      "checkedAt": "2026-11-14",
       "confidence": "High",
       "score": 76,
       "linkStatus": "reachable",
       "linkCheckNote": "HTTP 200",
-      "linkCheckAttemptedAt": "2026-11-13"
+      "linkCheckAttemptedAt": "2026-11-14"
     },
     {
       "id": "nrf-msit-korea-australia-watch",
@@ -105,12 +105,12 @@
       "fieldFit": "Potential fit for HCI, human-centred AI, digital media, robotics, visualization, immersive systems, and interdisciplinary computing when listed in the call.",
       "recommendation": "Search IRIS and NRF notices daily and activate only after an official Korea–Australia call, topic scope, and overseas eligibility are confirmed.",
       "url": "https://www.iris.go.kr/",
-      "checkedAt": "2026-11-13",
+      "checkedAt": "2026-11-14",
       "confidence": "Medium",
       "score": 72,
       "linkStatus": "reachable",
       "linkCheckNote": "HTTP 200",
-      "linkCheckAttemptedAt": "2026-11-13"
+      "linkCheckAttemptedAt": "2026-11-14"
     }
   ]
 }
