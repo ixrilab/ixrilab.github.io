@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T03:38:03.900Z",
+  "generatedAt": "2026-11-19T03:13:21.346Z",
   "timezone": "Australia/Sydney",
   "status": "partial",
   "stages": {
@@ -10,12 +10,12 @@
       "failedSources": []
     },
     "faculty": {
-      "status": "ok",
+      "status": "partial",
       "retained": 23,
-      "verified": 18,
+      "verified": 17,
       "expired": 0,
       "closed": 0,
-      "unverified": 0,
+      "unverified": 1,
       "active": 18,
       "closedTotal": 5
     },
